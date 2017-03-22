@@ -41,3 +41,39 @@
 .slider-caption .button{
     display: inline-block!important;
 }
+
+/*-----------------------------------------------------------------
+    Contactez nous
+ -----------------------------------------------------------------*/
+
+#slider
+{
+   /* height:800px;*/
+}
+
+.col-xs-12.col-md-7.col-sm-6.full-screen.center.nopadding {
+    background :transparent url('../images/slider/rev/ken-1.jpg');
+    height:800px;
+}
+
+.col-xs-12.col-md-5.col-sm-6.full-screen {
+    background-color: rgb(245, 245, 245);
+    height: 800px;
+}
+
+.vertical-middle.subscribe-widget {
+    position:absolute;
+    top:10%;
+    width:100%
+}
+
+.col-padding {
+    padding:60px;
+}
+
+/*FOOTER*/
+
+#footer .footer-widgets-wrap {
+    position: relative;
+    padding: 32px 0;
+}
