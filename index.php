@@ -23,9 +23,7 @@
 
 
     <link rel="stylesheet" href="css/font-icons.css" type="text/css" />
-    <link rel="stylesheet" href="main.css" type="text/css"/>
     <link rel="stylesheet" href="css/fonts.css" type="text/css"/>
-    <link rel="stylesheet" href="css/onepage.css" type="text/css"/>
 
 
     <link rel="stylesheet" href="css/animate.css" type="text/css" />
