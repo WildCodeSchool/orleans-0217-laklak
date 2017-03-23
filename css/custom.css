@@ -11,6 +11,7 @@ body {
 	text-align: justify-all;
 }
 
+
 h1{
 	font-family: 'Anton', sans-serif;
 	margin-left: 20px;
@@ -187,4 +188,76 @@ color: black;
 }
 .timeline-body > p + p {
   margin-top: 5px;
+}
+/* ----------------------------------------------------------------
+	Header
+-----------------------------------------------------------------*/
+#header-wrap, #header ul{
+    border: none!important;
+}
+#header #logo{
+    margin-top: 5px!important;
+    border: none!important;
+}
+#primary-menu-trigger{
+    font-size: 20px;
+    right:0px!important;
+    left: inherit;
+}
+#primary-menu ul li:hover > a{
+    color: #000;
+    font-weight: 600;
+}
+#primary-menu ul li a{
+    font-weight: normal;
+}
+
+/* ----------------------------------------------------------------
+	Slider
+-----------------------------------------------------------------*/
+
+.slider-caption h2{
+    text-transform: none;
+}
+.slider-caption{
+    top: 30%!important;
+}
+.slider-caption .button{
+    display: inline-block!important;
+}
+
+/*-----------------------------------------------------------------
+    Contactez nous
+ -----------------------------------------------------------------*/
+
+#slider
+{
+   /* height:800px;*/
+}
+
+.col-xs-12.col-md-7.col-sm-6.full-screen.center.nopadding {
+    background :transparent url('../images/slider/rev/ken-1.jpg');
+    height:800px;
+}
+
+.col-xs-12.col-md-5.col-sm-6.full-screen {
+    background-color: rgb(245, 245, 245);
+    height: 800px;
+}
+
+.vertical-middle.subscribe-widget {
+    position:absolute;
+    top:10%;
+    width:100%
+}
+
+.col-padding {
+    padding:60px;
+}
+
+/*FOOTER*/
+
+#footer .footer-widgets-wrap {
+    position: relative;
+    padding: 32px 0;
 }
