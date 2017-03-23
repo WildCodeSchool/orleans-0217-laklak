@@ -26,21 +26,31 @@
                             ============================================= -->
             <nav id="primary-menu">
                 <ul class="one-page-menu sf-js-enabled">
-                    <li><a href="index-test.html">
+                    <li>
+                        <a href="index-test.html">
                             <div>About</div>
-                        </a></li>
-                    <li><a href="link.html">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="link.html">
                             <div>Artistes</div>
-                        </a></li>
-                    <li><a href="link.html">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="link.html">
                             <div>Evenements</div>
-                        </a></li>
-                    <li><a href="link.html">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="link.html">
                             <div>Agenda</div>
-                        </a></li>
-                    <li><a href="link.html">
+                        </a>
+                    </li>
+                    <li><
+                        a href="link.html">
                             <div>Contact</div>
-                        </a></li>
+                        </a>
+                    </li>
                 </ul>
             </nav>
             <!-- #primary-menu end -->
