@@ -5,10 +5,45 @@
 	Overwriting Default Theme Styles for Better Hanlding Updates
 -----------------------------------------------------------------*/
 
+/* ----------------------------------------------------------------
+	Header
+-----------------------------------------------------------------*/
+#header-wrap, #header ul{
+    border: none!important;
+}
+#header #logo{
+    margin-top: 5px!important;
+    border: none!important;
+}
+#primary-menu-trigger{
+    font-size: 20px;
+    right:0px!important;
+    left: inherit;
+}
+#primary-menu ul li:hover > a{
+    color: #000;
+    font-weight: 600;
+}
+#primary-menu ul li a{
+    font-weight: normal;
+}
+
+/* ----------------------------------------------------------------
+	Slider
+-----------------------------------------------------------------*/
+
+.slider-caption h2{
+    text-transform: none;
+}
+.slider-caption{
+    top: 30%!important;
+}
+.slider-caption .button{
+    display: inline-block!important;
+}
+
 /*-----------------------------------------------------------------
     Contactez nous
-
-
  -----------------------------------------------------------------*/
 
 #slider
@@ -42,4 +77,3 @@
     position: relative;
     padding: 32px 0;
 }
-
