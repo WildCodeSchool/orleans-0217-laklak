@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
     <link rel="stylesheet" href="style.css" type="text/css" />
     <!--  <link rel="stylesheet" href="css/swiper.css" type="text/css" /> -->
-      <link rel="stylesheet" href="css/dark.css" type="text/css" />
+    <!--  <link rel="stylesheet" href="css/dark.css" type="text/css" /> -->
       <link rel="stylesheet" href="css/font-icons.css" type="text/css" />
       <link rel="stylesheet" href="css/animate.css" type="text/css" />
       <link rel="stylesheet" href="css/magnific-popup.css" type="text/css" />
@@ -27,16 +27,11 @@
 
 </head>
 
-<?php
-include 'header.php';
-?>
 <!-- Slider
 		============================================= -->
-<!-- <section id="slider" class="slider-parallax full-screen slider-parallax-visible"> -->
-
 <section id="slider" class="full-screen">
 
-    <div class="col-xs-12 col-md-7 col-sm-6 full-screen center nopadding">
+     <div class="col-xs-12 col-md-7 col-sm-6 full-screen center nopadding">
     </div>
 
     <div class="col-xs-12 col-md-5 col-sm-6 full-screen">
@@ -96,10 +91,12 @@ include 'header.php';
 
 </section>
 
+
 <!-- Footer
-		============================================= -->
+
 <?php
 include ('footer.php');
 ?>
+
 
 </html>
