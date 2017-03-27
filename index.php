@@ -31,13 +31,14 @@
     <link rel="stylesheet" href="css/colors.css" type="text/css"/>
 
     <link rel="stylesheet" href="css/custom.css" type="text/css"/>
+    <link rel="icon" type="image/png" href="images/photoartistes/logo.jpg" />
 
 
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
     <!-- Document Title
     ============================================= -->
-    <title>Canvas | The Multi-Purpose HTML5 Template</title>
+    <title>Laklak Productions</title>
 
 </head>
 <body class="stretched side-push-panel device-lg" cz-shortcut-listen="true">

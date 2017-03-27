@@ -26,8 +26,8 @@
                             ============================================= -->
             <nav id="primary-menu">
                 <ul class="one-page-menu sf-js-enabled">
-                    <li><a href="index-test.html">
-                            <div>About</div>
+                    <li><a href="presentation.php">
+                            <div>Presentation</div>
                         </a></li>
                     <li><a href="link.html">
                             <div>Artistes</div>
