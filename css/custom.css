@@ -4,6 +4,65 @@
 	Add all your Custom Styled CSS here for New Styles or
 	Overwriting Default Theme Styles for Better Hanlding Updates
 -----------------------------------------------------------------*/
+body {
+    line-height: 1.5;
+    color: #555;
+    font-family: 'Lato', sans-serif;
+    text-align: justify-all;
+}
+
+
+h1{
+    font-family: 'Anton', sans-serif;
+    margin-left: 20px;
+
+}
+
+h2{
+    margin-left: 20px;
+}
+
+p{
+    text-align: justify;
+    font-size: 20px;
+}
+
+h3{
+    text-align:center;
+}
+
+
+.presentation{
+
+    margin: 60px;
+}
+
+
+.entete{
+
+    text-align: center;
+
+}
+
+
+a {
+    text-decoration: none !important;
+    color: #1ABC9C;
+}
+
+
+
+a:hover { color: #222; }
+
+.question{
+    font-family: 'Baloo Bhaina', cursive;
+    font-size: 40px;
+    color: black;
+}
+
+.premier-block{
+    padding-top:  20px;
+}
 
 /* ----------------------------------------------------------------
 	Header
@@ -42,17 +101,22 @@
     display: inline-block!important;
 }
 
+
 /*-----------------------------------------------------------------
     Contactez nous
  -----------------------------------------------------------------*/
 
-#slider
+/*#slider
 {
-   /* height:800px;*/
+   /* height:800px;
+}*/
+
+#slider.full-screen {
+    position:static;
 }
 
 .col-xs-12.col-md-7.col-sm-6.full-screen.center.nopadding {
-    background :transparent url('../images/slider/rev/ken-1.jpg');
+    background :transparent url('../images/image_contact.jpg') no-repeat scroll center center / cover;
     height:800px;
 }
 
@@ -63,12 +127,19 @@
 
 .vertical-middle.subscribe-widget {
     position:absolute;
-    top:10%;
+    top:2%;
     width:100%
 }
 
 .col-padding {
     padding:60px;
+}
+
+@media screen and (max-width: 760px) {
+    .col-xs-12.col-md-7.col-sm-6.full-screen.center.nopadding {
+        background :transparent url('../images/image_contact.jpg') no-repeat scroll center center / cover;
+        height:200px;
+    }
 }
 
 /*FOOTER*/
