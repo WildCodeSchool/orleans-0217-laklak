@@ -29,9 +29,9 @@
 
 <!-- Slider
 		============================================= -->
-<section id="slider" class="slider-parallax full-screen slider-parallax-visible">
+<section id="slider" class="full-screen">
 
-    <div class="col-xs-12 col-md-7 col-sm-6 full-screen center nopadding">
+     <div class="col-xs-12 col-md-7 col-sm-6 full-screen center nopadding">
     </div>
 
     <div class="col-xs-12 col-md-5 col-sm-6 full-screen">
@@ -90,5 +90,13 @@
     </div>
 
 </section>
+
+
+<!-- Footer
+
+<?php
+include ('footer.php');
+?>
+
 
 </html>
