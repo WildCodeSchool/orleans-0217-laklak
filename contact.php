@@ -8,9 +8,9 @@ include 'header.php';
 include 'navbar.php';
 ?>
 <!-- Slider ============================================= -->
-<section id="slider" class="full-screen">
+<section id="slider" class="full-screen contact">
 
-     <div class="col-xs-12 col-md-7 col-sm-6 full-screen center nopadding">
+    <div class="col-xs-12 col-md-7 col-sm-6 full-screen center nopadding">
     </div>
 
     <div class="col-xs-12 col-md-5 col-sm-6 full-screen">
