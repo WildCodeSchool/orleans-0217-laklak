@@ -111,7 +111,7 @@ a:hover { color: #222; }
    /* height:800px;
 }*/
 
-#slider.full-screen {
+#slider.full-screen.contact {
     position:static;
 }
 
