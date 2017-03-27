@@ -1,37 +1,16 @@
-<!DOCTYPE html>
-<html dir="ltr" lang="en-US">
-<head>
+<?php
+include 'header.php';
+?>
 
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <meta name="author" content="SemiColonWeb" />
+<body>
 
-    <!-- Stylesheets
-    ============================================= -->
-    <link href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
-    <link rel="stylesheet" href="style.css" type="text/css" />
-    <!--  <link rel="stylesheet" href="css/swiper.css" type="text/css" /> -->
-    <!--  <link rel="stylesheet" href="css/dark.css" type="text/css" /> -->
-      <link rel="stylesheet" href="css/font-icons.css" type="text/css" />
-      <link rel="stylesheet" href="css/animate.css" type="text/css" />
-      <link rel="stylesheet" href="css/magnific-popup.css" type="text/css" />
-
-      <link rel="stylesheet" href="css/responsive.css" type="text/css" />
-      <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-      <link rel="stylesheet" href="css/custom.css" type="text/css" />
-
-      <!-- Document Title
-      ============================================= -->
-    <title>Laklak - Contact</title>
-
-</head>
-
-<!-- Slider
-		============================================= -->
+<?php
+include 'navbar.php';
+?>
+<!-- Slider ============================================= -->
 <section id="slider" class="full-screen">
 
-     <div class="col-xs-12 col-md-7 col-sm-6 full-screen center nopadding">
+    <div class="col-xs-12 col-md-7 col-sm-6 full-screen center nopadding">
     </div>
 
     <div class="col-xs-12 col-md-5 col-sm-6 full-screen">
@@ -92,11 +71,8 @@
 </section>
 
 
-<!-- Footer
+<!-- Footer -->
 
 <?php
 include ('footer.php');
 ?>
-
-
-</html>

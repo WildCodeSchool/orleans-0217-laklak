@@ -5,26 +5,26 @@
 	Overwriting Default Theme Styles for Better Hanlding Updates
 -----------------------------------------------------------------*/
 body {
-	line-height: 1.5;
-	color: #555;
-	font-family: 'Lato', sans-serif;
-	text-align: justify-all;
+    line-height: 1.5;
+    color: #555;
+    font-family: 'Lato', sans-serif;
+    text-align: justify-all;
 }
 
 
 h1{
-	font-family: 'Anton', sans-serif;
-	margin-left: 20px;
+    font-family: 'Anton', sans-serif;
+    margin-left: 20px;
 
 }
 
 h2{
-	margin-left: 20px;
+    margin-left: 20px;
 }
 
 p{
-	text-align: justify;
-	font-size: 20px;
+    text-align: justify;
+    font-size: 20px;
 }
 
 h3{
@@ -34,20 +34,20 @@ h3{
 
 .presentation{
 
-	margin: 60px;
+    margin: 60px;
 }
 
 
 .entete{
 
-	text-align: center;
+    text-align: center;
 
 }
 
 
 a {
-	text-decoration: none !important;
-	color: #1ABC9C;
+    text-decoration: none !important;
+    color: #1ABC9C;
 }
 
 
@@ -55,9 +55,9 @@ a {
 a:hover { color: #222; }
 
 .question{
-font-family: 'Baloo Bhaina', cursive;
-font-size: 40px;
-color: black;
+    font-family: 'Baloo Bhaina', cursive;
+    font-size: 40px;
+    color: black;
 }
 
 .premier-block{
