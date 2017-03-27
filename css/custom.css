@@ -42,17 +42,22 @@
     display: inline-block!important;
 }
 
+
 /*-----------------------------------------------------------------
     Contactez nous
  -----------------------------------------------------------------*/
 
-#slider
+/*#slider
 {
-   /* height:800px;*/
+   /* height:800px;
+}*/
+
+#slider.full-screen {
+    position:static;
 }
 
 .col-xs-12.col-md-7.col-sm-6.full-screen.center.nopadding {
-    background :transparent url('../images/slider/rev/ken-1.jpg');
+    background :transparent url('../images/image_contact.jpg') no-repeat scroll center center / cover;
     height:800px;
 }
 
@@ -63,12 +68,19 @@
 
 .vertical-middle.subscribe-widget {
     position:absolute;
-    top:10%;
+    top:2%;
     width:100%
 }
 
 .col-padding {
     padding:60px;
+}
+
+@media screen and (max-width: 760px) {
+    .col-xs-12.col-md-7.col-sm-6.full-screen.center.nopadding {
+        background :transparent url('../images/image_contact.jpg') no-repeat scroll center center / cover;
+        height:200px;
+    }
 }
 
 /*FOOTER*/

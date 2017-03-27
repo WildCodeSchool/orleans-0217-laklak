@@ -38,7 +38,7 @@
                     <li><a href="link.html">
                             <div>Agenda</div>
                         </a></li>
-                    <li><a href="link.html">
+                    <li><a href="contact.php">
                             <div>Contact</div>
                         </a></li>
                 </ul>
