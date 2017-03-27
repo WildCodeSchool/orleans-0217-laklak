@@ -1,23 +1,11 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8">
-<link rel="icon" type="image/png" href="images/photoartistes/logo.jpg" />
-<link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Baloo+Bhaina" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="style.css">
-<link rel="stylesheet" type="text/css" href="css/responsive.css">
-<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-<link rel="stylesheet" type="text/css" href="css/custom.css">
+<?php
+include 'header.php';
+?>
 
-
-	<title>Présentation | Laklak productions</title>
-</head>
 <body>
 
 <?php
-
-include 'header.php'
+include 'navbar.php';
 ?>
 
 
@@ -141,7 +129,9 @@ include 'header.php'
 
 </div>
 
-
+<?php
+include 'footer.php'
+?>
 
 </body>
 

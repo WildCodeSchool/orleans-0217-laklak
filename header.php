@@ -1,50 +1,36 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: wilder12
- * Date: 22/03/17
- * Time: 10:36
- */
-?>
-<!-- Header
-		============================================= -->
-<header id="header" class="style-3 full-header transparent-header static-sticky" data-sticky-class="not-dark" data-sticky-offset="0">
-    <div id="header-wrap">
-        <div class="container clearfix">
-            <div id="primary-menu-trigger">
-                <i class="icon-reorder"></i>
-            </div>
+<!DOCTYPE html>
+<html dir="ltr" lang="fr-FR">
+<head>
 
-            <!-- Logo
-                            ============================================= -->
-            <div id="logo">
-                <a href="index.php" class="standard-logo" ><img src="images/Laklak/logo.png" alt="LAKLAK Logo"></a>
-                <a href="index.php" class="retina-logo"><img src="images/Laklak/logo.png" alt="LAKLAK Logo"></a>
-            </div>
-            <!-- #logo end -->
-            <!-- Primary Navigation
-                            ============================================= -->
-            <nav id="primary-menu">
-                <ul class="one-page-menu sf-js-enabled">
-                    <li><a href="presentation.php">
-                            <div>Presentation</div>
-                        </a></li>
-                    <li><a href="link.html">
-                            <div>Artistes</div>
-                        </a></li>
-                    <li><a href="link.html">
-                            <div>Evenements</div>
-                        </a></li>
-                    <li><a href="link.html">
-                            <div>Agenda</div>
-                        </a></li>
-                    <li><a href="contact.php">
-                            <div>Contact</div>
-                        </a></li>
-                </ul>
-            </nav>
-            <!-- #primary-menu end -->
-        </div>
-    </div>
-</header>
-<!-- #header end -->
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta name="author" content="SemiColonWeb"/>
+
+    <!-- Stylesheets
+    ============================================= -->
+    <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700|Roboto:300,400,500,700" rel="stylesheet" type="text/css" />
+
+    <link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <link rel="stylesheet" href="css/swiper.css" type="text/css" />
+
+
+    <link rel="stylesheet" href="css/font-icons.css" type="text/css" />
+    <link rel="stylesheet" href="css/fonts.css" type="text/css"/>
+
+
+    <link rel="stylesheet" href="css/dark.css" type="text/css" />
+    <link rel="stylesheet" href="css/animate.css" type="text/css" />
+    <link rel="stylesheet" href="css/responsive.css" type="text/css"/>
+    <link rel="stylesheet" href="css/colors.css" type="text/css"/>
+
+    <link rel="stylesheet" href="css/custom.css" type="text/css"/>
+    <link rel="icon" type="image/png" href="images/photoartistes/logo.jpg" />
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <!-- Document Title
+    ============================================= -->
+    <title>Laklak Productions</title>
+
+</head>
