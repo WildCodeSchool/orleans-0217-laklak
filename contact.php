@@ -27,6 +27,9 @@
 
 </head>
 
+<?php
+include 'header.php';
+?>
 <!-- Slider
 		============================================= -->
 <!-- <section id="slider" class="slider-parallax full-screen slider-parallax-visible"> -->
@@ -157,11 +160,16 @@
                                 <div class="col-md-6 clearfix">
                                     <a href="https://twitter.com/Laklak_Prod?lang=fr" target="_blank" class="social-icon si-dark si-colored si-twitter nobottommargin" style="margin-right: 10px;">
                                         <i class="icon-twitter"></i>
-
                                     </a>
                                     <a href="#"><small style="display: block; margin-top: 5px;"><strong>Abonnez-vous</strong><br>à notre Twitter</small></a>
                                 </div>
-
+                                <br>
+                                <div class="col-md-6 clearfix visible-xs">
+                                    <a href="https://www.facebook.com/laklakproductions" target="_blank" class="social-icon si-dark si-colored si-facebook nobottommargin" style="margin-right: 10px;">
+                                        <i class="icon-facebook"></i>
+                                    </a>
+                                    <a href="#"><small style="display: block; margin-top: 5px;"><strong>Aimez-nous</strong><br>sur notre Facebook</small></a>
+                                </div>
                             </div>
 
                         </div>
@@ -176,24 +184,16 @@
                     </div>
                 </div>
 
-
-
             </div>
-
             <div class="col_one_third col_last">
 
-                <div class="widget clearfix" style="margin-bottom: -20px;">
+                <div class="widget clearfix hidden-xs">
 
                     <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Flaklakproductions&tabs=timeline&width=320&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="340" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+
                 </div>
-
-
-
             </div>
-
         </div><!-- .footer-widgets-wrap end -->
-
     </div>
-
 
 </html>

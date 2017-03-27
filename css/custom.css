@@ -52,6 +52,10 @@
    /* height:800px;
 }*/
 
+#slider.full-screen {
+    position:static;
+}
+
 .col-xs-12.col-md-7.col-sm-6.full-screen.center.nopadding {
     background :transparent url('../images/image_contact.jpg') no-repeat scroll center center / cover;
     height:800px;
