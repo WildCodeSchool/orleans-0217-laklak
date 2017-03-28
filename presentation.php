@@ -14,25 +14,30 @@ include 'navbar.php';
     <div class="row">
         <div class="col-sm-12">
             <div class="presentation">
-				    <h1>LAKLAK PRODUCTIONS - L'AGENCE</h1>
-					    <h3>LAKLAK Productions est une agence de production de spectacles et de booking, basée à Rabat au Maroc.</h3>
+                <h1>LAKLAK PRODUCTIONS - L'AGENCE</h1>
+                <h3>LAKLAK Productions est une agence de production de spectacles et de booking, basée à Rabat au
+                    Maroc.</h3>
             </div>
         </div>
 
-                        <div class="imagelogo">
-  							<center><img class="imagelogo img-responsive" src="images/photoartistes/logofull1.jpg"></center>
-                            </div>
+        <div class="col-sm-12">
+            <img class="imagelogo img-responsive" src="images/photoartistes/logofull1.jpg">
+        </div>
 
-  							<br/>
-                            <br/>
+        <br/>
+        <br/>
     </div>
     <!--fin premiere row-->
     <hr/>
     <div class="row">
         <div class="col-sm-12">
-            <p><strong>LAKLAK Productions</strong> ce sont plus de <strong>six années d’expérience en France et au Maroc</strong> (Universal Music France, 3 Pom Prod, Francofolies de La Rochelle, Paris Hip Hop, Mawazine, Institut français du Maroc…) faites de multiples rencontres et collaborations artistiques.</p><br/>
-                <br/>
-                    <p>Nous mettons ce savoir faire au service des artistes avec qui nous collaborons, des partenaires privés et publics qui nous accordent leur confiance et du public que nous accueillons.</p>
+            <p><strong>LAKLAK Productions</strong> ce sont plus de <strong>six années d’expérience en France et au
+                    Maroc</strong> (Universal Music France, 3 Pom Prod, Francofolies de La Rochelle, Paris Hip Hop,
+                Mawazine, Institut français du Maroc…) faites de multiples rencontres et collaborations artistiques.</p>
+            <br/>
+            <br/>
+            <p>Nous mettons ce savoir faire au service des artistes avec qui nous collaborons, des partenaires privés et
+                publics qui nous accordent leur confiance et du public que nous accueillons.</p>
 
         </div>
     </div>
@@ -40,6 +45,7 @@ include 'navbar.php';
     <!--fin deuxième row-->
 
     <br/>
+
 
                     <div class="row">
                         <div class="col-sm-12">
@@ -53,22 +59,19 @@ include 'navbar.php';
 
                         <div class="col-md-6">
 
-                            <h1>Festivall Jazz au Chellah à Rabat</h1>
-                            <br/>
-                            <br/>
+                            <h4>Festivall Jazz au Chellah à Rabat</h4>
   							<img src="images/photoartistes/2015/jazzaauchellah.jpg" class="img-responsive">
                         </div>
 
                         <div class="col-md-6">
-                            <h1>Hindi Zahra</h1>
-                            <br/>
-                            <br/>
+                            <h4>Hindi Zahra</h4>
+
                                 <img src="images/photoartistes/2015/hindizahra.jpg" class="img-responsive">
                         </div>
 
 
-                        <div class="col-sm-12">
-                            <h3><i>(Quelques exemples de nos productions)</i></h3>
+                        <div class="col-sm-12 text-center">
+                            <h5><i>(Quelques exemples de nos productions)</i></h5>
                         </div>
                     </div>
         <!--fin troisieme row-->
@@ -90,61 +93,56 @@ include 'navbar.php';
 
                         <div class="col-md-6">
 
-  							<h1>Nuit electronique à Casablanca</h1>
-                            <br/>
-                            <br/>
+  							<h4>Nuit electronique à Casablanca</h4>
+
   							<img src="images/photoartistes/2016/nuitelectroniquecasa.jpg" class="img-responsive">
                         </div>
                         <div class="col-md-6">
-  							<h1>Jazzablanca</h1>
-  							<br/>
-                            <br/>
+  							<h4>Jazzablanca</h4>
+
   							<img src="images/photoartistes/2016/jazzablanca.jpg" class="img-responsive">
                         </div>
                     </div>
 
             <!--fin quatrieme row-->
 
-                        <div class="row">
+                    <div class="row">
                             <div class="col-md-6">
                                 <br/>
-  							        <h1>Meryem Aboulouafa</h1>
+  							        <h4>Meryem Aboulouafa</h4>
   							            <img src="images/photoartistes/2016/meryem2.jpg" class="img-responsive">
                             </div>
                             <br/>
 
                             <div class="col-md-6">
-                                <h1>Ayoub El Machatt</h1>
-                                <img src="images/photoartistes/2016/ayoub8.jpg" class="img-responsive"
+                                <h4>Ayoub El Machatt</h4>
+                                <img src="images/photoartistes/2016/ayoub3.jpg" class="img-responsive"
                             </div>
-                        </div>
+                    </div>
     <!--fin cinquieme row-->
 
                 <div class="row">
-                     <div class="col-sm-12">
-                         <h3><i>(Quelques exemples de nos productions)</i></h3>
+                     <div class="col-sm-12 text-center">
+                         <h5><i>(Quelques exemples de nos productions)</i></h5>
                     </div>
                 </div>
 <!--fin sixieme row-->
 
-                    <br/>
-
-                    <div class="row">
-                       <div class="col-sm-12">
-                          <h1>2017</h1>
-                            <p>Encore plus d'événements à venir...</p>
-                       </div>
-                    </div>
 
 
+    <br/>
 
+    <div class="row">
+        <div class="col-sm-12">
+            <h1>2017</h1>
+            <p>Encore plus d'événements à venir...</p>
+        </div>
+    </div>
+    <!--fin du container-->
 </div>
+</div>
+
 
 <?php
 include 'footer.php'
 ?>
-
-</body>
-
-
-</html>

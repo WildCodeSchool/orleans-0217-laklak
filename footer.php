@@ -1,12 +1,11 @@
 
 
-
 <!--footer-->
-<footer id="footer" class="dark">
 
+<footer id="footer" class="dark">
     <div class="container">
 
-        <!-- Footer Widgets -->
+
         <div class="footer-widgets-wrap clearfix">
 
             <div class="col_two_third">
@@ -94,6 +93,20 @@
                 </div>
         </div><!-- .footer-widgets-wrap end -->
     </div>
+
+
 </footer>
+
+<!-- Go To Top ============================================= -->
+<div id="gotoTop" class="icon-angle-up"></div>
+
+<!-- External JavaScripts ============================================= -->
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/plugins.js"></script>
+
+
+<!-- Footer Scripts ============================================= -->
+<script type="text/javascript" src="js/functions.js"></script>
 </body>
 </html>
+

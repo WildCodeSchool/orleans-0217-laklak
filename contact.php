@@ -7,6 +7,8 @@ include 'header.php';
 <?php
 include 'navbar.php';
 ?>
+<div class="container">
+
 <!-- Slider ============================================= -->
 <section id="slider" class="full-screen contact">
 
@@ -70,6 +72,7 @@ include 'navbar.php';
 
 </section>
 
+</div>
 
 <!-- Footer -->
 
