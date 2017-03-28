@@ -94,6 +94,9 @@ a:hover { color: #222; }
 #primary-menu ul li a{
     font-weight: normal;
 }
+#header{
+    margin-bottom: 20px;
+}
 
 /* ----------------------------------------------------------------
 	Slider
@@ -109,6 +112,9 @@ a:hover { color: #222; }
     display: inline-block!important;
 }
 
+#slider.swiper_wrapper{
+    margin-top: -20px;
+}
 
 /*-----------------------------------------------------------------
     Contactez nous
