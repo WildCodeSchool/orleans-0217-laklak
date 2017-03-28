@@ -1,9 +1,53 @@
+
+
+
+
+    <!-- Stylesheets -->
+    <link href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <link rel="stylesheet" href="css/swiper.css" type="text/css" />
+    <link rel="stylesheet" href="css/dark.css" type="text/css" />
+    <link rel="stylesheet" href="css/font-icons.css" type="text/css" />
+    <link rel="stylesheet" href="css/animate.css" type="text/css" />
+    <link rel="stylesheet" href="css/magnific-popup.css" type="text/css" />
+
+    <link rel="stylesheet" href="css/responsive.css" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="css/custom.css" type="text/css" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--footer-->
 <footer id="footer" class="dark">
 
     <div class="container">
 
-        <!-- Footer Widgets
-        ============================================= -->
+        <!-- Footer Widgets -->
         <div class="footer-widgets-wrap clearfix">
 
             <div class="col_two_third">
@@ -49,26 +93,22 @@
 
                             <div class="row">
 
-                                <div class="col-md-6 clearfix bottommargin-sm">
+                                <div class="col-md-3 col-xs-3 clearfix bottommargin-sm">
 
                                     <a href="https://www.instagram.com/laklakprod/" target="_blank" class="social-icon si-dark si-colored si-instagram nobottommargin" style="margin-right: 10px;">
                                         <i class="icon-instagram"></i>
-
                                     </a>
-                                    <a href="#"><small style="display: block; margin-top: 3px;"><strong>Suivez-nous</strong><br>sur Instagram</small></a>
                                 </div>
-                                <div class="col-md-6 clearfix">
+                                <div class="col-md-3 col-xs-3 clearfix bottommargin-sm">
                                     <a href="https://twitter.com/Laklak_Prod?lang=fr" target="_blank" class="social-icon si-dark si-colored si-twitter nobottommargin" style="margin-right: 10px;">
                                         <i class="icon-twitter"></i>
                                     </a>
-                                    <a href="#"><small style="display: block; margin-top: 5px;"><strong>Abonnez-vous</strong><br>à notre Twitter</small></a>
                                 </div>
-                                <br>
-                                <div class="col-md-6 clearfix visible-xs">
+
+                                <div class="col-md-3 col-xs-3 clearfix bottommargin-sm">
                                     <a href="https://www.facebook.com/laklakproductions" target="_blank" class="social-icon si-dark si-colored si-facebook nobottommargin" style="margin-right: 10px;">
                                         <i class="icon-facebook"></i>
                                     </a>
-                                    <a href="#"><small style="display: block; margin-top: 5px;"><strong>Aimez-nous</strong><br>sur notre Facebook</small></a>
                                 </div>
                             </div>
 
