@@ -73,13 +73,13 @@ a:hover { color: #222; }
     padding-top:  20px;
 }
 
-/*
-	Header-*/
+/* ----------------------------------------------------------------
+	Header
+-----------------------------------------------------------------*/
 #header-wrap, #header ul{
     border: none!important;
 }
 #header #logo{
-    margin-top: 5px!important;
     border: none!important;
 }
 #primary-menu-trigger{
@@ -93,6 +93,9 @@ a:hover { color: #222; }
 }
 #primary-menu ul li a{
     font-weight: normal;
+}
+#header{
+    margin-bottom: 20px;
 }
 
 /* ----------------------------------------------------------------
@@ -109,6 +112,9 @@ a:hover { color: #222; }
     display: inline-block!important;
 }
 
+#slider.swiper_wrapper{
+    margin-top: -20px;
+}
 
 /*-----------------------------------------------------------------
     Contactez nous
