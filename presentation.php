@@ -53,22 +53,19 @@ include 'navbar.php';
 
                         <div class="col-md-6">
 
-                            <h1>Festivall Jazz au Chellah à Rabat</h1>
-                            <br/>
-                            <br/>
+                            <h4>Festivall Jazz au Chellah à Rabat</h4>
   							<img src="images/photoartistes/2015/jazzaauchellah.jpg" class="img-responsive">
                         </div>
 
                         <div class="col-md-6">
-                            <h1>Hindi Zahra</h1>
-                            <br/>
-                            <br/>
+                            <h4>Hindi Zahra</h4>
+
                                 <img src="images/photoartistes/2015/hindizahra.jpg" class="img-responsive">
                         </div>
 
 
-                        <div class="col-sm-12">
-                            <h3><i>(Quelques exemples de nos productions)</i></h3>
+                        <div class="col-sm-12 text-center">
+                            <h5><i>(Quelques exemples de nos productions)</i></h5>
                         </div>
                     </div>
         <!--fin troisieme row-->
@@ -90,39 +87,37 @@ include 'navbar.php';
 
                         <div class="col-md-6">
 
-  							<h1>Nuit electronique à Casablanca</h1>
-                            <br/>
-                            <br/>
+  							<h4>Nuit electronique à Casablanca</h4>
+
   							<img src="images/photoartistes/2016/nuitelectroniquecasa.jpg" class="img-responsive">
                         </div>
                         <div class="col-md-6">
-  							<h1>Jazzablanca</h1>
-  							<br/>
-                            <br/>
+  							<h4>Jazzablanca</h4>
+
   							<img src="images/photoartistes/2016/jazzablanca.jpg" class="img-responsive">
                         </div>
                     </div>
 
             <!--fin quatrieme row-->
 
-                        <div class="row">
+                    <div class="row">
                             <div class="col-md-6">
                                 <br/>
-  							        <h1>Meryem Aboulouafa</h1>
+  							        <h4>Meryem Aboulouafa</h4>
   							            <img src="images/photoartistes/2016/meryem2.jpg" class="img-responsive">
                             </div>
                             <br/>
 
                             <div class="col-md-6">
-                                <h1>Ayoub El Machatt</h1>
-                                <img src="images/photoartistes/2016/ayoub8.jpg" class="img-responsive"
+                                <h4>Ayoub El Machatt</h4>
+                                <img src="images/photoartistes/2016/ayoub3.jpg" class="img-responsive"
                             </div>
-                        </div>
+                    </div>
     <!--fin cinquieme row-->
 
                 <div class="row">
-                     <div class="col-sm-12">
-                         <h3><i>(Quelques exemples de nos productions)</i></h3>
+                     <div class="col-sm-12 text-center">
+                         <h5><i>(Quelques exemples de nos productions)</i></h5>
                     </div>
                 </div>
 <!--fin sixieme row-->
@@ -137,8 +132,9 @@ include 'navbar.php';
                     </div>
 
 
-
 </div>
+</div>
+
 
 <?php
 include 'footer.php'

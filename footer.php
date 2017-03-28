@@ -1,6 +1,8 @@
-<footer id="footer" class="dark">
 
+
+<footer id="footer" class="dark">
     <div class="container">
+
 
         <!-- Footer Widgets
         ============================================= -->
@@ -96,5 +98,6 @@
         </div><!-- .footer-widgets-wrap end -->
     </div>
 </footer>
+
 </body>
 </html>
