@@ -4,27 +4,33 @@
 	Add all your Custom Styled CSS here for New Styles or
 	Overwriting Default Theme Styles for Better Hanlding Updates
 -----------------------------------------------------------------*/
+
+/* ----------------------------------------------------------------
+    Presentation
+-----------------------------------------------------------------*/
 body {
-	line-height: 1.5;
-	color: #555;
-	font-family: 'Lato', sans-serif;
-	text-align: justify-all;
+    line-height: 1.5;
+    color: #555;
+    font-family: 'Lato', sans-serif;
+    text-align: justify-all;
 }
 
 
 h1{
-	font-family: 'Anton', sans-serif;
-	margin-left: 20px;
+    font-family: 'Anton', sans-serif;
+    margin-left: 20px;
 
 }
 
 h2{
-	margin-left: 20px;
+    margin-left: 20px;
 }
 
 p{
+
 	text-align: justify;
 	font-size: 20px;
+
 
 }
 
@@ -33,12 +39,24 @@ h3{
 }
 
 .presentation{
+
     text-align: center;
 }
 
+
+
+
+.entete{
+
+    text-align: center;
+
+}
+
+
+
 a {
-	text-decoration: none !important;
-	color: #1ABC9C;
+    text-decoration: none !important;
+    color: #1ABC9C;
 }
 
 
@@ -46,9 +64,9 @@ a {
 a:hover { color: #222; }
 
 .question{
-font-family: 'Baloo Bhaina', cursive;
-font-size: 40px;
-color: black;
+    font-family: 'Baloo Bhaina', cursive;
+    font-size: 40px;
+    color: black;
 }
 
 .premier-block{
@@ -102,7 +120,7 @@ color: black;
    /* height:800px;
 }*/
 
-#slider.full-screen {
+#slider.full-screen.contact {
     position:static;
 }
 
