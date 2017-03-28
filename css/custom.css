@@ -73,13 +73,13 @@ a:hover { color: #222; }
     padding-top:  20px;
 }
 
-/*
-	Header-*/
+/* ----------------------------------------------------------------
+	Header
+-----------------------------------------------------------------*/
 #header-wrap, #header ul{
     border: none!important;
 }
 #header #logo{
-    margin-top: 5px!important;
     border: none!important;
 }
 #primary-menu-trigger{
