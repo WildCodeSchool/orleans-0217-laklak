@@ -14,25 +14,30 @@ include 'navbar.php';
     <div class="row">
         <div class="col-sm-12">
             <div class="presentation">
-				    <h1>LAKLAK PRODUCTIONS - L'AGENCE</h1>
-					    <h3>LAKLAK Productions est une agence de production de spectacles et de booking, basée à Rabat au Maroc.</h3>
+                <h1>LAKLAK PRODUCTIONS - L'AGENCE</h1>
+                <h3>LAKLAK Productions est une agence de production de spectacles et de booking, basée à Rabat au
+                    Maroc.</h3>
             </div>
         </div>
 
-                        <div class="imagelogo">
-  							<center><img class="imagelogo img-responsive" src="images/photoartistes/logofull1.jpg"></center>
-                            </div>
+        <div class="col-sm-12">
+            <img class="imagelogo img-responsive" src="images/photoartistes/logofull1.jpg">
+        </div>
 
-  							<br/>
-                            <br/>
+        <br/>
+        <br/>
     </div>
     <!--fin premiere row-->
     <hr/>
     <div class="row">
         <div class="col-sm-12">
-            <p><strong>LAKLAK Productions</strong> ce sont plus de <strong>six années d’expérience en France et au Maroc</strong> (Universal Music France, 3 Pom Prod, Francofolies de La Rochelle, Paris Hip Hop, Mawazine, Institut français du Maroc…) faites de multiples rencontres et collaborations artistiques.</p><br/>
-                <br/>
-                    <p>Nous mettons ce savoir faire au service des artistes avec qui nous collaborons, des partenaires privés et publics qui nous accordent leur confiance et du public que nous accueillons.</p>
+            <p><strong>LAKLAK Productions</strong> ce sont plus de <strong>six années d’expérience en France et au
+                    Maroc</strong> (Universal Music France, 3 Pom Prod, Francofolies de La Rochelle, Paris Hip Hop,
+                Mawazine, Institut français du Maroc…) faites de multiples rencontres et collaborations artistiques.</p>
+            <br/>
+            <br/>
+            <p>Nous mettons ce savoir faire au service des artistes avec qui nous collaborons, des partenaires privés et
+                publics qui nous accordent leur confiance et du public que nous accueillons.</p>
 
         </div>
     </div>
@@ -40,6 +45,7 @@ include 'navbar.php';
     <!--fin deuxième row-->
 
     <br/>
+
 
                     <div class="row">
                         <div class="col-sm-12">
@@ -122,16 +128,17 @@ include 'navbar.php';
                 </div>
 <!--fin sixieme row-->
 
-                    <br/>
-
-                    <div class="row">
-                       <div class="col-sm-12">
-                          <h1>2017</h1>
-                            <p>Encore plus d'événements à venir...</p>
-                       </div>
-                    </div>
 
 
+    <br/>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <h1>2017</h1>
+            <p>Encore plus d'événements à venir...</p>
+        </div>
+    </div>
+    <!--fin du container-->
 </div>
 </div>
 
@@ -139,8 +146,3 @@ include 'navbar.php';
 <?php
 include 'footer.php'
 ?>
-
-</body>
-
-
-</html>
