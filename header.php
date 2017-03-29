@@ -20,6 +20,9 @@
 
     <link rel="stylesheet" href="css/dark.css" type="text/css" />
     <link rel="stylesheet" href="css/animate.css" type="text/css" />
+    <link rel="stylesheet" href="css/components/bs-select.css" type="text/css" />
+    <link rel="stylesheet" href="css/components/bs-switches.css" type="text/css" />
+    <link rel="stylesheet" href="css/components/radio-checkbox.css" type="text/css" />
     <link rel="stylesheet" href="css/responsive.css" type="text/css"/>
     <link rel="stylesheet" href="css/colors.css" type="text/css"/>
     <link rel="stylesheet" href="css/custom.css" type="text/css"/>
@@ -31,5 +34,4 @@
     <!-- Document Title
     ============================================= -->
     <title>Laklak Productions</title>
-
 </head>

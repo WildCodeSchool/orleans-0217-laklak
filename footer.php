@@ -104,9 +104,27 @@
 <script type="text/javascript" src="js/jquery.js"></script>
 <script type="text/javascript" src="js/plugins.js"></script>
 
+<!-- Bootstrap Select Plugin -->
+<script type="text/javascript" src="js/components/bs-select.js"></script>
+<!-- Select Splitter Plugin -->
+<script type="text/javascript" src="js/components/selectsplitter.js"></script>
+
+<!-- Bootstrap Switch Plugin -->
+<script type="text/javascript" src="js/components/bs-switches.js"></script>
 
 <!-- Footer Scripts ============================================= -->
 <script type="text/javascript" src="js/functions.js"></script>
+
+<script type="text/javascript">
+
+    $('.selectsplitter').selectsplitter();
+
+</script>
+<script>
+
+    jQuery(".bt-switch").bootstrapSwitch();
+
+</script>
 
 </body>
 </html>

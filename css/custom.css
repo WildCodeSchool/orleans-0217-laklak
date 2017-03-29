@@ -93,7 +93,7 @@ a:hover { color: #222; }
 }
 
 /* ----------------------------------------------------------------
-	Slider
+	Slider de la Home
 -----------------------------------------------------------------*/
 
 .slider-caption h2{
@@ -108,6 +108,23 @@ a:hover { color: #222; }
 
 #slider.swiper_wrapper{
     margin-top: -20px;
+}
+
+/* ----------------------------------------------------------------
+	Agenda
+-----------------------------------------------------------------*/
+
+.agenda .bootstrap-select{
+    width: 100%!important;
+}
+.height-line{
+    line-height: 70px;
+}
+.agenda .panel-body{
+    padding: 5px 0 0 0;
+}
+form > div:not(.height-line) {
+    margin-bottom: 17px;
 }
 
 /*-----------------------------------------------------------------
@@ -149,6 +166,43 @@ a:hover { color: #222; }
         height:200px;
     }
 }
+
+/*-----------------------------------------------------------------
+    Liste Artistes
+ -----------------------------------------------------------------*/
+
+
+.list_artist .fbox-media {
+    position:relative;
+    overflow: hidden;
+}
+
+.image_list_artist {
+    background-size: cover;
+    max-width: 100%;
+    height: 280px;
+}
+
+.list_artist .img_list_artist {
+    display:none;
+}
+
+.list_label_laklak {
+    position:absolute;
+    top:2%;
+    max-width: 20%;
+}
+
+.nom_list_artiste {
+    color:#fff;
+    font-size:4rem;
+    position:absolute;
+    top:20%;
+    left:20%;
+}
+
+
+
 
 /*FOOTER*/
 
