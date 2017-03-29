@@ -25,7 +25,6 @@
     <link rel="stylesheet" href="css/components/radio-checkbox.css" type="text/css" />
     <link rel="stylesheet" href="css/responsive.css" type="text/css"/>
     <link rel="stylesheet" href="css/colors.css" type="text/css"/>
-
     <link rel="stylesheet" href="css/custom.css" type="text/css"/>
     <link rel="icon" type="image/png" href="images/photoartistes/logo.jpg" />
 
