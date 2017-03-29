@@ -21,8 +21,9 @@ include 'navbar.php';
         </div>
 
         <div class="col-sm-12">
-            <img class="imagelogo img-responsive" src="images/photoartistes/logofull1.jpg">
+            <center><img class="imagelogo img-responsive" src="images/photoartistes/logofull1.jpg"></center>
         </div>
+
 
         <br/>
         <br/>

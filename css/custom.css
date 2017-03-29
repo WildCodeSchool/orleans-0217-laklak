@@ -36,14 +36,6 @@ h3{
     text-align:center;
 }
 
-.presentation{
-
-    text-align: center;
-}
-
-
-
-
 .entete{
 
     text-align: center;
@@ -69,6 +61,10 @@ a:hover { color: #222; }
 
 .premier-block{
     padding-top:  20px;
+}
+
+.presentation{
+    text-align: center;
 }
 
 /* ----------------------------------------------------------------
