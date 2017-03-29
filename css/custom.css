@@ -204,7 +204,7 @@ form > div:not(.height-line) {
 .nom_list_artiste {
     color:#fff;
     font-size:3rem;
-    max-width:50%
+    max-width:50%;
     overflow: hidden;
     position:absolute;
     top:60%;
@@ -239,11 +239,11 @@ form > div:not(.height-line) {
 .nom_list_event {
     color:#fff;
     font-size:3rem;
-    max-width:50%
+    max-width:50%;
     overflow: hidden;
     position:absolute;
     top:60%;
-    left:25%;
+    left:0%;
 }
 
 
