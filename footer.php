@@ -1,9 +1,9 @@
-<!--footer-->
-<footer id="footer" class="dark">
 
+
+<footer id="footer" class="dark">
     <div class="container">
 
-        <!-- Footer Widgets -->
+
         <div class="footer-widgets-wrap clearfix">
 
             <div class="col_two_third">
@@ -91,6 +91,8 @@
                 </div>
         </div><!-- .footer-widgets-wrap end -->
     </div>
+
+
 </footer>
 
 <!-- Go To Top ============================================= -->
@@ -105,3 +107,4 @@
 <script type="text/javascript" src="js/functions.js"></script>
 </body>
 </html>
+
