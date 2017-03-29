@@ -11,9 +11,47 @@ include 'navbar.php';
 
     <div class="container clearfix list_artist">
 
-        <div class="heading-block">
+        <div class="fancy-title title-border">
             <h3>ARTISTES</h3>
+        </div>
 
+        <a href="#" class="button button-small button-border button-rounded tright visible-xs" data-toggle="collapse" data-target="#collapseExample"
+           aria-expanded="false" aria-controls="collapseExample">Filtres<i class="icon-circle-arrow-right"></i>
+        </a>
+        <div class="collapse" id="collapseExample">
+            <div class="well">
+                <form id="template-contactform " class="">
+
+                    <div class="col-md-2 col-sm-6 text-center">
+                        <label>100% LAKLAK:</label>
+                        <input class="bt-switch" type="checkbox" checked data-size="mini">
+                    </div>
+
+                    <div class="col-md-3 col-sm-6 pull-left text-center">
+                        <button class="button button-small button-border button-rounded tright nomargin" type="submit" id="template-contactform-submit"
+                                name="template-contactform-submit" value="submit">Filtrer
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="panel panel-default hidden-xs">
+            <div class="panel-body">
+                <form id="template-contactform" class="">
+
+                    <div class="col-md-2 col-sm-6">
+                        <label>100% LAKLAK:</label>
+                        <input class="bt-switch" type="checkbox" checked data-size="mini">
+                    </div>
+
+                    <div class="col-md-3 col-sm-6 height-line pull-left">
+                        <button class="button button-small button-border button-rounded tright nomargin" type="submit" id="template-contactform-submit"
+                                name="template-contactform-submit" value="submit">Filtrer
+                        </button>
+                    </div>
+                </form>
+            </div>
         </div>
 
 
@@ -26,7 +64,7 @@ include 'navbar.php';
                         <a href="artiste.php"></a>
                     </div>
                     <div class="i-overlay on-hover">
-                        <a href="#"><span class="nom_list_artiste">MERYEM</span>
+                        <a href="artiste.php"><span class="nom_list_artiste">MERYEM</span>
                             <i class ="icon-line-plus"></i>
                         </a>
                     </div>
@@ -45,7 +83,7 @@ include 'navbar.php';
                         <a href="artiste.php"></a>
                     </div>
                     <div class="i-overlay on-hover">
-                        <a href="#"><span class="nom_list_artiste">PARAONE</span>
+                        <a href="artiste.php"><span class="nom_list_artiste">PARAONE</span>
                             <i class ="icon-line-plus"></i>
                         </a>
                     </div>
@@ -64,7 +102,7 @@ include 'navbar.php';
                         <a href="artiste.php"></a>
                     </div>
                     <div class="i-overlay on-hover">
-                        <a href="#"><span class="nom_list_artiste">AYOUB</span>
+                        <a href="artiste.php"><span class="nom_list_artiste">AYOUB</span>
                             <i class ="icon-line-plus"></i>
                         </a>
                     </div>
@@ -83,7 +121,7 @@ include 'navbar.php';
                         <a href="artiste.php"></a>
                     </div>
                     <div class="i-overlay on-hover">
-                        <a href="#"><span class="nom_list_artiste">MERYEM</span>
+                        <a href="artiste.php"><span class="nom_list_artiste">MERYEM</span>
                             <i class ="icon-line-plus"></i>
                         </a>
                     </div>
@@ -102,7 +140,7 @@ include 'navbar.php';
                         <a href="artiste.php"></a>
                     </div>
                     <div class="i-overlay on-hover">
-                        <a href="#"><span class="nom_list_artiste">HABIBIFUNK</span>
+                        <a href="artiste.php"><span class="nom_list_artiste">HABIBIFUNK</span>
                             <i class ="icon-line-plus"></i>
                         </a>
                     </div>
@@ -121,7 +159,7 @@ include 'navbar.php';
                         <a href="artiste.php"></a>
                     </div>
                     <div class="i-overlay on-hover">
-                        <a href="#"><span class="nom_list_artiste">MERYEM</span>
+                        <a href="artiste.php"><span class="nom_list_artiste">MERYEM</span>
                             <i class ="icon-line-plus"></i>
                         </a>
                     </div>
@@ -140,7 +178,7 @@ include 'navbar.php';
                         <a href="artiste.php"></a>
                     </div>
                     <div class="i-overlay on-hover">
-                        <a href="#"><span class="nom_list_artiste">MERYEM</span>
+                        <a href="artiste.php"><span class="nom_list_artiste">MERYEM</span>
                             <i class ="icon-line-plus"></i>
                         </a>
                     </div>
