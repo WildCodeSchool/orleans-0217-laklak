@@ -30,8 +30,6 @@ p{
 
 	text-align: justify;
 	font-size: 20px;
-
-
 }
 
 h3{
@@ -182,16 +180,6 @@ form > div:not(.height-line) {
 .thumbnail {
     margin-top :20px;
 }
-/*.img-responsive{
-
-
-    background: url('../images/logo-laklak-footerAlpha.png');
-    background-repeat: no-repeat;
-    z-index: 4;
-    }
-
-*/
-
 
 .web {
     margin : 30px 0px;
@@ -222,18 +210,19 @@ form > div:not(.height-line) {
 }
 .bio p {
     text-align: justify;
-    margin : auto;
+    line-height : 20px !important;
+
 
 }
 
 /* gallerie photo*/
 
 div.gallery {
-    border: 1px solid #ccc;
+    border: 1px solid #E5E5E5;
 }
 
 div.gallery:hover {
-    border: 1px solid #777;
+    border: 1px solid #E5E5E5;
 }
 
 div.gallery img {

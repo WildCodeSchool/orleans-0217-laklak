@@ -1,5 +1,7 @@
 
 
+<!--footer-->
+
 <footer id="footer" class="dark">
     <div class="container">
 
