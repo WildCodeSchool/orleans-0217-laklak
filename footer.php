@@ -40,11 +40,11 @@
                         <h4>Liens</h4>
 
                         <ul>
-                            <li><a href="#">Accueil</a></li>
-                            <li><a href="#">Artistes</a></li>
+                            <li><a href="presentation.php">Accueil</a></li>
+                            <li><a href="liste_artiste.php">Artistes</a></li>
                             <li><a href="#">Evènements</a></li>
-                            <li><a href="#">Agenda</a></li>
-                            <li><a href="#">Contact</a></li>
+                            <li><a href="agenda.php">Agenda</a></li>
+                            <li><a href="contact.php">Contact</a></li>
 
                         </ul>
                         <div class="widget clearfix" style="margin-bottom: -20px;">
@@ -107,6 +107,7 @@
 
 <!-- Footer Scripts ============================================= -->
 <script type="text/javascript" src="js/functions.js"></script>
+
 </body>
 </html>
 
