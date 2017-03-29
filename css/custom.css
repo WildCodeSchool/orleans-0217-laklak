@@ -95,7 +95,7 @@ a:hover { color: #222; }
 }
 
 /* ----------------------------------------------------------------
-	Slider
+	Slider de la Home
 -----------------------------------------------------------------*/
 
 .slider-caption h2{
@@ -110,6 +110,23 @@ a:hover { color: #222; }
 
 #slider.swiper_wrapper{
     margin-top: -20px;
+}
+
+/* ----------------------------------------------------------------
+	Agenda
+-----------------------------------------------------------------*/
+
+.agenda .bootstrap-select{
+    width: 100%!important;
+}
+.height-line{
+    line-height: 70px;
+}
+.agenda .panel-body{
+    padding: 5px 0 0 0;
+}
+form > div:not(.height-line) {
+    margin-bottom: 17px;
 }
 
 /*-----------------------------------------------------------------

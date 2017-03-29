@@ -1030,7 +1030,7 @@ var SEMICOLON = SEMICOLON || {};
 
             // J'ai commenté les lignes suivantes pour éviter d'avoir un margin top qui vient s'incrémenter sur le footer
 
-			
+
 			// if( !$body.hasClass('sticky-footer') && $footer.length > 0 && $wrapper.has('#footer') ) {
 			// 	if( windowH > wrapperH ) {
 			// 		$footer.css({ 'margin-top': ( windowH - wrapperH ) });
