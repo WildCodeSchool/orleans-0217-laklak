@@ -167,6 +167,43 @@ form > div:not(.height-line) {
     }
 }
 
+/*-----------------------------------------------------------------
+    Liste Artistes
+ -----------------------------------------------------------------*/
+
+
+.list_artist .fbox-media {
+    position:relative;
+    overflow: hidden;
+}
+
+.image_list_artist {
+    background-size: cover;
+    max-width: 100%;
+    height: 280px;
+}
+
+.list_artist .img_list_artist {
+    display:none;
+}
+
+.list_label_laklak {
+    position:absolute;
+    top:2%;
+    max-width: 20%;
+}
+
+.nom_list_artiste {
+    color:#fff;
+    font-size:4rem;
+    position:absolute;
+    top:20%;
+    left:20%;
+}
+
+
+
+
 /*FOOTER*/
 
 #footer .footer-widgets-wrap {
