@@ -19,13 +19,13 @@
                     <li><a href="presentation.php">
                             <div>Presentation</div>
                         </a></li>
-                    <li><a href="link.html">
+                    <li><a href="liste_artistes.php">
                             <div>Artistes</div>
                         </a></li>
-                    <li><a href="link.html">
+                    <li><a href="liste_evenements.php">
                             <div>Evenements</div>
                         </a></li>
-                    <li><a href="link.html">
+                    <li><a href="agenda.php">
                             <div>Agenda</div>
                         </a></li>
                     <li><a href="contact.php">
