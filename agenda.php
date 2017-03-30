@@ -89,7 +89,7 @@ include 'navbar.php';
         <div id="posts" class="events small-thumbs">
 
             <div class="entry clearfix">
-                <div class="entry-image hidden-sm">
+                <div class="entry-image ">
                     <a href="#">
                         <img src="images/events/thumbs/1.jpg" alt="Inventore voluptates velit totam ipsa tenetur">
                         <div class="entry-date">10<span>Apr</span></div>
@@ -113,7 +113,7 @@ include 'navbar.php';
             </div>
 
             <div class="entry clearfix">
-                <div class="entry-image hidden-sm">
+                <div class="entry-image ">
                     <a href="#">
                         <img src="images/events/thumbs/2.jpg" alt="Nemo quaerat nam beatae iusto minima vel">
                         <div class="entry-date">16<span>Apr</span></div>
@@ -135,7 +135,7 @@ include 'navbar.php';
             </div>
 
             <div class="entry clearfix">
-                <div class="entry-image hidden-sm">
+                <div class="entry-image ">
                     <a href="#">
                         <img src="images/events/thumbs/3.jpg" alt="Ducimus ipsam error fugiat harum recusandae">
                         <div class="entry-date">3<span>May</span></div>
@@ -158,7 +158,7 @@ include 'navbar.php';
             </div>
 
             <div class="entry clearfix">
-                <div class="entry-image hidden-sm">
+                <div class="entry-image ">
                     <a href="#">
                         <img src="images/events/thumbs/4.jpg" alt="Nisi officia adipisci molestiae aliquam">
                         <div class="entry-date">16<span>Jun</span></div>

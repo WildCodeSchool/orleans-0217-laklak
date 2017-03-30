@@ -8,14 +8,6 @@
 /* ----------------------------------------------------------------
     Presentation
 -----------------------------------------------------------------*/
-body {
-    line-height: 1.5;
-    color: #555;
-    font-family: 'Lato', sans-serif;
-    text-align: justify-all;
-}
-
-
 h1{
     font-family: 'Anton', sans-serif;
     margin-left: 20px;
@@ -24,12 +16,6 @@ h1{
 
 h2{
     margin-left: 20px;
-}
-
-p{
-
-	text-align: justify;
-	font-size: 20px;
 }
 
 h3{
