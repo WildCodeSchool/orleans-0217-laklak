@@ -12,7 +12,7 @@ small,
 .wp-caption,
 .feature-box.fbox-center.fbox-italic p,
 .skills li .progress-percent .counter,
-.nav-tree ul ul a { font-family: 'Roboto', sans-serif; }
+.nav-tree ul ul a { font-family: "HelveticaNeue-light", Helvetica, Arial; }
 
 h1,
 h2,
@@ -31,7 +31,7 @@ h6,
 label,
 .nav-tree li a,
 .wedding-head .first-name,
-.wedding-head .last-name { font-family: 'Roboto', sans-serif; }
+.wedding-head .last-name { font-family: "HelveticaNeue-light", Helvetica, Arial; }
 
 .entry-meta li,
 .entry-link span,
@@ -57,7 +57,10 @@ label,
 -----------------------------------------------------------------*/
 
 
-body { line-height: 1.5; }
+body {
+	line-height: 1.3em;
+	font-size: 14px;
+}
 
 h1,
 h2,
