@@ -12,9 +12,9 @@ include 'navbar.php';
                     <div class=row">
                              <div class="col-sm-4">
                                  <h1 class="visible-xs">Meryem Aboulouafa</h1>
-                                    <div class="bio thumbnail">
+                                   <div class="bio thumbnail">
 
-                                        <div class="feature media-box">
+                                        <div class="feature media-box clearfix">
                                             <div class="fbox-media">
                                                 <div class="image_list_artist" style="background-image:url('images/photoartistes/2016/meryem.jpg')">
                                                     <img class="img_list_artist" src="images/photoartistes/2016/meryem.jpg" alt="meryem"/>
@@ -41,7 +41,7 @@ include 'navbar.php';
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                   </div>
 
 
 

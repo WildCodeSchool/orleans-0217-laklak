@@ -64,9 +64,10 @@ include 'navbar.php';
                         <a href="artiste.php"></a>
                     </div>
                     <div class="i-overlay on-hover">
-                        <a href="artiste.php"><span class="nom_list_artiste">MERYEM</span>
+                        <a href="artiste.php">
                             <i class ="icon-line-plus"></i>
                         </a>
+                        <h3 class="nom_list_artiste">MERYEM</h3>
                     </div>
                 </div>
                 <div class="fbox-desc">
@@ -83,9 +84,10 @@ include 'navbar.php';
                         <a href="artiste.php"></a>
                     </div>
                     <div class="i-overlay on-hover">
-                        <a href="artiste.php"><span class="nom_list_artiste">PARAONE</span>
+                        <a href="artiste.php">
                             <i class ="icon-line-plus"></i>
                         </a>
+                        <h3 class="nom_list_artiste">PARAONE</h3>
                     </div>
                 </div>
                 <div class="fbox-desc">
@@ -102,9 +104,10 @@ include 'navbar.php';
                         <a href="artiste.php"></a>
                     </div>
                     <div class="i-overlay on-hover">
-                        <a href="artiste.php"><span class="nom_list_artiste">AYOUB</span>
+                        <a href="artiste.php">
                             <i class ="icon-line-plus"></i>
                         </a>
+                        <h3 class="nom_list_artiste">AYOUB</h3>
                     </div>
                 </div>
                 <div class="fbox-desc">
@@ -121,9 +124,10 @@ include 'navbar.php';
                         <a href="artiste.php"></a>
                     </div>
                     <div class="i-overlay on-hover">
-                        <a href="artiste.php"><span class="nom_list_artiste">MERYEM</span>
+                        <a href="artiste.php">
                             <i class ="icon-line-plus"></i>
                         </a>
+                        <h3 class="nom_list_artiste">MERYEM</h3>
                     </div>
                 </div>
                 <div class="fbox-desc">
@@ -140,9 +144,10 @@ include 'navbar.php';
                         <a href="artiste.php"></a>
                     </div>
                     <div class="i-overlay on-hover">
-                        <a href="artiste.php"><span class="nom_list_artiste">HABIBIFUNK</span>
+                        <a href="artiste.php">
                             <i class ="icon-line-plus"></i>
                         </a>
+                        <h3 class="nom_list_artiste">HABIBIFUNK</h3>
                     </div>
                 </div>
                 <div class="fbox-desc">
@@ -159,9 +164,10 @@ include 'navbar.php';
                         <a href="artiste.php"></a>
                     </div>
                     <div class="i-overlay on-hover">
-                        <a href="artiste.php"><span class="nom_list_artiste">MERYEM</span>
+                        <a href="artiste.php">
                             <i class ="icon-line-plus"></i>
                         </a>
+                        <h3 class="nom_list_artiste">MERYEM</h3>
                     </div>
                 </div>
                 <div class="fbox-desc">
@@ -178,9 +184,10 @@ include 'navbar.php';
                         <a href="artiste.php"></a>
                     </div>
                     <div class="i-overlay on-hover">
-                        <a href="artiste.php"><span class="nom_list_artiste">MERYEM</span>
+                        <a href="artiste.php">
                             <i class ="icon-line-plus"></i>
                         </a>
+                        <h3 class="nom_list_artiste">MERYEM</h3>
                     </div>
                 </div>
                 <div class="fbox-desc">

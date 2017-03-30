@@ -63,9 +63,10 @@ include 'navbar.php';
                     <img class="img_list_event" src="images/photoartistes/2015/jazzaauchellah.jpg" alt="jazzaauchellah"/>
                 </div>
                 <div class="i-overlay on-hover">
-                    <a href="evenement.php"><span class="nom_list_event">jazzaauchellah</span>
+                    <a href="evenement.php">
                         <i class ="icon-line-plus"></i>
                     </a>
+                    <h3 class="nom_list_event">jazzaauchellah</h3>
                 </div>
             </div>
             <div class="fbox-desc">
@@ -81,9 +82,10 @@ include 'navbar.php';
                     <img class="img_list_event" src="images/photoartistes/2015/transahara.jpg" alt="transahara"/>
                 </div>
                 <div class="i-overlay on-hover">
-                    <a href="evenement.php"><span class="nom_list_event">transahara</span>
+                    <a href="evenement.php">
                         <i class ="icon-line-plus"></i>
                     </a>
+                    <h3 class="nom_list_event">transahara</h3>
                 </div>
             </div>
             <div class="fbox-desc">
@@ -99,9 +101,10 @@ include 'navbar.php';
                     <img class="img_list_event" src="images/photoartistes/2016/jazzablanca.jpg" alt="jazzablanca"/>
                 </div>
                 <div class="i-overlay on-hover">
-                    <a href="evenement.php"><span class="nom_list_event">jazzablanca</span>
+                    <a href="evenement.php">
                         <i class ="icon-line-plus"></i>
                     </a>
+                    <h3 class="nom_list_event">jazzablanca</h3>
                 </div>
             </div>
             <div class="fbox-desc">
@@ -117,9 +120,10 @@ include 'navbar.php';
                     <img class="img_list_event" src="images/photoartistes/2016/nuitelectroniquecasa.jpg" alt="nuitelectroniquecasa"/>
                 </div>
                 <div class="i-overlay on-hover">
-                    <a href="evenement.php"><span class="nom_list_event">nuitelectroniquecasa</span>
+                    <a href="evenement.php">
                         <i class ="icon-line-plus"></i>
                     </a>
+                    <h3 class="nom_list_event">nuitelectroniquecasa</h3>
                 </div>
             </div>
             <div class="fbox-desc">
@@ -135,9 +139,10 @@ include 'navbar.php';
                     <img class="img_list_event" src="images/photoartistes/2016/nuitcasa.jpg" alt="nuitcasa"/>
                 </div>
                 <div class="i-overlay on-hover">
-                    <a href="evenement.php"><span class="nom_list_event">nuitcasa</span>
+                    <a href="evenement.php">
                         <i class ="icon-line-plus"></i>
                     </a>
+                    <h3 class="nom_list_event">nuitcasa</h3>
                 </div>
             </div>
             <div class="fbox-desc">
@@ -153,9 +158,10 @@ include 'navbar.php';
                     <img class="img_list_event" src="images/photoartistes/2017/encore2.png" alt="encore2"/>
                 </div>
                 <div class="i-overlay on-hover">
-                    <a href="evenement.php"><span class="nom_list_event">encore2</span>
+                    <a href="evenement.php">
                         <i class ="icon-line-plus"></i>
                     </a>
+                    <h3 class="nom_list_event">encore2</h3>
                 </div>
             </div>
             <div class="fbox-desc">
