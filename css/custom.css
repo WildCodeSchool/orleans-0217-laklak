@@ -131,23 +131,16 @@ form > div:not(.height-line) {
     Contactez nous
  -----------------------------------------------------------------*/
 
-/*#slider
-{
-   /* height:800px;
-}*/
 
-#slider.full-screen.contact {
-    position:static;
+.col-xs-12.col-md-5.col-sm-6.full-screen.center.nopadding {
+    background :transparent url('../images/image_contact2.jpg') no-repeat scroll center center / cover;
+    opacity:0.8;
+
 }
 
-.col-xs-12.col-md-7.col-sm-6.full-screen.center.nopadding {
-    background :transparent url('../images/image_contact.jpg') no-repeat scroll center center / cover;
-    height:800px;
-}
-
-.col-xs-12.col-md-5.col-sm-6.full-screen {
+.col-xs-12.col-md-7.col-sm-6.full-screen {
     background-color: rgb(245, 245, 245);
-    height: 800px;
+
 }
 
 .vertical-middle.subscribe-widget {
@@ -161,7 +154,7 @@ form > div:not(.height-line) {
 }
 
 @media screen and (max-width: 760px) {
-    .col-xs-12.col-md-7.col-sm-6.full-screen.center.nopadding {
+    .col-xs-12.col-md-5.col-sm-6.full-screen.center.nopadding {
         background :transparent url('../images/image_contact.jpg') no-repeat scroll center center / cover;
         height:200px;
     }
@@ -193,60 +186,27 @@ form > div:not(.height-line) {
     max-width: 20%;
 }
 
-.nom_list_artiste {
-    color:#fff;
-    font-size:4rem;
-    position:absolute;
-    top:50%;
-    left:50%;
-}
-
-.nom_list_artiste {
+h3.nom_list_artiste {
     color:#fff;
     font-size:3rem;
-    max-width:50%;
-    overflow: hidden;
+    display:block;
     position:absolute;
     top:60%;
-    left:25%;
+    width:100%;
+
 }
+
+
 /*-----------------------------------------------------------------
     Liste Evènements
  -----------------------------------------------------------------*/
 
 
-.list_event .fbox-media {
-    position:relative;
-    overflow: hidden;
+/*.list_event .fbox-media {*/
+    /*position:relative;*/
+    /*overflow: hidden;*/
 
-}
-
-.image_list_event {
-    background-size: cover;
-    max-width: 100%;
-    height: 280px;
-}
-
-.list_event .img_list_event {
-    display:none;
-}
-
-.list_label_laklak {
-    position:absolute;
-    top:2%;
-    max-width: 20%;
-}
-
-.nom_list_event {
-    color:#fff;
-    font-size:3rem;
-    max-width:50%
-    overflow: hidden;
-    position:absolute;
-    top:60%;
-    left:25%;
-
-}
+/*}*/
 
 .image_list_event {
     background-size: cover;
@@ -264,19 +224,15 @@ form > div:not(.height-line) {
     max-width: 20%;
 }
 
-.nom_list_event {
+h3.nom_list_event {
     color:#fff;
     font-size:3rem;
-    max-width:50%;
-    overflow: hidden;
+    display:block;
     position:absolute;
     top:60%;
-    left:0%;
+    width:100%;
+
 }
-
-
-
-
 
 /*-----------------------------------------------------------------
   Footer
@@ -341,6 +297,7 @@ form > div:not(.height-line) {
    Fin Détail Artistes
  -----------------------------------------------------------------*/
 
+<<<<<<< HEAD
 div.gallery {
     border: 1px solid #E5E5E5;
 }
@@ -389,4 +346,60 @@ div.desc {
 }
 
 /* fin page artiste */
+=======
+
+
+/*-----------------------------------------------------------------
+    Gallery photo Fin
+ -----------------------------------------------------------------*/
+
+/*div.gallery {*/
+    /*border: 1px solid #E5E5E5;*/
+/*}*/
+
+/*div.gallery:hover {*/
+    /*border: 1px solid #E5E5E5;*/
+/*}*/
+
+/*div.gallery img {*/
+    /*width: 100%;*/
+    /*height: auto;*/
+/*}*/
+
+/*div.desc {*/
+    /*padding: 15px;*/
+    /*text-align: center;*/
+/*}*/
+
+/** {*/
+    /*box-sizing: border-box;*/
+/*}*/
+
+/*.responsive {*/
+    /*padding: 0 6px;*/
+    /*float: left;*/
+    /*width: 24.99999%;*/
+/*}*/
+
+/*@media only screen and (max-width: 700px){*/
+    /*.responsive {*/
+        /*width: 49.99999%;*/
+        /*margin: 6px 0;*/
+    /*}*/
+/*}*/
+
+/*@media only screen and (max-width: 500px){*/
+    /*.responsive {*/
+        /*width: 100%;*/
+    /*}*/
+/*}*/
+
+/*.clearfix:after {*/
+    /*content: "";*/
+    /*display: table;*/
+    /*clear: both;*/
+/*}*/
+
+/*!* fin page artiste *!*/
+>>>>>>> 552b8c8ec3b90a7b80c75c6784185c201b37561b
 

@@ -13,6 +13,7 @@ include 'navbar.php';
                              <div class="col-sm-4 bottommargin detail-artiste">
 
                                  <h1 class="visible-xs">Meryem Aboulouafa</h1>
+
                         <div class="feature media-box clearfix">
                                    <div class="detail fbox-media">
                                        <div class="image_list_artist" style="background-image:url('images/photoartistes/2016/meryem.jpg')">
@@ -25,6 +26,37 @@ include 'navbar.php';
                                                 <img class="detail_list_label_laklak" src="images/Laklak/logo.jpg" alt=""/>
                                             </div>
                                  <!--      <div class="fbox-social">
+=======
+                                   <div class="bio thumbnail">
+
+                                        <div class="feature media-box clearfix">
+                                            <div class="fbox-media">
+                                                <div class="image_list_artist" style="background-image:url('images/photoartistes/2016/meryem.jpg')">
+                                                    <img class="img_list_artist" src="images/photoartistes/2016/meryem.jpg" alt="meryem"/>
+                                                    <a href="artiste.php"></a>
+                                                </div>
+                                            </div>
+                                            <div class="fbox-desc">
+                                                <img class="list_label_laklak" src="images/Laklak/logo.jpg" alt=""/>
+                                            </div>
+                                            <div class="fbox-social">
+                                               <div class="site"> <a href="#" class="button button-xlarge button-dark button-rounded button-button border tright"<a href="#" class="button button-xlarge button-dark button-rounded tright">Site de l'artiste</a>
+                                               </div>
+                                                <div class="social">
+                                                     <a href="https://twitter.com/search?q=aboulouafa&src=typd&lang=fr" target="_blank" class="social-icon si-dark si-colored si-twitter nobottommargin" style="margin-right: 10px;">
+                                                            <i class="icon-twitter"></i>
+                                                        </a>
+
+                                                        <a href="https://www.facebook.com/meryemaboulouafa/" target="_blank" class="social-icon si-dark si-colored si-facebook nobottommargin" style="margin-right: 10px;">
+                                                            <i class="icon-facebook"></i>
+                                                        </a>
+                                                        <a href="https://soundcloud.com/meryemaboulouafa" target="_blank" class="social-icon si-dark si-colored si-soundcloud nobottommargin" style="margin-right: 10px;">
+                                                            <i class="icon-soundcloud"></i>
+                                                        </a>
+                                                </div>
+                                            </div>
+                                        </div>
+
 
                                                                                       <div class="social">
                                                                                          <div class="site "> <a href="#" class="button button-xlarge button-dark button-rounded button-button border tright"<a href="#" class="button button-xlarge button-dark button-rounded tright">Site de l'artiste</a>
