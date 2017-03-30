@@ -218,6 +218,34 @@ form > div:not(.height-line) {
 .list_event .fbox-media {
     position:relative;
     overflow: hidden;
+
+}
+
+.image_list_event {
+    background-size: cover;
+    max-width: 100%;
+    height: 280px;
+}
+
+.list_event .img_list_event {
+    display:none;
+}
+
+.list_label_laklak {
+    position:absolute;
+    top:2%;
+    max-width: 20%;
+}
+
+.nom_list_event {
+    color:#fff;
+    font-size:3rem;
+    max-width:50%
+    overflow: hidden;
+    position:absolute;
+    top:60%;
+    left:25%;
+
 }
 
 .image_list_event {
@@ -245,6 +273,7 @@ form > div:not(.height-line) {
     top:60%;
     left:0%;
 }
+
 
 
 
@@ -298,7 +327,7 @@ form > div:not(.height-line) {
 /*-----------------------------------------------------------------
     Gallery photo
  -----------------------------------------------------------------*/
-.col_full {
+/*.col_full {
     width:100%
 }
 
