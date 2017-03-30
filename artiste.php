@@ -10,80 +10,41 @@ include 'navbar.php';
 <body>
     <div class="container">
                     <div class=row">
-                             <div class="col-sm-4 bottommargin detail-artiste">
+                        <h1 class="visible-xs">Meryem Aboulouafa</h1>
+                             <div class="col-sm-4 bottommargin">
+                                 <div class="fbox-media clearfix bio thumbnail">
 
-                                 <h1 class="visible-xs">Meryem Aboulouafa</h1>
+                                             <a href="#"><img src="images/photoartistes/2016/meryem.jpg" alt="Checked Short Dress"></a>
+                                             <div class="detail_artiste"><img src="images/Laklak/logo.jpg" alt=""/></div>
 
-                        <div class="feature media-box clearfix">
-                                   <div class="detail fbox-media">
-                                       <div class="image_list_artist" style="background-image:url('images/photoartistes/2016/meryem.jpg')">
-                                           <img class="img_list_artist" src="images/photoartistes/2016/meryem.jpg" alt="meryem"/>
-                                           <a href="artiste.php"></a>
-                                       </div>
-                                   </div>
-                        </div>
-                                        <div class="fbox-desc">
-                                                <img class="detail_list_label_laklak" src="images/Laklak/logo.jpg" alt=""/>
-                                            </div>
-                                 <!--      <div class="fbox-social">
-=======
-                                   <div class="bio thumbnail">
+                                 </div>
+                                    <div class="row">
+                                             <div class="social col-sm-12">
+                                                 <button class="button button-large button-border button-rounded tright nomargin" type="submit" id="template-contactform-submit"
+                                                         name="siteArtiste">Site de l'artiste
+                                                 </button>
+                                                    <div class="col-sm-12">
+                                                 <a href="https://twitter.com/search?q=aboulouafa&src=typd&lang=fr" target="_blank" class="social-icon si-dark si-colored si-twitter nobottommargin" style="margin-right: 10px;">
+                                                     <i class="icon-twitter"></i>
+                                                 </a>
 
-                                        <div class="feature media-box clearfix">
-                                            <div class="fbox-media">
-                                                <div class="image_list_artist" style="background-image:url('images/photoartistes/2016/meryem.jpg')">
-                                                    <img class="img_list_artist" src="images/photoartistes/2016/meryem.jpg" alt="meryem"/>
-                                                    <a href="artiste.php"></a>
-                                                </div>
-                                            </div>
-                                            <div class="fbox-desc">
-                                                <img class="list_label_laklak" src="images/Laklak/logo.jpg" alt=""/>
-                                            </div>
-                                            <div class="fbox-social">
-                                               <div class="site"> <a href="#" class="button button-xlarge button-dark button-rounded button-button border tright"<a href="#" class="button button-xlarge button-dark button-rounded tright">Site de l'artiste</a>
-                                               </div>
-                                                <div class="social">
-                                                     <a href="https://twitter.com/search?q=aboulouafa&src=typd&lang=fr" target="_blank" class="social-icon si-dark si-colored si-twitter nobottommargin" style="margin-right: 10px;">
-                                                            <i class="icon-twitter"></i>
-                                                        </a>
-
-                                                        <a href="https://www.facebook.com/meryemaboulouafa/" target="_blank" class="social-icon si-dark si-colored si-facebook nobottommargin" style="margin-right: 10px;">
-                                                            <i class="icon-facebook"></i>
-                                                        </a>
-                                                        <a href="https://soundcloud.com/meryemaboulouafa" target="_blank" class="social-icon si-dark si-colored si-soundcloud nobottommargin" style="margin-right: 10px;">
+                                                 <a href="https://www.facebook.com/meryemaboulouafa/" target="_blank" class="social-icon si-dark si-colored si-facebook nobottommargin" style="margin-right: 10px;">
+                                                     <i class="icon-facebook"></i>
+                                                 </a>
+                                                        <a href="https://www.facebook.com/meryemaboulouafa/" target="_blank" class="social-icon si-dark si-colored si-soundcloud nobottommargin" style="margin-right: 10px;">
                                                             <i class="icon-soundcloud"></i>
-                                                        </a>
-                                                </div>
-                                            </div>
-                                        </div>
+                                                    </div>
+                                                 </a>
+                                             </div>
+                                    </div>
 
-
-                                                                                      <div class="social">
-                                                                                         <div class="site "> <a href="#" class="button button-xlarge button-dark button-rounded button-button border tright"<a href="#" class="button button-xlarge button-dark button-rounded tright">Site de l'artiste</a>
-                                                                                         </div>
-
-                                                                                           <a href="https://twitter.com/search?q=aboulouafa&src=typd&lang=fr" target="_blank" class="social-icon si-dark si-colored si-twitter nobottommargin" style="margin-right: 10px;">
-                                                                                               <i class="icon-twitter"></i>
-                                                                                           </a>
-
-                                                                                           <a href="https://www.facebook.com/meryemaboulouafa/" target="_blank" class="social-icon si-dark si-colored si-facebook nobottommargin" style="margin-right: 10px;">
-                                                                                               <i class="icon-facebook"></i>
-                                                                                           </a>
-                                                                                           <a href="https://soundcloud.com/meryemaboulouafa" target="_blank" class="social-icon si-dark si-colored si-soundcloud nobottommargin" style="margin-right: 10px;">
-                                                                                               <i class="icon-soundcloud"></i>
-                                                                                           </a>
-
-                                                                                       -->
 
                                               <div class="bio thumbnail video hidden-xs"><iframe width="100%" height="315" src="http://www.youtube.com/embed/nOCmdZNgbQA" frameborder="0" allowfullscreen></iframe>
                                                </div>
 
-                                         <div class="bio thumbnail sound">
-                                         <iframe width="100%" height="450" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/users/9943443&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
-                                         </div>
-                                 <button class="button button-small button-border button-rounded tright nomargin" type="submit" id="template-contactform-submit"
-                                         name="template-contactform-submit" value="submit">Filtrer
-                                 </button>
+                                             <div class="bio thumbnail sound">
+                                             <iframe width="100%" height="450" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/users/9943443&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
+                                             </div>
 
                              </div>
 
@@ -109,17 +70,48 @@ include 'navbar.php';
                                             ut Homerici bacarum suavitate Lotophagi, humanitatis
                                             multiformibus officiis retentabant.</p>
                                         </div>
-                                        <div class="bio thumbnail"><h3>Dates à retenir</h3>
-                                        <p>Un projet à retrouver sur scène pour la première fois en tournée, à partir du printemps 2017</p>
-                                        </div>
+
+                                            <div class="nobottommargin bio thumbnail">
+
+                                                <h4>Dates importantes</h4>
+
+                                                <div class="table-responsive">
+                                                    <table class="table table-striped">
+                                                        <thead>
+                                                        <tr>
+                                                            <th>Timings</th>
+                                                            <th>Location</th>
+                                                            <th>Events</th>
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                        <tr>
+                                                            <td><span class="label label-danger">10:00 - 12:00</span></td>
+                                                            <td>Main Auditorium</td>
+                                                            <td>WWDC Developer Conference</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><span class="label label-danger">12:00 - 12:45</span></td>
+                                                            <td>Cafeteria</td>
+                                                            <td>Lunch</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><span class="label label-danger">15:00 - 18:00</span></td>
+                                                            <td>Room - 25, 2nd Floor</td>
+                                                            <td>Hardware Testing &amp; Evaluation</td>
+                                                        </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
 
 
-                                        <div class="bio thumbnail"><h3>Actualités</h3>
-                                        <p>Illud autem non dubitatur quod cum esset aliquando virtutum
-                                            omnium domicilium Roma, ingenuos advenas pleriqu nobilium,
-                                            ut Homerici bacarum suavitate Lotophagi, humanitatis
-                                            multiformibus officiis retentabant.</p>
-                                        </div>
+                                         <div class="bio thumbnail"><h3>Actualités</h3>
+                                            <p>Illud autem non dubitatur quod cum esset aliquando virtutum
+                                                omnium domicilium Roma, ingenuos advenas pleriqu nobilium,
+                                                ut Homerici bacarum suavitate Lotophagi, humanitatis
+                                                multiformibus officiis retentabant.</p>
+                                         </div>
 
                                           <div class="col_full clearfix">
                                             <h3>Galerie</h3>
@@ -138,6 +130,7 @@ include 'navbar.php';
                                               <div class="divider"><i class="icon-circle"></i></div>
                                           </div>
                                 </div>
+
                     </div>
     </div>
 

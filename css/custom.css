@@ -250,27 +250,20 @@ h3.nom_list_event {
 /*-----------------------------------------------------------------
     Détail Artistes
  -----------------------------------------------------------------*/
-.detail-artiste .detail fbox-media{
-    position:relative;
-    overflow: hidden;
+.detail_artiste {
+    position: absolute;
+    top: 2%;
+    padding: 6px 10px;
+    border-radius: 2px;
+    max-width: 25%;
 
 }
+.social{
+    position : relative;
 
-.image_list_artist {
-    background-size: cover;
-    max-width: 100%;
-    height: 100%;
 }
-.detail_list_label_laklak {
-    position:absolute;
-    top:1%;
-    right : 1%;
-    max-width: 20%;
-}
-
-
-.button:hover {
-    background-color: rgba(0,0,0,0.3);
+.button-large {
+    margin-bottom: 10px !important;
 }
 
 .img_list_artist{
@@ -297,7 +290,7 @@ h3.nom_list_event {
    Fin Détail Artistes
  -----------------------------------------------------------------*/
 
-<<<<<<< HEAD
+
 div.gallery {
     border: 1px solid #E5E5E5;
 }
