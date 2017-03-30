@@ -10,12 +10,12 @@ include 'navbar.php';
     <div class="container">
 
         <!-- Slider ============================================= -->
-        <section id="slider" class="full-screen contact">
+        <div class="row common-height contact">
 
-            <div class="col-xs-12 col-md-7 col-sm-6 full-screen center nopadding">
+            <div class="col-xs-12 col-md-5 col-sm-6 full-screen center nopadding">
             </div>
 
-            <div class="col-xs-12 col-md-5 col-sm-6 full-screen">
+            <div class="col-xs-12 col-md-7 col-sm-6 full-screen">
                 <div class="vertical-middle subscribe-widget">
                     <div class="col-padding">
                         <div class="heading-block nobottomborder bottommargin-sm">
@@ -70,7 +70,7 @@ include 'navbar.php';
 
             </div>
 
-        </section>
+        </div>
 
     </div>
 
