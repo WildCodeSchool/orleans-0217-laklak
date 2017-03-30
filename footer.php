@@ -4,14 +4,9 @@
 
 <footer id="footer" class="dark">
     <div class="container">
-
-
         <div class="footer-widgets-wrap clearfix">
-
             <div class="col_two_third">
-
                 <div class="col_half">
-
                     <div class="widget clearfix">
 
                         <a href="#"><img src="images/logo-laklak-footerAlpha.png" alt="logo Laklak" class="footer-logo"></a>
@@ -27,32 +22,21 @@
                             <abbr title="Phone Number"><strong>Téléphone:</strong></abbr> (91) 8547 632521<br>
                             <abbr title="Email Address"><strong>Email:</strong></abbr> laklak@laklak.com
                         </div>
-
-
                     </div>
-
                 </div>
-
                 <div class="col_one_third">
-
                     <div class="widget widget_links clearfix">
-
                         <h4>Liens</h4>
-
                         <ul>
                             <li><a href="presentation.php">Accueil</a></li>
                             <li><a href="liste_artiste.php">Artistes</a></li>
                             <li><a href="#">Evènements</a></li>
                             <li><a href="agenda.php">Agenda</a></li>
                             <li><a href="contact.php">Contact</a></li>
-
                         </ul>
                         <div class="widget clearfix" style="margin-bottom: -20px;">
-
                             <div class="row">
-
                                 <div class="col-md-3 col-xs-3 clearfix bottommargin-sm">
-
                                     <a href="https://www.instagram.com/laklakprod/" target="_blank" class="social-icon si-dark si-colored si-instagram nobottommargin" style="margin-right: 10px;">
                                         <i class="icon-instagram"></i>
                                     </a>
@@ -81,7 +65,6 @@
                         </p>
                     </div>
                 </div>
-
             </div>
                 <div class="col_one_third col_last">
 
