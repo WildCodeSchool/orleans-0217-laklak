@@ -136,18 +136,19 @@ form > div:not(.height-line) {
    /* height:800px;
 }*/
 
-#slider.full-screen.contact {
+/*#slider.full-screen.contact {
     position:static;
-}
-
-.col-xs-12.col-md-7.col-sm-6.full-screen.center.nopadding {
-    background :transparent url('../images/image_contact.jpg') no-repeat scroll center center / cover;
     height:800px;
+}*/
+
+.col-xs-12.col-md-5.col-sm-6.full-screen.center.nopadding {
+    background :transparent url('../images/image_contact.jpg') no-repeat scroll center center / cover;
+    /*height:800px;*/
 }
 
-.col-xs-12.col-md-5.col-sm-6.full-screen {
+.col-xs-12.col-md-7.col-sm-6.full-screen {
     background-color: rgb(245, 245, 245);
-    height: 800px;
+    /*height: 800px;*/
 }
 
 .vertical-middle.subscribe-widget {
@@ -161,7 +162,7 @@ form > div:not(.height-line) {
 }
 
 @media screen and (max-width: 760px) {
-    .col-xs-12.col-md-7.col-sm-6.full-screen.center.nopadding {
+    .col-xs-12.col-md-5.col-sm-6.full-screen.center.nopadding {
         background :transparent url('../images/image_contact.jpg') no-repeat scroll center center / cover;
         height:200px;
     }
