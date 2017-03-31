@@ -56,7 +56,10 @@ a:hover { color: #222; }
     color: white;
 }
 
-
+.presentation.espace{
+    padding-left: 0px;
+    padding-right: 0px;
+}
 
 
 /* ----------------------------------------------------------------
