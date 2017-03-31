@@ -125,13 +125,13 @@ form > div:not(.height-line) {
 
 
 .col-xs-12.col-md-5.col-sm-6.full-screen.center.nopadding {
-    background :transparent url('../images/image_contact2.jpg') no-repeat scroll center center / cover;
+    background :transparent url('../images/image_contact3.jpg') no-repeat scroll center center / cover;
     opacity:0.8;
 
 }
 
 .col-xs-12.col-md-7.col-sm-6.full-screen {
-    background-color: rgb(245, 245, 245);
+    /*background-color: rgb(245, 245, 245);*/
 
 }
 
@@ -141,13 +141,17 @@ form > div:not(.height-line) {
     width:100%
 }
 
-.col-padding {
-    padding:60px;
+.contact.col-padding {
+    padding:10px;
+}
+
+.contact .spancontact {
+    margin-left: 20px;
 }
 
 @media screen and (max-width: 760px) {
     .col-xs-12.col-md-5.col-sm-6.full-screen.center.nopadding {
-        background :transparent url('../images/image_contact2.jpg') no-repeat scroll center center / cover;
+        background :transparent url('../images/image_contact3.jpg') no-repeat scroll center center / cover;
         height:200px;
     }
 }
@@ -176,6 +180,7 @@ form > div:not(.height-line) {
     position:absolute;
     top:2%;
     max-width: 20%;
+    opacity:0.8;
 }
 
 h3.nom_list_artiste {
@@ -214,6 +219,7 @@ h3.nom_list_artiste {
     position:absolute;
     top:2%;
     max-width: 20%;
+    opacity:0.8;
 }
 
 h3.nom_list_event {
