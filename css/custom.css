@@ -56,6 +56,13 @@ a:hover { color: #222; }
     color: white;
 }
 
+.presentation p{
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+}
+
+
+
 
 
 
@@ -244,6 +251,10 @@ h3.nom_list_event {
     position: relative;
     padding: 32px 0;
 
+}
+.standard-logo{
+
+    margin-bottom: 20px;
 }
 /*-----------------------------------------------------------------
     Fin Footer
