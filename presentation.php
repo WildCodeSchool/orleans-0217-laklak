@@ -8,32 +8,49 @@ include 'navbar.php';
 <!--début photo présentation-->
 
 
-    <div class="parallax-container">
-        <div class="parallax"><img src="images/photoartistes/bgpresentation.jpg"></div>
-        <div class="section white">
-            <div class="row container">
-                <h2 class="header">Laklak Productions</h2>
-                <p class="grey-text text-darken-3 lighten-3">Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling.</p>
+
+<div class="container-fluid presentation">
+    <div class="row">
+        <div class="col-xs-12">
+
+    <section id="slider">
+
+        <div class="section parallax swiper_wrapper nopadding nomargin noborder ohidden" style="background-image: url('images/photoartistes/bgpresentation1.jpg');" data-stellar-background-ratio="0.9">
+
+            <div class="container center">
+                <div class="vertical-middle">
+
+                    <div class="emphasis-title">
+                        <h2 class="t600 ls4 uppercase bottommargin-xs">Laklak Productions</h2>
+                        <p class="lead hidden-xs">Société de productions de spectacles musicaux basé à Rabat (Maroc)</p>
+                    </div>
+                </div>
             </div>
+
+
         </div>
+
+    </section>
+</div>
     </div>
+</div>
 
 
+<br/>
 
 
-<!--Fin photo presentation-->
+    <!--Fin photo presentation-->
 
 <!--Texte présentation-->
-<div class="container">
+<div class="container text-align">
 
     <!--fin premiere row-->
-    <hr/>
+
     <div class="row">
         <div class="col-sm-12">
             <p><strong>LAKLAK Productions</strong> ce sont plus de <strong>six années d’expérience en France et au
                     Maroc</strong> (Universal Music France, 3 Pom Prod, Francofolies de La Rochelle, Paris Hip Hop,
                 Mawazine, Institut français du Maroc…) faites de multiples rencontres et collaborations artistiques.</p>
-            <br/>
             <br/>
             <p>Nous mettons ce savoir faire au service des artistes avec qui nous collaborons, des partenaires privés et
                 publics qui nous accordent leur confiance et du public que nous accueillons.</p>
