@@ -20,7 +20,7 @@ include 'navbar.php';
                                  </div>
                                     <div class="row">
                                              <div class="social col-xs-12">
-                                                 <button class="button button-large button-border button-rounded tright nomargin" type="submit" id="template-contactform-submit"
+                                                 <button class="button button-large button-border button-rounded tright nomargin" type="submit" id="#"
                                                          name="siteArtiste">Site de l'artiste
                                                  </button>
                                              </div>
