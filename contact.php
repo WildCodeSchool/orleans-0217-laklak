@@ -7,7 +7,7 @@ include 'header.php';
 <?php
 include 'navbar.php';
 ?>
-    <div class="container">
+    <div class="container-fullwidth contact">
 
         <!-- Slider ============================================= -->
         <div class="row common-height contact">
@@ -17,14 +17,14 @@ include 'navbar.php';
 
             <div class="col-xs-12 col-md-7 col-sm-6 full-screen">
                 <div class="vertical-middle subscribe-widget">
-                    <div class="col-padding">
-                        <div class="heading-block nobottomborder bottommargin-sm">
+                    <div class="col-padding contact">
+                        <div class="heading-block leftmargin-sm nobottomborder bottommargin-sm">
                             <h1>Contactez nous</h1>
-                            <span>Artistes, Professionnels, Amateurs de musique</span>
+                            <span class="spancontact">Artistes, Professionnels, Amateurs de musique</span>
                         </div>
 
 
-                        <form id="slider-subscribe-form" action="contact.php" method="post" class="nobottommargin" novalidate="novalidate">
+                        <form id="slider-subscribe-form" action="contact.php" method="post" class="col-padding" novalidate="novalidate">
 
                             <div class="col_half">
                                 <input class="sm-form-control required" name="widget-subscribe-form-fname" placeholder="Prenom" aria-required="true" type="text">
@@ -48,7 +48,7 @@ include 'navbar.php';
                             <div class="clear"></div>
 
                             <div class="col_half">
-                                <select class="sm-form-control required" name="widget-subscribe-form-service">
+                                <select class="selectpicker required" name="widget-subscribe-form-service">
                                     <option value=""> Vous êtes </option>
                                     <option value="Artiste">Un Artiste</option>
                                     <option value="Professionnel">Un Professionnel</option>

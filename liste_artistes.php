@@ -40,12 +40,12 @@ include 'navbar.php';
             <div class="panel-body">
                 <form id="template-contactform" class="">
 
-                    <div class="col-md-2 col-sm-6">
+                    <div class="col-xs-6 col-md-2 col-sm-6">
                         <label>100% LAKLAK:</label>
                         <input class="bt-switch" type="checkbox" checked data-size="mini">
                     </div>
 
-                    <div class="col-md-3 col-sm-6 height-line pull-left">
+                    <div class="col-xs-6 col-md-3 col-sm-6 height-line pull-left">
                         <button class="button button-small button-border button-rounded tright nomargin" type="submit" id="template-contactform-submit"
                                 name="template-contactform-submit" value="submit">Filtrer
                         </button>
