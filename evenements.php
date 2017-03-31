@@ -2,7 +2,7 @@
 <?php
 include 'header.php';
 ?>
-</head>
+
 <?php
 include 'navbar.php';
 ?>
@@ -70,16 +70,6 @@ include 'navbar.php';
                             <td><span class="label label-danger">10:00 - 12:00</span></td>
                             <td>Main Auditorium</td>
                             <td>WWDC Developer Conference</td>
-                        </tr>
-                        <tr>
-                            <td><span class="label label-danger">12:00 - 12:45</span></td>
-                            <td>Cafeteria</td>
-                            <td>Lunch</td>
-                        </tr>
-                        <tr>
-                            <td><span class="label label-danger">15:00 - 18:00</span></td>
-                            <td>Room - 25, 2nd Floor</td>
-                            <td>Hardware Testing &amp; Evaluation</td>
                         </tr>
                         </tbody>
                     </table>
