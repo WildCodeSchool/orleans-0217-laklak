@@ -9,8 +9,8 @@
 
             <!-- Logo ============================================= -->
             <div id="logo">
-                <a href="index.php" class="standard-logo" ><img src="images/Laklak/logo.png" alt="LAKLAK Logo"></a>
-                <a href="index.php" class="retina-logo"><img src="images/Laklak/logo.png" alt="LAKLAK Logo"></a>
+                <a href="index.php" class="standard-logo" ><img src="images/Laklak/Logotype-full-PNG-HD-BLACK.png" alt="LAKLAK Logo"></a>
+                <a href="index.php" class="retina-logo"><img src="images/Laklak/Logotype-full-PNG-HD-BLACK.png" alt="LAKLAK Logo"></a>
             </div>
             <!-- #logo end -->
             <!-- Primary Navigation ============================================= -->
