@@ -56,10 +56,21 @@ a:hover { color: #222; }
     color: white;
 }
 
+<<<<<<< HEAD
 .presentation.espace{
     padding-left: 0px;
     padding-right: 0px;
 }
+=======
+.presentation p{
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+}
+
+
+
+
+>>>>>>> 0784c10283a1fd306059dcb10f4cf36b3c959a47
 
 
 /* ----------------------------------------------------------------
@@ -132,13 +143,13 @@ form > div:not(.height-line) {
 
 
 .col-xs-12.col-md-5.col-sm-6.full-screen.center.nopadding {
-    background :transparent url('../images/image_contact2.jpg') no-repeat scroll center center / cover;
+    background :transparent url('../images/image_contact3.jpg') no-repeat scroll center center / cover;
     opacity:0.8;
 
 }
 
 .col-xs-12.col-md-7.col-sm-6.full-screen {
-    background-color: rgb(245, 245, 245);
+    /*background-color: rgb(245, 245, 245);*/
 
 }
 
@@ -148,13 +159,17 @@ form > div:not(.height-line) {
     width:100%
 }
 
-.col-padding {
-    padding:60px;
+.contact.col-padding {
+    padding:10px;
+}
+
+.contact .spancontact {
+    margin-left: 20px;
 }
 
 @media screen and (max-width: 760px) {
     .col-xs-12.col-md-5.col-sm-6.full-screen.center.nopadding {
-        background :transparent url('../images/image_contact2.jpg') no-repeat scroll center center / cover;
+        background :transparent url('../images/image_contact3.jpg') no-repeat scroll center center / cover;
         height:200px;
     }
 }
@@ -183,6 +198,7 @@ form > div:not(.height-line) {
     position:absolute;
     top:2%;
     max-width: 20%;
+    opacity:0.8;
 }
 
 h3.nom_list_artiste {
@@ -221,6 +237,7 @@ h3.nom_list_artiste {
     position:absolute;
     top:2%;
     max-width: 20%;
+    opacity:0.8;
 }
 
 h3.nom_list_event {
@@ -241,6 +258,10 @@ h3.nom_list_event {
     position: relative;
     padding: 32px 0;
 
+}
+.standard-logo{
+
+    margin-bottom: 20px;
 }
 /*-----------------------------------------------------------------
     Fin Footer
