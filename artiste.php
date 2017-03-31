@@ -23,6 +23,7 @@ include 'navbar.php';
                                                  <button class="button button-large button-border button-rounded tright nomargin" type="submit" id="template-contactform-submit"
                                                          name="siteArtiste">Site de l'artiste
                                                  </button>
+                                             </div>
                                                     <div class="col-sm-12">
                                                  <a href="https://twitter.com/search?q=aboulouafa&src=typd&lang=fr" target="_blank" class="social-icon si-dark si-colored si-twitter nobottommargin" style="margin-right: 10px;">
                                                      <i class="icon-twitter"></i>
@@ -33,9 +34,8 @@ include 'navbar.php';
                                                  </a>
                                                         <a href="https://www.facebook.com/meryemaboulouafa/" target="_blank" class="social-icon si-dark si-colored si-soundcloud nobottommargin" style="margin-right: 10px;">
                                                             <i class="icon-soundcloud"></i>
-                                                    </div>
                                                  </a>
-                                             </div>
+                                                    </div>
                                     </div>
 
 
