@@ -10,6 +10,7 @@ include 'navbar.php';
 <body>
 <div class="container">
     <div class=row">
+        <!--logo evenement-->
         <h1 class="visible-xs">Encore #2</h1>
         <div class="col-sm-4 bottommargin">
             <div class="fbox-media clearfix bio thumbnail">
@@ -18,6 +19,9 @@ include 'navbar.php';
                 <div class="detail_artiste"><img src="images/Laklak/logo.jpg" alt=""/></div>
 
             </div>
+            <!--fin logo evenements-->
+
+            <!--debut colonne gauche-->
             <div class="row">
                 <div class="social col-sm-12">
                     <button class="button button-large button-border button-rounded tright nomargin" type="submit" id="template-contactform-submit"
@@ -45,8 +49,10 @@ include 'navbar.php';
             </div>
 
 
-
+        <!--fin colonne gauche-->
         </div>
+
+        <!--début colonne droite-->
 
         <div class="col-sm-8">
             <h1 class="hidden-xs">Encore #2 <br/>
@@ -118,6 +124,7 @@ include 'navbar.php';
 
                 <div class="divider"><i class="icon-circle"></i></div>
             </div>
+            <!--fin colonne gauche-->
         </div>
 
     </div>

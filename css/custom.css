@@ -49,9 +49,20 @@ a:hover { color: #222; }
     padding-top:  20px;
 }
 
-.presentation{
-    text-align: center;
+.presentation h2{
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    margin:150px;
 }
+
+.presentation p{
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    margin: 150px;
+
+}
+
+
 
 
 /* ----------------------------------------------------------------
