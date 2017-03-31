@@ -8,7 +8,10 @@ include 'navbar.php';
 <!--début photo présentation-->
 
 
+
 <div class="container-fluid presentation">
+    <div class="row">
+        <div class="col-xs-12">
 
     <section id="slider">
 
@@ -18,8 +21,8 @@ include 'navbar.php';
                 <div class="vertical-middle">
 
                     <div class="emphasis-title">
-                        <h2 class="t600 ls4 uppercase bottommargin-sm" style="font-size: 48px;">Laklak Productions <span class="nocolor hidden-sm"></span></h2>
-                        <p class="lead">Société de productions de spectacles musicaux basé au Maroc</p>
+                        <h2 class="t600 ls4 uppercase bottommargin-xs">Laklak Productions</h2>
+                        <p class="lead hidden-xs">Société de productions de spectacles musicaux basé à Rabat (Maroc)</p>
                     </div>
                 </div>
             </div>
@@ -29,6 +32,8 @@ include 'navbar.php';
 
     </section>
 </div>
+    </div>
+</div>
 
 
 <br/>
@@ -37,7 +42,7 @@ include 'navbar.php';
     <!--Fin photo presentation-->
 
 <!--Texte présentation-->
-<div class="container">
+<div class="container text-align">
 
     <!--fin premiere row-->
 
