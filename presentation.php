@@ -5,27 +5,27 @@ include 'header.php';
 <?php
 include 'navbar.php';
 ?>
+<!--début photo présentation-->
 
+
+    <div class="parallax-container">
+        <div class="parallax"><img src="images/photoartistes/bgpresentation.jpg"></div>
+        <div class="section white">
+            <div class="row container">
+                <h2 class="header">Laklak Productions</h2>
+                <p class="grey-text text-darken-3 lighten-3">Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling.</p>
+            </div>
+        </div>
+    </div>
+
+
+
+
+<!--Fin photo presentation-->
 
 <!--Texte présentation-->
 <div class="container">
-    <div class="row">
-        <div class="col-sm-12">
-            <div class="presentation">
-                <h1>LAKLAK PRODUCTIONS - L'AGENCE</h1>
-                <h3>LAKLAK Productions est une agence de production de spectacles et de booking, basée à Rabat au
-                    Maroc.</h3>
-            </div>
-        </div>
 
-        <div class="col-sm-12">
-            <center><img class="imagelogo img-responsive" src="images/photoartistes/logofull1.jpg"></center>
-        </div>
-
-
-        <br/>
-        <br/>
-    </div>
     <!--fin premiere row-->
     <hr/>
     <div class="row">

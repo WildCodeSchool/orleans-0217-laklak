@@ -2,7 +2,7 @@
 include 'header.php';
 ?>
 
-<body>
+
 
 <?php
 include 'navbar.php';
@@ -63,7 +63,7 @@ include 'navbar.php';
                     <img class="img_list_event" src="images/photoartistes/2015/jazzaauchellah.jpg" alt="jazzaauchellah"/>
                 </div>
                 <div class="i-overlay on-hover">
-                    <a href="evenement.php">
+                    <a href="evenements.php">
                         <i class ="icon-line-plus"></i>
                     </a>
                     <h3 class="nom_list_event">jazzaauchellah</h3>
@@ -82,7 +82,7 @@ include 'navbar.php';
                     <img class="img_list_event" src="images/photoartistes/2015/transahara.jpg" alt="transahara"/>
                 </div>
                 <div class="i-overlay on-hover">
-                    <a href="evenement.php">
+                    <a href="evenements.php">
                         <i class ="icon-line-plus"></i>
                     </a>
                     <h3 class="nom_list_event">transahara</h3>
@@ -101,7 +101,7 @@ include 'navbar.php';
                     <img class="img_list_event" src="images/photoartistes/2016/jazzablanca.jpg" alt="jazzablanca"/>
                 </div>
                 <div class="i-overlay on-hover">
-                    <a href="evenement.php">
+                    <a href="evenements.php">
                         <i class ="icon-line-plus"></i>
                     </a>
                     <h3 class="nom_list_event">jazzablanca</h3>
@@ -120,7 +120,7 @@ include 'navbar.php';
                     <img class="img_list_event" src="images/photoartistes/2016/nuitelectroniquecasa.jpg" alt="nuitelectroniquecasa"/>
                 </div>
                 <div class="i-overlay on-hover">
-                    <a href="evenement.php">
+                    <a href="evenements.php">
                         <i class ="icon-line-plus"></i>
                     </a>
                     <h3 class="nom_list_event">nuitelectroniquecasa</h3>
@@ -139,7 +139,7 @@ include 'navbar.php';
                     <img class="img_list_event" src="images/photoartistes/2016/nuitcasa.jpg" alt="nuitcasa"/>
                 </div>
                 <div class="i-overlay on-hover">
-                    <a href="evenement.php">
+                    <a href="evenements.php">
                         <i class ="icon-line-plus"></i>
                     </a>
                     <h3 class="nom_list_event">nuitcasa</h3>
@@ -158,7 +158,7 @@ include 'navbar.php';
                     <img class="img_list_event" src="images/photoartistes/2017/encore2.png" alt="encore2"/>
                 </div>
                 <div class="i-overlay on-hover">
-                    <a href="evenement.php">
+                    <a href="evenements.php">
                         <i class ="icon-line-plus"></i>
                     </a>
                     <h3 class="nom_list_event">encore2</h3>
