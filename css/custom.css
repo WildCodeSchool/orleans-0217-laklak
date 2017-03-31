@@ -155,7 +155,7 @@ form > div:not(.height-line) {
 
 @media screen and (max-width: 760px) {
     .col-xs-12.col-md-5.col-sm-6.full-screen.center.nopadding {
-        background :transparent url('../images/image_contact.jpg') no-repeat scroll center center / cover;
+        background :transparent url('../images/image_contact2.jpg') no-repeat scroll center center / cover;
         height:200px;
     }
 }

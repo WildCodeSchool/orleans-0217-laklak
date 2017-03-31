@@ -15,7 +15,7 @@ include 'navbar.php';
             <h3>ARTISTES</h3>
         </div>
 
-        <a href="#" class="button button-small button-border button-rounded tright visible-xs" data-toggle="collapse" data-target="#collapseExample"
+<!--        <a href="#" class="button button-small button-border button-rounded tright visible-xs" data-toggle="collapse" data-target="#collapseExample"
            aria-expanded="false" aria-controls="collapseExample">Filtres<i class="icon-circle-arrow-right"></i>
         </a>
         <div class="collapse" id="collapseExample">
@@ -34,9 +34,9 @@ include 'navbar.php';
                     </div>
                 </form>
             </div>
-        </div>
+        </div> -->
 
-        <div class="panel panel-default hidden-xs">
+        <div class="panel panel-default">
             <div class="panel-body">
                 <form id="template-contactform" class="">
 
