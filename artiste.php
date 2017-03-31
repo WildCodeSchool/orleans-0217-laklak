@@ -19,23 +19,29 @@ include 'navbar.php';
 
                                  </div>
                                     <div class="row">
-                                             <div class="social col-sm-12">
-                                                 <button class="button button-large button-border button-rounded tright nomargin" type="submit" id="template-contactform-submit"
+                                             <div class="social col-xs-12">
+                                                 <button class="button button-large button-border button-rounded tright nomargin" type="submit" id="#"
                                                          name="siteArtiste">Site de l'artiste
                                                  </button>
-                                                    <div class="col-sm-12">
-                                                 <a href="https://twitter.com/search?q=aboulouafa&src=typd&lang=fr" target="_blank" class="social-icon si-dark si-colored si-twitter nobottommargin" style="margin-right: 10px;">
-                                                     <i class="icon-twitter"></i>
-                                                 </a>
-
-                                                 <a href="https://www.facebook.com/meryemaboulouafa/" target="_blank" class="social-icon si-dark si-colored si-facebook nobottommargin" style="margin-right: 10px;">
-                                                     <i class="icon-facebook"></i>
-                                                 </a>
-                                                        <a href="https://www.facebook.com/meryemaboulouafa/" target="_blank" class="social-icon si-dark si-colored si-soundcloud nobottommargin" style="margin-right: 10px;">
-                                                            <i class="icon-soundcloud"></i>
-                                                    </div>
-                                                 </a>
                                              </div>
+                                                    <div class="col-sm-12">
+                                                         <a href="https://twitter.com/search?q=aboulouafa&src=typd&lang=fr" target="_blank" class="social-icon si-dark si-colored si-twitter nobottommargin" style="margin-right: 10px;">
+                                                             <i class="icon-twitter"></i>
+                                                         </a>
+
+                                                         <a href="https://www.facebook.com/meryemaboulouafa/" target="_blank" class="social-icon si-dark si-colored si-facebook nobottommargin" style="margin-right: 10px;">
+                                                             <i class="icon-facebook"></i>
+                                                         </a>
+                                                          <a href="https://soundcloud.com/meryemaboulouafa" target="_blank" class="social-icon si-dark si-colored si-soundcloud nobottommargin" style="margin-right: 10px;">
+                                                           <i class="icon-soundcloud"></i>
+                                                         </a>
+                                                          <a href="http://meryemaboulouafa.tumblr.com" target="_blank" class="social-icon si-dark si-colored si-tumblr nobottommargin" style="margin-right: 10px;">
+                                                            <i class="icon-tumblr"></i>
+                                                           </a>
+                                                          <a href="https://vimeo.com/meryemaboulouafa" target="_blank" class="social-icon si-dark si-colored si-vimeo nobottommargin" style="margin-right: 10px;">
+                                                          <i class="icon-vimeo"></i>
+                                                            </a>
+                                                    </div>
                                     </div>
 
 
@@ -73,7 +79,7 @@ include 'navbar.php';
 
                                             <div class="nobottommargin bio thumbnail">
 
-                                                <h4>Dates importantes</h4>
+                                                <h3>Dates importantes</h3>
 
                                                 <div class="table-responsive">
                                                     <table class="table table-striped">

@@ -68,8 +68,12 @@ a:hover { color: #222; }
 #header-wrap, #header ul{
     border: none!important;
 }
-#header #logo{
+#header #logo img{
+    margin: 10px 0;
+}
+#header #logo, #header #logo img{
     border: none!important;
+    max-height: 80px;
 }
 #primary-menu-trigger{
     font-size: 20px;
@@ -83,10 +87,10 @@ a:hover { color: #222; }
 #primary-menu ul li a{
     font-weight: normal;
 }
-#header{
-    margin-bottom: 20px;
-}
 
+#header.transparent-header{
+   margin-bottom:  20px;
+}
 /* ----------------------------------------------------------------
 	Slider de la Home
 -----------------------------------------------------------------*/
@@ -150,7 +154,7 @@ form > div:not(.height-line) {
 
 @media screen and (max-width: 760px) {
     .col-xs-12.col-md-5.col-sm-6.full-screen.center.nopadding {
-        background :transparent url('../images/image_contact.jpg') no-repeat scroll center center / cover;
+        background :transparent url('../images/image_contact2.jpg') no-repeat scroll center center / cover;
         height:200px;
     }
 }
@@ -259,6 +263,8 @@ h3.nom_list_event {
 }
 .button-large {
     margin-bottom: 10px !important;
+    width : 100%;
+    text-align: center !important;
 }
 
 .img_list_artist{
