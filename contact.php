@@ -24,7 +24,7 @@ include 'navbar.php';
                         </div>
 
 
-                        <form id="slider-subscribe-form" action="contact.php" method="post" class="col-padding" novalidate="novalidate">
+                        <form id="widget-subscribe-form" action="contact.php" method="post" class="col-padding" novalidate="novalidate">
 
                             <div class="col_half">
                                 <input class="sm-form-control required" name="widget-subscribe-form-fname" placeholder="Prenom" aria-required="true" type="text">
