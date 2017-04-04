@@ -36,18 +36,18 @@
                         </ul>
                         <div class="widget clearfix" style="margin-bottom: -20px;">
                             <div class="row">
-                                <div class="col-md-4 col-xs-1 clearfix bottommargin-xs">
+                                <div class="col-md-4 col-xs-2 clearfix bottommargin-md">
                                     <a href="https://www.instagram.com/laklakprod/" target="_blank" class="social-icon si-dark si-colored si-instagram nobottommargin" style="margin-right: 10px;">
                                         <i class="icon-instagram"></i>
                                     </a>
                                 </div>
-                                <div class="col-md-4 col-xs-1 clearfix bottommargin-xs">
+                                <div class="col-md-4 col-xs-2 clearfix bottommargin-md">
                                     <a href="https://twitter.com/Laklak_Prod?lang=fr" target="_blank" class="social-icon si-dark si-colored si-twitter nobottommargin" style="margin-right: 10px;">
                                         <i class="icon-twitter"></i>
                                     </a>
                                 </div>
 
-                                <div class="col-md-4 col-xs-1 clearfix bottommargin-xs">
+                                <div class="col-md-4 col-xs-2 clearfix bottommargin-md">
                                     <a href="https://www.facebook.com/laklakproductions" target="_blank" class="social-icon si-dark si-colored si-facebook nobottommargin" style="margin-right: 10px;">
                                         <i class="icon-facebook"></i>
                                     </a>
