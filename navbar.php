@@ -2,7 +2,7 @@
 
 <header id="header" class="style-3 full-header transparent-header static-sticky" data-sticky-class="not-dark" data-sticky-offset="0">
     <div id="header-wrap">
-        <div class="container clearfix">
+        <div class="clearfix">
             <div id="primary-menu-trigger">
                 <i class="icon-reorder"></i>
             </div>

@@ -56,6 +56,12 @@ a:hover { color: #222; }
     color: white;
 }
 
+<<<<<<< HEAD
+.presentation.espace{
+    padding-left: 0px;
+    padding-right: 0px;
+}
+=======
 .presentation p{
     background: rgba(0, 0, 0, 0.5);
     color: white;
@@ -64,11 +70,16 @@ a:hover { color: #222; }
 
 
 
+>>>>>>> 0784c10283a1fd306059dcb10f4cf36b3c959a47
 
 
 /* ----------------------------------------------------------------
 	Header
 -----------------------------------------------------------------*/
+
+#header #header-wrap > div{
+    padding: 0 15px;
+}
 #header-wrap, #header ul{
     border: none!important;
 }
@@ -111,6 +122,10 @@ a:hover { color: #222; }
 
 #slider.swiper_wrapper{
     margin-top: -20px;
+}
+
+.slider-caption p{
+    line-height: 1.3em;
 }
 
 /* ----------------------------------------------------------------
