@@ -5,11 +5,15 @@
     },
     "authors": [
         {
+
             "name": "Francois",
             "email": "francois.ponceau@gmail.com"
+
         }
     ],
     "autoload": {
         "psr-4": {"laklak\\": "src/"}
     }
+
 }
+
