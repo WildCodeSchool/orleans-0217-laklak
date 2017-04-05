@@ -56,22 +56,9 @@ a:hover { color: #222; }
     color: white;
 }
 
-<<<<<<< HEAD
-.presentation.espace{
-    padding-left: 0px;
-    padding-right: 0px;
+.bloc-presentation{
+    text-align: justify;
 }
-=======
-.presentation p{
-    background: rgba(0, 0, 0, 0.5);
-    color: white;
-}
-
-
-
-
->>>>>>> 0784c10283a1fd306059dcb10f4cf36b3c959a47
-
 
 /* ----------------------------------------------------------------
 	Header
@@ -332,9 +319,7 @@ h3.nom_list_event {
 
 }
 
-h3{
-    text-align: left;
-}
+
 /*-----------------------------------------------------------------
    Fin Détail Artistes
  -----------------------------------------------------------------*/

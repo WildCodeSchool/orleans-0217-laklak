@@ -16,8 +16,8 @@
             <!-- Primary Navigation ============================================= -->
             <nav id="primary-menu">
                 <ul class="one-page-menu sf-js-enabled">
-                    <li><a href="presentation.php">
-                            <div>Presentation</div>
+                    <li><a href="a-propos.php">
+                            <div>A propos</div>
                         </a></li>
                     <li><a href="liste_artistes.php">
                             <div>Artistes</div>

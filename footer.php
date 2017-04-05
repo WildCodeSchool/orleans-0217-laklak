@@ -9,7 +9,7 @@
                <div class="col-md-3">
                     <div class="widget clearfix">
 
-                        <a href="presentation.php"><img src="images/Laklak/Logotype-full-PNG-HD-WHITE.png" alt="logo Laklak" class="standard-logo"></a>
+                        <a href="a-propos.php"><img src="images/Laklak/Logotype-full-PNG-HD-WHITE.png" alt="logo Laklak" class="standard-logo"></a>
 
                         <p>Société de production musicale.</br><strong>Professionnel</strong>, <strong>Créatif</strong> &amp; <strong>Moderne</strong>.</p>
 
@@ -28,7 +28,7 @@
                     <div class="widget widget_links clearfix">
                         <h4>Liens</h4>
                         <ul>
-                            <li><a href="presentation.php">Accueil</a></li>
+                            <li><a href="a-propos.php">Accueil</a></li>
                             <li><a href="liste_artistes.php">Artistes</a></li>
                             <li><a href="liste_evenements.php">Evènements</a></li>
                             <li><a href="agenda.php">Agenda</a></li>
