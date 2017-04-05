@@ -31,8 +31,11 @@ switch ($page) {
     case 'agenda':
         $view = $default->agenda();
         break;
-    case 'artiste':
-        $view = $default->artiste();
+    case 'artistes':
+        $view = $default->artistes();
+        break;
+    case 'agenda':
+        $view = $default->agenda();
         break;
     default :
         $view = $default->index();

@@ -43,3 +43,12 @@ class DefaultController extends Controller
 
 
 }
+=======
+    public function agenda()
+    {
+
+        return $this->twig->render('agenda.html.twig');
+
+    }
+}
+>>>>>>> a2ca8ff089b721e465dec523129139445d7859b8
