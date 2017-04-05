@@ -1,5 +1,5 @@
 {% extends 'layout.html.twig' %}
-{% block title %}Presentation{{ parent() }}{% endblock %}
+{% block title %}Agenda{{ parent() }}{% endblock %}
 
 {% block content %}
     <div class="container agenda">
@@ -176,7 +176,38 @@
 
             </div>
 
+            <div class="divider"><i class="icon-circle"></i></div>
+            <div class="evenements-passés">
+                <h2>Evénements passés</h2>
+
+                <div id="posts" class="events small-thumbs">
+
+                    <div class="entry clearfix">
+                        <div class="entry-image ">
+                            <a href="#">
+                                <img src="images/events/thumbs/1.jpg" alt="Inventore voluptates velit totam ipsa tenetur">
+                                <div class="entry-date">10<span>Apr</span></div>
+                            </a>
+                        </div>
+                        <div class="entry-c">
+                            <div class="entry-title">
+                                <h2><a href="#">Inventore voluptates velit totam ipsa tenetur</a></h2>
+                            </div>
+                            <ul class="entry-meta clearfix">
+                                <li><span class="label label-warning">Private</span></li>
+                                <li><a href="#"><i class="icon-time"></i> 11:00 - 19:00</a></li>
+                                <li><a href="#"><i class="icon-map-marker2"></i> Melbourne</a></li>
+                            </ul>
+                            <div class="entry-content">
+                                </a> <a href="#" class="btn btn-danger">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
         </section>
 
-    </div>
+
 {% endblock %}
