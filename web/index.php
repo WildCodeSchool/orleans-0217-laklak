@@ -24,11 +24,15 @@ if (isset($_GET['page'])) {
                 case 'agenda':
                     $view = $default->index();
                     break;
+                case 'ajoutartistes':
+                    $view = $default->ajoutartistes();
+                    break;
                 default :
                     $view = $default->index();
 
 
             }
+            echo $view;
         } //Sinon, on redirige l'utilisateur vers les pages du front
         else {
 
@@ -37,7 +41,7 @@ if (isset($_GET['page'])) {
 
             switch ($page) {
                 case 'a-propos':
-                    $view = $default->a_propos();
+                    $view = $default->a-propos();
                     break;
                 case 'liste_artistes':
                     $view = $default->liste_artistes();
