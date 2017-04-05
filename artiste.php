@@ -19,14 +19,12 @@ include 'navbar.php';
 </div>
     <div class="container">
                     <div class=row">
-                        <div class="haut">
-                            <h1 class="visible-xs">Meryem Aboulouafa</h1>
-                             <div class="col-sm-4 bottommargin">
-                                 <div class="fbox-media clearfix bio thumbnail">
 
+                            <h1 class="visible-xs">Meryem Aboulouafa</h1>
+                             <div class="col-sm-4 bottommargin haut">
+                                 <div class="fbox-media clearfix bio thumbnail">
                                              <a href="#"><img src="images/photoartistes/2016/meryem.jpg" alt="Visage Meryem Aboulouafa"></a>
                                              <div class="detail_artiste"><img src="images/Laklak/logo.jpg" alt=""/></div>
-
                                  </div>
 
                                     <div class="row">
@@ -65,7 +63,7 @@ include 'navbar.php';
                                              <div class="bio thumbnail">
                                                  <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fmeryemaboulouafa%2F%3Ffref%3Dts&tabs=timeline&width=400&height=400&small_header=true&adapt_container_width=true&hide_cover=true&show_facepile=false&appId" width="100%" height="300" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>                                             </div>
                              </div>
-                        </div>
+
 
                                 <div class="col-sm-8">
                                         <h1 class="hidden-xs">Meryem Aboulouafa</h1>
