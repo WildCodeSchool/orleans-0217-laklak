@@ -16,10 +16,6 @@ class DefaultController extends Controller
     {
         return $this->twig->render('presentation.html.twig');
     }
-    public function liste_evenements()
-    {
-        return $this->twig->render('liste_evenements.html.twig');
-    }
     public function liste_artistes()
     {
         return $this->twig->render('liste_artistes.html.twig');
@@ -27,6 +23,10 @@ class DefaultController extends Controller
     public function evenements()
     {
         return $this->twig->render('evenements.html.twig');
+    }
+    public function liste_evenements()
+    {
+        return $this->twig->render('liste_evenements.html.twig');
     }
     public function artistes()
     {
@@ -36,14 +36,12 @@ class DefaultController extends Controller
     {
         return $this->twig->render('contact.html.twig');
     }
+    public function index()
+    {
+        return $this->twig->render('index.php');
+    }
 
 
-
-
-
-
-}
-=======
     public function agenda()
     {
 
@@ -51,4 +49,4 @@ class DefaultController extends Controller
 
     }
 }
->>>>>>> a2ca8ff089b721e465dec523129139445d7859b8
+
