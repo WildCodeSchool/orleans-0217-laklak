@@ -40,10 +40,4 @@ class DefaultController extends Controller
     {
         return $this->twig->render('agenda.html.twig');
     }
-
-
-
-
-
-
 }

@@ -36,8 +36,8 @@ else {
     $default = new DefaultController(true);
 
     switch ($page) {
-        case 'a_propos':
-            $view = $default->a_propos();
+        case 'presentation':
+            $view = $default->presentation();
             break;
         case 'liste_artistes':
             $view = $default->liste_artistes();
