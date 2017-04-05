@@ -44,7 +44,7 @@ class DefaultController extends Controller
 
     public function index()
     {
-        return $this->twig->render('index.php');
+        return $this->twig->render('index.php.twig');
     }
 
 

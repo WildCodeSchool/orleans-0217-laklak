@@ -1,0 +1,15 @@
+{
+    "name": "wilder12/orleans-0217-laklak",
+    "require": {
+        "twig/twig": "^2.3"
+    },
+    "authors": [
+        {
+            "name": "Francois",
+            "email": "francois.ponceau@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {"laklak\\": "src/"}
+    }
+}
