@@ -11,10 +11,6 @@ if (isset($_GET['page'])) {
     $page = $_GET['page'];
 }
 
-
-$default = new DefaultController();
-
-
 //Si l'admin est connecté (simulé par le Get['id'] )
 //On redirige l'admin vers les pages admin
         if (isset($_GET['id'])) {
@@ -64,7 +60,7 @@ $default = new DefaultController();
                 default :
                     $view = $default->index();
             }
-
-        }
         echo $view;
+
+}
 
