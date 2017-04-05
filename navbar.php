@@ -1,4 +1,3 @@
-<!-- Header ============================================= -->
 
 <header id="header" class="style-3 full-header transparent-header static-sticky" data-sticky-class="not-dark" data-sticky-offset="0">
     <div id="header-wrap">
@@ -38,3 +37,4 @@
     </div>
 </header>
 <!-- #header end -->
+
