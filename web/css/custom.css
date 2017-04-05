@@ -15,9 +15,6 @@ h1{
 }
 
 
-h3{
-    text-align:center;
-}
 
 .entete{
 
@@ -56,13 +53,11 @@ a:hover { color: #222; }
     color: white;
 }
 
-<<<<<<< HEAD:css/custom.css
+
 .bloc-presentation{
     text-align: justify;
 }
 
-=======
->>>>>>> 42e34730306007da6df34f3e23f31b48fc055d71:web/css/custom.css
 /* ----------------------------------------------------------------
 	Header
 -----------------------------------------------------------------*/
@@ -206,6 +201,7 @@ h3.nom_list_artiste {
     position:absolute;
     top:60%;
     width:100%;
+    text-align: center;
 
 }
 
@@ -245,7 +241,7 @@ h3.nom_list_event {
     position:absolute;
     top:60%;
     width:100%;
-
+    text-align: center;
 }
 
 /*-----------------------------------------------------------------
