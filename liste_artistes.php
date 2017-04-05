@@ -15,27 +15,6 @@ include 'navbar.php';
             <h3>ARTISTES</h3>
         </div>
 
-<!--        <a href="#" class="button button-small button-border button-rounded tright visible-xs" data-toggle="collapse" data-target="#collapseExample"
-           aria-expanded="false" aria-controls="collapseExample">Filtres<i class="icon-circle-arrow-right"></i>
-        </a>
-        <div class="collapse" id="collapseExample">
-            <div class="well">
-                <form id="template-contactform " class="">
-
-                    <div class="col-md-2 col-sm-6 text-center">
-                        <label>100% LAKLAK:</label>
-                        <input class="bt-switch" type="checkbox" checked data-size="mini">
-                    </div>
-
-                    <div class="col-md-3 col-sm-6 pull-left text-center">
-                        <button class="button button-small button-border button-rounded tright nomargin" type="submit" id="template-contactform-submit"
-                                name="template-contactform-submit" value="submit">Filtrer
-                        </button>
-                    </div>
-                </form>
-            </div>
-        </div> -->
-
 
 
 
