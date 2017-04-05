@@ -1,4 +1,8 @@
 # Created by .ignore support plugin (hsz.mobi)
 
 /vendor/
+<<<<<<< HEAD
 app/config/connect.php
+=======
+/app/config/connect.php
+>>>>>>> 561d109b5ef1fbabc1b7458ba298b369376a2400

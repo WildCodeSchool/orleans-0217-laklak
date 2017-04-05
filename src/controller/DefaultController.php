@@ -47,13 +47,12 @@ class DefaultController extends Controller
         return $this->twig->render('index.php.twig');
     }
 
-
+    
     public function agenda()
     {
 
         return $this->twig->render('agenda.html.twig');
 
     }
-
 
 }

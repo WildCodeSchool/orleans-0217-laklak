@@ -31,9 +31,11 @@ $default = new DefaultController();
                 default :
                     $view = $default->index();
 
+
             }
         } //Sinon, on redirige l'utilisateur vers les pages du front
         else {
+
 
             $default = new DefaultController(true);
 
