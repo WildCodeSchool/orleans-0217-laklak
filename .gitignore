@@ -1,5 +1,4 @@
 # Created by .ignore support plugin (hsz.mobi)
 
 /vendor/
-/composer.json
 /app/config/connect.php
