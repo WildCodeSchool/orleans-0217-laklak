@@ -16,6 +16,9 @@ switch ($page) {
     case 'presentation':
         $view = $default->presentation();
         break;
+    case 'agenda':
+        $view = $default->agenda();
+        break;
     default :
         $view = $default->index();
 

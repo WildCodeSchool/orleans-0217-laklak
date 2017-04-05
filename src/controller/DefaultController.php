@@ -18,4 +18,10 @@ class DefaultController extends Controller
         return $this->twig->render('presentation.html.twig');
 
     }
+    public function agenda()
+    {
+
+        return $this->twig->render('agenda.html.twig');
+
+    }
 }
