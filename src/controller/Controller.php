@@ -17,9 +17,13 @@ class Controller
     protected $bdd;
 
 
-    public function __construct()
+    public function __construct($route)
     {
-        $loader = new \Twig_Loader_Filesystem(__DIR__ . '/../../src/ressources/views');
+        if ($route){
+            $loader = new \Twig_Loader_Filesystem(__DIR__ . '/../../src/ressources/views/front');
+        } else {
+            $loader = new \Twig_Loader_Filesystem(__DIR__ . '/../../src/ressources/views/admin');
+        }
         $twig = new \Twig_Environment($loader, [
 
             'cache' => false, //__DIR__ . 'tmp'
