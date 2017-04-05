@@ -13,11 +13,30 @@ if (isset($_GET['page'])) {
 $default = new DefaultController();
 
 switch ($page) {
-    case 'presentation':
-        $view = $default->presentation();
+    case 'a_propos':
+        $view = $default->a_propos();
+        break;
+    case 'liste_artistes':
+        $view = $default->liste_artistes();
+        break;
+    case 'liste_evenements':
+        $view = $default->liste_evenements();
+        break;
+    case 'evenements':
+        $view = $default->evenements();
+        break;
+    case 'contact':
+        $view = $default->contact();
+        break;
+    case 'agenda':
+        $view = $default->agenda();
+        break;
+    case 'artiste':
+        $view = $default->artiste();
         break;
     default :
         $view = $default->index();
+
 
 }
 
