@@ -1,17 +1,198 @@
-<div id="wrapper" class="active">
-    <!-- Sidebar -->
-    <div id="sidebar-wrapper">
-        <ul id="sidebar_menu" class="sidebar-nav">
-            <li class="sidebar-brand"><a id="menu-toggle" href="#">Menu<span id="main_icon" class="glyphicon glyphicon-align-justify"></span></a></li>
-        </ul>
-        <ul class="sidebar-nav" id="sidebar">
-            <li><a>Cadastro<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
-            <ul class="sidebar-nav" id="sidebar">
-                <li><a>link1<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
-                <li><a>link2<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
-            </ul>
-            <li><a>Consulta<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
-            <li><a>Relatorio<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
-        </ul>
-    </div>
-</div>
+<!DOCTYPE html>
+<html dir="ltr" lang="fr-FR">
+<head>
+
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta name="author" content="SemiColonWeb"/>
+
+
+    <!-- Stylesheets
+    ============================================= -->
+    <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700|Roboto:300,400,500,700"
+          rel="stylesheet" type="text/css"/>
+
+    <link rel="stylesheet" href="css/bootstrap.css" type="text/css"/>
+    <link rel="stylesheet" href="style.css" type="text/css"/>
+    <link rel="stylesheet" href="css/swiper.css" type="text/css"/>
+
+
+
+    <link rel="stylesheet" href="css/font-icons.css" type="text/css"/>
+    <link rel="stylesheet" href="css/fonts.css" type="text/css"/>
+
+
+    <link rel="stylesheet" href="css/dark.css" type="text/css"/>
+    <link rel="stylesheet" href="css/animate.css" type="text/css"/>
+    <link rel="stylesheet" href="css/components/bs-select.css" type="text/css"/>
+    <link rel="stylesheet" href="css/components/bs-switches.css" type="text/css"/>
+    <link rel="stylesheet" href="css/components/radio-checkbox.css" type="text/css"/>
+    <link rel="stylesheet" href="css/responsive.css" type="text/css"/>
+    <link rel="stylesheet" href="css/colors.css" type="text/css"/>
+    <link rel="stylesheet" href="css/custom.css" type="text/css"/>
+    <link rel="stylesheet" href="css/magnific-popup.css" type="text/css"/>
+    <link rel="stylesheet" href="css/imports/header.css" type="text/css"/>
+    <link rel="icon" type="image/png" href="images/photoartistes/logo.jpg"/>
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <!-- Document Title
+    ============================================= -->
+    <title>{% block title %} - Laklak Productions{% endblock title %}</title>
+</head>
+
+<body class="stretched side-header">
+<!-- Document Wrapper
+	============================================= -->
+<div id="wrapper" class="clearfix">
+
+    <!-- Header
+    ============================================= -->
+    <header id="header" class="dark">
+
+        <div id="header-wrap">
+
+            <div class="container clearfix">
+
+                <div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
+
+                <!-- Logo
+                ============================================= -->
+                <div id="logo" class="nobottomborder">
+                    <a href="index.php" class="standard-logo" data-dark-logo="http://canvashtml-cdn.semicolonweb.com/images/logo-side-dark.png"><img src="http://canvashtml-cdn.semicolonweb.com/images/logo-side.png" alt="Canvas Logo"></a>
+                    <a href="index.php" class="retina-logo" data-dark-logo="http://canvashtml-cdn.semicolonweb.com/images/logo-side-dark@2x.png"><img src="http://canvashtml-cdn.semicolonweb.com/images/logo-side@2x.png" alt="Canvas Logo"></a>
+                </div><!-- #logo end -->
+
+                <!-- Primary Navigation
+                ============================================= -->
+                <nav id="primary-menu">
+
+                    <ul>
+                        <li class="current"><a href="index.php"><div>Home</div></a>
+                            <ul>
+                                <li><a href="index-corporate.php"><div>Home - Corporate</div></a>
+                                    <ul>
+                                        <li><a href="index-corporate.php"><div>Corporate - Layout 1</div></a></li>
+                                        <li><a href="index-corporate-2.php"><div>Corporate - Layout 2</div></a></li>
+                                        <li><a href="index-corporate-3.php"><div>Corporate - Layout 3</div></a></li>
+                                        <li><a href="index-corporate-4.php"><div>Corporate - Layout 4</div></a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="index-portfolio.php"><div>Home - Portfolio</div></a>
+                                    <ul>
+                                        <li><a href="index-portfolio.php"><div>Portfolio - Layout 1</div></a></li>
+                                        <li><a href="index-portfolio-2.php"><div>Portfolio - Layout 2</div></a></li>
+                                        <li><a href="index-portfolio-3.php"><div>Portfolio - Masonry</div></a></li>
+                                        <li><a href="index-portfolio-4.php"><div>Portfolio - AJAX</div></a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><a href="#"><div>Features</div></a>
+                            <ul>
+                                <li><a href="#"><div><i class="icon-stack"></i>Sliders</div></a>
+                                    <ul>
+                                        <li><a href="slider-revolution.php"><div>Revolution Slider</div></a>
+                                            <ul>
+                                                <li><a href="rs-demo-premium-concept.php"><div>Premium Templates</div></a></li>
+                                                <li><a href="slider-revolution.php"><div>Full Screen</div></a></li>
+                                                <li><a href="slider-revolution-fullwidth.php"><div>Full Width</div></a></li>
+                                                <li><a href="slider-revolution-kenburns.php"><div>Kenburns Effect</div></a></li>
+                                                <li><a href="slider-revolution-html5-videos.php"><div>HTML5 Video</div></a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="slider-canvas.php"><div>Canvas Slider</div></a>
+                                            <ul>
+                                                <li><a href="slider-canvas.php"><div>Full Width</div></a></li>
+                                                <li><a href="slider-canvas-fade.php"><div>Fade Transition</div></a></li>
+                                                <li><a href="slider-canvas-autoplay.php"><div>Autoplay Feature</div></a></li>
+                                                <li><a href="slider-canvas-video-event.php"><div>Custom Video Event</div></a></li>
+                                                <li><a href="slider-canvas-pagination.php"><div>Pagination Navigation</div></a></li>
+                                                <li><a href="slider-canvas-3.php"><div>3 Columns</div></a></li>
+                                                <li><a href="slider-canvas-4.php"><div>4 Columns</div></a></li>
+                                                <li><a href="slider-canvas-5.php"><div>5 Columns</div></a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                </nav><!-- #primary-menu end -->
+
+                <div class="clearfix visible-md visible-lg">
+                    <a href="#" class="social-icon si-small si-borderless si-facebook">
+                        <i class="icon-facebook"></i>
+                        <i class="icon-facebook"></i>
+                    </a>
+
+                    <a href="#" class="social-icon si-small si-borderless si-twitter">
+                        <i class="icon-twitter"></i>
+                        <i class="icon-twitter"></i>
+                    </a>
+
+                    <a href="#" class="social-icon si-small si-borderless si-gplus">
+                        <i class="icon-gplus"></i>
+                        <i class="icon-gplus"></i>
+                    </a>
+
+                    <a href="#" class="social-icon si-small si-borderless si-pinterest">
+                        <i class="icon-pinterest"></i>
+                        <i class="icon-pinterest"></i>
+                    </a>
+
+                    <a href="#" class="social-icon si-small si-borderless si-github">
+                        <i class="icon-github"></i>
+                        <i class="icon-github"></i>
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </header><!-- #header end -->
+    <!-- Content
+            ============================================= -->
+    <section id="content">
+
+        <div class="content-wrap nopadding">
+            {% block content %}
+            {% endblock %}
+        </div>
+
+    </section><!-- #content end -->
+
+
+<!-- Go To Top ============================================= -->
+<div id="gotoTop" class="icon-angle-up"></div>
+
+<!-- External JavaScripts ============================================= -->
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/plugins.js"></script>
+
+<!-- Bootstrap Select Plugin -->
+<script type="text/javascript" src="js/components/bs-select.js"></script>
+<!-- Select Splitter Plugin -->
+<script type="text/javascript" src="js/components/selectsplitter.js"></script>
+
+<!-- Bootstrap Switch Plugin -->
+<script type="text/javascript" src="js/components/bs-switches.js"></script>
+
+<!-- Footer Scripts ============================================= -->
+<script type="text/javascript" src="js/functions.js"></script>
+
+<script type="text/javascript">
+
+    $('.selectsplitter').selectsplitter();
+
+</script>
+<script>
+
+    jQuery(".bt-switch").bootstrapSwitch();
+
+</script>
+
+</body>
+</html>

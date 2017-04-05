@@ -22,10 +22,7 @@ if(isset($_GET['id'])) {
         case 'index':
             $view = $default->index();
             break;
-        case 'agenda':
-            $view = $default->index();
-            break;
-        default :
+        default:
             $view = $default->index();
 
     }

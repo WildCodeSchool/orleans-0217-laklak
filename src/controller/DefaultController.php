@@ -11,7 +11,6 @@ namespace laklak\controller;
 
 class DefaultController extends Controller
 {
-
     public function presentation()
     {
         return $this->twig->render('presentation.html.twig');
