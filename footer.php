@@ -3,17 +3,17 @@
 <!--footer-->
 
 <footer id="footer" class="dark">
-    <div class="container">
+    <div class="container-fluid">
         <div class="footer-widgets-wrap clearfix">
-            <div class="col_two_third">
-                <div class="col_half">
+            <div class="row">
+               <div class="col-md-3">
                     <div class="widget clearfix">
 
                         <a href="presentation.php"><img src="images/Laklak/Logotype-full-PNG-HD-WHITE.png" alt="logo Laklak" class="standard-logo"></a>
 
                         <p>Société de production musicale.</br><strong>Professionnel</strong>, <strong>Créatif</strong> &amp; <strong>Moderne</strong>.</p>
 
-                        <div style="background: url('images/world-map.png') no-repeat center center; background-size: 75%;">
+                        <div style="background: url('images/world-map.png') no-repeat left left; background-size: 20%;">
                             <address>
                                 <strong>Siège social:</strong><br>
                                 <br>
@@ -23,37 +23,36 @@
                             <abbr title="Email Address"><strong>Email:</strong></abbr> laklak@laklak.com
                         </div>
                     </div>
-                </div>
-                <div class="col_one_third">
+               </div>
+                <div class="col-md-3">
                     <div class="widget widget_links clearfix">
                         <h4>Liens</h4>
                         <ul>
                             <li><a href="presentation.php">Accueil</a></li>
-                            <li><a href="liste_artiste.php">Artistes</a></li>
+                            <li><a href="liste_artistes.php">Artistes</a></li>
                             <li><a href="liste_evenements.php">Evènements</a></li>
                             <li><a href="agenda.php">Agenda</a></li>
                             <li><a href="contact.php">Contact</a></li>
                         </ul>
                         <div class="widget clearfix" style="margin-bottom: -20px;">
                             <div class="row">
-                                <div class="col-md-3 col-xs-3 clearfix bottommargin-sm">
+                                <div class="col-md-4 col-xs-2 clearfix bottommargin-md">
                                     <a href="https://www.instagram.com/laklakprod/" target="_blank" class="social-icon si-dark si-colored si-instagram nobottommargin" style="margin-right: 10px;">
                                         <i class="icon-instagram"></i>
                                     </a>
                                 </div>
-                                <div class="col-md-3 col-xs-3 clearfix bottommargin-sm">
+                                <div class="col-md-4 col-xs-2 clearfix bottommargin-md">
                                     <a href="https://twitter.com/Laklak_Prod?lang=fr" target="_blank" class="social-icon si-dark si-colored si-twitter nobottommargin" style="margin-right: 10px;">
                                         <i class="icon-twitter"></i>
                                     </a>
                                 </div>
 
-                                <div class="col-md-3 col-xs-3 clearfix bottommargin-sm">
+                                <div class="col-md-4 col-xs-2 clearfix bottommargin-md">
                                     <a href="https://www.facebook.com/laklakproductions" target="_blank" class="social-icon si-dark si-colored si-facebook nobottommargin" style="margin-right: 10px;">
                                         <i class="icon-facebook"></i>
                                     </a>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                     <div>
@@ -64,21 +63,21 @@
                             <br><small>Mentions légales | Crédits | © Copyright</small>
                         </p>
                     </div>
+
                 </div>
-            </div>
-                <div class="col_one_third col_last">
+                <div class="col-md-6">
 
                     <div class="widget clearfix hidden-xs">
-
-                        <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Flaklakproductions&tabs=timeline&width=320&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="340" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
-
+                        <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Flaklakproductions%2F%3Fref%3Dts%26fref%3Dts&tabs=timeline&width=500&height=400&small_header=false&hide_cover=false&show_facepile=false&appId" width="500" height="400" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
                     </div>
                 </div>
-        </div><!-- .footer-widgets-wrap end -->
+            </div>
+        </div>
     </div>
 
 
 </footer>
+
 
 <!-- Go To Top ============================================= -->
 <div id="gotoTop" class="icon-angle-up"></div>
