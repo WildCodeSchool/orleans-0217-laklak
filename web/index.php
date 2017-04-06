@@ -17,6 +17,7 @@ if (isset($_GET['page'])) {
 
             $default = new AdminController(false);
 
+
             switch ($page) {
                 case 'index':
                     $view = $default->index();
