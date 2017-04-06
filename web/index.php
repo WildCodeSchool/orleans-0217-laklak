@@ -29,12 +29,19 @@ if (isset($_GET['page'])) {
                     $view = $default->ajoutartistes();
                     break;
 
+
                 case 'adminapropos':
                     $view = $default->adminapropos();
+
+                case 'listeartistes':
+                    $view = $default->listeartistes();
+                    break;
+                case 'listeevenements':
+                    $view = $default->listeevenements();
+
                     break;
                 default :
                     $view = $default->index();
-
 
             }
             echo $view;
