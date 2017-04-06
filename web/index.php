@@ -36,6 +36,7 @@ if (isset($_GET['page'])) {
                     break;
                 default :
                     $view = $default->index();
+
             }
             echo $view;
         } //Sinon, on redirige l'utilisateur vers les pages du front
