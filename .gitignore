@@ -1,6 +1,6 @@
 # Created by .ignore support plugin (hsz.mobi)
 
 /vendor/
-app/config/connect.php
 /composer.json
-
+/old.idea/workspace.xml
+/app/config/connect.php

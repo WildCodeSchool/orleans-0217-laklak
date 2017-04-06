@@ -32,6 +32,7 @@ if (isset($_GET['page'])) {
 
                 case 'adminapropos':
                     $view = $default->adminapropos();
+                    break;
 
                 case 'listeartistes':
                     $view = $default->listeartistes();

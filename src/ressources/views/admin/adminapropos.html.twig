@@ -1,4 +1,65 @@
 {% extends 'layout.html.twig' %}
 {% block content %}
- <h1>titi</h1>
+
+ <form method="post" action="adminapropos.html.twig">
+  <div class="form-group">
+   <label for="produit">Nom du produit</label>
+   <input type="produit" name="nom_du_produit" class="form-control" id="produit" placeholder="Nom du produit">
+  </div>
+
+
+
+  <div class="radio">
+   <h4>Sur quelle base:</h4><br/>
+   <label><input type="radio" name="sur_quelle_base" value="Tomate" checked="Tomate" /> Tomate</label>
+   <label><input type="radio" name="sur_quelle_base" value="Creme" checked="Crème" /> Crème</label>
+   <label><input type="radio" name="sur_quelle_base" value="Dessert" checked="Dessert" /> Dessert</label>
+  </div>
+  <br/>
+
+
+
+  <div class="form-group">
+   <label for="comment">Ingrédients:</label>
+   <textarea class="form-control" rows="5" id="comment"name="ingredients"></textarea>
+
+  </div>
+
+
+  <div class="radio">
+   <h4>Taille:</h4><br/>
+   <label><input type="radio" name="taille" value="S" checked="S" /> S &nbsp;&nbsp;29cm</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   <label><input type="radio" name="taille" value="L" checked="L" /> L&nbsp;&nbsp; 33cm </label>
+  </div>
+
+
+  <div class="form-group">
+   <label for="produit">Prix</label>
+   <input type="prix" name="prix" class="form-control" id="prix" placeholder="prix">
+  </div>
+
+  <br/>
+
+  <div class="radio">
+   <h4>Taille l:</h4><br/>
+   <label><input type="radio" name="taillel" value="S" checked="S" /> S &nbsp;&nbsp;29cm</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   <label><input type="radio" name="taillel" value="L" checked="L" /> L&nbsp;&nbsp; 33cm </label>
+  </div>
+
+
+
+  <div class="form-group">
+   <label for="produit">Prixl</label>
+   <input type="prix" name="prixl" class="form-control" id="prix" placeholder="prix">
+  </div>
+
+
+
+  <input class="btn btn-default" type="reset" name="btnReset" value="Effacer" />
+  <input class="btn btn-success" type="submit" name="btnSubmit" value="Ajouter" />
+  <br/>
+  <a href="modifpizza.php" = target="_blank"> <button type="button" class="btn btn-primary">Gérer les pizzas existantes</button></a>
+
+
+ </form>
 {% endblock %}
