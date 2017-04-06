@@ -28,17 +28,14 @@ if (isset($_GET['page'])) {
                 case 'ajoutartistes':
                     $view = $default->ajoutartistes();
                     break;
-
-
                 case 'adminapropos':
                     $view = $default->adminapropos();
-
+                    break;
                 case 'listeartistes':
                     $view = $default->listeartistes();
                     break;
                 case 'listeevenements':
                     $view = $default->listeevenements();
-
                     break;
                 default :
                     $view = $default->index();
