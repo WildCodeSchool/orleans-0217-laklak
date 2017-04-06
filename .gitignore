@@ -1,10 +1,5 @@
 # Created by .ignore support plugin (hsz.mobi)
 
 /vendor/
-app/config/connect.php
 /composer.json
-<<<<<<< HEAD
-/old.idea/
-=======
-
->>>>>>> 832fe68ec0f29635f13a74050752b761218c3f77
+app/config/connect.php
