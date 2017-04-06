@@ -2,10 +2,9 @@
 
 {% block content %}
 
-    <script type="text/javascript" src="/vendor/ckeditor/ckeditor/ckeditor.js"></script>
     <h1>Ajouter un artiste</h1>
-<div class="container">
-    <div class="row col-xs-9 col-xs-offset-1">
+<div class="container-fluid">
+    <div class="row col-xs-9">
     <form method="POST" action="ajoutartistes.html.twig">
         <div class="form-group">
             <label for="nom">Nom de l'artiste</label>
@@ -15,8 +14,6 @@
             <label for="biographie">Biographie</label>
             <textarea cols="70" class="ckeditor" rows="10" class="form-control" id="bio" placeholder="Biographie"></textarea>
         </div>
-
-
         <div class="form-group">
             <label for="Site de l'artiste">site de l'artiste</label>
             <input type="url" class="form-control" id="url" placeholder="site de l'artiste">
@@ -24,6 +21,7 @@
         <div class="form-group">
             <label for="IframeFacebook">Iframe Facebook <i class="icon-facebook"></i></label>
             <input type="url" class="form-control" id="iframeFacebook" placeholder="lien Facebook">
+            <comment><em> prendre le code de l'iframe de <a href="https://developers.facebook.com/docs/plugins/page-plugin">facebook.</a></em></comment>
         </div>
         <div class="form-group">
             <label for="IframeYoutube">Iframe Youtube <i class="icon-youtube"></i></label>
@@ -46,7 +44,17 @@
             <label for="fluxInstagram">Instagram <i class="icon-instagram"></i></label>
             <input type="url" class="form-control" id="fluxInstagram" placeholder="page Instagram">
         </div>
-
+        <h4>Artiste Laklak</h4>
+        <div class="radio">
+            <label>
+                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">Oui
+            </label>
+        </div>
+        <div class="radio">
+            <label>
+                <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">Non
+            </label>
+        </div>
 
 
         <div class="form-group">
