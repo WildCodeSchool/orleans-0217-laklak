@@ -2,36 +2,52 @@
 
 {% block content %}
 
+    <script type="text/javascript" src="/vendor/ckeditor/ckeditor/ckeditor.js"></script>
+    <h1>Ajouter un artiste</h1>
+<div class="container">
+    <div class="row col-xs-9 col-xs-offset-1">
     <form method="POST" action="ajoutartistes.html.twig">
         <div class="form-group">
             <label for="nom">Nom de l'artiste</label>
             <input type="text" class="form-control" id="nom" placeholder="nom de l'artiste">
         </div>
-        <div class="form-group textarea">
+        <div class="form-group">
             <label for="biographie">Biographie</label>
-            <input type="text" class="form-control" id="bio" placeholder="Biographie">
+            <textarea cols="70" class="ckeditor" rows="10" class="form-control" id="bio" placeholder="Biographie"></textarea>
+        </div>
+
+
+        <div class="form-group">
+            <label for="Site de l'artiste">site de l'artiste</label>
+            <input type="url" class="form-control" id="url" placeholder="site de l'artiste">
         </div>
         <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            <label for="IframeFacebook">Iframe Facebook <i class="icon-facebook"></i></label>
+            <input type="url" class="form-control" id="iframeFacebook" placeholder="lien Facebook">
         </div>
         <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            <label for="IframeYoutube">Iframe Youtube <i class="icon-youtube"></i></label>
+            <input type="url" class="form-control" id="iframeYoutube" placeholder="lien Youtube">
         </div>
         <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            <label for="IframeSoundCloud">Iframe Soundcloud <i class="icon-soundcloud"></i></label>
+            <input type="url" class="form-control" id="iframeSoundCloud" placeholder="lien Soundcloud">
         </div>
         <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            <label for="fluxTwitter">Twitter <i class="icon-twitter"></i></label>
+            <input type="url" class="form-control" id="fluxTwitter" placeholder="page Twitter">
+        </div>
+        <div class="form-group">
+            <label for="fluxVimeo">Vimeo <i class="icon-vimeo"></i></label>
+            <input type="url" class="form-control" id="fluxVimeo" placeholder="page Vimeo">
         </div>
 
         <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            <label for="fluxInstagram">Instagram <i class="icon-instagram"></i></label>
+            <input type="url" class="form-control" id="fluxInstagram" placeholder="page Instagram">
         </div>
+
+
 
         <div class="form-group">
             <label for="exampleInputFile">File input</label>
@@ -40,6 +56,10 @@
         </div>
 
         <button type="submit" class="btn btn-default">Ajouter</button>
+
     </form>
+    </div>
+
+</div>
 
 {% endblock %}
