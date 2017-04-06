@@ -22,6 +22,9 @@ if(isset($_GET['id'])) {
         case 'index':
             $view = $default->index();
             break;
+        case 'adminapropos':
+            $view = $default->adminapropos();
+            break;
         default:
             $view = $default->index();
 
