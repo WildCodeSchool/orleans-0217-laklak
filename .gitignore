@@ -3,3 +3,4 @@
 /vendor/
 app/config/connect.php
 /composer.json
+/old.idea/
