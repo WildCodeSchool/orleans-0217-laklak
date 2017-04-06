@@ -28,9 +28,20 @@ if (isset($_GET['page'])) {
                 case 'ajoutartistes':
                     $view = $default->ajoutartistes();
                     break;
+
+
+                case 'adminapropos':
+                    $view = $default->adminapropos();
+
+                case 'listeartistes':
+                    $view = $default->listeartistes();
+                    break;
+                case 'listeevenements':
+                    $view = $default->listeevenements();
+
+                    break;
                 default :
                     $view = $default->index();
-
 
             }
             echo $view;
@@ -40,9 +51,10 @@ if (isset($_GET['page'])) {
 
             $default = new DefaultController(true);
 
+
             switch ($page) {
-                case 'a-propos':
-                    $view = $default->a-propos();
+                case 'apropos':
+                    $view = $default->apropos();
                     break;
                 case 'liste_artistes':
                     $view = $default->liste_artistes();
@@ -68,4 +80,5 @@ if (isset($_GET['page'])) {
         echo $view;
 
 }
+
 
