@@ -58,8 +58,10 @@ else {
             $view = $default->index();
     }
 
+    echo $view;
+
 }
 
 
 
-echo $view;
+
