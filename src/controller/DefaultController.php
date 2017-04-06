@@ -11,9 +11,9 @@ namespace laklak\controller;
 
 class DefaultController extends Controller
 {
-    public function presentation()
+    public function apropos()
     {
-        return $this->twig->render('presentation.html.twig');
+        return $this->twig->render('apropos.html.twig');
     }
 
     public function liste_artistes()
