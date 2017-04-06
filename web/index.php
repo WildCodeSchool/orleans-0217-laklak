@@ -27,19 +27,12 @@ if (isset($_GET['page'])) {
                 case 'ajoutartistes':
                     $view = $default->ajoutartistes();
                     break;
+
+                case 'adminapropos':
+                    $view = $default->adminapropos();
+                    break;
                 default :
                     $view = $default->index();
-
-    switch ($page) {
-        case 'index':
-            $view = $default->index();
-            break;
-        case 'adminapropos':
-            $view = $default->adminapropos();
-            break;
-        default:
-            $view = $default->index();
-
 
 
             }
@@ -47,11 +40,6 @@ if (isset($_GET['page'])) {
         } //Sinon, on redirige l'utilisateur vers les pages du front
         else {
 
-
-
-    echo $view;
-
-}
 
             $default = new DefaultController(true);
 
