@@ -46,8 +46,8 @@ if (isset($_GET['page'])) {
 
 
             switch ($page) {
-                case 'a-propos':
-                    $view = $default->a-propos();
+                case 'apropos':
+                    $view = $default->apropos();
                     break;
                 case 'liste_artistes':
                     $view = $default->liste_artistes();
