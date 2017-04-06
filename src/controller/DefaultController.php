@@ -33,7 +33,7 @@ class DefaultController extends Controller
 
     public function artistes()
     {
-        return $this->twig->render('ajoutartistes.html.twig');
+        return $this->twig->render('artistes.html.twig');
     }
 
     public function contact()
