@@ -1,15 +1,19 @@
 {
     "name": "wilder12/orleans-0217-laklak",
     "require": {
-        "twig/twig": "^2.3"
+        "twig/twig": "^2.3",
+        "ckeditor/ckeditor": "4.*"
     },
     "authors": [
         {
-            "name": "Jean-Baptiste",
-            "email": "jb.hallassou@gmail.com"
+
+            "name": "Veronique",
+            "email": "veronique.jollivel@wanadoo.fr"
         }
     ],
     "autoload": {
         "psr-4": {"laklak\\": "src/"}
     }
+
 }
+
