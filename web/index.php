@@ -17,7 +17,7 @@ if (isset($_GET['page'])) {
 
             $default = new AdminController(false);
 
-<<<<<<< HEAD
+
             switch ($page) {
                 case 'index':
                     $view = $default->index();
@@ -28,18 +28,14 @@ if (isset($_GET['page'])) {
                 case 'ajoutartistes':
                     $view = $default->ajoutartistes();
                     break;
+                case 'listeartistes':
+                    $view = $default->listeartistes();
+                    break;
+                case 'listeevenements':
+                    $view = $default->listeevenements();
+                    break;
                 default :
                     $view = $default->index();
-=======
-    switch ($page) {
-        case 'index':
-            $view = $default->index();
-            break;
-        default:
-            $view = $default->index();
->>>>>>> 0a5962e21c7f4001045174c5eaf9f4970e2d908f
-
-
             }
             echo $view;
         } //Sinon, on redirige l'utilisateur vers les pages du front
