@@ -1,0 +1,39 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+
+    <h1>Artistes</h1>
+
+
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <td>ID</td>
+            <td>Visuel</td>
+            <td>Artiste</td>
+            <td>Action Modifier</td>
+            <td>Action Supprimer</td>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr>
+            <td>1</td>
+            <td><img src="/web/images/photoartistes/2016/meryem.jpg" width="50px"></td>
+            <td>Meryem</td>
+            <td><button type="submit" class="btn btn-default">Modifier</button></td>
+            <td><button type="submit" class="btn btn-default">Supprimer</button></td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td><img src="/web/images/photoartistes/2016/meryem.jpg" width="50px"></td>
+            <td>Meryem</td>
+            <td><button type="submit" class="btn btn-default">Modifier</button></td>
+            <td><button type="submit" class="btn btn-default">Supprimer</button></td>
+        </tr>
+        </tbody>
+
+        <tfoot></tfoot>
+    </table>
+
+{% endblock %}
