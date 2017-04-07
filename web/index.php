@@ -35,8 +35,8 @@ if (isset($_GET['page'])) {
                 case 'listeartistes':
                     $view = $default->listeartistes();
                     break;
-                case 'listeevenements':
-                    $view = $default->listeevenements();
+                case 'listEvent':
+                    $view = $default->listEvent();
                     break;
                 default :
                     $view = $default->index();

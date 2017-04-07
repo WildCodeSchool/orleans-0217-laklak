@@ -10,15 +10,19 @@ namespace laklak\controller;
 
 
 use laklak\Model\Event;
+use laklak\Model\EventManager;
 
 class EventController extends Controller
 {
 
     public function listEvent()
-    {
-        $events = new Event();
-        $events = $this->findAll('event');
-        return $this->twig->render('listEvent.html.twig');
+    {   // je vais appeler une méthode de EventManager listAll
+        // j'instancie un objet EventManager
+        $eventManager = new EventManager();
+        // j'applique la méthode listAll à l'objet EventManager que j'envoie dans la variable $events
+        $events=$eventManager->listAll('event');
+        // j'applique mon objet en cours à la propriété twig à la méthode render
+        return $this->twig->render('listEvent.html.twig',array('events'=>$events));
     }
 
     public function addEvent()
