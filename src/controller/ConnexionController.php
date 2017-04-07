@@ -19,7 +19,7 @@ class ConnexionController extends Controller
     public function connexion(array $connexion)
     {
         $this->email = $connexion['email'];
-        $this->mdp = $connexion['mdp'];
+        $this->mdp = sha1($connexion['mdp']);
 
         if($this->verif()){
             $_SESSION['email'] = $this->email;
