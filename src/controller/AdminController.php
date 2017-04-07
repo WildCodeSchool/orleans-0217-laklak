@@ -34,6 +34,11 @@ class AdminController extends Controller
         return $this->getTwig()->render('listEvent.html.twig');
     }
 
+    public function addEvent()
+    {
+        return $this->twig->render('addEvent.html.twig');
+    }
+
     public function addArtist()
     {
         // si le form est submit, je récupère mon $_POST
