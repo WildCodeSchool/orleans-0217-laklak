@@ -44,6 +44,9 @@ if (isset($_GET['page'])) {
                 case 'listEvent':
                     $view = $default->listEvent();
                     break;
+                case 'addEvent':
+                    $view = $default->addEvent();
+                    break;
                 case 'deconnexion':
                     $view = $default->deconnexion();
                     break;

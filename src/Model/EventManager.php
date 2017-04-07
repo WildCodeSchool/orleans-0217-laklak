@@ -22,6 +22,20 @@ class EventManager
 
     }
 
+    public function listOne($table,$id)
+    {
+        // connection à la bdd
+        $db = new DB();
+        // requete sql pour récupérer tous les events dans un tableau d'objets Events
+        $req = "SELECT * FROM $table WHERE id=:id";
+        $prep = $db->prepare($req);
+        $prep->bindValue(':id',$id,PDO::PARAM_INT);
+        $prep->execute();
+        $res = $prep ->fetchAll(PDO::FETCH_CLASS,'laklak\Model\Event');
+        return $res[0];
+
+    }
+
     public function show($id)
     {
         $db = new DB();
