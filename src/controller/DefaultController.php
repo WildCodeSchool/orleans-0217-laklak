@@ -43,14 +43,19 @@ class DefaultController extends Controller
 
     public function index()
     {
-        return $this->twig->render('index.php.twig');
+        return $this->twig->render('index.html.twig');
     }
-
 
     public function agenda()
     {
 
         return $this->twig->render('agenda.html.twig');
+
+    }
+    public function connexion()
+    {
+
+        return $this->twig->render('connexion.html.twig');
 
     }
 
