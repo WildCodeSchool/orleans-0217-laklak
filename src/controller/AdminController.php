@@ -23,15 +23,26 @@ class AdminController extends Controller
         return $this->twig->render('adminapropos.html.twig');
     }
 
+
+    public function listeartistes()
+    {
+        return $this->twig->render('listeartistes.html.twig');
+    }
+
+    public function listEvent()
+    {
+        return $this->twig->render('listEvent.html.twig');
+    }
+
     public function addArtist()
     {
         // si le form est submit, je récupère mon $_POST
-            // je fais mon traitement
-            // $artist = new Artist()
-            // $artist -> setNom($_POST['nom');
+        // je fais mon traitement
+        // $artist = new Artist()
+        // $artist -> setNom($_POST['nom');
 
-            // $artist -> insert();
-            // redirect vers la page qui liste les artist $this->listArtist()
+        // $artist -> insert();
+        // redirect vers la page qui liste les artist $this->listArtist()
 
         // sinon le form est pas submit, j'affiche le form
         return $this->twig->render('ajoutartistes.html.twig');
@@ -40,14 +51,15 @@ class AdminController extends Controller
     public function updateArtist($id)
     {
         // si le form est submit
-            // $artist = findOne($id);
-            // comme pour le addArtist
-            // $artist->update();
-            //  redirect
+        // $artist = findOne($id);
+        // comme pour le addArtist
+        // $artist->update();
+        //  redirect
 
         // sinon j'affiche le form
        // return $this->twig->render('ajoutartistes.html.twig', array('artist'=>$artist));
     }
+
 
     public function listeartistes()
     {
