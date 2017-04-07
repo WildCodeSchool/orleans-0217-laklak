@@ -1,10 +1,20 @@
-<!--
-    you can substitue the span of reauth email for a input with the email and
-    include the remember me checkbox
-    -->
+<?php
+session_start();
+$admin = new \laklak\controller\ConnexionController();
+if (isset($_POST['email']) && isset($_POST['mdp'])){
+    $user = $_POST['email'];
+    $mdp = $_POST['mdp'];
+    $admin->verif($user,$mdp);
+}
 
-<link href="css/connection.css" rel="stylesheet">
+?>
 
+<div class="presentation">
+    <h1>LAKLAK PRODUCTIONS - Administration</h1>
+
+</div>
+
+</div>
 <div class="container">
     <div class="card card-container">
         <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
@@ -12,8 +22,8 @@
         <p id="profile-name" class="profile-name-card"></p>
         <form class="form-signin">
             <span id="reauth-email" class="reauth-email"></span>
-            <input type="email" id="inputEmail" class="form-control" placeholder="Adresse email" required autofocus>
-            <input type="password" id="inputPassword" class="form-control" placeholder="Mot de passe" required>
+            <input type="email" id="inputEmail" class="form-control" name="email" placeholder="Adresse email" required autofocus>
+            <input type="password" id="inputPassword" class="form-control" name="mdp" placeholder="Mot de passe" required>
             <div id="remember" class="checkbox">
                 <label>
                     <input type="checkbox" value="remember-me"> Se souvenir de moi
