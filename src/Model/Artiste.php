@@ -118,7 +118,7 @@ class Artiste
     /**
      * @param mixed $artist_facebook_url
      */
-    public function setArtistFacebookUrl($artist_facebook_url)
+    public function set($artist_facebook_url)
     {
         $this->artist_facebook_url = $artist_facebook_url;
     }
