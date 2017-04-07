@@ -1,8 +1,7 @@
 {
     "name": "wilder12/orleans-0217-laklak",
     "require": {
-        "twig/twig": "^2.3",
-        "ckeditor/ckeditor": "4.*"
+        "twig/twig": "^2.3"
 
     },
     "authors": [
