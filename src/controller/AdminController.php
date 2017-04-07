@@ -57,10 +57,29 @@ class AdminController extends Controller
         //  redirect
 
         // sinon j'affiche le form
-        return $this->twig->render('ajoutartistes.html.twig', array('artist'=>$artist));
+       // return $this->twig->render('ajoutartistes.html.twig', array('artist'=>$artist));
     }
 
 
+    public function listeartistes()
+    {
+        return $this->twig->render('listeartistes.html.twig');
+    }
+
+    public function listEvent()
+    {
+        return $this->twig->render('listEvent.html.twig');
+    }
+    public function deconnexion()
+    {
+        session_destroy();
+        return $this->twig->render('deconnexion.html.twig');
+    }
+
+    public function ajoutartistes()
+    {
+        return $this->twig->render('ajoutartistes.html.twig');
+    }
 
 
 

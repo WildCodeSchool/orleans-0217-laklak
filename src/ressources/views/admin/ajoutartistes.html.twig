@@ -8,55 +8,55 @@
     <form method="POST" action="ajoutartistes.html.twig">
         <div class="form-group">
             <label for="nom">Nom de l'artiste</label>
-            <input type="text" class="form-control" id="nom" placeholder="nom de l'artiste">
+            <input type="text" class="form-control" id="nom" placeholder="nom de l'artiste" name="nomArtist">
         </div>
         <div class="form-group">
             <label for="biographie">Biographie</label>
-            <textarea cols="70" class="ckeditor" rows="10" class="form-control" id="bio" placeholder="Biographie"></textarea>
+            <textarea cols="70" class="ckeditor" rows="10" class="form-control" id="bio" placeholder="Biographie" name="bio"></textarea>
         </div>
         <div class="form-group">
             <label for="Site de l'artiste">site de l'artiste</label>
-            <input type="url" class="form-control" id="url" placeholder="site de l'artiste">
+            <input type="url" class="form-control" id="url" placeholder="site de l'artiste" name="siteArtist">
         </div>
         <div class="form-group">
             <label for="IframeFacebook">Iframe Facebook <i class="icon-facebook"></i></label>
-            <input type="url" class="form-control" id="iframeFacebook" placeholder="lien Facebook">
+            <input type="url" class="form-control" id="iframeFacebook" placeholder="lien Facebook" name="fbArtistIframe">
             <comment><em> prendre le code de l'iframe de <a href="https://developers.facebook.com/docs/plugins/page-plugin">facebook.</a></em></comment>
         </div>
         <div class="form-group">
             <label for="IframeYoutube">Iframe Youtube <i class="icon-youtube"></i></label>
-            <input type="url" class="form-control" id="iframeYoutube" placeholder="lien Youtube">
+            <input type="url" class="form-control" id="iframeYoutube" placeholder="lien Youtube" name="yArtistIframe">
         </div>
         <div class="form-group">
             <label for="IframeSoundCloud">Iframe Soundcloud <i class="icon-soundcloud"></i></label>
-            <input type="url" class="form-control" id="iframeSoundCloud" placeholder="lien Soundcloud">
+            <input type="url" class="form-control" id="iframeSoundCloud" placeholder="lien Soundcloud" name="scArtistIframe>
         </div>
         <div class="form-group">
             <label for="fluxTwitter">Twitter <i class="icon-twitter"></i></label>
-            <input type="url" class="form-control" id="fluxTwitter" placeholder="page Twitter">
+            <input type="url" class="form-control" id="fluxTwitter" placeholder="page Twitter" name="twitArtist">
         </div>
         <div class="form-group">
             <label for="fluxVimeo">Vimeo <i class="icon-vimeo"></i></label>
-            <input type="url" class="form-control" id="fluxVimeo" placeholder="page Vimeo">
+            <input type="url" class="form-control" id="fluxVimeo" placeholder="page Vimeo" name="vimArtist">
         </div>
 
         <div class="form-group">
             <label for="fluxInstagram">Instagram <i class="icon-instagram"></i></label>
-            <input type="url" class="form-control" id="fluxInstagram" placeholder="page Instagram">
+            <input type="url" class="form-control" id="fluxInstagram" placeholder="page Instagram" name="instArtist">
         </div>
         <div class="form-group">
             <label for="fluxTumblr">Tumblr <i class="icon-tumblr"></i></label>
-            <input type="url" class="form-control" id="fluxtumblr" placeholder="page Tumblr">
+            <input type="url" class="form-control" id="fluxtumblr" placeholder="page Tumblr" name="tumbArtist">
         </div>
         <h4>Artiste Laklak</h4>
         <div class="radio">
             <label>
-                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">Oui
+                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" name="laklak">Oui
             </label>
         </div>
         <div class="radio">
             <label>
-                <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2" checked>Non
+                <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2" name="laklak" checked>Non
             </label>
         </div>
 
@@ -76,7 +76,7 @@
         <select class="selectpicker" multiple title="Choisir un ou plusieurs événement">
             <option>Event 1</option>
             <option>Event 2</option>
-            <option>event 3</option>
+            <option>Event 3</option>
         </select>
     </div>
 

@@ -29,6 +29,7 @@
     <link rel="stylesheet" href="css/custom.css" type="text/css"/>
     <link rel="stylesheet" href="css/magnific-popup.css" type="text/css"/>
     <link rel="icon" type="image/png" href="images/photoartistes/logo.jpg" />
+    {% block css %}{% endblock %}
 
 
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -40,7 +41,7 @@
 <body>
 <!-- Header ============================================= -->
 
-<header id="header" class="style-3 full-header transparent-header static-sticky" data-sticky-class="not-dark" data-sticky-offset="0">
+<header id="header" class="{% block classHeader %}{% endblock %}style-3 full-header transparent-header static-sticky" data-sticky-class="not-dark" data-sticky-offset="0">
     <div id="header-wrap">
         <div class="clearfix">
             <div id="primary-menu-trigger">
@@ -81,7 +82,7 @@
 {% block content %}
 
 {% endblock %}
-
+{% block footer %}
 <!--footer-->
 
 <footer id="footer" class="dark">
@@ -192,3 +193,4 @@
 
 </body>
 </html>
+{% endblock %}
