@@ -352,22 +352,6 @@ class Event
         $this->event_booking_url = $event_booking_url;
     }
 
-    public function listAll()
-    {
-        // connection à la bdd
-        $db = new DB();
-        // requete sql pour récupérer tous les events dans un tableau d'objets Events
-        $events = $db -> findAll('event');
-    }
 
-    public function show($id)
-    {
-        $db = new DB();
-        $event = $db -> findOne('event', $id);
-    }
-
-    public function add() {
-
-    }
 
 }
