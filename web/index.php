@@ -41,8 +41,11 @@ if (isset($_GET['page'])) {
                 case 'listeartistes':
                     $view = $default->listeartistes();
                     break;
-                case 'listeevenements':
-                    $view = $default->listeevenements();
+                case 'listEvent':
+                    $view = $default->listEvent();
+                    break;
+                case 'addEvent':
+                    $view = $default->addEvent();
                     break;
                 case 'deconnexion':
                     $view = $default->deconnexion();

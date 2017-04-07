@@ -1,0 +1,113 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+
+    <h1>Ajouter un évènement</h1>
+    <div class="container-fluid">
+        <div class="row col-xs-9">
+            <form method="POST" name="addEvent" action="addEvent.html.twig">
+
+                <div class="form-group">
+                    <label for="nom">Nom</label>
+                    <input type="text" class="form-control" name="nom" id="nom" name="nom" placeholder="nom de l'évènement">
+                </div>
+
+                <div class="form-group">
+                    <label for="lieu">Lieu</label>
+                    <input type="text" class="form-control" name="lieu" id="lieu" placeholder="lieu de l'évènement">
+                </div>
+
+                <div class="form-group">
+                    <label for="date">Date</label>
+                    <input type="text" class="form-control" name="date" id="date" placeholder="date de l'évènement">
+                </div>
+
+                <div class="form-group">
+                    <label for="artistes">Artistes de l'évènement</label>
+                    <textarea cols="70" class="ckeditor" rows="10" class="form-control" name="artistes" id="artistes" placeholder="production"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="production">Productions</label>
+                    <textarea cols="70" class="ckeditor" rows="10" class="form-control" name="production" id="production" placeholder="production"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="website_url">website url</label>
+                    <input type="url" class="form-control" id="website_url" name="website_url" placeholder="website url">
+                </div>
+
+                <div class="form-group">
+                    <label for="facebook_url">Facebook url</label>
+                    <input type="url" class="form-control" name="facebook_url" id="facebook_url" placeholder="url facebook">
+                </div>
+
+                <div class="form-group">
+                    <label for="twitter_url">Twitter url</label>
+                    <input type="url" class="form-control" name="twitter_url" id="twitter_url" placeholder="url twitter">
+                </div>
+
+                <div class="form-group">
+                    <label for="soundcloud_url">Soundcloud url</label>
+                    <input type="url" class="form-control" name="soundcloud_url" id="soundcloud_url" placeholder="url soundcloud">
+                </div>
+
+                <div class="form-group">
+                    <label for="iframe_soundcloud">Iframe Soundcloud <i class="icon-soundcloud"></i></label>
+                    <input type="url" class="form-control" id="iframe_soundcloud" name="iframe_soundcloud" placeholder="iframe Soundcloud">
+                </div>
+
+                <div class="form-group">
+                    <label for="iframe_youtube">Iframe Youtube <i class="icon-youtube"></i></label>
+                    <input type="url" class="form-control" name="iframe_youtube" id="iframe_youtube" placeholder="iframe Youtube">
+                </div>
+
+                <h4>Evènement Laklak</h4>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">Oui
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2" checked>Non
+                    </label>
+                </div>
+
+                <div class="form-group">
+                    <label for="image_evenement">Photo profil évènement</label>
+                    <input type="file" name="image_evenement" id="image_evenement">
+                </div>
+
+                <div class="form-group">
+                    <label for="image_cover_evenement">Photo couverture évènement</label>
+                    <input type="file" name="image_cover_evenement" id="image_cover_evenement">
+                </div>
+
+                <div>
+                    <label>Type évènement</label>
+                    <select class="selectpicker" multiple title="Choisir un type">
+                        <option>private</option>
+                        <option>type 2</option>
+                        <option>type 3</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="more_url">more url</label>
+                    <input type="url" class="form-control" id="more_url" name="more_url" placeholder="more_url">
+                </div>
+
+                <div class="form-group">
+                    <label for="booking_url">booking url</label>
+                    <input type="url" class="form-control" id="booking_url" name="booking_url" placeholder="more url">
+                </div>
+
+                <input class="btn btn-success" type="submit" name="addEvent" value="Ajouter">
+
+                </form>
+        </div>
+
+    </div>
+
+{% endblock %}
