@@ -61,15 +61,6 @@ class AdminController extends Controller
     }
 
 
-    public function listeartistes()
-    {
-        return $this->twig->render('listeartistes.html.twig');
-    }
-
-    public function listEvent()
-    {
-        return $this->twig->render('listEvent.html.twig');
-    }
     public function deconnexion()
     {
         session_destroy();
