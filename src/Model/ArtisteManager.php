@@ -39,9 +39,8 @@ class ArtisteManager extends Artiste
      */
     public function add()
     {
-        $db = new DB();
-        $artistes = $db ->add('artistes');
-        return $this->render('front/liste_artistes.html.twig');
+        $formEvent = new Form;
+
     }
 
     /**
