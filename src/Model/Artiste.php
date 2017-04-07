@@ -21,7 +21,9 @@ class Artiste
     private $artist_twitter_url;
     private $artist_tumblr_url;
     private $artist_vimeo_url;
+    private $artiste_insta_url;
     private $artist_iframe_soundcloud_url;
+    private $artist_soundcloud_url;
     private $artist_iframe_youtube_url;
     private $artist_img_cover_path;
     private $artist_img_profil_path;
@@ -33,6 +35,22 @@ class Artiste
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getArtistSoundcloudUrl()
+    {
+        return $this->artist_soundcloud_url;
+    }
+
+    /**
+     * @param mixed $artist_soundcloud_url
+     */
+    public function setArtistSoundcloudUrl($artist_soundcloud_url)
+    {
+        $this->artist_soundcloud_url = $artist_soundcloud_url;
     }
 
     /**
@@ -169,6 +187,23 @@ class Artiste
     public function setArtistVimeoUrl($artist_vimeo_url)
     {
         $this->artist_vimeo_url = $artist_vimeo_url;
+    }
+
+
+    /**
+     * @return mixed
+     */
+    public function getArtisteInstaUrl()
+    {
+        return $this->artiste_insta_url;
+    }
+
+    /**
+     * @param mixed $artiste_insta_url
+     */
+    public function setArtisteInstaUrl($artiste_insta_url)
+    {
+        $this->artiste_insta_url = $artiste_insta_url;
     }
 
     /**

@@ -15,11 +15,11 @@ class ArtisteManager extends Artiste
     {
         // connection à la bdd
         $db = new DB();
-        // requete sql pour récupérer tous les artistes dans un tableau d'objets Artistes
-        $artistes = $db -> findAll('artistes');
-        // affichage de la vue HTML
-        return $this->render('/front/liste_artistes.html.twig', ['artistes'=>$artistes]);
+        $req = "SELECT * FROM $table";
+        $res = $this->db->query($req);
+        return $res->fetchAll(PDO::FETCH_CLASS,'laklak\Model\Artiste');
     }
+
 
     /**
      * récupération de l'artiste correspondant à l'id $id et affichage des informations de cet artiste uniquement
@@ -28,9 +28,14 @@ class ArtisteManager extends Artiste
      */
     public function showOne($id)
     {
-        $db = new DB();
-        $artiste = $db -> findOne('artiste', $id);
-        return $this->render('front/artiste.html.twig', ['artiste'=>$artiste]);
+        $req = "SELECT * FROM $table WHERE id=$id";
+        $prep = $this->db->prepare($req);
+        $prep->bindValue(':id', $id, \PDO::PARAM_INT);
+
+        $prep->execute();
+
+        $res = $prep->fetchAll(\PDO::FETCH_CLASS, __NAMESPACE__ . '\model\\'.ucfirst($table));
+        return $res[$id];
 
     }
 
@@ -39,7 +44,11 @@ class ArtisteManager extends Artiste
      */
     public function add()
     {
-        $formEvent = new Form;
+
+        $bdd->exec("INSERT INTO artiste (nom, prenom, age) VALUES ('$artist_name', '$artist_bio', '$artist_laklak','$artist_website_url',
+         '$artist_facebook_url','$artist_twitter_url','$artist_tumblr_url','$artist_vimeo_url','$artist_soundcloud_url','$artist_insta_url','$artist_iframe_soundcloud_url','$artist_iframe_youtube_url',
+         '$artist_img_cover_path','$artist_img_profil_path','$artist_id_event')");
+
 
     }
 
@@ -47,7 +56,12 @@ class ArtisteManager extends Artiste
      *
      */
     public function update() {
-
+        $res=$bdd->prepare("UPDATE artist SET  WHERE id =:id");
+        $res->bindValue(':nom', $_POST['nom']);
+        $res->bindValue(':prenom', $_POST['premon']);
+        $res->bindValue(':age', $_POST['age']);
+        $res->bindValue(':id', $_POST['id']);
+        $res->execute();
     }
 
     /**
