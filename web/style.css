@@ -951,7 +951,7 @@ html[xmlns] .slider-wrap {display: block;}
 
 #header.transparent-header.floating-header { margin-top: 60px; }
 
-#header.transparent-header.floating-header .container {
+#header.transparent-header.floating-header:not(.home) .container {
 	width: 1220px;
 	background-color: #FFF;
 	padding: 0 40px;
@@ -2040,12 +2040,14 @@ body.top-search-open #top-account { opacity: 0; }
 	z-index: 199;
 	-webkit-backface-visibility: hidden;
 }
-
 #header.sticky-header #header-wrap {
 	position: fixed;
 	top: 0;
 	left: 0;
 	width: 100%;
+}
+
+#header.sticky-header:not(.home) #header-wrap {
 	background-color: #FFF;
 	box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }

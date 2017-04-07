@@ -17,7 +17,7 @@ class Controller
     protected $bdd;
 
 
-    public function __construct($route)
+    public function __construct($route = true)
     {
         if ($route){
             $loader = new \Twig_Loader_Filesystem(__DIR__ . '/../../src/ressources/views/front');

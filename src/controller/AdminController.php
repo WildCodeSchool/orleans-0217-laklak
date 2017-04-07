@@ -37,6 +37,11 @@ class AdminController extends Controller
     {
         return $this->twig->render('listeevenements.html.twig');
     }
+    public function deconnexion()
+    {
+        session_destroy();
+        return $this->twig->render('deconnexion.html.twig');
+    }
 
 
 }

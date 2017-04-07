@@ -1,10 +1,16 @@
 <?php
+session_start();
 require '../vendor/autoload.php';
 use laklak\controller\DefaultController;
 use laklak\controller\AdminController;
 
 
-
+if (isset($_POST['email']) && isset($_POST['mdp'])){
+    $user = $_POST['email'];
+    $mdp = $_POST['mdp'];
+    $admin = new \laklak\controller\ConnexionController();
+    $admin->connexion($_POST);
+}
 
 $page = '';
 if (isset($_GET['page'])) {
@@ -13,7 +19,7 @@ if (isset($_GET['page'])) {
 
 //Si l'admin est connecté (simulé par le Get['id'] )
 //On redirige l'admin vers les pages admin
-        if (isset($_GET['id'])) {
+        if (isset($_SESSION['email'])) {
 
             $default = new AdminController(false);
 
@@ -37,6 +43,9 @@ if (isset($_GET['page'])) {
                     break;
                 case 'listeevenements':
                     $view = $default->listeevenements();
+                    break;
+                case 'deconnexion':
+                    $view = $default->deconnexion();
                     break;
                 default :
                     $view = $default->index();
@@ -72,6 +81,13 @@ if (isset($_GET['page'])) {
                 case 'artistes':
                     $view = $default->artistes();
                     break;
+                case 'connexion':
+                    $view = $default->connexion();
+                    break;
+                case 'index':
+                    $view = $default->index();
+                    break;
+
                 default :
                     $view = $default->index();
             }
