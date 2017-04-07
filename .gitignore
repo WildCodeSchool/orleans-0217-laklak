@@ -2,6 +2,8 @@
 
 /vendor/
 /composer.json
-
 /app/config/connect.php
+.idea
+
+
 
