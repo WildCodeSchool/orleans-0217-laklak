@@ -1,12 +1,17 @@
 {% extends 'layout.html.twig' %}
 {% block content %}
 
+
+ <link rel="stylesheet" href="summernote/summernote.css">
  <form method="post" action="adminapropos.html.twig">
   <h1>Modifier texte de présentation</h1>
   <div class="form-group">
-   <label for="produit">Texte de presentation</label>
 
-  <textarea class="form-control" style = width:70% rows="10"></textarea>
+   <label for="produit"></label>
+
+
+  <textarea class="form-control" style = width:70% rows="10">{{ resu.text_presentation }}</textarea>
+
 
   <input class="btn btn-default" type="reset" name="btnReset" value="Effacer" />
    <input class="btn btn-primary" type="submit" name="btnSubmit" value="modifier" />
@@ -15,4 +20,5 @@
   </div>
 
  </form>
+ <script type="text/javascript" src="summernote/summernote.js"></script>
 {% endblock %}
