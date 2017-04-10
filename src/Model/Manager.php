@@ -8,7 +8,7 @@
 
 namespace laklak\Model;
 
-require __DIR__ . '../../app/config/connect.php';
+require __DIR__ . '/../../app/config/connect.php';
 
 class Manager
 {

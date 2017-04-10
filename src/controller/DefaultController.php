@@ -13,49 +13,49 @@ class DefaultController extends Controller
 {
     public function apropos()
     {
-        return $this->twig->render('apropos.html.twig');
+        return $this->getTwig()->render('apropos.html.twig');
     }
 
     public function liste_artistes()
     {
-        return $this->twig->render('liste_artistes.html.twig');
+        return $this->getTwig()->render('liste_artistes.html.twig');
     }
 
     public function evenements()
     {
-        return $this->twig->render('evenements.html.twig');
+        return $this->getTwig()->render('evenements.html.twig');
     }
 
     public function liste_evenements()
     {
-        return $this->twig->render('liste_evenements.html.twig');
+        return $this->getTwig()->render('liste_evenements.html.twig');
     }
 
     public function artistes()
     {
-        return $this->twig->render('artistes.html.twig');
+        return $this->getTwig()->render('artistes.html.twig');
     }
 
     public function contact()
     {
-        return $this->twig->render('contact.html.twig');
+        return $this->getTwig()->render('contact.html.twig');
     }
 
     public function index()
     {
-        return $this->twig->render('index.html.twig');
+        return $this->getTwig()->render('index.html.twig');
     }
 
     public function agenda()
     {
 
-        return $this->twig->render('agenda.html.twig');
+        return $this->getTwig()->render('agenda.html.twig');
 
     }
     public function connexion()
     {
 
-        return $this->twig->render('connexion.html.twig');
+        return $this->getTwig()->render('connexion.html.twig');
 
     }
 

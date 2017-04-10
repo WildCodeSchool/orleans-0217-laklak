@@ -2,19 +2,32 @@
 
 namespace laklak\controller;
 
-require __DIR__ .'/../../app/config/connect.php';
-
 
 class Controller
 {
+
     /**
      * @var \Twig_Environment
      */
-    protected $twig;
+    private $twig;
+
     /**
-     * @var \PDO
+     * @return \Twig_Environment
      */
-    protected $bdd;
+    public function getTwig()
+    {
+        return $this->twig;
+    }
+
+    /**
+     * @param \Twig_Environment $twig
+     * @return Controller
+     */
+    public function setTwig(\Twig_Environment $twig)
+    {
+        $this->twig = $twig;
+        return $this;
+    }
 
 
     public function __construct($route = true)
@@ -31,7 +44,6 @@ class Controller
 
         ]);
         $twig->addExtension(new \Twig_Extension_Debug());
-        $this->twig = $twig;
-        $this->bdd = new \PDO(DSN,USER,PASS);
+        $this->setTwig($twig);
     }
 }

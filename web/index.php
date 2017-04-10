@@ -37,15 +37,20 @@ if (isset($_GET['page'])) {
                 case 'adminapropos':
                     $view = $default->adminapropos();
                     break;
-
                 case 'listeartistes':
                     $view = $default->listeartistes();
                     break;
-                case 'listeevenements':
-                    $view = $default->listeevenements();
+                case 'listEvent':
+                    $view = $default->listEvent();
+                    break;
+                case 'addEvent':
+                    $view = $default->addEvent();
                     break;
                 case 'deconnexion':
                     $view = $default->deconnexion();
+                    break;
+                case 'modifAccueil':
+                    $view = $default->modifAccueil();
                     break;
                 default :
                     $view = $default->index();
