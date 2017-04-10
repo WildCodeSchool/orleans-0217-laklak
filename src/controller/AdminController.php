@@ -20,7 +20,9 @@ class AdminController extends Controller
 
     public function adminAPropos()
     {
-        return $this->twig->render('adminapropos.html.twig');
+        $res = new aproposController();
+        $resultat = $res->textPresentation();
+        return $this->twig->render('adminapropos.html.twig', array('resu' => $resultat));
     }
 
     public function addArtist()
