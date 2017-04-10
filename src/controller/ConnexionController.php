@@ -8,8 +8,17 @@
 
 namespace laklak\controller;
 
+require __DIR__ . '/../../app/config/connect.php';
+
 class ConnexionController extends Controller
 {
+    protected $bdd;
+
+    public function __construct()
+    {
+        parent::__construct();
+        $this->bdd = new \PDO(DSN,USER,PASS);
+    }
 
     private $email;
 

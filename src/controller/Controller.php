@@ -2,8 +2,6 @@
 
 namespace laklak\controller;
 
-require __DIR__ .'/../../app/config/connect.php';
-
 
 class Controller
 {
@@ -32,13 +30,7 @@ class Controller
     }
 
 
-    /**
-     * @var \PDO
-     */
-    protected $bdd;
-
-
-    public function __construct($route)
+    public function __construct($route = true)
     {
         if ($route){
             $loader = new \Twig_Loader_Filesystem(__DIR__ . '/../../src/ressources/views/front');
@@ -53,6 +45,5 @@ class Controller
         ]);
         $twig->addExtension(new \Twig_Extension_Debug());
         $this->setTwig($twig);
-        $this->bdd = new \PDO(DSN,USER,PASS);
     }
 }

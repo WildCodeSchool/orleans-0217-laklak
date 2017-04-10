@@ -18,7 +18,7 @@ class ArtistController extends Controller
     {
         $artists = new Artiste();
         $artists = $this->findAll('artiste');
-        return $this->twig->render('listartistes.html.twig');
+        return $this->getTwig()->render('listartistes.html.twig');
     }
 
     public function addArtist()
@@ -55,7 +55,7 @@ class ArtistController extends Controller
         // redirect vers la page qui liste les artist $this->listArtist()
 
         // sinon le form est pas submit, j'affiche le form
-        return $this->twig->render('ajoutartistes.html.twig');
+        return $this->getTwig()->render('ajoutartistes.html.twig');
     }
 
     public function updateEvent($id)
@@ -67,7 +67,7 @@ class ArtistController extends Controller
         //  redirect
 
         // sinon j'affiche le form
-        return $this->twig->render('ajoutartistes.html.twig', array('artist'=>$artist));
+        return $this->getTwig()->render('ajoutartistes.html.twig', array('artist'=>$artist));
     }
 
 }
