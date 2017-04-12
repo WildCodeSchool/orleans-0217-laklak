@@ -10,11 +10,13 @@ namespace laklak\controller;
 
 
 
+
 use laklak\Model\ArtisteManager;
 use laklak\Model\AdminaproposManager;
 use laklak\Model\PresentationManager;
 use laklak\Model\Slider;
 use laklak\Model\SliderManager;
+
 
 
 class AdminController extends Controller
@@ -26,25 +28,11 @@ class AdminController extends Controller
     }
 
 
-    public function adminapropos()
+
+    public function listeartistes()
     {
-        $presentationmanager = new PresentationManager();
-        if(isset($_POST['enregistrer'])) {
-        $presentationmanager->updatePresentation($_POST);
-        }
-        $presentation = $presentationmanager->textPresentation();
-        return $this->getTwig()->render('adminapropos.html.twig', array('presentation' => $presentation));
-
-
-        $res = new aproposController();
-        $resultat = $res->textPresentation();
-        return $this->getTwig()->render('adminapropos.html.twig', array('resu' => $resultat));
-
-
-        
+        return $this->getTwig()->render('listeartistes.html.twig');
     }
-
-
 
 
     public function listEvent()
@@ -59,48 +47,16 @@ class AdminController extends Controller
     }
 
 
-    public function updateArtist($id)
-    {
-        // si le form est submit
-        // $artist = findOne($id);
-        // comme pour le addArtist
-        // $artist->update();
-        //  redirect
 
-        // sinon j'affiche le form
-       // return $this->getTwig()->render('ajoutartistes.html.twig', array('artist'=>$artist));
-    }
 
     public function deconnexion()
     {
         session_destroy();
         return $this->getTwig()->render('deconnexion.html.twig');
     }
-
-
     public function listeevenements()
     {
         return $this->getTwig()->render('listeevenements.html.twig');
 
     }
-
-
-    public function modifAccueil()
-    {
-        $slide = new SliderManager();
-        $slides = $slide->selectAllSlide();
-        if (isset($_POST['addSlider'])) {
-            $slide->addSlide($_POST,$_FILES);
-            header('location: ?page=modifAccueil');
-        } elseif (isset($_POST['deleteSlider'])) {
-            $slide->deleteOneSlide($_POST['id']);
-            header('location: ?page=modifAccueil');
-        } elseif (isset($_POST['updateSlider'])) {
-            $slide->updateSlide($_POST);
-            header('location: ?page=modifAccueil');
-        }
-        return $this->getTwig()->render('modifAccueil.html.twig', array('slides' => $slides));
-
-    }
-
 }
