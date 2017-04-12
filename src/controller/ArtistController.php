@@ -22,6 +22,12 @@ class ArtistController extends Controller
        return $this->getTwig()->render('listeartistes.html.twig', array('artists' => $artists));
    }
 
+    public function listOneArtist()
+    {
+        $artist = new ArtisteManager();
+
+    }
+
     public function addArtist()
     {
 
@@ -48,24 +54,20 @@ class ArtistController extends Controller
 
     }
 
-    public function updateEvent($id)
+    public function updateArtist ()
     {
-        // si le form est submit
-        // $artist = findOne($id);
-        // comme pour le addArtist
-        // $artist->update();
-        //  redirect
 
-        // sinon j'affiche le form
-        return $this->getTwig()->render('ajoutartistes.html.twig', array('artist'=>$artist));
     }
 
-    public function deleteArtist ($id)
+    public function deleteArtist ()
     {
-        $artist =new ArtisteManager();
-        $artists = $artist->showAll();
+        if(isset($_POST['delete'])) {
+            $artist = new ArtisteManager();
+            $artist->deleteArtist($_POST['id']);
+        }
 
-        return $this->getTwig()->render('listeartistes.html.twig', array('artists' => $artists));
+        return $this->getTwig()->render('listeartistes.html.twig');
+
     }
 
 }

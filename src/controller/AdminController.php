@@ -8,6 +8,17 @@
 
 namespace laklak\controller;
 
+
+
+
+use laklak\Model\ArtisteManager;
+use laklak\Model\AdminaproposManager;
+use laklak\Model\PresentationManager;
+use laklak\Model\Slider;
+use laklak\Model\SliderManager;
+
+
+
 class AdminController extends Controller
 {
 
@@ -34,6 +45,10 @@ class AdminController extends Controller
         return $this->getTwig()->render('addEvent.html.twig');
 
     }
+
+
+
+
     public function deconnexion()
     {
         session_destroy();
