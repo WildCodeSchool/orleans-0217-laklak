@@ -377,3 +377,8 @@ div.desc {
 .table1 form{
     margin-bottom: 0;
 }
+
+.table1 img{
+    height: 50px;
+    width: 50px;
+}

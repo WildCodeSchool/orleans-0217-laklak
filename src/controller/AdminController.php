@@ -9,9 +9,15 @@
 namespace laklak\controller;
 
 
+
 use laklak\Model\ArtisteManager;
+=======
+use laklak\Model\AdminaproposManager;
+use laklak\Model\PresentationManager;
+>>>>>>> 6bb359b07e350eab2a8568f83f8332b97fae5a39
 use laklak\Model\Slider;
 use laklak\Model\SliderManager;
+
 
 class AdminController extends Controller
 {
@@ -22,14 +28,22 @@ class AdminController extends Controller
     }
 
 
-    public function adminAPropos()
+    public function adminapropos()
     {
+        $presentationmanager = new PresentationManager();
+        if(isset($_POST['enregistrer'])) {
+        $presentationmanager->updatePresentation($_POST);
+        }
+        $presentation = $presentationmanager->textPresentation();
+        return $this->getTwig()->render('adminapropos.html.twig', array('presentation' => $presentation));
+
 
         $res = new aproposController();
         $resultat = $res->textPresentation();
         return $this->getTwig()->render('adminapropos.html.twig', array('resu' => $resultat));
 
-        return $this->getTwig()->render('adminapropos.html.twig');
+
+        
     }
 
 
@@ -90,10 +104,15 @@ class AdminController extends Controller
     {
         $slide = new SliderManager();
         $slides = $slide->selectAllSlide();
-        if (isset($_POST['add'])) {
-
-        } elseif (isset($_POST['delete'])) {
+        if (isset($_POST['addSlider'])) {
+            $slide->addSlide($_POST,$_FILES);
+            header('location: ?page=modifAccueil');
+        } elseif (isset($_POST['deleteSlider'])) {
             $slide->deleteOneSlide($_POST['id']);
+            header('location: ?page=modifAccueil');
+        } elseif (isset($_POST['updateSlider'])) {
+            $slide->updateSlide($_POST);
+            header('location: ?page=modifAccueil');
         }
         return $this->getTwig()->render('modifAccueil.html.twig', array('slides' => $slides));
 

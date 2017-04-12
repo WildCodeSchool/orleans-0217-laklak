@@ -18,6 +18,8 @@ if (isset($_GET['page'])) {
     $page = $_GET['page'];
 }
 
+
+
 //Si l'admin est connecté (simulé par le Get['id'] )
 //On redirige l'admin vers les pages admin
         if (isset($_SESSION['email'])) {
@@ -53,6 +55,7 @@ if (isset($_GET['page'])) {
                     break;
                 case 'modifAccueil':
                     $view = $default->modifAccueil();
+
                     break;
                 default :
                     $view = $default->index();
