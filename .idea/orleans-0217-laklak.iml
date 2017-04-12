@@ -14,6 +14,8 @@
         </SOURCES>
       </library>
     </orderEntry>
+    <orderEntry type="module" module-name="crud-master" />
+    <orderEntry type="module" module-name="projetcatalunapizz" />
     <orderEntry type="module-library">
       <library name="PHARS">
         <CLASSES>
@@ -24,10 +26,5 @@
         </SOURCES>
       </library>
     </orderEntry>
-    <orderEntry type="module" module-name="crud-master" />
-    <orderEntry type="module" module-name="projetcatalunapizz" />
-    <orderEntry type="module" module-name="checkpoint1" />
-    <orderEntry type="module" module-name="ateliergot" />
-    <orderEntry type="module" module-name="flyaround" />
   </component>
 </module>
