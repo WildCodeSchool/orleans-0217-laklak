@@ -9,6 +9,9 @@
 namespace laklak\controller;
 
 
+use laklak\Model\Slider;
+use laklak\Model\SliderManager;
+
 class AdminController extends Controller
 {
 
@@ -20,6 +23,11 @@ class AdminController extends Controller
 
     public function adminAPropos()
     {
+
+        $res = new aproposController();
+        $resultat = $res->textPresentation();
+        return $this->twig->render('adminapropos.html.twig', array('resu' => $resultat));
+
         return $this->getTwig()->render('adminapropos.html.twig');
     }
 
@@ -37,6 +45,7 @@ class AdminController extends Controller
     public function addEvent()
     {
         return $this->getTwig()->render('addEvent.html.twig');
+
     }
 
     public function addArtist()
@@ -76,6 +85,26 @@ class AdminController extends Controller
         return $this->getTwig()->render('ajoutartistes.html.twig');
     }
 
+    public function listeevenements()
+    {
+        return $this->getTwig()->render('listeevenements.html.twig');
 
+    }
+
+
+    public function modifAccueil()
+    {
+        $slide = new SliderManager();
+        $slides = $slide->selectAllSlide();
+        if (isset($_POST['add'])) {
+
+
+
+        } elseif (isset($_POST['delete'])) {
+            $slide->deleteOneSlide($_POST['id']);
+        }
+        return $this->getTwig()->render('modifAccueil.html.twig', array('slides' => $slides));
+
+    }
 
 }

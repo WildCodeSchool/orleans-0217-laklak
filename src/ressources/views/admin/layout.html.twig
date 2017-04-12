@@ -37,6 +37,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
+
     <!-- Document Title
     ============================================= -->
     <title>{% block title %} - Laklak Productions{% endblock title %}</title>
@@ -77,14 +78,14 @@
                         <li><a href="#"><div>Evenements</div></a>
                             <ul>
                                 <li><a href="?page=listEvent&id=0"><div>Gérer les évènements</div></a></li>
-                                <li><a href="#"><div>Ajouter un évènement</div></a></li>
+                                <li><a href="?page=addEvent&id=0"><div>Ajouter un évènement</div></a></li>
                             </ul>
                         </li>
                         <li><a href="?page=adminapropos&id=0"><div>A propos</div></a></li>
                         <li><a href="#"><div>Agenda</div></a></li>
                         <li><a href="#"><div>Options</div></a>
                             <ul>
-                                <li><a href="#"><div>Page d'accueil</div></a></li>
+                                <li><a href="?page=modifAccueil"><div>Page d'accueil</div></a></li>
                                 <li><a href="#"><div>Autres</div></a></li>
                             </ul>
                         </li>
@@ -167,10 +168,10 @@
 <script>
 
     jQuery(".bt-switch").bootstrapSwitch();
-
 </script>
 
     <script src="js/ckeditor/ckeditor.js"></script>
+
 </div>
 </body>
 </html>

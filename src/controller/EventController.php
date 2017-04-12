@@ -22,7 +22,9 @@ class EventController extends Controller
         // j'utilise la méthode listAll de l'objet EventManager, j'enregistre le résultat dans la variable $events
         $events=$eventManager->listAll('event');
         // j'invoque la méthode render de mon objet contenu dans ma propriété twig de l'instance de la classe EventController
+
         return $this->getTwig()->render('listEvent.html.twig',array('events'=>$events));
+
     }
 
     public function listOneEvent($id)
@@ -32,7 +34,9 @@ class EventController extends Controller
         // j'utilise la méthode listAll de l'objet EventManager, j'enregistre le résultat dans la variable $event
         $event=$eventManager->listOne('event',$id);
         // j'invoque la méthode render de mon objet contenu dans ma propriété twig de l'instance de la classe EventController
+
         return $this->getTwig()->render('listEvent.html.twig',$event);
+
     }
 
     public function addEvent()
@@ -46,7 +50,9 @@ class EventController extends Controller
         // redirect vers la page qui liste les artist $this->listArtist()
 
         // sinon le form est pas submit, j'affiche le form
+
         return $this->getTwig()->render('ajoutartistes.html.twig');
+
     }
 
     public function updateEvent($id)
@@ -58,7 +64,9 @@ class EventController extends Controller
         //  redirect
 
         // sinon j'affiche le form
+
         return $this->getTwig()->render('ajoutartistes.html.twig', array('artist'=>$artist));
+
     }
 
 }
