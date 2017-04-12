@@ -9,13 +9,16 @@
 namespace laklak\controller;
 
 
+use laklak\Model\PresentationManager;
 use laklak\Model\SliderManager;
 
 class DefaultController extends Controller
 {
     public function apropos()
     {
-        return $this->getTwig()->render('apropos.html.twig');
+        $presentation = new PresentationManager();
+        $about = $presentation->textPresentation();
+        return $this->getTwig()->render('apropos.html.twig',array('presentation' => $about));
     }
 
     public function liste_artistes()

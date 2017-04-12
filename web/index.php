@@ -25,8 +25,13 @@ if (isset($_GET['page'])) {
         if (isset($_SESSION['email'])) {
 
             $default = new AdminController(false);
+
+            $presentation = new \laklak\controller\PresentationController(false);
+
+
             $adminAccueil = new \laklak\controller\SliderController(false);
             $defaultArtist = new \laklak\controller\ArtistController(false);
+
 
 
             switch ($page) {
@@ -40,7 +45,7 @@ if (isset($_GET['page'])) {
                     $view = $defaultArtist->addArtist();
                     break;
                 case 'adminapropos':
-                    $view = $default->adminapropos();
+                    $view = $presentation->adminapropos();
                     break;
                 case 'listeartistes':
                     $view = $defaultArtist->listArtist();
@@ -68,7 +73,6 @@ if (isset($_GET['page'])) {
 
 
             $default = new DefaultController(true);
-
 
             switch ($page) {
                 case 'apropos':

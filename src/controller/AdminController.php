@@ -16,6 +16,14 @@ class AdminController extends Controller
         return $this->getTwig()->render('index.html.twig');
     }
 
+
+
+    public function listeartistes()
+    {
+        return $this->getTwig()->render('listeartistes.html.twig');
+    }
+
+
     public function listEvent()
     {
         return $this->getTwig()->render('listEvent.html.twig');
