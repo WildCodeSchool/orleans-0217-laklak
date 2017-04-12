@@ -2,6 +2,7 @@
 
 {% block content %}
 
+
     <h1>Evènements</h1>
 
     <div class="container-fluid">
@@ -19,20 +20,15 @@
         </thead>
 
         <tbody>
-        <tr>
-            <td>1</td>
-            <td><img src="/web/images/photoartistes/2016/meryem.jpg" width="50px"></td>
-            <td>Jazzablanca</td>
-            <td><button type="submit" class="btn btn-default">Modifier</button></td>
-            <td><button type="submit" class="btn btn-default">Supprimer</button></td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td><img src="/web/images/photoartistes/2016/meryem.jpg" width="50px"></td>
-            <td>Nuitcasa</td>
-            <td><button type="submit" class="btn btn-default">Modifier</button></td>
-            <td><button type="submit" class="btn btn-default">Supprimer</button></td>
-        </tr>
+        {% for event in events %}
+            <tr>
+                <td>{{ event.id }}</td>
+                <td><img src="" width="50px"></td>
+                <td>{{ event.eventName }}</td>
+                <td><a href="?page=updateEvent&id={{ event.id }}" class="btn btn-default">Modifier</a></td>
+                <td><a href="?page=deleteEvent&id={{ event.id }}" class="btn btn-default">Supprimer</a></td>
+            </tr>
+        {% endfor %}
         </tbody>
 
         <tfoot></tfoot>
