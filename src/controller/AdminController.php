@@ -9,6 +9,7 @@
 namespace laklak\controller;
 
 
+use laklak\Model\EventManager;
 use laklak\Model\Slider;
 use laklak\Model\SliderManager;
 
@@ -34,19 +35,11 @@ class AdminController extends Controller
 
     public function listeartistes()
     {
+
         return $this->getTwig()->render('listeartistes.html.twig');
     }
 
-    public function listEvent()
-    {
-        return $this->getTwig()->render('listEvent.html.twig');
-    }
 
-    public function addEvent()
-    {
-        return $this->getTwig()->render('addEvent.html.twig');
-
-    }
 
     public function addArtist()
     {

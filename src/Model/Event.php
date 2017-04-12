@@ -12,25 +12,25 @@ namespace laklak\Model;
 class Event
 {
     private $id;
-    private $event_name;
-    private $event_description;
-    private $event_location;
-    private $event_date;
-    private $event_production;
-    private $event_website_url;
-    private $event_facebook_url;
-    private $event_twitter_url;
-    private $event_soundcloud_url;
-    private $event_iframe_soundcloud;
-    private $event_iframe_youtube;
-    private $event_laklak;
-    private $event_artistes;
-    private $event_id_artiste;
-    private $event_img_cover_path;
-    private $event_img_profile_path;
-    private $event_type;
-    private $event_more_url;
-    private $event_booking_url;
+    private $eventName;
+    private $eventDescription;
+    private $eventLocation;
+    private $eventDate;
+    private $eventProduction;
+    private $eventWebsiteUrl;
+    private $eventFacebookUrl;
+    private $eventTwitterUrl;
+    private $eventSoundcloudUrl;
+    private $eventIframeSoundcloud;
+    private $eventIframeYoutube;
+    private $eventLaklak;
+    private $eventArtistes;
+    private $eventIdArtiste;
+    private $eventImgCoverPath;
+    private $eventImgProfilePath;
+    private $eventType;
+    private $eventMoreUrl;
+    private $eventBookingUrl;
 
     /**
      * @return mixed
@@ -53,15 +53,15 @@ class Event
      */
     public function getEventName()
     {
-        return $this->event_name;
+        return $this->eventName;
     }
 
     /**
-     * @param mixed $event_name
+     * @param mixed $eventName
      */
-    public function setEventName($event_name)
+    public function setEventName($eventName)
     {
-        $this->event_name = $event_name;
+        $this->eventName = $eventName;
     }
 
     /**
@@ -69,15 +69,15 @@ class Event
      */
     public function getEventDescription()
     {
-        return $this->event_description;
+        return $this->eventDescription;
     }
 
     /**
-     * @param mixed $event_description
+     * @param mixed $eventDescription
      */
-    public function setEventDescription($event_description)
+    public function setEventDescription($eventDescription)
     {
-        $this->event_description = $event_description;
+        $this->eventDescription = $eventDescription;
     }
 
     /**
@@ -85,15 +85,15 @@ class Event
      */
     public function getEventLocation()
     {
-        return $this->event_location;
+        return $this->eventLocation;
     }
 
     /**
-     * @param mixed $event_location
+     * @param mixed $eventLocation
      */
-    public function setEventLocation($event_location)
+    public function setEventLocation($eventLocation)
     {
-        $this->event_location = $event_location;
+        $this->eventLocation = $eventLocation;
     }
 
     /**
@@ -101,15 +101,15 @@ class Event
      */
     public function getEventDate()
     {
-        return $this->event_date;
+        return $this->eventDate;
     }
 
     /**
-     * @param mixed $event_date
+     * @param mixed $eventDate
      */
-    public function setEventDate($event_date)
+    public function setEventDate($eventDate)
     {
-        $this->event_date = $event_date;
+        $this->eventDate = $eventDate;
     }
 
     /**
@@ -117,15 +117,15 @@ class Event
      */
     public function getEventProduction()
     {
-        return $this->event_production;
+        return $this->eventProduction;
     }
 
     /**
-     * @param mixed $event_production
+     * @param mixed $eventProduction
      */
-    public function setEventProduction($event_production)
+    public function setEventProduction($eventProduction)
     {
-        $this->event_production = $event_production;
+        $this->eventProduction = $eventProduction;
     }
 
     /**
@@ -133,15 +133,15 @@ class Event
      */
     public function getEventWebsiteUrl()
     {
-        return $this->event_website_url;
+        return $this->eventWebsiteUrl;
     }
 
     /**
-     * @param mixed $event_website_url
+     * @param mixed $eventWebsiteUrl
      */
-    public function setEventWebsiteUrl($event_website_url)
+    public function setEventWebsiteUrl($eventWebsiteUrl)
     {
-        $this->event_website_url = $event_website_url;
+        $this->eventWebsiteUrl = $eventWebsiteUrl;
     }
 
     /**
@@ -149,15 +149,15 @@ class Event
      */
     public function getEventFacebookUrl()
     {
-        return $this->event_facebook_url;
+        return $this->eventFacebookUrl;
     }
 
     /**
-     * @param mixed $event_facebook_url
+     * @param mixed $eventFacebookUrl
      */
-    public function setEventFacebookUrl($event_facebook_url)
+    public function setEventFacebookUrl($eventFacebookUrl)
     {
-        $this->event_facebook_url = $event_facebook_url;
+        $this->eventFacebookUrl = $eventFacebookUrl;
     }
 
     /**
@@ -165,15 +165,15 @@ class Event
      */
     public function getEventTwitterUrl()
     {
-        return $this->event_twitter_url;
+        return $this->eventTwitterUrl;
     }
 
     /**
-     * @param mixed $event_twitter_url
+     * @param mixed $eventTwitterUrl
      */
-    public function setEventTwitterUrl($event_twitter_url)
+    public function setEventTwitterUrl($eventTwitterUrl)
     {
-        $this->event_twitter_url = $event_twitter_url;
+        $this->eventTwitterUrl = $eventTwitterUrl;
     }
 
     /**
@@ -181,15 +181,15 @@ class Event
      */
     public function getEventSoundcloudUrl()
     {
-        return $this->event_soundcloud_url;
+        return $this->eventSoundcloudUrl;
     }
 
     /**
-     * @param mixed $event_soundcloud_url
+     * @param mixed $eventSoundcloudUrl
      */
-    public function setEventSoundcloudUrl($event_soundcloud_url)
+    public function setEventSoundcloudUrl($eventSoundcloudUrl)
     {
-        $this->event_soundcloud_url = $event_soundcloud_url;
+        $this->eventSoundcloudUrl = $eventSoundcloudUrl;
     }
 
     /**
@@ -197,15 +197,15 @@ class Event
      */
     public function getEventIframeSoundcloud()
     {
-        return $this->event_iframe_soundcloud;
+        return $this->eventIframeSoundcloud;
     }
 
     /**
-     * @param mixed $event_iframe_soundcloud
+     * @param mixed $eventIframeSoundcloud
      */
-    public function setEventIframeSoundcloud($event_iframe_soundcloud)
+    public function setEventIframeSoundcloud($eventIframeSoundcloud)
     {
-        $this->event_iframe_soundcloud = $event_iframe_soundcloud;
+        $this->eventIframeSoundcloud = $eventIframeSoundcloud;
     }
 
     /**
@@ -213,15 +213,15 @@ class Event
      */
     public function getEventIframeYoutube()
     {
-        return $this->event_iframe_youtube;
+        return $this->eventIframeYoutube;
     }
 
     /**
-     * @param mixed $event_iframe_youtube
+     * @param mixed $eventIframeYoutube
      */
-    public function setEventIframeYoutube($event_iframe_youtube)
+    public function setEventIframeYoutube($eventIframeYoutube)
     {
-        $this->event_iframe_youtube = $event_iframe_youtube;
+        $this->eventIframeYoutube = $eventIframeYoutube;
     }
 
     /**
@@ -229,15 +229,15 @@ class Event
      */
     public function getEventLaklak()
     {
-        return $this->event_laklak;
+        return $this->eventLaklak;
     }
 
     /**
-     * @param mixed $event_laklak
+     * @param mixed $eventLaklak
      */
-    public function setEventLaklak($event_laklak)
+    public function setEventLaklak($eventLaklak)
     {
-        $this->event_laklak = $event_laklak;
+        $this->eventLaklak = $eventLaklak;
     }
 
     /**
@@ -245,15 +245,15 @@ class Event
      */
     public function getEventArtistes()
     {
-        return $this->event_artistes;
+        return $this->eventArtistes;
     }
 
     /**
-     * @param mixed $event_artistes
+     * @param mixed $eventArtistes
      */
-    public function setEventArtistes($event_artistes)
+    public function setEventArtistes($eventArtistes)
     {
-        $this->event_artistes = $event_artistes;
+        $this->eventArtistes = $eventArtistes;
     }
 
     /**
@@ -261,15 +261,15 @@ class Event
      */
     public function getEventIdArtiste()
     {
-        return $this->event_id_artiste;
+        return $this->eventIdArtiste;
     }
 
     /**
-     * @param mixed $event_id_artiste
+     * @param mixed $eventIdArtiste
      */
-    public function setEventIdArtiste($event_id_artiste)
+    public function setEventIdArtiste($eventIdArtiste)
     {
-        $this->event_id_artiste = $event_id_artiste;
+        $this->eventIdArtiste = $eventIdArtiste;
     }
 
     /**
@@ -277,15 +277,15 @@ class Event
      */
     public function getEventImgCoverPath()
     {
-        return $this->event_img_cover_path;
+        return $this->eventImgCoverPath;
     }
 
     /**
-     * @param mixed $event_img_cover_path
+     * @param mixed $eventImgCoverPath
      */
-    public function setEventImgCoverPath($event_img_cover_path)
+    public function setEventImgCoverPath($eventImgCoverPath)
     {
-        $this->event_img_cover_path = $event_img_cover_path;
+        $this->eventImgCoverPath = $eventImgCoverPath;
     }
 
     /**
@@ -293,15 +293,15 @@ class Event
      */
     public function getEventImgProfilePath()
     {
-        return $this->event_img_profile_path;
+        return $this->eventImgProfilePath;
     }
 
     /**
-     * @param mixed $event_img_profile_path
+     * @param mixed $eventImgProfilePath
      */
-    public function setEventImgProfilePath($event_img_profile_path)
+    public function setEventImgProfilePath($eventImgProfilePath)
     {
-        $this->event_img_profile_path = $event_img_profile_path;
+        $this->eventImgProfilePath = $eventImgProfilePath;
     }
 
     /**
@@ -309,15 +309,15 @@ class Event
      */
     public function getEventType()
     {
-        return $this->event_type;
+        return $this->eventType;
     }
 
     /**
-     * @param mixed $event_type
+     * @param mixed $eventType
      */
-    public function setEventType($event_type)
+    public function setEventType($eventType)
     {
-        $this->event_type = $event_type;
+        $this->eventType = $eventType;
     }
 
     /**
@@ -325,15 +325,15 @@ class Event
      */
     public function getEventMoreUrl()
     {
-        return $this->event_more_url;
+        return $this->eventMoreUrl;
     }
 
     /**
-     * @param mixed $event_more_url
+     * @param mixed $eventMoreUrl
      */
-    public function setEventMoreUrl($event_more_url)
+    public function setEventMoreUrl($eventMoreUrl)
     {
-        $this->event_more_url = $event_more_url;
+        $this->eventMoreUrl = $eventMoreUrl;
     }
 
     /**
@@ -341,15 +341,15 @@ class Event
      */
     public function getEventBookingUrl()
     {
-        return $this->event_booking_url;
+        return $this->eventBookingUrl;
     }
 
     /**
-     * @param mixed $event_booking_url
+     * @param mixed $eventBookingUrl
      */
-    public function setEventBookingUrl($event_booking_url)
+    public function setEventBookingUrl($eventBookingUrl)
     {
-        $this->event_booking_url = $event_booking_url;
+        $this->eventBookingUrl = $eventBookingUrl;
     }
 
 

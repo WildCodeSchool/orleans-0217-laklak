@@ -14,58 +14,58 @@ use laklak\Model\EventManager;
 
 class EventController extends Controller
 {
-
     public function listEvent()
-    {   // je vais appeler une méthode de EventManager listAll
+    {
+        // je vais appeler une méthode de EventManager listAll
         // j'instancie un objet EventManager
-        $eventManager = new EventManager();
-        // j'utilise la méthode listAll de l'objet EventManager, j'enregistre le résultat dans la variable $events
-        $events=$eventManager->listAll('event');
-        // j'invoque la méthode render de mon objet contenu dans ma propriété twig de l'instance de la classe EventController
-
+        $event = new EventManager();
+        // j'utilise la méthode listAll de l'objet EventManager,
+        // j'enregistre le résultat dans la variable $events
+        $events = $event->listAll();
+        // j'invoque la méthode render de mon objet contenu dans ma propriété twig
+        // de l'instance de la classe EventController
         return $this->getTwig()->render('listEvent.html.twig',array('events'=>$events));
-
     }
 
-    public function listOneEvent($id)
-    {   // je vais appeler une méthode de EventManager listOne
-        // j'instancie un objet EventManager
-        $eventManager = new EventManager();
-        // j'utilise la méthode listAll de l'objet EventManager, j'enregistre le résultat dans la variable $event
-        $event=$eventManager->listOne('event',$id);
-        // j'invoque la méthode render de mon objet contenu dans ma propriété twig de l'instance de la classe EventController
 
-        return $this->getTwig()->render('listEvent.html.twig',$event);
 
-    }
 
     public function addEvent()
     {
         // si le form est submit, je récupère mon $_POST
-        // je fais mon traitement
-        // $artist = new Artist()
-        // $artist -> setNom($_POST['nom');
-
-        // $artist -> insert();
+        if (isset($_POST['addEvent'])){
+            $event = new EventManager();
+            $event->addEvent($_POST);
         // redirect vers la page qui liste les artist $this->listArtist()
-
+            header('Location:?page=listEvent');
+        }
         // sinon le form est pas submit, j'affiche le form
-
-        return $this->getTwig()->render('ajoutartistes.html.twig');
+        else{
+            return $this->getTwig()->render('addEvent.html.twig');
+        }
 
     }
 
     public function updateEvent($id)
     {
-        // si le form est submit
-        // $artist = findOne($id);
-        // comme pour le addArtist
-        // $artist->update();
-        //  redirect
+        $evt = new EventManager();
 
-        // sinon j'affiche le form
+        if (isset($_POST['updateEvent'])) {
 
-        return $this->getTwig()->render('ajoutartistes.html.twig', array('artist'=>$artist));
+            $evt->updateEvent($id,$_POST);
+            header('Location:?page=listEvent');
+        }
+
+        $event=$evt->showOneEvent($id);
+        return $this->getTwig()->render('editEvent.html.twig',array('event'=>$event));
+    }
+
+    public function deleteEvent($id)
+    {
+        $event = new EventManager();
+        $event->deleteEvent($id);
+
+        header('Location:?page=listEvent');
 
     }
 
