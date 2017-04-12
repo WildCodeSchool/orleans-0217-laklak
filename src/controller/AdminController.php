@@ -36,7 +36,7 @@ class AdminController extends Controller
 
     public function addEvent()
     {
-        return $this->twig->render('addEvent.html.twig');
+        return $this->getTwig()->render('addEvent.html.twig');
     }
 
     public function addArtist()
@@ -78,7 +78,7 @@ class AdminController extends Controller
 
     public function listeevenements()
     {
-        return $this->twig->render('listeevenements.html.twig');
+        return $this->getTwig()->render('listeevenements.html.twig');
     }
 
 }
