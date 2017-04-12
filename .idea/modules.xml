@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/../ateliergot/.idea/ateliergot.iml" filepath="$PROJECT_DIR$/../ateliergot/.idea/ateliergot.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../checkpoint1/.idea/checkpoint1.iml" filepath="$PROJECT_DIR$/../checkpoint1/.idea/checkpoint1.iml" />
       <module fileurl="file://$PROJECT_DIR$/../crud-master/.idea/crud-master.iml" filepath="$PROJECT_DIR$/../crud-master/.idea/crud-master.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../ateliersymfony/flyaround/.idea/flyaround.iml" filepath="$PROJECT_DIR$/../ateliersymfony/flyaround/.idea/flyaround.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/orleans-0217-laklak.iml" filepath="$PROJECT_DIR$/.idea/orleans-0217-laklak.iml" />
       <module fileurl="file://$PROJECT_DIR$/../projetcatalunapizz/.idea/projetcatalunapizz.iml" filepath="$PROJECT_DIR$/../projetcatalunapizz/.idea/projetcatalunapizz.iml" />
     </modules>

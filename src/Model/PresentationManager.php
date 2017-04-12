@@ -24,14 +24,14 @@ class PresentationManager extends Manager
 
     }
 
-    public function inserttextPresentation()
+    public function updatePresentation(array $value)
 
     {
-        $req = $this->bdd->query("INSERT INTO presentation VALUES ('text_presentation')");
+        $req = $this->bdd->prepare("UPDATE presentation SET textpresentation = :textpresentation WHERE id = :id");
+        $req->bindValue(':id', $value['id']);
+        $req->bindValue(':textpresentation', $value['textpresentation']);
         $req->execute();
-        $presentation = $req->fetchObject(Presentation::class);
 
-        return $presentation;
-        
     }
+
 }
