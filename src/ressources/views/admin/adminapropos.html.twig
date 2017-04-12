@@ -1,24 +1,19 @@
+
 {% extends 'layout.html.twig' %}
 {% block content %}
-
-
- <link rel="stylesheet" href="summernote/summernote.css">
- <form method="post" action="adminapropos.html.twig">
-  <h1>Modifier texte de présentation</h1>
-  <div class="form-group">
-
-   <label for="produit"></label>
-
-
-  <textarea class="form-control" style = width:70% rows="10">{{ resu.text_presentation }}</textarea>
-
-
-  <input class="btn btn-default" type="reset" name="btnReset" value="Effacer" />
-   <input class="btn btn-primary" type="submit" name="btnSubmit" value="modifier" />
-  <input class="btn btn-success" type="submit" name="btnSubmit" value="valider" />
-
-  </div>
-
- </form>
- <script type="text/javascript" src="summernote/summernote.js"></script>
+    <form method="post" action="?page=adminapropos&id=0" xmlns="http://www.w3.org/1999/html">
+        <h1>Modifier texte de présentation</h1>
+        <div class="form-group">
+            <label for="produit"></label>
+            <textarea cols="100" class="ckeditor" rows="30" class="form-control" id="bio" >{{ presentation.text_presentation }}</textarea>
+            <div>
+                <input class="btn btn-success" type="submit" name="btnSubmit" value="valider" />
+    </form>
 {% endblock %}
+
+
+
+
+
+
+
