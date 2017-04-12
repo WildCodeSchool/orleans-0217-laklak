@@ -9,6 +9,8 @@
 namespace laklak\controller;
 
 
+use laklak\Model\SliderManager;
+
 class DefaultController extends Controller
 {
     public function apropos()
@@ -43,7 +45,9 @@ class DefaultController extends Controller
 
     public function index()
     {
-        return $this->getTwig()->render('index.html.twig');
+        $slide = new SliderManager();
+        $slides = $slide->selectAllSlide();
+        return $this->getTwig()->render('index.html.twig', array('sliders' => $slides));
     }
 
     public function agenda()

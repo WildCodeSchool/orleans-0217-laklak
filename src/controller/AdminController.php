@@ -26,7 +26,7 @@ class AdminController extends Controller
 
         $res = new aproposController();
         $resultat = $res->textPresentation();
-        return $this->twig->render('adminapropos.html.twig', array('resu' => $resultat));
+        return $this->getTwig()->render('adminapropos.html.twig', array('resu' => $resultat));
 
         return $this->getTwig()->render('adminapropos.html.twig');
     }
@@ -96,12 +96,15 @@ class AdminController extends Controller
     {
         $slide = new SliderManager();
         $slides = $slide->selectAllSlide();
-        if (isset($_POST['add'])) {
-
-
-
-        } elseif (isset($_POST['delete'])) {
+        if (isset($_POST['addSlider'])) {
+            $slide->addSlide($_POST,$_FILES);
+            header('location: ?page=modifAccueil');
+        } elseif (isset($_POST['deleteSlider'])) {
             $slide->deleteOneSlide($_POST['id']);
+            header('location: ?page=modifAccueil');
+        } elseif (isset($_POST['updateSlider'])) {
+            $slide->updateSlide($_POST);
+            header('location: ?page=modifAccueil');
         }
         return $this->getTwig()->render('modifAccueil.html.twig', array('slides' => $slides));
 
