@@ -9,6 +9,7 @@
 namespace laklak\controller;
 
 
+use laklak\Model\ArtisteManager;
 use laklak\Model\Slider;
 use laklak\Model\SliderManager;
 
@@ -26,16 +27,13 @@ class AdminController extends Controller
 
         $res = new aproposController();
         $resultat = $res->textPresentation();
-        return $this->twig->render('adminapropos.html.twig', array('resu' => $resultat));
+        return $this->getTwig()->render('adminapropos.html.twig', array('resu' => $resultat));
 
         return $this->getTwig()->render('adminapropos.html.twig');
     }
 
 
-    public function listeartistes()
-    {
-        return $this->getTwig()->render('listeartistes.html.twig');
-    }
+
 
     public function listEvent()
     {
@@ -80,10 +78,6 @@ class AdminController extends Controller
         return $this->getTwig()->render('deconnexion.html.twig');
     }
 
-    public function ajoutartistes()
-    {
-        return $this->getTwig()->render('ajoutartistes.html.twig');
-    }
 
     public function listeevenements()
     {
