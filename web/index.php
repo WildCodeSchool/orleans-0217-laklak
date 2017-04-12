@@ -3,7 +3,12 @@ session_start();
 require '../vendor/autoload.php';
 use laklak\controller\DefaultController;
 use laklak\controller\AdminController;
+
 use laklak\controller\EventController;
+
+use laklak\controller\ArtistController;
+
+
 
 if (isset($_POST['email']) && isset($_POST['mdp'])){
     $user = $_POST['email'];
@@ -17,12 +22,21 @@ if (isset($_GET['page'])) {
     $page = $_GET['page'];
 }
 
+
+
 //Si l'admin est connecté (simulé par le Get['id'] )
 //On redirige l'admin vers les pages admin
         if (isset($_SESSION['email'])) {
 
             $default = new AdminController(false);
             $defaultEvent = new EventController(false);
+
+            $presentation = new \laklak\controller\PresentationController(false);
+
+
+            $adminAccueil = new \laklak\controller\SliderController(false);
+            $defaultArtist = new \laklak\controller\ArtistController(false);
+
 
 
             switch ($page) {
@@ -33,13 +47,13 @@ if (isset($_GET['page'])) {
                     $view = $default->index();
                     break;
                 case 'ajoutartistes':
-                    $view = $default->ajoutartistes();
+                    $view = $defaultArtist->addArtist();
                     break;
                 case 'adminapropos':
-                    $view = $default->adminapropos();
+                    $view = $presentation->adminapropos();
                     break;
                 case 'listeartistes':
-                    $view = $default->listeartistes();
+                    $view = $defaultArtist->listArtist();
                     break;
                 case 'listEvent':
                     $view = $defaultEvent->listEvent();
@@ -57,9 +71,13 @@ if (isset($_GET['page'])) {
                     $view = $default->deconnexion();
                     break;
                 case 'modifAccueil':
-                    $view = $default->modifAccueil();
+                    $view = $adminAccueil->modifAccueil();
                     break;
-                default :
+                case 'deleteartistes':
+                    $view = $defaultArtist->deleteArtist();
+                    break;
+
+                default:
                     $view = $default->index();
 
             }
@@ -69,7 +87,6 @@ if (isset($_GET['page'])) {
 
 
             $default = new DefaultController(true);
-
 
             switch ($page) {
                 case 'apropos':
@@ -103,8 +120,7 @@ if (isset($_GET['page'])) {
                 default :
                     $view = $default->index();
             }
-        echo $view;
-
+            echo $view;
 }
 
 

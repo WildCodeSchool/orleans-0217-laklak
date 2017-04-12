@@ -13,13 +13,15 @@ use laklak\Model\Slider;
 class SliderManager extends Manager
 {
 
-    public function updateSlide(Slider $slide)
+    public function updateSlide(array $slide)
     {
-        $req = $this->bdd->prepare('UPDATE slider SET  url = :url,titre = :titre ,boutton = :button WHERE id = :id');
-        $req->bindValue(':id', $slide->getId(), \PDO::PARAM_INT);
-        $req->bindValue(':url', $slide->getUrl(), \PDO::PARAM_STR);
-        $req->bindValue(':titre', $slide->getTitre(), \PDO::PARAM_STR);
-        $req->bindValue(':button', $slide->getButton(), \PDO::PARAM_STR);
+        $req = $this->bdd->prepare('UPDATE slider SET  url = :url,title = :title ,baseline = :baseline, button = :button WHERE id = :id');
+        $req->bindValue(':id', $slide['id'], \PDO::PARAM_INT);
+        $req->bindValue(':url', $slide['image'], \PDO::PARAM_STR);
+        $req->bindValue(':title', $slide['title'], \PDO::PARAM_STR);
+        $req->bindValue(':button', $slide['button'], \PDO::PARAM_STR);
+        $req->bindValue(':baselin', $slide['baseline'], \PDO::PARAM_STR);
+
         $req->execute();
     }
 
@@ -30,15 +32,21 @@ class SliderManager extends Manager
         $req->execute();
     }
 
-    public function addSlide(array $value)
+    public function addSlide(array $value,$file)
     {
-        $req = $this->bdd->prepare('INSERT INTO slider(url,titre,boutton) VALUES  url = :url,titre = :titre ,boutton = :button');
-        $req->bindValue(':id', $value['id'], \PDO::PARAM_INT);
-        $req->bindValue(':url', $value-['url'], \PDO::PARAM_STR);
-        $req->bindValue(':titre', $value['titre'], \PDO::PARAM_STR);
+        $uploaddir = 'images/Upload/Slider/';
+        $uploadfile = $uploaddir . basename($file['image']['name']);
+        move_uploaded_file($file['image']['tmp_name'], $uploadfile);
+
+        $req = $this->bdd->prepare('INSERT INTO slider(url,title,baseline, button) VALUES  (:url, :title,:baseline, :button)');
+        $req->bindValue(':url', $uploadfile, \PDO::PARAM_STR);
+        $req->bindValue(':title', $value['title'], \PDO::PARAM_STR);
+        $req->bindValue(':baseline', $value['baseline'], \PDO::PARAM_STR);
         $req->bindValue(':button', $value['button'], \PDO::PARAM_STR);
         $req->execute();
+
     }
+
 
     public function selectAllSlide()
     {

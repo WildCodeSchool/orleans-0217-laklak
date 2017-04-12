@@ -7,17 +7,17 @@
  */
 
 namespace laklak\Model;
+use laklak\Model\Artist;
 
 
-class ArtisteManager extends Artiste
+class ArtisteManager extends Manager
 {
     public function showAll()
     {
         // connection à la bdd
-        $db = new DB();
-        $req = "SELECT * FROM $table";
-        $res = $this->db->query($req);
-        return $res->fetchAll(PDO::FETCH_CLASS,'laklak\Model\Artiste');
+        $req = $this->bdd->query('SELECT * FROM artist');
+        $req->execute();
+        return $req->fetchAll(\PDO::FETCH_CLASS, __NAMESPACE__ . "\\Artist");
     }
 
 
@@ -28,13 +28,13 @@ class ArtisteManager extends Artiste
      */
     public function showOne($id)
     {
-        $req = "SELECT * FROM $table WHERE id=$id";
-        $prep = $this->db->prepare($req);
+        $req = "SELECT * FROM artist WHERE id=$id";
+        $prep = $this->bdd->prepare($req);
         $prep->bindValue(':id', $id, \PDO::PARAM_INT);
 
         $prep->execute();
 
-        $res = $prep->fetchAll(\PDO::FETCH_CLASS, __NAMESPACE__ . '\model\\'.ucfirst($table));
+        $res = $prep->fetchAll(\PDO::FETCH_CLASS, __NAMESPACE__ . '\model\\'.ucfirst('artist'));
         return $res[$id];
 
     }
@@ -42,33 +42,65 @@ class ArtisteManager extends Artiste
     /**
      * j'ajoute un élève
      */
-    public function add()
+    public function addArtist(array $value)
     {
 
-        $bdd->exec("INSERT INTO artiste (nom, prenom, age) VALUES ('$artist_name', '$artist_bio', '$artist_laklak','$artist_website_url',
-         '$artist_facebook_url','$artist_twitter_url','$artist_tumblr_url','$artist_vimeo_url','$artist_soundcloud_url','$artist_insta_url','$artist_iframe_soundcloud_url','$artist_iframe_youtube_url',
-         '$artist_img_cover_path','$artist_img_profil_path','$artist_id_event')");
 
+        $prep= $this->bdd->prepare('INSERT INTO artist (artistname, artistbio, artistlaklak, artistwebsiteurl,
+                                                        artistfacebookurl, artisttwitterurl, artisttumblrurl,
+                                                        artistvimeourl, artistsoundcloudurl, artistinstaurl, 
+                                                        artistiframesoundcloud, artistiframeyoutube, artistimgcoverpath, 
+                                                        artistimgprofilpath, artistidevent) 
+                                    VALUES (:artistName, :artistBio, :artistLaklak,:artistWebsiteUrl,:artistFacebookUrl,
+                                            :artistTwitterUrl,:artistTumblrUrl,:artistVimeoUrl, :artistSoundcloudUrl,
+                                            :artistInstaUrl,:artistIframeSoundcloudUrl, :artistIframeYoutubeUrl, 
+                                            :artistImgCoverPath, :artistImgProfilPath, :artistIdEvent)');
+
+
+       $prep->bindValue (':artistName', $value['nomArtist']);
+       $prep->bindValue (':artistBio', $value['bio']);
+       $prep->bindValue  (':artistLaklak',intval($value['laklak']));
+       $prep->bindValue  (':artistWebsiteUrl', $value['siteArtist']);
+       $prep->bindValue  (':artistFacebookUrl', $value['fbArtistIframe']);
+       $prep->bindValue  (':artistTwitterUrl', $value['twitArtist']);
+       $prep->bindValue  (':artistVimeoUrl', $value['vimArtist']);
+       $prep->bindValue  (':artistSoundcloudUrl', $value['artistsoundcloudurl']);
+       $prep->bindValue  (':artistIframeSoundcloudUrl', $value['scArtistIframe']);
+       $prep->bindValue  (':artistIframeYoutubeUrl', $value['yArtistIframe']);
+       $prep->bindValue  (':artistInstaUrl', $value['instArtist']);
+       $prep->bindValue  (':artistTumblrUrl', $value['tumbArtist']);
+       $prep->bindValue  (':artistImgCoverPath', $value['artistImgCoverPath']);
+       $prep->bindValue (':artistImgProfilPath', $value['artistImgProfilPath']);
+       $prep->bindValue (':artistIdEvent', intval($value['artistidevent']));
+
+       $prep->execute();
 
     }
 
     /**
      *
      */
-    public function update() {
-        $res=$bdd->prepare("UPDATE artist SET  WHERE id =:id");
+    public function update()
+    {
+
+        $res=$this-> bdd->prepare("UPDATE artist SET  WHERE id =:id");
         $res->bindValue(':nom', $_POST['nom']);
         $res->bindValue(':prenom', $_POST['premon']);
         $res->bindValue(':age', $_POST['age']);
         $res->bindValue(':id', $_POST['id']);
         $res->execute();
+
     }
 
     /**
      *
      */
-    public function delete() {
+    public function deleteArtist($id) {
 
+
+        $req = $this->bdd->prepare('DELETE FROM artist WHERE id = :id');
+        $req->bindValue(':id', $id );
+        $req->execute();
     }
 
 
