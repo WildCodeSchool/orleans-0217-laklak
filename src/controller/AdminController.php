@@ -30,7 +30,7 @@ class AdminController extends Controller
         $PresentationManager = new PresentationManager();
         $presentation = $PresentationManager->textPresentation();
         return $this->getTwig()->render('adminapropos.html.twig', array('presentation' => $presentation));
-        
+
     }
 
 
@@ -92,24 +92,4 @@ class AdminController extends Controller
         return $this->getTwig()->render('listeevenements.html.twig');
 
     }
-
-
-    public function modifAccueil()
-    {
-        $slide = new SliderManager();
-        $slides = $slide->selectAllSlide();
-        if (isset($_POST['addSlider'])) {
-            $slide->addSlide($_POST,$_FILES);
-            header('location: ?page=modifAccueil');
-        } elseif (isset($_POST['deleteSlider'])) {
-            $slide->deleteOneSlide($_POST['id']);
-            header('location: ?page=modifAccueil');
-        } elseif (isset($_POST['updateSlider'])) {
-            $slide->updateSlide($_POST);
-            header('location: ?page=modifAccueil');
-        }
-        return $this->getTwig()->render('modifAccueil.html.twig', array('slides' => $slides));
-
-    }
-
 }

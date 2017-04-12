@@ -24,6 +24,7 @@ if (isset($_GET['page'])) {
         if (isset($_SESSION['email'])) {
 
             $default = new AdminController(false);
+            $adminAccueil = new \laklak\controller\SliderController(false);
 
 
             switch ($page) {
@@ -52,7 +53,7 @@ if (isset($_GET['page'])) {
                     $view = $default->deconnexion();
                     break;
                 case 'modifAccueil':
-                    $view = $default->modifAccueil();
+                    $view = $adminAccueil->modifAccueil();
 
                     break;
                 default :
