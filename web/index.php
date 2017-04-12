@@ -37,7 +37,6 @@ if (isset($_GET['page'])) {
                 case 'adminapropos':
                     $view = $default->adminapropos();
                     break;
-
                 case 'listeartistes':
                     $view = $default->listeartistes();
                     break;
@@ -49,6 +48,9 @@ if (isset($_GET['page'])) {
                     break;
                 case 'deconnexion':
                     $view = $default->deconnexion();
+                    break;
+                case 'modifAccueil':
+                    $view = $default->modifAccueil();
                     break;
                 default :
                     $view = $default->index();

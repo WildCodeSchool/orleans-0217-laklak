@@ -1,0 +1,42 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+
+    <form method="POST" action="?page=modifAccueil">
+        <input type="submit" name="add" class="btn btn-default" value="Ajouter">
+    </form>
+
+    <table class="table1 table table-hover">
+        <thead>
+        <tr>
+            <td>Photo</td>
+            <td>Titre</td>
+            <td>Boutton</td>
+            <td colspan="2">Action</td>
+        </tr>
+        </thead>
+        <tbody>
+
+
+{% for slider in slides %}
+    <tr>
+        <td><img src="{{ slider.url }}"></td>
+        <td>{{ slider.titre }}</td>
+        <td>{{ slider.button }}</td>
+        <td><form method="POST" action="?page=modifAccueil">
+                <input type="submit" name="delete" class="btn btn-danger" value="Supprimer">
+                <input type="hidden" name="id" value="{{ slider.id }}">
+            </form></td>
+        <td><form method="POST" action="?page=modifAccueil">
+                <input type="submit" name="update" class="btn btn-primary" value="Modifier">
+                <input type="hidden" name="id" value="{{ slider.id }}">
+            </form></td>
+    </tr>
+
+
+
+
+{% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
