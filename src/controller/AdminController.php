@@ -88,7 +88,9 @@ class AdminController extends Controller
     public function listeevenements()
     {
         return $this->getTwig()->render('listeevenements.html.twig');
+
     }
+
 
     public function modifAccueil()
     {
@@ -100,6 +102,7 @@ class AdminController extends Controller
             $slide->deleteOneSlide($_POST['id']);
         }
         return $this->getTwig()->render('modifAccueil.html.twig', array('slides' => $slides));
+
     }
 
 }
