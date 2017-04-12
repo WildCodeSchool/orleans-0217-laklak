@@ -16,6 +16,6 @@ class Manager
 
     public function __construct()
     {
-        $this->bdd = new \PDO(DSN,USER,PASS);
+        $this->bdd = new \PDO(DSN,USER,PASS, array(\PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
     }
 }

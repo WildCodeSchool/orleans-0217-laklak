@@ -9,8 +9,11 @@
 namespace laklak\controller;
 
 
+use laklak\Model\AdminaproposManager;
+use laklak\Model\PresentationManager;
 use laklak\Model\Slider;
 use laklak\Model\SliderManager;
+
 
 class AdminController extends Controller
 {
@@ -21,14 +24,13 @@ class AdminController extends Controller
     }
 
 
-    public function adminAPropos()
+    public function adminapropos()
     {
 
-        $res = new aproposController();
-        $resultat = $res->textPresentation();
-        return $this->getTwig()->render('adminapropos.html.twig', array('resu' => $resultat));
-
-        return $this->getTwig()->render('adminapropos.html.twig');
+        $PresentationManager = new PresentationManager();
+        $presentation = $PresentationManager->textPresentation();
+        return $this->getTwig()->render('adminapropos.html.twig', array('presentation' => $presentation));
+        
     }
 
 
