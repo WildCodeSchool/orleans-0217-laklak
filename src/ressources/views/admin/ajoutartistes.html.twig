@@ -5,11 +5,13 @@
     <h1>Ajouter un artiste</h1>
 <div class="container-fluid">
     <div class="row col-xs-9">
-    <form method="POST" action="ajoutartistes.html.twig">
+    <form method="POST" action="?page=ajoutartistes">
+
         <div class="form-group">
             <label for="nom">Nom de l'artiste</label>
             <input type="text" class="form-control" id="nom" placeholder="nom de l'artiste" name="nomArtist">
         </div>
+        <input type="text" class="hidden" id="id" name="artistid">
         <div class="form-group">
 
             <label for="biographie">Biographie</label>
@@ -39,6 +41,10 @@
             <label for="fluxTwitter">Twitter <i class="icon-twitter"></i></label>
             <input type="url" class="form-control" id="fluxTwitter" placeholder="page Twitter" name="twitArtist">
         </div>
+        <div class="form-group">
+            <label for="fluxSoundcloud">SoundCloud <i class="icon-soundcloud"></i></label>
+            <input type="url" class="form-control" id="fluxSoundcloud" placeholder="page Soundcloud" name="artistsoundcloudurl">
+        </div>
 
         <div class="form-group">
             <label for="fluxVimeo">Vimeo <i class="icon-vimeo"></i></label>
@@ -56,40 +62,39 @@
         <h4>Artiste Laklak</h4>
         <div class="radio">
             <label>
-                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" name="laklak">Oui
+                <input type="radio" id="optionsRadios1" value="1" name="laklak">Oui
             </label>
         </div>
         <div class="radio">
             <label>
-                <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2" name="laklak" checked>Non
+                <input type="radio" id="optionsRadios2" value="0" name="laklak" checked>Non
             </label>
         </div>
 
 
         <div class="form-group">
             <label for="exampleInputFile">Photo artiste</label>
-            <input type="file" id="photoArtiste">
+            <input type="file" id="photoArtiste" name="artistImgProfilPath">
 
         </div>
         <div class="form-group">
             <label for="exampleInputFile">Photo Cover</label>
-            <input type="file" id="photoCover">
+            <input type="file" id="photoCover" name="artistImgCoverPath">
 
         </div>
         <div>
         <label>Evènements</label>
-        <select class="selectpicker" multiple title="Choisir un ou plusieurs événement">
-            <option>Event 1</option>
-            <option>Event 2</option>
-            <option>Event 3</option>
+        <select class="selectpicker" title="Choisir un ou plusieurs événement" name="artistidevent">
+            <option value="1" selected>Event 1</option>
+            <option value="2">Event 2</option>
+            <option value="3">Event 3</option>
         </select>
     </div>
 
-        <button type="submit" class="btn btn-default">Ajouter</button>
+        <button type="submit" name="add" class="btn btn-default">Ajouter</button>
 
     </form>
     </div>
-
 </div>
 
 {% endblock %}
