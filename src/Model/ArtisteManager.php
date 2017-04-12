@@ -26,17 +26,12 @@ class ArtisteManager extends Manager
      * @param $id
      * @return string
      */
-    public function showOne($id)
+    public function showOne()
     {
-        $req = "SELECT * FROM artist WHERE id=$id";
-        $prep = $this->bdd->prepare($req);
-        $prep->bindValue(':id', $id, \PDO::PARAM_INT);
-
+        $prep = $this->bdd->query('SELECT * FROM artist WHERE id=$id');
         $prep->execute();
 
-        $res = $prep->fetchAll(\PDO::FETCH_CLASS, __NAMESPACE__ . '\model\\'.ucfirst('artist'));
-        return $res[$id];
-
+        return $prep->fetch(\PDO::FETCH_CLASS, __NAMESPACE__ . '\model\\'.ucfirst('artist'));
     }
 
     /**

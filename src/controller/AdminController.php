@@ -29,10 +29,6 @@ class AdminController extends Controller
 
 
 
-    public function listeartistes()
-    {
-        return $this->getTwig()->render('listeartistes.html.twig');
-    }
 
 
     public function listEvent()
