@@ -11,10 +11,8 @@ namespace laklak\controller;
 
 
 use laklak\Model\ArtisteManager;
-=======
 use laklak\Model\AdminaproposManager;
 use laklak\Model\PresentationManager;
->>>>>>> 6bb359b07e350eab2a8568f83f8332b97fae5a39
 use laklak\Model\Slider;
 use laklak\Model\SliderManager;
 
@@ -60,19 +58,6 @@ class AdminController extends Controller
 
     }
 
-    public function addArtist()
-    {
-        // si le form est submit, je récupère mon $_POST
-        // je fais mon traitement
-        // $artist = new Artist()
-        // $artist -> setNom($_POST['nom');
-
-        // $artist -> insert();
-        // redirect vers la page qui liste les artist $this->listArtist()
-
-        // sinon le form est pas submit, j'affiche le form
-        return $this->getTwig()->render('ajoutartistes.html.twig');
-    }
 
     public function updateArtist($id)
     {

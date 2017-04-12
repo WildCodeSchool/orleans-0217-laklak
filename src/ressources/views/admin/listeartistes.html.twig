@@ -24,8 +24,13 @@
             <td>{{ artist.id }}</td>
             <td><img src="/web/images/photoartistes/2016/meryem.jpg" width="50px"></td>
             <td>{{ artist.artistname }}</td>
-            <td><button type="submit" class="btn btn-default">Modifier</button></td>
-            <td><button type="submit" class="btn btn-default">Supprimer</button></td>
+
+            <td><button type="submit" name ="modif" class="btn btn-default">Modifier</button></td>
+
+            <form method="POST" action="?page=deleteartistes">
+                <input type="hidden" name="id" value="{{ artist.id }}">
+            <td><button type="submit" name="delete" class="btn btn-default">Supprimer</button></td>
+            </form>
 
         </tr>
     {% endfor %}

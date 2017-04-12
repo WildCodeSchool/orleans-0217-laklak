@@ -46,17 +46,17 @@ class ArtisteManager extends Manager
     {
 
 
-        $prep= $this->bdd->prepare('INSERT INTO artist (id, artistname, artistbio, artistlaklak, artistwebsiteurl,
+        $prep= $this->bdd->prepare('INSERT INTO artist (artistname, artistbio, artistlaklak, artistwebsiteurl,
                                                         artistfacebookurl, artisttwitterurl, artisttumblrurl,
                                                         artistvimeourl, artistsoundcloudurl, artistinstaurl, 
                                                         artistiframesoundcloud, artistiframeyoutube, artistimgcoverpath, 
                                                         artistimgprofilpath, artistidevent) 
-                                    VALUES (:artistId, :artistName, :artistBio, :artistLaklak,:artistWebsiteUrl,:artistFacebookUrl,
+                                    VALUES (:artistName, :artistBio, :artistLaklak,:artistWebsiteUrl,:artistFacebookUrl,
                                             :artistTwitterUrl,:artistTumblrUrl,:artistVimeoUrl, :artistSoundcloudUrl,
                                             :artistInstaUrl,:artistIframeSoundcloudUrl, :artistIframeYoutubeUrl, 
                                             :artistImgCoverPath, :artistImgProfilPath, :artistIdEvent)');
 
-       $prep->bindValue (':artistId', $value['artistid']);
+
        $prep->bindValue (':artistName', $value['nomArtist']);
        $prep->bindValue (':artistBio', $value['bio']);
        $prep->bindValue  (':artistLaklak',intval($value['laklak']));
@@ -73,21 +73,23 @@ class ArtisteManager extends Manager
        $prep->bindValue (':artistImgProfilPath', $value['artistImgProfilPath']);
        $prep->bindValue (':artistIdEvent', intval($value['artistidevent']));
 
-       var_dump($prep);
        $prep->execute();
-        var_dump($prep);
+
     }
 
     /**
      *
      */
-    public function update() {
+    public function update()
+    {
+
         $res=$this-> bdd->prepare("UPDATE artist SET  WHERE id =:id");
         $res->bindValue(':nom', $_POST['nom']);
         $res->bindValue(':prenom', $_POST['premon']);
         $res->bindValue(':age', $_POST['age']);
         $res->bindValue(':id', $_POST['id']);
         $res->execute();
+
     }
 
     /**
@@ -97,7 +99,7 @@ class ArtisteManager extends Manager
 
 
         $req = $this->bdd->prepare('DELETE FROM artist WHERE id = :id');
-        $req->bindValue(':id', $id, \PDO::PARAM_INT);
+        $req->bindValue(':id', $id );
         $req->execute();
     }
 

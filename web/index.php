@@ -55,9 +55,12 @@ if (isset($_GET['page'])) {
                     break;
                 case 'modifAccueil':
                     $view = $default->modifAccueil();
-
                     break;
-                default :
+                case 'deleteartistes':
+                    $view = $defaultArtist->deleteArtist();
+                    break;
+
+                default:
                     $view = $default->index();
 
             }
@@ -101,8 +104,7 @@ if (isset($_GET['page'])) {
                 default :
                     $view = $default->index();
             }
-        echo $view;
-
+            echo $view;
 }
 
 
