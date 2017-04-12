@@ -3,7 +3,11 @@ session_start();
 require '../vendor/autoload.php';
 use laklak\controller\DefaultController;
 use laklak\controller\AdminController;
+
+use laklak\controller\EventController;
+
 use laklak\controller\ArtistController;
+
 
 
 if (isset($_POST['email']) && isset($_POST['mdp'])){
@@ -25,6 +29,7 @@ if (isset($_GET['page'])) {
         if (isset($_SESSION['email'])) {
 
             $default = new AdminController(false);
+            $defaultEvent = new EventController(false);
 
             $presentation = new \laklak\controller\PresentationController(false);
 
@@ -51,10 +56,16 @@ if (isset($_GET['page'])) {
                     $view = $defaultArtist->listArtist();
                     break;
                 case 'listEvent':
-                    $view = $default->listEvent();
+                    $view = $defaultEvent->listEvent();
                     break;
                 case 'addEvent':
-                    $view = $default->addEvent();
+                    $view = $defaultEvent->addEvent();
+                    break;
+                case 'updateEvent':
+                    $view = $defaultEvent->updateEvent($_GET['id']);
+                    break;
+                case 'deleteEvent':
+                    $view = $defaultEvent->deleteEvent($_GET['id']);
                     break;
                 case 'deconnexion':
                     $view = $default->deconnexion();
