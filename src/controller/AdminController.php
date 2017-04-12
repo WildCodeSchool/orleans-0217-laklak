@@ -98,6 +98,8 @@ class AdminController extends Controller
         $slides = $slide->selectAllSlide();
         if (isset($_POST['add'])) {
 
+
+
         } elseif (isset($_POST['delete'])) {
             $slide->deleteOneSlide($_POST['id']);
         }
