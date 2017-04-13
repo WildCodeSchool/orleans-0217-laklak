@@ -24,7 +24,13 @@ class ArtistController extends Controller
 
     public function listOneArtist()
     {
-        $artist = new ArtisteManager();
+        if (isset($_POST ['modif'])){
+
+            $artist = new ArtisteManager();
+            $artist->showOne();
+
+            return $this->getTwig()->render('ajoutartstes.html.twig');
+        }
 
     }
 
@@ -39,14 +45,6 @@ class ArtistController extends Controller
 
         }
 
-        // si le form est submit, je récupère mon $_POST
-        // je fais mon traitement
-
-
-        // $artist -> setNom($_POST['nom');
-
-        // $artist -> insert();
-        // redirect vers la page qui liste les artist $this->listArtist()
 
         // sinon le form est pas submit, j'affiche le form
         return $this->getTwig()->render('ajoutartistes.html.twig');
