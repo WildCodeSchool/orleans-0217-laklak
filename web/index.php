@@ -30,7 +30,9 @@ if (isset($_GET['page'])) {
 
             $default = new AdminController(false);
             $defaultEvent = new EventController(false);
+
             $defaultArtist = new ArtistController(false);
+
 
             $presentation = new \laklak\controller\PresentationController(false);
 
