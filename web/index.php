@@ -30,6 +30,7 @@ if (isset($_GET['page'])) {
 
             $default = new AdminController(false);
             $defaultEvent = new EventController(false);
+            $defaultArtist = new ArtistController(false);
 
             $presentation = new \laklak\controller\PresentationController(false);
 
@@ -76,7 +77,9 @@ if (isset($_GET['page'])) {
                 case 'deleteartistes':
                     $view = $defaultArtist->deleteArtist();
                     break;
-
+                case 'updateartist':
+                    $view = $defaultArtist->updateArtist($_GET['id']);
+                    break;
                 default:
                     $view = $default->index();
 

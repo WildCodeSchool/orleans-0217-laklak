@@ -26,16 +26,22 @@ class ArtisteManager extends Manager
      * @param $id
      * @return string
      */
-    public function showOne()
+    public function showOneArtist($id)
     {
-        $prep = $this->bdd->query('SELECT * FROM artist WHERE id=$id');
+
+        // requete sql pour récupérer un event dans un tableau d'objets artists
+        $req = "SELECT * FROM artist WHERE id=:id";
+        $prep = $this->bdd->prepare($req);
+        $prep->bindValue(':id', $id);
+
         $prep->execute();
 
-        return $prep->fetch(\PDO::FETCH_CLASS, __NAMESPACE__ . '\model\\'.ucfirst('artist'));
+        $res = $prep->fetchAll(\PDO::FETCH_CLASS, 'laklak\Model\Artist');
+        return $res;
     }
 
     /**
-     * j'ajoute un élève
+     * j'ajoute un artist
      */
     public function addArtist(array $value)
     {
@@ -75,15 +81,36 @@ class ArtisteManager extends Manager
     /**
      *
      */
-    public function update()
+    public function updateArtist($value)
     {
 
-        $res=$this-> bdd->prepare("UPDATE artist SET  WHERE id =:id");
-        $res->bindValue(':nom', $_POST['nom']);
-        $res->bindValue(':prenom', $_POST['premon']);
-        $res->bindValue(':age', $_POST['age']);
-        $res->bindValue(':id', $_POST['id']);
-        $res->execute();
+        $prep=$this-> bdd->prepare("UPDATE artist SET artistname=:artistname, artistbio=:artistBio, 
+                                    artistlaklak=:artistLaklak,
+                                    artistwebsiteurl=:artistWebsitUrl, artistfacebookurl=:artistFacebookUrl, 
+                                    artisttwitter:=artistTwitterUrl
+                                    artisttumblrurl=:artistTumblrURL, artistvimeourl=:artistVimeoUrl, 
+                                    artistsoundcloudurl=:artistSouncloudUrl,
+                                    artistinstaurl=:artistInstaUrl, artistiframesoundcloud=:artistIframeSoundcloudUrl, 
+                                    artistiframeyoutube=:artistIframeYoutube, artistimgcover=:artistImgcoverPath, 
+                                    artistimgprofilpath:=artistImgProfilPath, artistidevent:=artistIdEvent WHERE id =:id");
+
+
+        $prep->bindValue (':artistname', $value['nomArtist']);
+        $prep->bindValue (':artistBio', $value['bio']);
+        $prep->bindValue  (':artistLaklak',intval($value['laklak']));
+        $prep->bindValue  (':artistWebsiteUrl', $value['siteArtist']);
+        $prep->bindValue  (':artistFacebookUrl', $value['fbArtistIframe']);
+        $prep->bindValue  (':artistTwitterUrl', $value['twitArtist']);
+        $prep->bindValue  (':artistVimeoUrl', $value['vimArtist']);
+        $prep->bindValue  (':artistSoundcloudUrl', $value['artistsoundcloudurl']);
+        $prep->bindValue  (':artistIframeSoundcloudUrl', $value['scArtistIframe']);
+        $prep->bindValue  (':artistIframeYoutubeUrl', $value['yArtistIframe']);
+        $prep->bindValue  (':artistInstaUrl', $value['instArtist']);
+        $prep->bindValue  (':artistTumblrUrl', $value['tumbArtist']);
+        $prep->bindValue  (':artistImgCoverPath', $value['artistImgCoverPath']);
+        $prep->bindValue (':artistImgProfilPath', $value['artistImgProfilPath']);
+        $prep->bindValue (':artistIdEvent', intval($value['artistidevent']));
+        $prep->execute();
 
     }
 

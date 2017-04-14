@@ -2,26 +2,27 @@
 
 {% block content %}
 
-    <h1>Ajouter un artiste</h1>
+    <h1>Modifier un artiste</h1>
+
 <div class="container-fluid">
     <div class="row col-xs-9">
-    <form method="POST" action="?page=ajoutartistes">
+    <form method="POST" action="?page=updateartist" name="updateartist">
 
         <div class="form-group">
             <label for="nom">Nom de l'artiste</label>
-            <input type="text" class="form-control" id="nom" placeholder="nom de l'artiste" name="nomArtist">
+            <input type="text" class="form-control" id="nom" placeholder="nom de l'artiste" name="nomArtist" value="{{ artist.artistname }}">
         </div>
-
+        <input type="text" class="hidden" id="id" name="artistid">
         <div class="form-group">
 
             <label for="biographie">Biographie</label>
 
-            <textarea cols="70" class="ckeditor" rows="10" id="bio" placeholder="Biographie" name="bio"></textarea>
+            <textarea cols="70" class="ckeditor" rows="10" class="form-control" id="bio" placeholder="Biographie" name="bio" value="{{ artist.bio|raw }}"></textarea>
         </div>
 
         <div class="form-group">
             <label for="Site de l'artiste">site de l'artiste</label>
-            <input type="url" class="form-control" id="url" placeholder="site de l'artiste" name="siteArtist">
+            <input type="url" class="form-control" id="url" placeholder="site de l'artiste" name="siteArtist" value="{{ artist.artistwebsiteurl }}">
         </div>
         <div class="form-group">
             <label for="IframeFacebook">Iframe Facebook <i class="icon-facebook"></i></label>
@@ -91,7 +92,7 @@
         </select>
     </div>
 
-        <button type="submit" name="add" class="btn btn-default">Ajouter</button>
+        <button type="submit" name="add" class="btn btn-default">Modifier</button>
 
     </form>
     </div>
