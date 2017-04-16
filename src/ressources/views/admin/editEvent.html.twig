@@ -24,22 +24,22 @@
 
                 <div class="form-group">
                     <label for="artistes">Artistes de l'évènement</label>
-                    <textarea cols="70" class="ckeditor" rows="10" class="form-control" name="artistes" id="artistes" value="{{ event.eventArtistes }}"></textarea>
+                    <textarea cols="70" class="ckeditor" rows="10" class="form-control" name="artistes" id="artistes" value="{{ event.eventArtistes }}">{{ event.eventArtistes }}</textarea>
                 </div>
 
                 <div class="form-group">
                     <label for="description">Description de l'évènement</label>
-                    <textarea cols="70" class="ckeditor" rows="10" class="form-control" name="description" id="description" value="{{ event.eventDescription }}"></textarea>
+                    <textarea cols="70" class="ckeditor" rows="10" class="form-control" name="description" id="description" value="{{ event.eventDescription }}">{{ event.eventDescription }}</textarea>
                 </div>
 
                 <div class="form-group">
                     <label for="idArtiste">identifiant de l'artiste</label>
-                    <textarea cols="70" class="ckeditor" rows="10" class="form-control" name="idArtiste" id="idArtiste" value="{{ event.eventIdArtiste }}"></textarea>
+                    <input type="text" class="form-control" id="idArtiste" name="idArtiste" placeholder="idArtiste" value="{{ event.eventIdArtiste }}">
                 </div>
 
                 <div class="form-group">
                     <label for="production">Productions</label>
-                    <textarea cols="70" class="ckeditor" rows="10" class="form-control" name="production" id="production" value="{{ event.eventProduction }}"></textarea>
+                    <textarea cols="70" class="ckeditor" rows="10" class="form-control" name="production" id="production" value="{{ event.eventProduction }}">{{ event.eventProduction }}</textarea>
                 </div>
 
                 <div class="form-group">
@@ -104,7 +104,7 @@
 
                 <div class="form-group">
                     <label for="bookingUrl">booking url</label>
-                    <input type="url" class="form-control" id="bookingUrl" name="bookingUrl" value="{{ event.eventBookinUrl }}">
+                    <input type="url" class="form-control" id="bookingUrl" name="bookingUrl" value="{{ event.eventBookingUrl }}">
                 </div>
                 <input type="hidden" name="id" value="{{ event.id }}">
                 <input class="btn btn-success" type="submit" name="updateEvent" value="Modifier">

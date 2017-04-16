@@ -9,8 +9,10 @@
 namespace laklak\controller;
 
 
+use laklak\Model\Event;
 use laklak\Model\PresentationManager;
 use laklak\Model\SliderManager;
+use laklak\Model\EventManager;
 
 class DefaultController extends Controller
 {
@@ -26,10 +28,12 @@ class DefaultController extends Controller
         return $this->getTwig()->render('liste_artistes.html.twig');
     }
 
-    public function evenements()
-    {
-        return $this->getTwig()->render('evenements.html.twig');
-    }
+//    public function evenements($id)
+//    {
+//        $evt = new EventManager();
+//        $event=$evt->showOneEvent($id);
+//        return $this->getTwig()->render('evenements.html.twig',array('event'=>$event));
+//    }
 
     public function liste_evenements()
     {
