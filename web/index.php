@@ -3,9 +3,7 @@ session_start();
 require '../vendor/autoload.php';
 use laklak\controller\DefaultController;
 use laklak\controller\AdminController;
-
 use laklak\controller\EventController;
-
 use laklak\controller\ArtistController;
 
 
@@ -92,6 +90,7 @@ if (isset($_GET['page'])) {
 
 
             $default = new DefaultController(true);
+            $defaultEvent = new EventController(true);
 
             switch ($page) {
                 case 'apropos':
@@ -101,10 +100,10 @@ if (isset($_GET['page'])) {
                     $view = $default->liste_artistes();
                     break;
                 case 'liste_evenements':
-                    $view = $default->liste_evenements();
+                    $view = $defaultEvent->listeEvenements();
                     break;
                 case 'evenements':
-                    $view = $default->evenements();
+                    $view = $defaultEvent->evenements($_GET['id']);
                     break;
                 case 'contact':
                     $view = $default->contact();

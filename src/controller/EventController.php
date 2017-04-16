@@ -69,4 +69,20 @@ class EventController extends Controller
 
     }
 
+    public function evenements($id)
+    {
+        $evt = new EventManager();
+        $event=$evt->showOneEvent($id);
+        return $this->getTwig()->render('evenements.html.twig',array('event'=>$event));
+    }
+
+    public function listeEvenements()
+    {
+        $event = new EventManager();
+        $events=$event->listAll();
+        return $this->getTwig()->render('liste_evenements.html.twig',array('events'=>$events));
+    }
+
+
+
 }
