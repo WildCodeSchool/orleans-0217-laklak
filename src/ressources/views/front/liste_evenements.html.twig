@@ -35,26 +35,28 @@
         </div>
 
 
-
+        {% for event in events %}
         <div class="col-sm-6 col-md-3 thumbnail bottommargin">
             <div class="feature media-box">
                 <div class="fbox-media">
                     <div class="image_list_event" style="background-image:url('images/photoartistes/2015/jazzaauchellah.jpg')">
                         <img class="img_list_event" src="images/photoartistes/2015/jazzaauchellah.jpg" alt="jazzaauchellah"/>
-                        <h3 class="nom_list_event">jazzaauchellah</h3>
+                        <h3 class="nom_list_event">{{ event.eventName }}</h3>
                     </div>
                     <div class="i-overlay on-hover">
-                        <a href="?page=evenements">
+                        <a href="?page=evenements&id={{ event.id }}">
                             <i class ="icon-line-plus"></i>
                         </a>
 
                     </div>
                 </div>
                 <div class="fbox-desc">
-                    <img class="list_label_laklak" src="images/Laklak/logo.jpg" alt=""/>
+                    {% if event.eventLaklak == 1 %}<img class="list_label_laklak" src="images/Laklak/logo.jpg" alt=""/>{% endif %}
+                    {% if event.eventLaklak == 0 %}{% endif %}
                 </div>
             </div>
         </div>
+        {% endfor %}
 
         <div class="col-sm-6 col-md-3 thumbnail bottommargin">
             <div class="feature media-box">

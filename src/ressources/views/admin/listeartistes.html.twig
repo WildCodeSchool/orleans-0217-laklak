@@ -25,7 +25,7 @@
             <td><img src="/web/images/photoartistes/2016/meryem.jpg" width="50px"></td>
             <td>{{ artist.artistname }}</td>
 
-            <form method="POST" action="?page=listeartistes">
+            <form method="POST" action="?page=updateartist&id={{ artist.id }}">
             <input type="hidden" name="id" value="{{ artist.id }}">
             <td><button type="submit" name ="modif" class="btn btn-default">Modifier</button></td>
             </form>
