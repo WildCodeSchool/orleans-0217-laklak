@@ -2,7 +2,7 @@
 
 {% block content %}
 
-
+<div class="container-admin">
     <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample"
             aria-expanded="false" aria-controls="collapseExample">
         Ajouter
@@ -42,7 +42,8 @@
             <td>Photo</td>
             <td>Titre</td>
             <td>Boutton</td>
-            <td colspan="2">Action</td>
+            <td>Baseline</td>
+            <td>Action</td>
         </tr>
         </thead>
         <tbody>
@@ -53,55 +54,55 @@
                 <td><img src="{{ slider.url }}"></td>
                 <td>{{ slider.title }}</td>
                 <td>{{ slider.button }}</td>
+                <td>{{ slider.baseline }}</td>
                 <td>
-                    <form method="POST" action="?page=modifAccueil">
-                        <input type="submit" name="deleteSlider" class="btn btn-danger" value="Supprimer">
+                    <form class="form-admin" method="POST" action="?page=modifAccueil">
+                        <button type="submit" name="deleteSlider" class="btn btn-danger" value="Supprimer"><i class="icon-trash"></i></button>
                         <input type="hidden" name="id" value="{{ slider.id }}">
                     </form>
-                </td>
-                <td>
                     <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseUpdate{{ slider.id }}"
                             aria-expanded="false" aria-controls="collapseUpdate{{ slider.id }}">
-                        Modifier
+                        <i class="icon-pencil"></i>
                     </button>
                 </td>
             </tr>
             <tr>
                 <td colspan="5">
-                <div class="collapse" id="collapseUpdate{{ slider.id }}">
-                    <div class="well">
-                        <form enctype="multipart/form-data" class="form-inline" method="post" action="?page=modifAccueil">
-                            <div class="form-group">
-                                <label for="titre">Titre</label>
-                                <input type="text" name="title" class="form-control" id="titre" value="{{ slider.title }}" placeholder="Titre"
-                                       required>
-                            </div>
-                            <div class="form-group">
-                                <label for="baseline">Baseline</label>
-                                <textarea name="baseline" class="form-control" id="baseline"
-                                          placeholder="Baseline">{{ slider.baseline }}</textarea>
-                            </div>
-                            <div class="form-group">
-                                <label for="bouton">Bouton</label>
-                                <input type="text" name="button" class="form-control" value="{{ slider.button }}" id="bouton"
-                                       placeholder="Lien du bouton">
-                            </div>
-                            <div class="form-group">
-                                <label for="image">Image</label>
-                                <input type="hidden" name="MAX_FILE_SIZE" value="3000000" />
-                                <input type="file" name="image" id="image">
-                                <p class="help-block">Example block-level help text here.</p>
-                            </div>
-                            <input type="hidden" value="{{ slider.id }}" name="id">
-                            <div class="form-group">
-                                <input type="submit" name="updateSlider" id="image">
-                            </div>
-                        </form>
+                    <div class="collapse" id="collapseUpdate{{ slider.id }}">
+                        <div class="well">
+                            <form enctype="multipart/form-data" class="form-inline" method="post" action="?page=modifAccueil">
+                                <div class="form-group">
+                                    <label for="titre">Titre</label>
+                                    <input type="text" name="title" class="form-control" id="titre" value="{{ slider.title }}" placeholder="Titre"
+                                           required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="baseline">Baseline</label>
+                                    <textarea name="baseline" class="form-control" id="baseline"
+                                              placeholder="Baseline">{{ slider.baseline }}</textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label for="bouton">Bouton</label>
+                                    <input type="text" name="button" class="form-control" value="{{ slider.button }}" id="bouton"
+                                           placeholder="Lien du bouton">
+                                </div>
+                                <div class="form-group">
+                                    <label for="image">Image</label>
+                                    <input type="hidden" name="MAX_FILE_SIZE" value="3000000" />
+                                    <input type="file" name="image" id="image">
+                                    <p class="help-block">Example block-level help text here.</p>
+                                </div>
+                                <input type="hidden" value="{{ slider.id }}" name="id">
+                                <div class="form-group">
+                                    <input type="submit" name="updateSlider" id="image">
+                                </div>
+                            </form>
+                        </div>
                     </div>
-                </div>
                 </td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
+</div>
 {% endblock %}

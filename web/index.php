@@ -37,6 +37,7 @@ if (isset($_GET['page'])) {
 
             $adminAccueil = new \laklak\controller\SliderController(false);
             $defaultArtist = new \laklak\controller\ArtistController(false);
+            $gestionAdmin = new \laklak\controller\AdministrateurController(false);
 
 
 
@@ -79,6 +80,9 @@ if (isset($_GET['page'])) {
                     break;
                 case 'updateartist':
                     $view = $defaultArtist->updateArtist($_GET['id']);
+                    break;
+                case 'gestionAdmin':
+                    $view = $gestionAdmin->Admin();
                     break;
                 default:
                     $view = $default->index();
