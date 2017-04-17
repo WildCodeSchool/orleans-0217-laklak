@@ -1,7 +1,8 @@
 {
     "name": "wilder12/orleans-0217-laklak",
     "require": {
-        "twig/twig": "^2.3"
+        "twig/twig": "^2.3",
+        "swiftmailer/swiftmailer": "@stable"
 
     },
     "authors": [
@@ -16,4 +17,3 @@
     }
 
 }
-

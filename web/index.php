@@ -87,6 +87,7 @@ if (isset($_GET['page'])) {
 
 
             $default = new DefaultController(true);
+            $contact = new \laklak\controller\MailController(true);
 
             switch ($page) {
                 case 'apropos':
@@ -102,7 +103,7 @@ if (isset($_GET['page'])) {
                     $view = $default->evenements();
                     break;
                 case 'contact':
-                    $view = $default->contact();
+                    $view = $contact->send();
                     break;
                 case 'agenda':
                     $view = $default->agenda();

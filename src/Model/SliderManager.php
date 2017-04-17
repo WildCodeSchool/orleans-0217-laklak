@@ -13,14 +13,24 @@ use laklak\Model\Slider;
 class SliderManager extends Manager
 {
 
-    public function updateSlide(array $slide)
+    public function updateSlide(array $slide,array $file)
     {
+
+        if ($file['image']['name'] != null){
+            $uploaddir = 'images/Upload/Slider/';
+            $uploadfile = $uploaddir . basename($file['image']['name']);
+            move_uploaded_file($file['image']['tmp_name'], $uploadfile);
+        } else {
+            $slider = $this->selectOneSlide($slide['id']);
+            $uploadfile = $slider['url'];
+        }
+
         $req = $this->bdd->prepare('UPDATE slider SET  url = :url,title = :title ,baseline = :baseline, button = :button WHERE id = :id');
         $req->bindValue(':id', $slide['id'], \PDO::PARAM_INT);
-        $req->bindValue(':url', $slide['image'], \PDO::PARAM_STR);
+        $req->bindValue(':url', $uploadfile, \PDO::PARAM_STR);
         $req->bindValue(':title', $slide['title'], \PDO::PARAM_STR);
+        $req->bindValue(':baseline', $slide['baseline'], \PDO::PARAM_STR);
         $req->bindValue(':button', $slide['button'], \PDO::PARAM_STR);
-        $req->bindValue(':baselin', $slide['baseline'], \PDO::PARAM_STR);
 
         $req->execute();
     }
