@@ -25,12 +25,13 @@ class SliderManager extends Manager
             $uploadfile = $slider['url'];
         }
 
-        $req = $this->bdd->prepare('UPDATE slider SET  url = :url,title = :title ,baseline = :baseline, button = :button WHERE id = :id');
+        $req = $this->bdd->prepare('UPDATE slider SET  url = :url,title = :title ,baseline = :baseline, button = :button, urlbutton = :urlbutton WHERE id = :id');
         $req->bindValue(':id', $slide['id'], \PDO::PARAM_INT);
         $req->bindValue(':url', $uploadfile, \PDO::PARAM_STR);
         $req->bindValue(':title', $slide['title'], \PDO::PARAM_STR);
         $req->bindValue(':baseline', $slide['baseline'], \PDO::PARAM_STR);
         $req->bindValue(':button', $slide['button'], \PDO::PARAM_STR);
+        $req->bindValue(':urlbutton', $slide['urlButton'], \PDO::PARAM_STR);
 
         $req->execute();
     }
@@ -48,11 +49,12 @@ class SliderManager extends Manager
         $uploadfile = $uploaddir . basename($file['image']['name']);
         move_uploaded_file($file['image']['tmp_name'], $uploadfile);
 
-        $req = $this->bdd->prepare('INSERT INTO slider(url,title,baseline, button) VALUES  (:url, :title,:baseline, :button)');
+        $req = $this->bdd->prepare('INSERT INTO slider(url,title,baseline, button, urlbutton) VALUES  (:url, :title,:baseline, :button, :urlbutton)');
         $req->bindValue(':url', $uploadfile, \PDO::PARAM_STR);
         $req->bindValue(':title', $value['title'], \PDO::PARAM_STR);
         $req->bindValue(':baseline', $value['baseline'], \PDO::PARAM_STR);
         $req->bindValue(':button', $value['button'], \PDO::PARAM_STR);
+        $req->bindValue(':urlbutton', $value['urlButton'], \PDO::PARAM_STR);
         $req->execute();
 
     }

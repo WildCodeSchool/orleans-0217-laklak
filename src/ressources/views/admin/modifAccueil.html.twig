@@ -21,7 +21,11 @@
                 </div>
                 <div class="form-group">
                     <label for="bouton">Bouton</label>
-                    <input type="text" name="button" class="form-control" id="bouton" placeholder="Lien du bouton">
+                    <input type="text" name="button" class="form-control" id="bouton" placeholder="Titre du bouton">
+                </div>
+                <div class="form-group">
+                    <label for="urlBouton">URL du bouton</label>
+                    <input type="text" name="urlButton" class="form-control" id="urlBouton" placeholder="URL du bouton">
                 </div>
                 <div class="form-group">
                     <label for="image">Image</label>
@@ -42,6 +46,7 @@
             <td>Photo</td>
             <td>Titre</td>
             <td>Boutton</td>
+            <td>URL Boutton</td>
             <td>Baseline</td>
             <td>Action</td>
         </tr>
@@ -54,6 +59,7 @@
                 <td><img src="{{ slider.url }}"></td>
                 <td>{{ slider.title }}</td>
                 <td>{{ slider.button }}</td>
+                <td>{{ slider.urlbutton }}</td>
                 <td>{{ slider.baseline }}</td>
                 <td>
                     <form class="form-admin" method="POST" action="?page=modifAccueil">
@@ -85,6 +91,11 @@
                                     <label for="bouton">Bouton</label>
                                     <input type="text" name="button" class="form-control" value="{{ slider.button }}" id="bouton"
                                            placeholder="Lien du bouton">
+                                </div>
+                                <div class="form-group">
+                                    <label for="urlBouton">URL Bouton</label>
+                                    <input type="text" name="urlButton" class="form-control" value="{{ slider.urlbutton }}" id="urlBouton"
+                                           placeholder="URL du bouton">
                                 </div>
                                 <div class="form-group">
                                     <label for="image">Image</label>
