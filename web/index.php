@@ -94,7 +94,7 @@ if (isset($_GET['page'])) {
 
 
             $default = new DefaultController(true);
-            $contact = new \laklak\controller\MailController(true);
+            $contact = new \laklak\controller\ContactController(true);
             $defaultEvent = new EventController(true);
 
             switch ($page) {
@@ -111,7 +111,7 @@ if (isset($_GET['page'])) {
                     $view = $defaultEvent->evenements($_GET['id']);
                     break;
                 case 'contact':
-                    $view = $contact->send();
+                    $view = $contact->contact();
                     break;
                 case 'agenda':
                     $view = $default->agenda();

@@ -12,39 +12,27 @@ namespace laklak\controller;
 class MailController extends Controller
 {
 
-
-    public function Send()
+    public function Send($mail, $to)
     {
-        $alert = '';
-        if (isset($_POST['mail'])) {
             // Create the Transport
             $transport = \Swift_SmtpTransport::newInstance('smtp.googlemail.com', 465, 'ssl')
-                ->setUsername('teamwilders45@gmail.com')
-                ->setPassword('laklak45');
+                ->setUsername($this->expediteur)
+                ->setPassword('Laklak45');
             $mailer = \Swift_Mailer::newInstance($transport);
 
             $message = \Swift_Message::newInstance()
-                ->setSubject($_POST['sujet'])
-                ->setFrom(array($_POST['email'] => $_POST['nom']))
-                ->setSender($_POST['email'], $_POST['nom'])
-                ->setReplyTo($_POST['email'])
-                ->setTo(array('teamwilders45@gmail.com'))
+                ->setSubject($mail['sujet'])
+                ->setFrom(array($mail['email'] => $mail['nom']))
+                ->setSender($mail['email'], $mail['nom'])
+                ->setReplyTo($mail['email'])
+                ->setTo(array($to))
                 ->addPart('
-                <h1>Vous avez reçu un message de ' . $_POST['nom'] . '</h1> 
-                <p>Email : ' . $_POST['email'] . '<br/>
-                Tel : ' . $_POST['tel'] . '</p>
-                <p>' . $_POST['message'] . '</p>
+                <h1>Vous avez reçu un message de ' . $mail['nom'] . '</h1> 
+                <p>Email : ' . $mail['email'] . '<br/>
+                Tel : ' . $mail['tel'] . '</p>
+                <p>' . $mail['message'] . '</p>
                 ', 'text/html');
-
-            if (0 == $mailer->send($message)) {
-                $alert = 2;
-            } else {
-                $alert = 1;
-            };
-
-
-        }
-        return $this->getTwig()->render('contact.html.twig', array('alert' => $alert));
+           return $mailer->send($message);
 
     }
 

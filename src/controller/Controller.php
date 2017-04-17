@@ -14,6 +14,8 @@ class Controller
     /**
      * @return \Twig_Environment
      */
+    public $expediteur;
+
     public function getTwig()
     {
         return $this->twig;
@@ -45,5 +47,6 @@ class Controller
         ]);
         $twig->addExtension(new \Twig_Extension_Debug());
         $this->setTwig($twig);
+        $this->expediteur = 'teamwilders45@gmail.com';
     }
 }
