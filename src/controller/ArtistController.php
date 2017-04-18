@@ -81,5 +81,16 @@ class ArtistController extends Controller
         return $this->getTwig()->render('listeartistes.html.twig');
 
     }
-
+    public function artist($id)
+    {
+        $art = new ArtisteManager();
+        $artist=$art->showOneArtist($id);
+        return $this->getTwig()->render('artistes.html.twig',array('artist'=>$artist));
+    }
+    public function listeArt()
+    {
+        $artist = new ArtisteManager();
+        $artists=$artist->showAll();
+        return $this->getTwig()->render('liste_artistes.html.twig',array('artists'=>$artists));
+    }
 }

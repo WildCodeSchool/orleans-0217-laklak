@@ -1,8 +1,8 @@
 {% extends 'layout.html.twig' %}
-{% block title %}Artistes {{ parent() }}{% endblock %}
+{% block title %} Artistes {{ parent() }}{% endblock %}
+
 
 {% block content %}
-
     <div class="container hidden-xs">
         <div class=row">
             <div class="portfolio-image img-responsive">
@@ -14,62 +14,90 @@
     </div>
     <div class="container">
         <div class=row">
-            {% for artist in artists %}
+
             <h1 class="visible-xs">{{ artist.artistname }}</h1>
-            {% endfor %}
+
             <div class="col-sm-4 bottommargin haut">
                 <div class="fbox-media clearfix bio thumbnail">
                     <a href="#"><img src="images/photoartistes/2016/meryem.jpg" alt="Visage Meryem Aboulouafa"></a>
-                    <div class="detail_artiste"><img src="images/Laklak/logo.jpg" alt=""/></div>
+                    <div class="detail_artiste">{% if artist.artistlaklak == 1 %}<img src="images/Laklak/logo.jpg" alt=""> {% endif %} {% if artist.artistlaklak == 0 %}{% endif %}></div>
                 </div>
 
                 <div class="row">
                     <div class="social col-xs-12">
-                        <button class="button button-large button-border button-rounded tright nomargin" type="submit" id="#"
-                                name="siteArtiste">Site de l'artiste
+                     <a href="{{ artist.artistwebsiteurl }}" target="_blank">
+                         {%  if artist.artistwebsiteurl ==''  %}{%  else %}
+                        <button class="button button-large button-border button-rounded tright nomargin" type="submit" id="#" name="siteArtiste">Site de l'artiste
                         </button>
+                        </a>
+                      {% endif %}
                     </div>
                     <div class="col-sm-12 bottommargin-sm">
+                        {% if artist.artisttwitterurl =='' %}
+                        {% else %}
                         <a href="{{ artist.artisttwitterurl }}" target="_blank" class="social-icon si-dark si-colored si-twitter nobottommargin" style="margin-right: 10px;">
                             <i class="icon-twitter"></i>
                             <i class="icon-twitter"></i>
                         </a>
+                        {% endif %}
 
-                        <a href="https://www.facebook.com/meryemaboulouafa/" target="_blank" class="social-icon si-dark si-colored si-facebook nobottommargin" style="margin-right: 10px;">
+                            {%  if artist.artistfacebookurl =='' %}
+                            {% else %}
+                        <a href="{{ artist.artistfacebookurl }}" target="_blank" class="social-icon si-dark si-colored si-facebook nobottommargin" style="margin-right: 10px;">
                             <i class="icon-facebook"></i>
                             <i class="icon-facebook"></i>
                         </a>
-                        <a href="https://soundcloud.com/meryemaboulouafa" target="_blank" class="social-icon si-dark si-colored si-soundcloud nobottommargin" style="margin-right: 10px;">
+                            {% endif %}
+
+                            {% if artist.artistsoundcloudurl =='' %}
+                            {%  else %}
+                        <a href="{{ artist.artistsoundcloudurl }}" target="_blank" class="social-icon si-dark si-colored si-soundcloud nobottommargin" style="margin-right: 10px;">
                             <i class="icon-soundcloud"></i>
                             <i class="icon-soundcloud"></i>
                         </a>
-                        <a href="http://meryemaboulouafa.tumblr.com" target="_blank" class="social-icon si-dark si-colored si-tumblr nobottommargin" style="margin-right: 10px;">
+                            {% endif %}
+
+                        {% if artist.artisttumblrurl =='' %}
+                            {% else %}
+                        <a href="{{ artist.artisttumblrurl }}" target="_blank" class="social-icon si-dark si-colored si-tumblr nobottommargin" style="margin-right: 10px;">
                             <i class="icon-tumblr"></i>
                             <i class="icon-tumblr"></i>
                         </a>
-                        <a href="https://vimeo.com/meryemaboulouafa" target="_blank" class="social-icon si-dark si-colored si-vimeo nobottommargin" style="margin-right: 10px;">
+                                {% endif %}
+
+                        {% if artist.artistvimeourl =='' %}
+                            {% else %}
+                        <a href="{{ artist.artistvimeourl }}" target="_blank" class="social-icon si-dark si-colored si-vimeo nobottommargin" style="margin-right: 10px;">
                             <i class="icon-vimeo"></i>
                             <i class="icon-vimeo"></i>
                         </a>
+                                {% endif %}
                     </div>
                 </div>
 
-
-                <div class="bio thumbnail video hidden-xs"><iframe width="100%" height="315" src="http://www.youtube.com/embed/nOCmdZNgbQA" frameborder="0" allowfullscreen></iframe>
+                    {% if artist.artistiframeyoutube =='' %}
+                        {% else %}
+                <div class="bio thumbnail video hidden-xs"><iframe width="100%" height="315" src="{{ artist.artistiframeyoutube }}" frameborder="0" allowfullscreen></iframe>
+                    {% endif %}
                 </div>
-
+                    {% if artist.artistiframesoundcloud =='' %}
+                        {%  else %}
                 <div class="bio thumbnail sound">
-                    <iframe width="100%" height="450" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/users/9943443&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
+                    <iframe width="100%" height="450" scrolling="no" frameborder="no" src="{{ artist.artistiframesoundcloud }}"></iframe>
                 </div>
+                            {% endif %}
+                {% if artist.artistiframefacebook =='' %}
+                    {% else %}
                 <div class="bio thumbnail">
-                    <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fmeryemaboulouafa%2F%3Ffref%3Dts&tabs=timeline&width=400&height=400&small_header=true&adapt_container_width=true&hide_cover=true&show_facepile=false&appId" width="100%" height="300" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe></div>
+                    <iframe src="{{ artist.artistiframefacebook }}"></iframe></div>
+                    {% endif %}
             </div>
 
 
             <div class="col-sm-8">
-                <h1 class="hidden-xs">{{ artist.artistname }}</h1>
+                <h1 class="hidden-xs"> {{ artist.artistname }}</h1>
                 <div class=""> <h3>Biographie</h3>
-                    <p>{{ Artist.artistbio|raw }}</p>
+                    <p>{{ artist.artistbio|raw }}</p>
                 </div>
 
 
