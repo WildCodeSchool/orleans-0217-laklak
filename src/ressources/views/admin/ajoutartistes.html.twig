@@ -26,16 +26,23 @@
         </div>
         <div class="form-group">
             <label for="IframeFacebook">Iframe Facebook <i class="icon-facebook"></i></label>
-            <input type="url" class="form-control" id="iframeFacebook" placeholder="lien Facebook" name="fbArtistIframe" value="{{ artist.artistfacebookurl }}">
+            <input type="url" class="form-control" id="iframeFacebook" placeholder="lien Facebook" name="fbArtistIframe" value="{{ artist.artistiframefacebook }}">
             <comment><em> prendre le code de l'iframe de <a href="https://developers.facebook.com/docs/plugins/page-plugin" target="_blank">facebook.</a></em></comment>
         </div>
         <div class="form-group">
             <label for="IframeYoutube">Iframe Youtube <i class="icon-youtube"></i></label>
             <input type="url" class="form-control" id="iframeYoutube" placeholder="lien Youtube" name="yArtistIframe" value="{{ artist.artistiframeyoutube }}">
+            <comment><em> prendre le code entre les " apres la balise src de <a href="https://youtube.com" target="_blank">Youtube. </a></em></comment>
+
         </div>
         <div class="form-group">
             <label for="IframeSoundCloud">Iframe Soundcloud <i class="icon-soundcloud"></i></label>
             <input type="url" class="form-control" id="iframeSoundCloud" placeholder="lien Soundcloud" name="scArtistIframe" value="{{ artist.artistiframesoundcloud }}">
+            <comment><em> prendre le code entre les " apres la balise src de <a href="https://soundcloud.com" target="_blank">Soundcloud. </a></em></comment>
+        </div>
+        <div class="form-group">
+            <label for="fluxFacebook">Facebook<i class="icon-facebook"></i></label>
+            <input type="url" class="form-control" id="fluxFacebook" placeholder="lien Facebook" name="fbArtistUrl" value="{{ artist.artistfacebookurl }}">
         </div>
 
         <div class="form-group">
