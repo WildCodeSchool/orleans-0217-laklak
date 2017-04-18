@@ -18,39 +18,69 @@ class EventManager extends Manager
         // requete sql pour récupérer tous les events dans un tableau d'objets Events
         $req = "SELECT * FROM event";
         $res = $this->bdd->query($req);
-        return $res->fetchAll(\PDO::FETCH_CLASS,'laklak\Model\Event');
+        return $res->fetchAll(\PDO::FETCH_CLASS, 'laklak\Model\Event');
     }
 
-    public function addEvent(array $value,$file)
+    public function reArrayFiles($value, &$file_post)
     {
-        $imgFileP = $file['imgEvenement']['name'];
-        $tmpDirP = $file['imgEvenement']['tmp_name'];
-        $imgSizeP = $file['imgEvenement']['size'];
 
-        $imgFileC = $file['imgCoverEvenement']['name'];
-        $tmpDirC = $file['imgCoverEvenement']['tmp_name'];
-        $imgSizeC = $file['imgCoverEvenement']['size'];
+        $file_ary = array();
+        $file_count = count($file_post['galerie']['name']);
+        $file_keys = array_keys($file_post['galerie']);
+
+        for ($i = 0; $i < $file_count; $i++) {
+            foreach ($file_keys as $key) {
+                $file_ary[$i][$key] = $file_post['galerie'][$key][$i];
+            }
+        }
+
+        $uploaddir = 'images/Upload/Gallerie/Event/';
+
+        $this->addEvent($value, $file_post['imgEvenement'], $file_post['imgCoverEvenement']);
+
+        for ($i = 0; $i < $file_count ; $i++){
+            if ($file_ary[$i]['name'] != null){
+                $uploadfile = $uploaddir . basename($file_ary['name']);
+                move_uploaded_file($file_ary['tmp_name'], $uploadfile);
+
+                $req = $this->bdd->prepare('INSERT INTO event_images VALUES (:idevent, :eventimggalerypath)');
+                $req->bindValue(':idevent', $this->bdd->lastInsertId());
+                $req->bindValue(':eventimggalerypath', $uploadfile);
+                $req->execute();
+            }
+        }
+    }
+
+    public function addEvent(array $value, $filep, $filec)
+    {
+        $imgFileP = $filep['name'];
+        $tmpDirP = $filep['tmp_name'];
+        $imgSizeP = $filep['size'];
+
+        $imgFileC = $filec['name'];
+        $tmpDirC = $filec['tmp_name'];
+        $imgSizeC = $filec['size'];
 
         $uploaddir = 'images/Upload/Event/';
 
-        $imgExtP = strtolower(pathinfo($imgFileP,PATHINFO_EXTENSION));
-        $imgExtC = strtolower(pathinfo($imgFileC,PATHINFO_EXTENSION));
+        $imgExtP = strtolower(pathinfo($imgFileP, PATHINFO_EXTENSION));
+        $imgExtC = strtolower(pathinfo($imgFileC, PATHINFO_EXTENSION));
 
-        $valid_extensions = array('jpeg','jpg','png','gif');
+        $valid_extensions = array('jpeg', 'jpg', 'png', 'gif');
 
-        $imgEvtP = rand(1000,1000000).".".$imgExtP;
-        $imgEvtC = rand(1000,1000000).".".$imgExtC;
+        $imgEvtP = rand(1000, 1000000) . "." . $imgExtP;
+        $imgEvtC = rand(1000, 1000000) . "." . $imgExtC;
 
 
-        if(in_array($imgExtP,$valid_extensions)){
-            if($imgSizeP < 5000000){
-                move_uploaded_file($tmpDirP,$uploaddir.$imgEvtP);
-                }
+        if (in_array($imgExtP, $valid_extensions)) {
+            if ($imgSizeP < 5000000) {
+                move_uploaded_file($tmpDirP, $uploaddir . $imgEvtP);
             }
+        }
 
-        if(in_array($imgExtC,$valid_extensions)){
-            if($imgSizeC < 5000000){
-                move_uploaded_file($tmpDirC,$uploaddir.$imgEvtC);
+        if (in_array($imgExtC, $valid_extensions)) {
+            if ($imgSizeC < 5000000) {
+                move_uploaded_file($tmpDirC, $uploaddir . $imgEvtC);
             }
         }
 
@@ -66,25 +96,25 @@ class EventManager extends Manager
 
         $prep = $this->bdd->prepare($req);
 
-        $prep->bindValue(':eventName',$value['nom']);
-        $prep->bindValue(':eventDescription',$value['description']);
-        $prep->bindValue(':eventLocation',$value['lieu']);
-        $prep->bindValue(':eventDate',$value['date']);
-        $prep->bindValue(':eventProduction',$value['production']);
-        $prep->bindValue(':eventWebsiteUrl',$value['websiteUrl']);
-        $prep->bindValue(':eventFacebookUrl',$value['facebookUrl']);
-        $prep->bindValue(':eventTwitterUrl',$value['twitterUrl']);
-        $prep->bindValue(':eventSoundcloudUrl',$value['soundcloudUrl']);
-        $prep->bindValue(':eventIframeSoundcloud',$value['iframeSoundcloud']);
-        $prep->bindValue(':eventIframeYoutube',$value['iframeYoutube']);
-        $prep->bindValue(':eventLaklak',intval($value['laklak']));
-        $prep->bindValue(':eventArtistes',$value['artistes']);
-        $prep->bindValue(':eventIdArtiste',intval($value['idArtiste']));
-        $prep->bindValue(':eventImgCoverPath',$imgEvtC);
-        $prep->bindValue(':eventImgProfilePath',$imgEvtP);
-        $prep->bindValue(':eventType',$value['type']);
-        $prep->bindValue(':eventMoreUrl',$value['moreUrl']);
-        $prep->bindValue(':eventBookingUrl',$value['bookingUrl']);
+        $prep->bindValue(':eventName', $value['nom']);
+        $prep->bindValue(':eventDescription', $value['description']);
+        $prep->bindValue(':eventLocation', $value['lieu']);
+        $prep->bindValue(':eventDate', $value['date']);
+        $prep->bindValue(':eventProduction', $value['production']);
+        $prep->bindValue(':eventWebsiteUrl', $value['websiteUrl']);
+        $prep->bindValue(':eventFacebookUrl', $value['facebookUrl']);
+        $prep->bindValue(':eventTwitterUrl', $value['twitterUrl']);
+        $prep->bindValue(':eventSoundcloudUrl', $value['soundcloudUrl']);
+        $prep->bindValue(':eventIframeSoundcloud', $value['iframeSoundcloud']);
+        $prep->bindValue(':eventIframeYoutube', $value['iframeYoutube']);
+        $prep->bindValue(':eventLaklak', intval($value['laklak']));
+        $prep->bindValue(':eventArtistes', $value['artistes']);
+        $prep->bindValue(':eventIdArtiste', intval($value['idArtiste']));
+        $prep->bindValue(':eventImgCoverPath', $imgEvtC);
+        $prep->bindValue(':eventImgProfilePath', $imgEvtP);
+        $prep->bindValue(':eventType', $value['type']);
+        $prep->bindValue(':eventMoreUrl', $value['moreUrl']);
+        $prep->bindValue(':eventBookingUrl', $value['bookingUrl']);
 
         $prep->execute();
 
@@ -96,16 +126,16 @@ class EventManager extends Manager
         // requete sql pour récupérer un event dans un tableau d'objets Events
         $req = "SELECT * FROM event WHERE id=:id";
         $prep = $this->bdd->prepare($req);
-        $prep->bindValue(':id',$id);
+        $prep->bindValue(':id', $id);
 
         $prep->execute();
 
-        $res = $prep ->fetchAll(\PDO::FETCH_CLASS,'laklak\Model\Event');
+        $res = $prep->fetchAll(\PDO::FETCH_CLASS, 'laklak\Model\Event');
         return $res[0];
 
     }
 
-    public function updateEvent($id,$value,$file)
+    public function updateEvent($id, $value, $file)
     {
         $imgFileP = $file['imgEvenement']['name'];
         $tmpDirP = $file['imgEvenement']['tmp_name'];
@@ -117,24 +147,24 @@ class EventManager extends Manager
 
         $uploaddir = 'images/Upload/Event/';
 
-        $imgExtP = strtolower(pathinfo($imgFileP,PATHINFO_EXTENSION));
-        $imgExtC = strtolower(pathinfo($imgFileC,PATHINFO_EXTENSION));
+        $imgExtP = strtolower(pathinfo($imgFileP, PATHINFO_EXTENSION));
+        $imgExtC = strtolower(pathinfo($imgFileC, PATHINFO_EXTENSION));
 
-        $valid_extensions = array('jpeg','jpg','png','gif');
+        $valid_extensions = array('jpeg', 'jpg', 'png', 'gif');
 
-        $imgEvtP = rand(1000,1000000).".".$imgExtP;
-        $imgEvtC = rand(1000,1000000).".".$imgExtC;
+        $imgEvtP = rand(1000, 1000000) . "." . $imgExtP;
+        $imgEvtC = rand(1000, 1000000) . "." . $imgExtC;
 
 
-        if(in_array($imgExtP,$valid_extensions)){
-            if($imgSizeP < 5000000){
-                move_uploaded_file($tmpDirP,$uploaddir.$imgEvtP);
+        if (in_array($imgExtP, $valid_extensions)) {
+            if ($imgSizeP < 5000000) {
+                move_uploaded_file($tmpDirP, $uploaddir . $imgEvtP);
             }
         }
 
-        if(in_array($imgExtC,$valid_extensions)){
-            if($imgSizeC < 5000000){
-                move_uploaded_file($tmpDirC,$uploaddir.$imgEvtC);
+        if (in_array($imgExtC, $valid_extensions)) {
+            if ($imgSizeC < 5000000) {
+                move_uploaded_file($tmpDirC, $uploaddir . $imgEvtC);
             }
         }
 
@@ -149,26 +179,26 @@ class EventManager extends Manager
 
         $prep = $this->bdd->prepare($req);
 
-        $prep->bindValue(':id',$value['id']);
-        $prep->bindValue(':eventName',$value['nom']);
-        $prep->bindValue(':eventDescription',$value['description']);
-        $prep->bindValue(':eventLocation',$value['lieu']);
-        $prep->bindValue(':eventDate',$value['date']);
-        $prep->bindValue(':eventProduction',$value['production']);
-        $prep->bindValue(':eventWebsiteUrl',$value['websiteUrl']);
-        $prep->bindValue(':eventFacebookUrl',$value['facebookUrl']);
-        $prep->bindValue(':eventTwitterUrl',$value['twitterUrl']);
-        $prep->bindValue(':eventSoundcloudUrl',$value['soundcloudUrl']);
-        $prep->bindValue(':eventIframeSoundcloud',$value['iframeSoundcloud']);
-        $prep->bindValue(':eventIframeYoutube',$value['iframeYoutube']);
-        $prep->bindValue(':eventLaklak',intval($value['laklak']));
-        $prep->bindValue(':eventArtistes',$value['artistes']);
-        $prep->bindValue(':eventIdArtiste',intval($value['idArtiste']));
-        $prep->bindValue(':eventImgCoverPath',$imgEvtC);
-        $prep->bindValue(':eventImgProfilePath',$imgEvtP);
-        $prep->bindValue(':eventType',$value['type']);
-        $prep->bindValue(':eventMoreUrl',$value['moreUrl']);
-        $prep->bindValue(':eventBookingUrl',$value['bookingUrl']);
+        $prep->bindValue(':id', $value['id']);
+        $prep->bindValue(':eventName', $value['nom']);
+        $prep->bindValue(':eventDescription', $value['description']);
+        $prep->bindValue(':eventLocation', $value['lieu']);
+        $prep->bindValue(':eventDate', $value['date']);
+        $prep->bindValue(':eventProduction', $value['production']);
+        $prep->bindValue(':eventWebsiteUrl', $value['websiteUrl']);
+        $prep->bindValue(':eventFacebookUrl', $value['facebookUrl']);
+        $prep->bindValue(':eventTwitterUrl', $value['twitterUrl']);
+        $prep->bindValue(':eventSoundcloudUrl', $value['soundcloudUrl']);
+        $prep->bindValue(':eventIframeSoundcloud', $value['iframeSoundcloud']);
+        $prep->bindValue(':eventIframeYoutube', $value['iframeYoutube']);
+        $prep->bindValue(':eventLaklak', intval($value['laklak']));
+        $prep->bindValue(':eventArtistes', $value['artistes']);
+        $prep->bindValue(':eventIdArtiste', intval($value['idArtiste']));
+        $prep->bindValue(':eventImgCoverPath', $imgEvtC);
+        $prep->bindValue(':eventImgProfilePath', $imgEvtP);
+        $prep->bindValue(':eventType', $value['type']);
+        $prep->bindValue(':eventMoreUrl', $value['moreUrl']);
+        $prep->bindValue(':eventBookingUrl', $value['bookingUrl']);
 
         $prep->execute();
 
@@ -179,17 +209,11 @@ class EventManager extends Manager
         // requete sql pour récupérer un event dans un tableau d'objets Events
         $req = "DELETE FROM event WHERE id=:id";
         $prep = $this->bdd->prepare($req);
-        $prep->bindValue(':id',$id);
+        $prep->bindValue(':id', $id);
 
         $prep->execute();
 
     }
-
-
-
-
-
-
 
 
 }

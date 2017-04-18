@@ -35,7 +35,7 @@ class EventController extends Controller
         // si le form est submit, je récupère mon $_POST
         if (isset($_POST['addEvent'])){
             $event = new EventManager();
-            $event->addEvent($_POST,$_FILES);
+            $event->reArrayFiles($_POST,$_FILES);
         // redirect vers la page qui liste les artist $this->listArtist()
             header('Location:?page=listEvent');
         }
