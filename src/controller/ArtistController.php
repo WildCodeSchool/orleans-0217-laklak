@@ -40,9 +40,8 @@ class ArtistController extends Controller
         $artist = new ArtisteManager();
 
         if (isset($_POST['add'])){
-
             $artist->addArtist($_POST);
-            return $this->getTwig()->render('ajoutartistes.html.twig');
+            return $this->getTwig()->render('listeartistes.html.twig');
 
         }
         if (isset($_GET['id'])){

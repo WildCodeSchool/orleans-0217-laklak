@@ -24,6 +24,8 @@ class EventManager extends Manager
     public function reArrayFiles($value, &$file_post)
     {
 
+        $this->addEvent($value, $file_post['imgEvenement'], $file_post['imgCoverEvenement']);
+
         $file_ary = array();
         $file_count = count($file_post['galerie']['name']);
         $file_keys = array_keys($file_post['galerie']);
@@ -34,18 +36,18 @@ class EventManager extends Manager
             }
         }
 
-        $uploaddir = 'images/Upload/Gallerie/Event/';
+        $uploaddir = __DIR__ . '/../../web/images/Upload/Gallerie/Event/';
 
-        $this->addEvent($value, $file_post['imgEvenement'], $file_post['imgCoverEvenement']);
 
+        $lastid = $this->bdd->lastInsertId();
         for ($i = 0; $i < $file_count ; $i++){
             if ($file_ary[$i]['name'] != null){
-                $uploadfile = $uploaddir . basename($file_ary['name']);
-                move_uploaded_file($file_ary['tmp_name'], $uploadfile);
+                $uploadfile = $uploaddir . basename($file_ary[$i]['name']);
+                move_uploaded_file($file_ary[$i]['tmp_name'], $uploadfile);
 
-                $req = $this->bdd->prepare('INSERT INTO event_images VALUES (:idevent, :eventimggalerypath)');
-                $req->bindValue(':idevent', $this->bdd->lastInsertId());
-                $req->bindValue(':eventimggalerypath', $uploadfile);
+                $req = $this->bdd->prepare('INSERT INTO eventimages(idevent, eventimggalerrypath) VALUES (:idevent, :eventimggalerrypath)');
+                $req->bindValue(':idevent', $lastid );
+                $req->bindValue(':eventimggalerrypath', $uploadfile);
                 $req->execute();
             }
         }
@@ -83,7 +85,14 @@ class EventManager extends Manager
                 move_uploaded_file($tmpDirC, $uploaddir . $imgEvtC);
             }
         }
-
+        if($value['idArtiste'] == ''){
+            $value['idArtiste'] = NULL;
+        } else {
+            $value['idArtiste'] = intval($value['idArtiste']);
+        }
+        if($value['laklak'] == ''){
+            $value['laklak'] = NULL;
+        }
         // requête sql pour créer l'event
         $req = "INSERT INTO event (eventName,eventDescription,eventLocation,eventDate,eventProduction,eventWebsiteUrl,
         eventFacebookUrl,eventTwitterUrl,eventSoundcloudUrl,eventIframeYoutube,eventIframeSoundcloud,
@@ -107,15 +116,14 @@ class EventManager extends Manager
         $prep->bindValue(':eventSoundcloudUrl', $value['soundcloudUrl']);
         $prep->bindValue(':eventIframeSoundcloud', $value['iframeSoundcloud']);
         $prep->bindValue(':eventIframeYoutube', $value['iframeYoutube']);
-        $prep->bindValue(':eventLaklak', intval($value['laklak']));
+        $prep->bindValue(':eventLaklak', $value['laklak']);
         $prep->bindValue(':eventArtistes', $value['artistes']);
-        $prep->bindValue(':eventIdArtiste', intval($value['idArtiste']));
-        $prep->bindValue(':eventImgCoverPath', $imgEvtC);
-        $prep->bindValue(':eventImgProfilePath', $imgEvtP);
+        $prep->bindValue(':eventIdArtiste', $value['idArtiste']);
+        $prep->bindValue(':eventImgCoverPath', 'OK');
+        $prep->bindValue(':eventImgProfilePath', 'OK');
         $prep->bindValue(':eventType', $value['type']);
         $prep->bindValue(':eventMoreUrl', $value['moreUrl']);
         $prep->bindValue(':eventBookingUrl', $value['bookingUrl']);
-
         $prep->execute();
 
     }
