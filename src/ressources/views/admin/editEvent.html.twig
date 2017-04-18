@@ -74,20 +74,26 @@
 
                 <h4>Evènement Laklak</h4>
                 <div class="radio">
+                    <label>
                     <input type="radio" name="laklak" id="oui" value="1"{% if event.eventLaklak == 1 %}checked="checked"{% endif %} >Oui</label>
+                </div>
+                <div class="radio">
+                    <label>
                     <input type="radio" name="laklak" id="non" value="0" {% if event.eventLaklak == 0 %}checked="checked"{% endif %}>Non</label>
                 </div>
 
                 <div class="form-group">
                     <label for="imgEvenement">Photo profil évènement</label>
-                    <img src="images/Upload/Event/{{ event.eventImgProfilePath }}" class="img-rounded" width="250px" />
+                    <br/>
+                    <img src="images/Upload/Event/{{ event.eventImgProfilePath }}" class="img-thumbnail" width="250px" />
                     <input type="hidden" name="MAX_FILE_SIZE" value="1000000"/>
                     <input type="file" class="form-control" name="imgEvenement" id="imgEvenement" value="{{ event.eventImgProfilePath }}">
                 </div>
 
                 <div class="form-group">
                     <label for="imgCoverEvenement">Photo couverture évènement</label>
-                    <img src="images/Upload/Event/{{ event.eventImgCoverPath }}" class="img-rounded" width="250px" />
+                    <br/>
+                    <img src="images/Upload/Event/{{ event.eventImgCoverPath }}" class="img-thumbnail" width="250px" />
                     <input type="hidden" name="MAX_FILE_SIZE" value="1000000"/>
                     <input type="file" class="form-control" name="imgCoverEvenement" id="imgCoverEvenement" value="{{ event.eventImgCoverPath }}">
                 </div>
