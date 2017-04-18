@@ -24,7 +24,7 @@ class SliderController extends Controller
             $slide->deleteOneSlide($_POST['id']);
             header('location: ?page=modifAccueil');
         } elseif (isset($_POST['updateSlider'])) {
-            $slide->updateSlide($_POST);
+            $slide->updateSlide($_POST,$_FILES);
             header('location: ?page=modifAccueil');
         }
         return $this->getTwig()->render('modifAccueil.html.twig', array('slides' => $slides));

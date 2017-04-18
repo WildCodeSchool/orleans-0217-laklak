@@ -1,0 +1,84 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+
+    <div class="container-admin">
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample"
+                aria-expanded="false" aria-controls="collapseExample">
+            Ajouter
+        </button>
+        <div class="collapse" id="collapseExample">
+            <div class="well">
+                <form enctype="multipart/form-data" class="form-inline" method="post" action="?page=gestionAdmin">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" class="form-control" id="email" placeholder="Email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Mot de passe</label>
+                        <input type="text" name="password" class="form-control" id="password" placeholder="Password">
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" name="addAdmin" id="image">
+                        <p class="help-block">Example block-level help text here.</p>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <table class="table1 table table-hover">
+            <thead>
+            <tr>
+                <td>Email</td>
+                <td>Action</td>
+            </tr>
+            </thead>
+            <tbody>
+
+
+            {% for admin in admins %}
+                <tr>
+                    <td>{{ admin.email }}</td>
+                    <td>
+                        <form class="form-admin" method="POST" action="?page=gestionAdmin">
+                            <button type="submit" name="deleteAdmin" class="btn btn-danger" value="Supprimer"><i
+                                        class="icon-trash"></i></button>
+                            <input type="hidden" name="id" value="{{ admin.id }}">
+                        </form>
+                        <button class="btn btn-primary" type="button" data-toggle="collapse"
+                                data-target="#collapseUpdate{{ admin.id }}"
+                                aria-expanded="false" aria-controls="collapseUpdate{{ admin.id }}">
+                            <i class="icon-pencil"></i>
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <div class="collapse" id="collapseUpdate{{ admin.id }}">
+                            <div class="well">
+                                <form enctype="multipart/form-data" class="form-inline" method="post"
+                                      action="?page=modifAccueil">
+                                    <div class="form-group">
+                                        <label for="email">Email</label>
+                                        <input type="text" name="email" class="form-control" id="email"
+                                               value="{{ admin.email }}" placeholder="Email"
+                                               required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="password">Password</label>
+                                        <input type="text" name="password" class="form-control" id="baseline"
+                                               placeholder="Nouveau password...">
+                                    </div>
+                                    <input type="hidden" value="{{ admin.id }}" name="id">
+                                    <div class="form-group">
+                                        <input type="submit" name="updateSlider" id="image">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

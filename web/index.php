@@ -3,9 +3,7 @@ session_start();
 require '../vendor/autoload.php';
 use laklak\controller\DefaultController;
 use laklak\controller\AdminController;
-
 use laklak\controller\EventController;
-
 use laklak\controller\ArtistController;
 
 
@@ -30,13 +28,16 @@ if (isset($_GET['page'])) {
 
             $default = new AdminController(false);
             $defaultEvent = new EventController(false);
+
             $defaultArtist = new ArtistController(false);
+
 
             $presentation = new \laklak\controller\PresentationController(false);
 
 
             $adminAccueil = new \laklak\controller\SliderController(false);
             $defaultArtist = new \laklak\controller\ArtistController(false);
+            $gestionAdmin = new \laklak\controller\AdministrateurController(false);
 
 
 
@@ -80,6 +81,9 @@ if (isset($_GET['page'])) {
                 case 'updateartist':
                     $view = $defaultArtist->updateArtist($_GET['id']);
                     break;
+                case 'gestionAdmin':
+                    $view = $gestionAdmin->Admin();
+                    break;
                 default:
                     $view = $default->index();
 
@@ -90,6 +94,8 @@ if (isset($_GET['page'])) {
 
 
             $default = new DefaultController(true);
+            $contact = new \laklak\controller\ContactController(true);
+            $defaultEvent = new EventController(true);
 
             switch ($page) {
                 case 'apropos':
@@ -99,13 +105,13 @@ if (isset($_GET['page'])) {
                     $view = $default->liste_artistes();
                     break;
                 case 'liste_evenements':
-                    $view = $default->liste_evenements();
+                    $view = $defaultEvent->listeEvenements();
                     break;
                 case 'evenements':
-                    $view = $default->evenements();
+                    $view = $defaultEvent->evenements($_GET['id']);
                     break;
                 case 'contact':
-                    $view = $default->contact();
+                    $view = $contact->contact();
                     break;
                 case 'agenda':
                     $view = $default->agenda();
