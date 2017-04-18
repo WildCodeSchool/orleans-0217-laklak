@@ -51,18 +51,18 @@ class ArtisteManager extends Manager
                                                         artistfacebookurl, artisttwitterurl, artisttumblrurl,
                                                         artistvimeourl, artistsoundcloudurl, artistinstaurl, 
                                                         artistiframesoundcloud, artistiframeyoutube, artistimgcoverpath, 
-                                                        artistimgprofilpath, artistidevent) 
+                                                        artistimgprofilpath, artistidevent, artistiframefacebook) 
                                     VALUES (:artistname, :artistbio, :artistLaklak,:artistWebsiteUrl,:artistFacebookUrl,
                                             :artistTwitterUrl,:artistTumblrUrl,:artistVimeoUrl, :artistSoundcloudUrl,
                                             :artistInstaUrl,:artistIframeSoundcloudUrl, :artistIframeYoutubeUrl, 
-                                            :artistImgCoverPath, :artistImgProfilPath, :artistIdEvent)');
+                                            :artistImgCoverPath, :artistImgProfilPath, :artistIdEvent, artistIframeFacebook)');
 
 
        $prep->bindValue (':artistname', $value['nomArtist']);
        $prep->bindValue (':artistbio', $value['bio']);
        $prep->bindValue  (':artistLaklak',intval($value['laklak']));
        $prep->bindValue  (':artistWebsiteUrl', $value['siteArtist']);
-       $prep->bindValue  (':artistFacebookUrl', $value['fbArtistIframe']);
+       $prep->bindValue  (':artistFacebookUrl', $value['fbArtistUrl']);
        $prep->bindValue  (':artistTwitterUrl', $value['twitArtist']);
        $prep->bindValue  (':artistVimeoUrl', $value['vimArtist']);
        $prep->bindValue  (':artistSoundcloudUrl', $value['artistsoundcloudurl']);
@@ -73,6 +73,7 @@ class ArtisteManager extends Manager
        $prep->bindValue  (':artistImgCoverPath', $value['artistImgCoverPath']);
        $prep->bindValue (':artistImgProfilPath', $value['artistImgProfilPath']);
        $prep->bindValue (':artistIdEvent', intval($value['artistidevent']));
+       $prep->bindValue (':artistIframeFacebook', ($value['fbArtistIframe']));
 
        $prep->execute();
 
@@ -93,7 +94,8 @@ class ArtisteManager extends Manager
                                     artistsoundcloudurl = :artistSouncloudUrl,
                                     artistinstaurl = :artistInstaUrl, artistiframesoundcloud = :artistIframeSoundcloudUrl, 
                                     artistiframeyoutube = :artistIframeYoutube, artistimgcoverpath = :artistImgcoverPath, 
-                                    artistimgprofilpath = :artistImgProfilPath, artistidevent = :artistIdEvent WHERE id =:id");
+                                    artistimgprofilpath = :artistImgProfilPath, artistidevent = :artistIdEvent
+                                    artisteiframefacebook = :artistiframefacebook WHERE id =:id");
 
         $prep = $this->bdd->prepare($req);
 
@@ -102,7 +104,7 @@ class ArtisteManager extends Manager
         $prep->bindValue (':artistBio', $value['bio']);
         $prep->bindValue  (':artistLaklak',intval($value['laklak']));
         $prep->bindValue  (':artistWebsiteUrl', $value['siteArtist']);
-        $prep->bindValue  (':artistFacebookUrl', $value['fbArtistIframe']);
+        $prep->bindValue  (':artistFacebookUrl', $value['fbArtistUrl']);
         $prep->bindValue  (':artistTwitterUrl', $value['twitArtist']);
         $prep->bindValue  (':artistVimeoUrl', $value['vimArtist']);
         $prep->bindValue  (':artistSoundcloudUrl', $value['artistsoundcloudurl']);
@@ -113,6 +115,7 @@ class ArtisteManager extends Manager
         $prep->bindValue  (':artistImgCoverPath', $value['artistImgCoverPath']);
         $prep->bindValue (':artistImgProfilPath', $value['artistImgProfilPath']);
         $prep->bindValue (':artistIdEvent', intval($value['artistidevent']));
+        $prep->bindValue (':artistIframeFacebbok', ($value['fbArtistIframe']));
         $prep->execute();
 
     }
