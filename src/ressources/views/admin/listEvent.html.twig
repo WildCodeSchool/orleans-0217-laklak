@@ -23,7 +23,7 @@
         {% for event in events %}
             <tr>
                 <td>{{ event.id }}</td>
-                <td><img src="" width="50px"></td>
+                <td><img src="images/Upload/Event/{{ event.eventImgProfilePath }}" width="50px"></td>
                 <td>{{ event.eventName }}</td>
                 <td><a href="?page=updateEvent&id={{ event.id }}" class="btn btn-default">Modifier</a></td>
                 <td><a href="?page=deleteEvent&id={{ event.id }}" class="btn btn-default">Supprimer</a></td>
