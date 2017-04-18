@@ -21,11 +21,13 @@ class Artist
     private $artistTwitterUrl;
     private $artistTumblrUrl;
     private $artistVimeoUrl;
-    private $artisteInstaUrl;
-    private $artistIframeSoundcloudUrl;
     private $artistSoundcloudUrl;
-    private $artistIframeYoutubeUrl;
+    private $artisteInstaUrl;
+    private $artistIframeSoundcloud;
+    private $artistIframeYoutube;
     private $artistImgCoverPath;
+    private $artistImgProfilPath;
+    private $artistIdEvent;
 
     /**
      * @return mixed
@@ -174,38 +176,6 @@ class Artist
     /**
      * @return mixed
      */
-    public function getArtisteInstaUrl()
-    {
-        return $this->artisteInstaUrl;
-    }
-
-    /**
-     * @param mixed $artisteInstaUrl
-     */
-    public function setArtisteInstaUrl($artisteInstaUrl)
-    {
-        $this->artisteInstaUrl = $artisteInstaUrl;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getArtistIframeSoundcloudUrl()
-    {
-        return $this->artistIframeSoundcloudUrl;
-    }
-
-    /**
-     * @param mixed $artistIframeSoundcloudUrl
-     */
-    public function setArtistIframeSoundcloudUrl($artistIframeSoundcloudUrl)
-    {
-        $this->artistIframeSoundcloudUrl = $artistIframeSoundcloudUrl;
-    }
-
-    /**
-     * @return mixed
-     */
     public function getArtistSoundcloudUrl()
     {
         return $this->artistSoundcloudUrl;
@@ -222,17 +192,49 @@ class Artist
     /**
      * @return mixed
      */
-    public function getArtistIframeYoutubeUrl()
+    public function getArtisteInstaUrl()
     {
-        return $this->artistIframeYoutubeUrl;
+        return $this->artisteInstaUrl;
     }
 
     /**
-     * @param mixed $artistIframeYoutubeUrl
+     * @param mixed $artisteInstaUrl
      */
-    public function setArtistIframeYoutubeUrl($artistIframeYoutubeUrl)
+    public function setArtisteInstaUrl($artisteInstaUrl)
     {
-        $this->artistIframeYoutubeUrl = $artistIframeYoutubeUrl;
+        $this->artisteInstaUrl = $artisteInstaUrl;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getArtistIframeSoundcloud()
+    {
+        return $this->artistIframeSoundcloud;
+    }
+
+    /**
+     * @param mixed $artistIframeSoundcloud
+     */
+    public function setArtistIframeSoundcloud($artistIframeSoundcloud)
+    {
+        $this->artistIframeSoundcloud = $artistIframeSoundcloud;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getArtistIframeYoutube()
+    {
+        return $this->artistIframeYoutube;
+    }
+
+    /**
+     * @param mixed $artistIframeYoutube
+     */
+    public function setArtistIframeYoutube($artistIframeYoutube)
+    {
+        $this->artistIframeYoutube = $artistIframeYoutube;
     }
 
     /**
@@ -282,8 +284,6 @@ class Artist
     {
         $this->artistIdEvent = $artistIdEvent;
     }
-    private $artistImgProfilPath;
-    private $artistIdEvent;
 
+  }
 
-}

@@ -30,13 +30,13 @@ class ArtisteManager extends Manager
     {
 
         // requete sql pour récupérer un event dans un tableau d'objets artists
-        $req = "SELECT * FROM artist WHERE id=:id";
+        $req = "SELECT * FROM artist WHERE id = :id";
         $prep = $this->bdd->prepare($req);
         $prep->bindValue(':id', $id);
 
         $prep->execute();
 
-        $res = $prep->fetchAll(\PDO::FETCH_CLASS, 'laklak\Model\Artist');
+        $res = $prep->fetch();
         return $res;
     }
 
@@ -52,14 +52,14 @@ class ArtisteManager extends Manager
                                                         artistvimeourl, artistsoundcloudurl, artistinstaurl, 
                                                         artistiframesoundcloud, artistiframeyoutube, artistimgcoverpath, 
                                                         artistimgprofilpath, artistidevent) 
-                                    VALUES (:artistName, :artistBio, :artistLaklak,:artistWebsiteUrl,:artistFacebookUrl,
+                                    VALUES (:artistname, :artistbio, :artistLaklak,:artistWebsiteUrl,:artistFacebookUrl,
                                             :artistTwitterUrl,:artistTumblrUrl,:artistVimeoUrl, :artistSoundcloudUrl,
                                             :artistInstaUrl,:artistIframeSoundcloudUrl, :artistIframeYoutubeUrl, 
                                             :artistImgCoverPath, :artistImgProfilPath, :artistIdEvent)');
 
 
-       $prep->bindValue (':artistName', $value['nomArtist']);
-       $prep->bindValue (':artistBio', $value['bio']);
+       $prep->bindValue (':artistname', $value['nomArtist']);
+       $prep->bindValue (':artistbio', $value['bio']);
        $prep->bindValue  (':artistLaklak',intval($value['laklak']));
        $prep->bindValue  (':artistWebsiteUrl', $value['siteArtist']);
        $prep->bindValue  (':artistFacebookUrl', $value['fbArtistIframe']);
@@ -81,21 +81,24 @@ class ArtisteManager extends Manager
     /**
      *
      */
-    public function updateArtist($value)
+    public function updateArtist($id, $value)
     {
 
-        $prep=$this-> bdd->prepare("UPDATE artist SET artistname=:artistname, artistbio=:artistBio, 
-                                    artistlaklak=:artistLaklak,
-                                    artistwebsiteurl=:artistWebsitUrl, artistfacebookurl=:artistFacebookUrl, 
-                                    artisttwitter:=artistTwitterUrl
-                                    artisttumblrurl=:artistTumblrURL, artistvimeourl=:artistVimeoUrl, 
-                                    artistsoundcloudurl=:artistSouncloudUrl,
-                                    artistinstaurl=:artistInstaUrl, artistiframesoundcloud=:artistIframeSoundcloudUrl, 
-                                    artistiframeyoutube=:artistIframeYoutube, artistimgcover=:artistImgcoverPath, 
-                                    artistimgprofilpath:=artistImgProfilPath, artistidevent:=artistIdEvent WHERE id =:id");
 
+        $req=("UPDATE artist SET artistname = :artistName, artistbio = :artistBio, 
+                                    artistlaklak = :artistLaklak,
+                                    artistwebsiteurl = :artistWebsitUrl, artistfacebookurl = :artistFacebookUrl, 
+                                    artisttwitterurl = :artistTwitterUrl
+                                    artisttumblrurl = :artistTumblrURL, artistvimeourl = :artistVimeoUrl, 
+                                    artistsoundcloudurl = :artistSouncloudUrl,
+                                    artistinstaurl = :artistInstaUrl, artistiframesoundcloud = :artistIframeSoundcloudUrl, 
+                                    artistiframeyoutube = :artistIframeYoutube, artistimgcoverpath = :artistImgcoverPath, 
+                                    artistimgprofilpath = :artistImgProfilPath, artistidevent = :artistIdEvent WHERE id =:id");
 
-        $prep->bindValue (':artistname', $value['nomArtist']);
+        $prep = $this->bdd->prepare($req);
+
+        $prep->bindValue(':id', $id);
+        $prep->bindValue (':artistName', $value['nomArtist']);
         $prep->bindValue (':artistBio', $value['bio']);
         $prep->bindValue  (':artistLaklak',intval($value['laklak']));
         $prep->bindValue  (':artistWebsiteUrl', $value['siteArtist']);
