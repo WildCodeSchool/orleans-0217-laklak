@@ -382,3 +382,11 @@ div.desc {
     height: 50px;
     width: 50px;
 }
+
+.container-admin{
+    margin:30px 40px;
+}
+
+.form-admin{
+    display: inline;
+}

@@ -22,12 +22,12 @@ class ArtistController extends Controller
        return $this->getTwig()->render('listeartistes.html.twig', array('artists' => $artists));
    }
 
-    public function listOneArtist()
+    public function listOneArtist($id)
     {
         if (isset($_POST ['modif'])){
 
             $artist = new ArtisteManager();
-            $artist->showOne();
+            $artist->showOneArtist($id);
 
             return $this->getTwig()->render('ajoutartstes.html.twig');
         }
@@ -36,13 +36,18 @@ class ArtistController extends Controller
 
     public function addArtist()
     {
+        $artist = new ArtisteManager();
 
         if (isset($_POST ['add'])){
 
-            $artist = new ArtisteManager();
+
             $artist->addArtist($_POST);
             return $this->getTwig()->render('ajoutartistes.html.twig');
 
+        }
+        if (isset($_GET['id'])){
+           $value = $artist->showOneArtist($_GET['id']);
+            return $this->getTwig()->render('ajoutartistes.html.twig', array('artist' => $value));
         }
 
 
@@ -52,9 +57,18 @@ class ArtistController extends Controller
 
     }
 
-    public function updateArtist ()
+    public function updateArtist($id)
     {
+        $art = new ArtisteManager();
 
+        if (isset($_POST['add'])) {
+
+            $art->updateArtist($id, $_POST);
+            header('Location:?page=listartistes');
+        }
+
+        $artist=$art->showOneArtist($id);
+        return $this->getTwig()->render('editartistes.html.twig',array('artist'=>$artist));
     }
 
     public function deleteArtist ()

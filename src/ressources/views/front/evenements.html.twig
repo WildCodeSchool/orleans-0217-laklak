@@ -14,41 +14,61 @@
         </div>
     </div>
 
+    {{ dump(event) }}
+
     <!--fin cover-->
 
     <!--debut container-->
     <div class="container">
         <div class=row">
             <div class="haut">
-                <h1 class="visible-xs">Encore #2</h1>
+                <h1 class="visible-xs">{{ event.eventName }}</h1>
                 <div class="col-sm-4 bottommargin">
                     <div class="fbox-media clearfix bio thumbnail">
 
                         <a href="#"><img src="images/photoartistes/2017/encore2.png" alt="photo evenenement encore #2"></a>
-                        <div class="detail_artiste"><img src="images/Laklak/logo.jpg" alt=""/></div>
+                            <div class="detail_artiste">
+                            {% if event.eventLaklak == 1 %}<img src="images/Laklak/logo.jpg" alt=""/>{% endif %}
+                            {% if event.eventLaklak == 0 %}{% endif %}
+                            </div>
 
                     </div>
 
                     <!--reseaux sociaux et site web-->
                     <div class="row">
-                        <div class="social col-xs-12">
-                            <a href="http://www.encoremusic.live/#accueil-section" <button class="button button-large button-border button-rounded tright nomargin" type="submit" id="#"
-                                                                                           name="siteArtiste">Site de l'evenement
-                            </button></a>
-                        </div>
+
+                               <div class="social col-xs-12">
+                                <a href="{{ event.eventWebsiteUrl }}">
+                                    {% if event.eventWebsiteUrl =='' %}
+                                    {% else %}
+                                    <button class="button button-large button-border button-rounded tright nomargin"
+                                    type="submit" id="#" name="siteArtiste">Site de l'evenement</button>
+                                    {% endif %}
+                                </a>
+                            </div>
+
                         <div class="col-sm-12 bottommargin-sm">
-
-                            <a href="http://www.facebook.com/encoremusicmaroc" target="_blank" class="social-icon si-dark si-colored si-facebook nobottommargin" style="margin-right: 10px;">
+                            {% if event.eventFacebookUrl =='' %}
+                            {% else %}
+                                <a href="{{ event.eventFacebookUrl }}" target="_blank" class="social-icon si-dark si-colored si-facebook nobottommargin" style="margin-right: 10px;">
                                 <i class="icon-facebook"></i>
-                            </a>
+                                </a>
+                            {% endif %}
 
-                            <a href="https://twitter.com/encore_music_" target="_blank" class="social-icon si-dark si-colored si-twitter nobottommargin" style="margin-right: 10px;">
+                            {% if event.eventTwitterUrl =='' %}
+                            {% else %}
+                                <a href="{{ event.eventTwitterUrl }}" target="_blank" class="social-icon si-dark si-colored si-twitter nobottommargin" style="margin-right: 10px;">
                                 <i class="icon-twitter"></i>
-                            </a>
+                                </a>
+                            {% endif %}
 
-                            <a href="http://instagram.com/encore_music_" target="_blank" class="social-icon si-dark si-colored si-instagram nobottommargin" style="margin-right: 10px;">
-                                <i class="icon-instagram"></i>
-                            </a>
+                            {% if event.eventSoundcloudUrl =='' %}
+                            {% else %}
+                                <a href="{{ event.eventSoundcloudUrl }}" target="_blank" class="social-icon si-dark si-colored si-soundcloud nobottommargin" style="margin-right: 10px;">
+                                    <i class="icon-soundcloud"></i>
+                                </a>
+                            {% endif %}
+
                         </div>
                     </div>
 
@@ -56,8 +76,12 @@
 
 
                     <!--video youtube-->
-                    <div class="bio thumbnail video hidden-xs"><iframe width="100%" height="315" src="https://www.youtube.com/embed/si5aVBv4oFQ" frameborder="0" allowfullscreen></iframe>
-                    </div>
+
+                    {% if event.eventIframeYoutube =='' %}
+                    {% else %}
+                         <div class="bio thumbnail video hidden-xs"><iframe width="100%" height="315" src="{{ event.eventIframeYoutube }}" frameborder="0" allowfullscreen></iframe>
+                         </div>
+                    {% endif %}
                     <!--video youtube-->
 
 
@@ -68,11 +92,11 @@
 
             <!--debut titre evenement-->
             <div class="col-sm-8">
-                <h1 class="hidden-xs">ENCORE #2</h1>
+                <h1 class="hidden-xs">{{ event.eventName }}</h1>
                 <div class="bio thumbnail">
-                    <h2>Kube Club, Casablanca</h2>
-                    <h3>Habibi Funk & Polyswitch</h3>
-                    <h4>Jeudi 8 décembre 2016</h4>
+                    <h2>{{ event.eventlocation }}</h2>
+                    <h3>{{ event.eventartistes|raw}}</h3>
+                    <h4>{{ event.eventdate }}</h4>
                 </div>
 
 
@@ -80,29 +104,30 @@
                 <!--fin titre evenement-->
 
                 <!--debut bloc description-->
+                {% if event.eventdescription =='' %}
+                {% else %}
                 <div class="bio thumbnail"><h3>Description</h3>
-                    <p>ENCORE est une série de concerts qui a pour ambition de se décliner sur plusieurs saisons.
-                        C’est une initiative culturelle engagée qui se traduit par une programmation à la fois pointue et éclectique d’artistes maghrébins et africains, du monde arabe et d’ailleurs, confirmés ou prometteurs, que nous avons à coeur de présenter au public marocain, dans l’idée de faire du Maroc une étape dans les tournées internationales, en proposant une alternative aux grands festivals et des possibilités de tourner à travers le Royaume.
-                        L’ambition d’ENCORE est également de favoriser une ouverture sur le monde grâce à la musique.
-                        ENCORE c’est la collaboration de LAKLAK Productions et Lioumness, deux entreprises culturelles marocaines qui allient leur expertise et leur passion pour proposer un concept nouveau et durable, qui trouvera à coup sûr son public à travers le Maroc. </p>
-
+                    <p>{{ event.eventdescription|raw }}</p>
                 </div>
+                {% endif %}
 
                 <!--fin bloc description-->
 
 
                 <!--debut bloc productions-->
+                {% if event.eventproduction =='' %}
+                {% else %}
                 <div class="bio thumbnail"><h3>Productions</h3>
-                    <p>Et interdum acciderat, ut siquid in penetrali secreto nullo citerioris vitae ministro praesente paterfamilias uxori susurrasset in aurem, velut Amphiarao referente aut Marcio, quondam vatibus inclitis, postridie disceret imperator.
-                        ideoque etiam parietes arcanorum soli conscii timebantur.</p>
+                    <p>{{ event.eventproduction|raw}}</p>
                 </div>
+                {% endif %}
 
                 <!--fin bloc productions-->
 
 
 
 
-                <!--début gallerie photo-->
+                <!--début galerie photo-->
                 <div class="col_full clearfix">
                     <h3>Galerie</h3>
 
@@ -119,7 +144,7 @@
 
                     <div class="divider"><i class="icon-circle"></i></div>
                 </div>
-                <!--fin gallerie photo-->
+                <!--fin galerie photo-->
             </div>
 
         </div>

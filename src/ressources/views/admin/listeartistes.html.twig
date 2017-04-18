@@ -22,12 +22,12 @@ GIT{% extends 'layout.html.twig' %}
         <tr>
 
             <td>{{ artist.id }}</td>
-            <td><img src="/web/images/photoartistes/2016/meryem.jpg" width="50px"></td>
+            <td><img src="/web/images/photoartistes/2016/meryem.jpg" width="50px" ></td>
             <td>{{ artist.artistname }}</td>
 
-            <form method="POST" action="?page=listeartistes">
+            <form method="POST" action="?page=ajoutartistes&id={{ artist.id }}">
             <input type="hidden" name="id" value="{{ artist.id }}">
-            <td><button type="submit" name ="modif" class="btn btn-default">Modifier</button></td>
+            <td><button type="submit" name ="updateartist" class="btn btn-default">Modifier</button></td>
             </form>
             <form method="POST" action="?page=deleteartistes">
                 <input type="hidden" name="id" value="{{ artist.id }}">

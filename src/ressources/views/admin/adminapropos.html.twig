@@ -1,20 +1,22 @@
-
 {% extends 'layout.html.twig' %}
 
 {% block content %}
-    <form method="post" action="?page=adminapropos">
-        <h1>Modifier texte de présentation</h1>
+    <div class="container-admin">
+        <form method="post" action="?page=adminapropos">
+            <h1>Modifier texte de présentation</h1>
             <div class="form-group">
 
-              <label for="presentation"></label>
+                <label for="presentation"></label>
 
                 <input type="hidden" name="id" value="{{ presentation.id }}">
-                  <textarea cols="100" name="textpresentation" class="ckeditor" rows="30" class="form-control" id="bio" >{{ presentation.textpresentation }}
+                <textarea cols="100" name="textpresentation" class="ckeditor" rows="30" class="form-control"
+                          id="bio">{{ presentation.textpresentation }}
                      </textarea>
-                      </div>
-                            <input class="btn btn-success" type="submit" name="enregistrer" value="enregistrer" />
+            </div>
+            <input class="btn btn-success" type="submit" name="enregistrer" value="enregistrer"/>
 
-    </form>
+        </form>
+    </div>
 {% endblock %}
 
 
