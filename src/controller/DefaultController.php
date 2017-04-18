@@ -23,10 +23,6 @@ class DefaultController extends Controller
         return $this->getTwig()->render('apropos.html.twig',array('presentation' => $about));
     }
 
-    public function liste_artistes()
-    {
-        return $this->getTwig()->render('liste_artistes.html.twig');
-    }
 
 //    public function evenements($id)
 //    {
@@ -40,10 +36,7 @@ class DefaultController extends Controller
         return $this->getTwig()->render('liste_evenements.html.twig');
     }
 
-    public function artistes()
-    {
-        return $this->getTwig()->render('artistes.html.twig');
-    }
+
 
     public function contact()
     {

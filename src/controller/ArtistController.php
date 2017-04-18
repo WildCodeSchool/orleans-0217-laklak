@@ -36,10 +36,10 @@ class ArtistController extends Controller
 
     public function addArtist()
     {
+
         $artist = new ArtisteManager();
 
-        if (isset($_POST ['add'])){
-
+        if (isset($_POST['add'])){
 
             $artist->addArtist($_POST);
             return $this->getTwig()->render('ajoutartistes.html.twig');
@@ -53,7 +53,6 @@ class ArtistController extends Controller
 
         // sinon le form est pas submit, j'affiche le form
         return $this->getTwig()->render('ajoutartistes.html.twig');
-
 
     }
 
@@ -81,5 +80,16 @@ class ArtistController extends Controller
         return $this->getTwig()->render('listeartistes.html.twig');
 
     }
-
+    public function artist($id)
+    {
+        $art = new ArtisteManager();
+        $artist=$art->showOneArtist($id);
+        return $this->getTwig()->render('artistes.html.twig',array('artist'=>$artist));
+    }
+    public function listeArt()
+    {
+        $artist = new ArtisteManager();
+        $artists=$artist->showAll();
+        return $this->getTwig()->render('liste_artistes.html.twig',array('artists'=>$artists));
+    }
 }
