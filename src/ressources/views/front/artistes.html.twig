@@ -5,6 +5,7 @@
 
 {% block content %}
 
+
     <div class="container hidden-xs">
         <div class=row">
 
@@ -143,27 +144,19 @@
                         <table class="table table-striped">
                             <thead>
                             <tr>
-                                <th>Timings</th>
-                                <th>Location</th>
-                                <th>Events</th>
+                                <th>Date</th>
+                                <th>Lieu</th>
+                                <th>Evénement</th>
                             </tr>
                             </thead>
                             <tbody>
+                            {% for evt in event %}
                             <tr>
-                                <td><span class="label label-danger">10:00 - 12:00</span></td>
-                                <td>Main Auditorium</td>
-                                <td>WWDC Developer Conference</td>
+                                <td><span class="label label-danger">{{ evt.eventDate|date('d-m-Y') }}</span></td>
+                                <td>{{ evt.eventLocation }}</td>
+                                <td>{{ evt.eventName }}</td>
                             </tr>
-                            <tr>
-                                <td><span class="label label-danger">12:00 - 12:45</span></td>
-                                <td>Cafeteria</td>
-                                <td>Lunch</td>
-                            </tr>
-                            <tr>
-                                <td><span class="label label-danger">15:00 - 18:00</span></td>
-                                <td>Room - 25, 2nd Floor</td>
-                                <td>Hardware Testing &amp; Evaluation</td>
-                            </tr>
+                            {% endfor %}
                             </tbody>
                         </table>
                     </div>

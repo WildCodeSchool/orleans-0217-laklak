@@ -273,7 +273,7 @@ class EventManager extends Manager
     public function listEventByArtist($id)
     {
         // requete sql pour récupérer tous les events dans un tableau d'objets Events
-        $req = "SELECT * FROM event WHERE idArtiste=:id ";
+        $req = "SELECT * FROM event WHERE eventIdArtiste = :id ";
         $prep = $this->bdd->prepare($req);
         $prep->bindValue(':id', $id);
 

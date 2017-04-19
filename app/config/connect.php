@@ -9,8 +9,3 @@
 define("DSN","mysql:host=localhost;dbname=laklak");
 define("USER","root");
 define("PASS","root");
-
-
-
-
-
