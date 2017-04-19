@@ -24,6 +24,27 @@ class EventManager extends Manager
         return $res->fetchAll(\PDO::FETCH_CLASS, 'laklak\Model\Event');
     }
 
+
+    public function listAllByOrderDesc()
+    {
+        // requete sql pour récupérer tous les events dans un tableau d'objets Events
+        $req = "SELECT * FROM event ORDER BY eventDate DESC ";
+        $res = $this->bdd->query($req);
+        return $res->fetchAll(\PDO::FETCH_CLASS,'laklak\Model\Event');
+    }
+
+    public function formatEventsByYear() : array
+    {
+        $events = $this->listAllByOrderDesc();
+        foreach($events as $event) {
+            $date = $event->getEventDate();
+            //je crée un tableau avec une dimension supplémentaire
+            $eventsYear[$date->format('Y')][] = $event;
+        }
+        return $eventsYear;
+    }
+
+
     public function reArrayFiles($value, &$file_post)
     {
 
@@ -57,9 +78,9 @@ class EventManager extends Manager
         }
     }
 
+
     public function addEvent(array $value, $filep, $filec)
     {
-
         if ($filep['name'] != null){
             $uploaddir = 'images/Upload/Event/';
             $uploadfilep = $uploaddir . basename($filep['name']);
@@ -67,7 +88,6 @@ class EventManager extends Manager
         } else {
             $uploadfilep = '';
         }
-
         if ($filec['name'] != null){
             $uploaddir = 'images/Upload/Event/';
             $uploadfilec = $uploaddir . basename($filec['name']);
@@ -75,7 +95,6 @@ class EventManager extends Manager
         } else {
             $uploadfilec= '';
         }
-
         if($value['idArtiste'] == ''){
             $value['idArtiste'] = NULL;
         } else {
@@ -86,7 +105,6 @@ class EventManager extends Manager
         } else {
             $value['laklak'] = intval($value['laklak']);
         }
-
         // requête sql pour créer l'event
         $req = "INSERT INTO event (eventName,eventDescription,eventLocation,eventDate,eventProduction,eventWebsiteUrl,
         eventFacebookUrl,eventTwitterUrl,eventSoundcloudUrl,eventIframeYoutube,eventIframeSoundcloud,
@@ -96,8 +114,9 @@ class EventManager extends Manager
         :eventFacebookUrl,:eventTwitterUrl,:eventSoundcloudUrl,:eventIframeYoutube,:eventIframeSoundcloud,
         :eventArtistes,:eventLaklak,:eventIdArtiste,:eventImgCoverPath,:eventImgProfilePath,:eventType,
         :eventMoreUrl,:eventBookingUrl)";
-
         $prep = $this->bdd->prepare($req);
+
+
 
         $prep->bindValue(':eventName', $value['nom']);
         $prep->bindValue(':eventDescription', $value['description']);
@@ -119,9 +138,7 @@ class EventManager extends Manager
         $prep->bindValue(':eventMoreUrl', $value['moreUrl']);
         $prep->bindValue(':eventBookingUrl', $value['bookingUrl']);
         $prep->execute();
-
     }
-
 
     public function showOneEvent($id)
     {
@@ -134,7 +151,6 @@ class EventManager extends Manager
 
         $res = $prep->fetchAll(\PDO::FETCH_CLASS, 'laklak\Model\Event');
         return $res[0];
-
     }
 
     public function reArrayFilesUpdate($file_post, $id)
@@ -179,6 +195,7 @@ class EventManager extends Manager
             $uploadfilep = $event->getEventImgProfilePath();
         }
 
+
         if ($file['imgCoverEvenement']['name'] != null){
             $uploaddir = 'images/Upload/Event/';
             $uploadfilec = $uploaddir . basename($file['imgCoverEvenement']['name']);
@@ -214,7 +231,6 @@ class EventManager extends Manager
          eventIdArtiste=:eventIdArtiste, eventImgCoverPath=:eventImgCoverPath, eventImgProfilePath=:eventImgProfilePath,
         eventType=:eventType, eventMoreUrl=:eventMoreUrl, eventBookingUrl=:eventBookingUrl WHERE id = :id";
 
-
         $prep = $this->bdd->prepare($req);
 
         $prep->bindValue(':id', $value['id']);
@@ -239,8 +255,6 @@ class EventManager extends Manager
         $prep->bindValue(':eventBookingUrl', $value['bookingUrl']);
 
         $prep->execute();
-
-
     }
 
     public function deleteEvent($id)

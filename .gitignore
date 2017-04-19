@@ -4,6 +4,7 @@
 /composer.json
 /app/config/connect.php
 .idea
+archiveEventManager.php
 
 
 
