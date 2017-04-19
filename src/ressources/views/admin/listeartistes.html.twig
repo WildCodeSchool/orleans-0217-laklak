@@ -23,8 +23,7 @@
 
             <td>{{ artist.id }}</td>
 
-            <td><img src="images/Upload/Artiste/{{ artist.artistimgprofilpath }}" width="50px" ></td>
-
+            <td><img src="{{ artist.artistimgprofilpath }}" width="50px" ></td>
             <td>{{ artist.artistname }}</td>
 
             <form method="POST" action="?page=updateartist&id={{ artist.id }}">
