@@ -1,17 +1,20 @@
 {% extends 'layout.html.twig' %}
-{% block title %} Artistes {{ parent() }}{% endblock %}
+{% block title %} Artistes {{ parent() }}{% endblock title %}
+
 
 
 {% block content %}
     <div class="container hidden-xs">
         <div class=row">
             <div class="portfolio-image img-responsive">
-                <img src="images/Upload/Artistes/coverartistes/{{ artist.artistimgcoverpath }}" alt="Portfolio Title">
+
+                <img src="{{ artist.artistimgcoverpath }}" alt="Portfolio Title">
 
 
             </div>
         </div>
     </div>
+
     <div class="container">
         <div class=row">
 
@@ -19,7 +22,7 @@
 
             <div class="col-sm-4 bottommargin haut">
                 <div class="fbox-media clearfix bio thumbnail">
-                    <a href="#"><img src="images/Upload/Artistes/profilartistes/{{ artist.artistimgprofilpath }}" alt="{{ artist.artistname }}"></a>
+                    <a href="#"><img src="{{ artist.artistimgprofilpath }}" alt="{{ artist.artistname }}"></a>
                     <div class="detail_artiste">{% if artist.artistlaklak == 1 %}<img src="images/Laklak/logo.jpg" alt=""> {% endif %} {% if artist.artistlaklak == 0 %}{% endif %}</div>
                 </div>
 
@@ -89,7 +92,9 @@
                 {% if artist.artistiframefacebook =='' %}
                     {% else %}
                 <div class="bio thumbnail">
-                    <iframe src="{{ artist.artistiframefacebook }}"></iframe></div>
+
+                    <iframe width="100%" height="450" scrolling="no" frameborder="no"  src="{{ artist.artistiframefacebook }}"></iframe></div>
+
                     {% endif %}
             </div>
 
@@ -102,39 +107,25 @@
 
 
                 <div class="divider"><i class="icon-circle"></i></div>
+
+
+
                 <div class=""><h3>Discographie</h3>
-
-
                     <div class="row">
+                       {% for disc in discs %}
                         <div class="col-xs-6 col-md-3">
-                            <a href="#" class="thumbnail">
-                                <img alt="disque 1" src="http://canvashtml-cdn.semicolonweb.com/images/extras/200x200.gif" style="height: 80px; width: 80%; display: block;">
+                            <a href="{{ disc.artistalbumurl }}" target="_blank" class="thumbnail">
+                                <img src="images/Upload/Event/{{ disc.artistalbumimg }}" alt="{{ artist.artistname }}"  style="height: 90px; width: 80%; display: block;" />
                             </a>
                         </div>
-                        <div class="col-xs-6 col-md-3">
-                            <a href="#" class="thumbnail">
-                                <img alt="disque 2" src="http://canvashtml-cdn.semicolonweb.com/images/extras/200x200.gif" style="height: 80px; width: 80%; display: block;">
-                            </a>
-                        </div>
-                        <div class="col-xs-6 col-md-3">
-                            <a href="#" class="thumbnail">
-                                <img alt="disque 3" src="http://canvashtml-cdn.semicolonweb.com/images/extras/200x200.gif" style="height: 80px; width: 80%; display: block;">
-                            </a>
-                        </div>
-                        <div class="col-xs-6 col-md-3">
-                            <a href="#" class="thumbnail">
-                                <img alt="disque 4" src="http://canvashtml-cdn.semicolonweb.com/images/extras/200x200.gif" style="height: 80px; width: 80%; display: block;">
-                            </a>
-                        </div>
-                        <div class="col-xs-6 col-md-3">
-                            <a href="#" class="thumbnail">
-                                <img alt="disque 5" src="http://canvashtml-cdn.semicolonweb.com/images/extras/200x200.gif" style="height: 80px; width: 80%; display: block;">
-                            </a>
-                        </div>
+                       {% endfor %}
                     </div>
 
+                    <div class="divider"><i class="icon-circle"></i></div>
                 </div>
-                <div class="divider"><i class="icon-circle"></i></div>
+
+
+
 
                 <div class="nobottommargin">
 
@@ -169,6 +160,7 @@
                         </table>
                     </div>
                 </div>
+
                 <div class="divider"><i class="icon-circle"></i></div>
 
 
@@ -181,28 +173,15 @@
                         <a href="images/Laklak/Meryem/F94T0300.JPG" data-lightbox="gallery-item"><img class="image_fade" src="images/Laklak/Meryem/F94T0300.JPG" alt="Gallery Thumb 2"></a>
                         <a href="images/Laklak/Meryem/Meryem_Aboulouafa©BaptisteDVA-20.jpg" data-lightbox="gallery-item"><img class="image_fade" src="images/Laklak/Meryem/Meryem_Aboulouafa©BaptisteDVA-20.jpg" alt="Gallery Thumb 3"></a>
                         <a href="images/Laklak/Meryem/Meryem_Aboulouafa©BaptisteDVA-19.jpg" data-lightbox="gallery-item"><img class="image_fade" src="images/Laklak/Meryem/Meryem_Aboulouafa©BaptisteDVA-19.jpg" alt="Gallery Thumb 4"></a>
-                        <a href="images/Laklak/Meryem/Meryem_Aboulouafa©BaptisteDVA-19.jpg" data-lightbox="gallery-item"><img class="image_fade" src="images/Laklak/Meryem/Meryem_Aboulouafa©BaptisteDVA-19.jpg" alt="Gallery Thumb 4"></a>
-                        <a href="images/Laklak/Meryem/Meryem_Aboulouafa©BaptisteDVA-19.jpg" data-lightbox="gallery-item"><img class="image_fade" src="images/Laklak/Meryem/Meryem_Aboulouafa©BaptisteDVA-19.jpg" alt="Gallery Thumb 4"></a>
-                        <a href="images/Laklak/Meryem/Meryem_Aboulouafa©BaptisteDVA-19.jpg" data-lightbox="gallery-item"><img class="image_fade" src="images/Laklak/Meryem/Meryem_Aboulouafa©BaptisteDVA-19.jpg" alt="Gallery Thumb 4"></a>
-                        <a href="images/Laklak/Meryem/Meryem_Aboulouafa©BaptisteDVA-19.jpg" data-lightbox="gallery-item"><img class="image_fade" src="images/Laklak/Meryem/Meryem_Aboulouafa©BaptisteDVA-19.jpg" alt="Gallery Thumb 4"></a>
-                        <a href="images/Laklak/Meryem/Meryem_Aboulouafa©BaptisteDVA-19.jpg" data-lightbox="gallery-item"><img class="image_fade" src="images/Laklak/Meryem/Meryem_Aboulouafa©BaptisteDVA-19.jpg" alt="Gallery Thumb 4"></a>
-                        <a href="images/Laklak/Meryem/Meryem_Aboulouafa©BaptisteDVA-13.jpg" data-lightbox="gallery-item"><img class="image_fade" src="images/Laklak/Meryem/Meryem_Aboulouafa©BaptisteDVA-13.jpg" alt="Gallery Thumb 5"></a>
-                        <a href="images/Laklak/Meryem/Meryem_Aboulouafa©BaptisteDVA-13.jpg" data-lightbox="gallery-item"><img class="image_fade" src="images/Laklak/Meryem/Meryem_Aboulouafa©BaptisteDVA-13.jpg" alt="Gallery Thumb 5"></a>
-                        <a href="images/Laklak/Meryem/Meryem_Aboulouafa©BaptisteDVA-13.jpg" data-lightbox="gallery-item"><img class="image_fade" src="images/Laklak/Meryem/Meryem_Aboulouafa©BaptisteDVA-13.jpg" alt="Gallery Thumb 5"></a>
-                        <a href="images/Laklak/Meryem/Meryem_Aboulouafa©BaptisteDVA-13.jpg" data-lightbox="gallery-item"><img class="image_fade" src="images/Laklak/Meryem/Meryem_Aboulouafa©BaptisteDVA-13.jpg" alt="Gallery Thumb 5"></a>
                         <a href="images/Laklak/Meryem/Meryem_Aboulouafa©BaptisteDVA-13.jpg" data-lightbox="gallery-item"><img class="image_fade" src="images/Laklak/Meryem/Meryem_Aboulouafa©BaptisteDVA-13.jpg" alt="Gallery Thumb 5"></a>
                         <a href="images/Laklak/Meryem/Meryem_Aboulouafa©BaptisteDVA-12.jpg" data-lightbox="gallery-item"><img class="image_fade" src="images/Laklak/Meryem/Meryem_Aboulouafa©BaptisteDVA-12.jpg" alt="Gallery Thumb 6"></a>
                         <a href="images/Laklak/Meryem/Meryem%20Aboulouafa.jpg" data-lightbox="gallery-item"><img class="image_fade" src="images/Laklak/Meryem/Meryem%20Aboulouafa.jpg" alt="Gallery Thumb 7"></a>
-                        <a href="images/Laklak/Meryem/JohnFPeters_BDMOROC_5828.jpg" data-lightbox="gallery-item"><img class="image_fade" src="images/Laklak/Meryem/JohnFPeters_BDMOROC_5828.jpg" alt="Gallery Thumb 9"></a>
-                        <a href="images/Laklak/Meryem/JohnFPeters_BDMOROC_5828.jpg" data-lightbox="gallery-item"><img class="image_fade" src="images/Laklak/Meryem/JohnFPeters_BDMOROC_5828.jpg" alt="Gallery Thumb 9"></a>
-                        <a href="images/Laklak/Meryem/JohnFPeters_BDMOROC_5828.jpg" data-lightbox="gallery-item"><img class="image_fade" src="images/Laklak/Meryem/JohnFPeters_BDMOROC_5828.jpg" alt="Gallery Thumb 9"></a>
                         <a href="images/Laklak/Meryem/JohnFPeters_BDMOROC_5828.jpg" data-lightbox="gallery-item"><img class="image_fade" src="images/Laklak/Meryem/JohnFPeters_BDMOROC_5828.jpg" alt="Gallery Thumb 9"></a>
                     </div>
 
                     <div class="divider"><i class="icon-circle"></i></div>
                 </div>
             </div>
-
         </div>
     </div>
 

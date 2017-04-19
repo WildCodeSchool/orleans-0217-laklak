@@ -179,7 +179,7 @@ class ArtisteManager extends Manager
         } else {
             $artist = $this->showOneArtist($value['id']);
 
-            $uploadfilep = $artist['artistimgcoverpath'];
+            $uploadfilep = $artist['artistimgprofilpath'];
         }
 
         if ($file['artistImgCoverPath']['name'] != null){
@@ -188,7 +188,7 @@ class ArtisteManager extends Manager
             move_uploaded_file($file['artistimgcoverpath']['tmp_name'], $uploadfilec);
         } else {
             $artist = $this->showOneArtist($value['id']);
-            $uploadfilec = $artist['artistimgprofilpath'];
+            $uploadfilec = $artist['artistimgcoverpath'];
         }
 
         if($value['artistidevent'] == ''){
@@ -249,11 +249,11 @@ class ArtisteManager extends Manager
     public function deleteArtist($id)
     {
 
-
         $req = $this->bdd->prepare('DELETE FROM artist WHERE id = :id');
         $req->bindValue(':id', $id);
         $req->execute();
     }
+
 
 
 }

@@ -153,6 +153,7 @@ class EventManager extends Manager
         return $res[0];
     }
 
+
     public function reArrayFilesUpdate($file_post, $id)
     {
 
@@ -182,6 +183,7 @@ class EventManager extends Manager
             }
         }
     }
+
 
     public function updateEvent($value, $file)
     {

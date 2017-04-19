@@ -100,6 +100,7 @@ if (isset($_GET['page'])) {
             $agenda = new \laklak\controller\AgendaController(true);
 
 
+
             switch ($page) {
                 case 'apropos':
                     $view = $default->apropos();
