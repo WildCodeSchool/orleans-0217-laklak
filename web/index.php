@@ -36,7 +36,7 @@ if (isset($_GET['page'])) {
 
 
             $adminAccueil = new \laklak\controller\SliderController(false);
-            $defaultArtist = new \laklak\controller\ArtistController(false);
+
             $gestionAdmin = new \laklak\controller\AdministrateurController(false);
 
 
@@ -64,7 +64,7 @@ if (isset($_GET['page'])) {
                     $view = $defaultEvent->addEvent();
                     break;
                 case 'updateEvent':
-                    $view = $defaultEvent->updateEvent($_GET['id']);
+                    $view = $defaultEvent->updateEvent();
                     break;
                 case 'deleteEvent':
                     $view = $defaultEvent->deleteEvent($_GET['id']);
@@ -79,7 +79,7 @@ if (isset($_GET['page'])) {
                     $view = $defaultArtist->deleteArtist();
                     break;
                 case 'updateartist':
-                    $view = $defaultArtist->updateArtist($_GET['id']);
+                    $view = $defaultArtist->updateArtist();
                     break;
                 case 'gestionAdmin':
                     $view = $gestionAdmin->Admin();
@@ -96,13 +96,15 @@ if (isset($_GET['page'])) {
             $default = new DefaultController(true);
             $contact = new \laklak\controller\ContactController(true);
             $defaultEvent = new EventController(true);
+            $defaultArtist = new ArtistController(true);
+
 
             switch ($page) {
                 case 'apropos':
                     $view = $default->apropos();
                     break;
                 case 'liste_artistes':
-                    $view = $default->liste_artistes();
+                    $view = $defaultArtist->listeArt();
                     break;
                 case 'liste_evenements':
                     $view = $defaultEvent->listeEvenements();
@@ -117,7 +119,7 @@ if (isset($_GET['page'])) {
                     $view = $default->agenda();
                     break;
                 case 'artistes':
-                    $view = $default->artistes();
+                    $view = $defaultArtist->artist($_GET ['id']);
                     break;
                 case 'connexion':
                     $view = $default->connexion();

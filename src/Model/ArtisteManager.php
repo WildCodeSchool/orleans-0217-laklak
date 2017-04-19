@@ -7,6 +7,7 @@
  */
 
 namespace laklak\Model;
+
 use laklak\Model\Artist;
 
 
@@ -40,94 +41,178 @@ class ArtisteManager extends Manager
         return $res;
     }
 
+
+    public function reArrayFiles($value, &$file_post)
+    {
+
+        $this->addArtist($value, $file_post['artistImgProfilPath'], $file_post['artistImgCoverPath']);
+
+        $file_ary = array();
+        $file_count = count($file_post['galerie']['name']);
+        $file_keys = array_keys($file_post['galerie']);
+
+        for ($i = 0; $i < $file_count; $i++) {
+            foreach ($file_keys as $key) {
+                $file_ary[$i][$key] = $file_post['galerie'][$key][$i];
+            }
+        }
+
+        $uploaddir = 'images/Upload/Galerie/Artist/';
+
+        $lastid = $this->bdd->lastInsertId();
+        for ($i = 0; $i < $file_count ; $i++){
+            if ($file_ary[$i]['name'] != null){
+                $uploadfile = $uploaddir . basename($file_ary[$i]['name']);
+                move_uploaded_file($file_ary[$i]['tmp_name'], $uploadfile);
+
+                $req = $this->bdd->prepare('INSERT INTO artistimages(artistimggalerypath, idartist) VALUES (:artistimggalerypath, :idartist)');
+                $req->bindValue(':idartist', $lastid );
+                $req->bindValue(':artistimggalerypath', $uploadfile);
+                $req->execute();
+            }
+        }
+    }
+
     /**
      * j'ajoute un artist
      */
-    public function addArtist(array $value)
+    public function addArtist(array $value, $filep, $filec)
     {
 
 
-        $prep= $this->bdd->prepare('INSERT INTO artist (artistname, artistbio, artistlaklak, artistwebsiteurl,
+        if ($filep['name'] != null){
+            $uploaddir = 'images/Upload/Artiste/';
+            $uploadfilep = $uploaddir . basename($filep['name']);
+            move_uploaded_file($filep['tmp_name'], $uploadfilep);
+        }
+
+        if ($filec['name'] != null){
+            $uploaddir = 'images/Upload/Artiste/';
+            $uploadfilec = $uploaddir . basename($filec['name']);
+            move_uploaded_file($filec['tmp_name'], $uploadfilec);
+        }
+
+        if($value['artistidevent'] == ''){
+            $value['artistidevent'] = NULL;
+        } else {
+            $value['artistidevent'] = intval($value['artistidevent']);
+        }
+        if($value['laklak'] == ''){
+            $value['laklak'] = NULL;
+        } else {
+            $value['laklak'] = intval($value['laklak']);
+        }
+
+
+        $prep = $this->bdd->prepare('INSERT INTO artist (artistname, artistbio, artistlaklak, artistwebsiteurl,
                                                         artistfacebookurl, artisttwitterurl, artisttumblrurl,
-                                                        artistvimeourl, artistsoundcloudurl, artistinstaurl, 
-                                                        artistiframesoundcloud, artistiframeyoutube, artistimgcoverpath, 
-                                                        artistimgprofilpath, artistidevent) 
+                                                        artistvimeourl, artistsoundcloudurl, artistiframesoundcloud, artistiframeyoutube, artistimgcoverpath, 
+                                                        artistimgprofilpath, artistidevent, artistiframefacebook, artistinstagramurl) 
                                     VALUES (:artistname, :artistbio, :artistLaklak,:artistWebsiteUrl,:artistFacebookUrl,
-                                            :artistTwitterUrl,:artistTumblrUrl,:artistVimeoUrl, :artistSoundcloudUrl,
-                                            :artistInstaUrl,:artistIframeSoundcloudUrl, :artistIframeYoutubeUrl, 
-                                            :artistImgCoverPath, :artistImgProfilPath, :artistIdEvent)');
+                                            :artistTwitterUrl,:artistTumblrUrl,:artistVimeoUrl, :artistSoundcloudUrl,:artistIframeSoundcloudUrl, :artistIframeYoutubeUrl, 
+                                            :artistImgCoverPath, :artistImgProfilPath, :artistIdEvent, :artistIframeFacebook, :artistinstagramurl)');
 
 
-       $prep->bindValue (':artistname', $value['nomArtist']);
-       $prep->bindValue (':artistbio', $value['bio']);
-       $prep->bindValue  (':artistLaklak',intval($value['laklak']));
-       $prep->bindValue  (':artistWebsiteUrl', $value['siteArtist']);
-       $prep->bindValue  (':artistFacebookUrl', $value['fbArtistIframe']);
-       $prep->bindValue  (':artistTwitterUrl', $value['twitArtist']);
-       $prep->bindValue  (':artistVimeoUrl', $value['vimArtist']);
-       $prep->bindValue  (':artistSoundcloudUrl', $value['artistsoundcloudurl']);
-       $prep->bindValue  (':artistIframeSoundcloudUrl', $value['scArtistIframe']);
-       $prep->bindValue  (':artistIframeYoutubeUrl', $value['yArtistIframe']);
-       $prep->bindValue  (':artistInstaUrl', $value['instArtist']);
-       $prep->bindValue  (':artistTumblrUrl', $value['tumbArtist']);
-       $prep->bindValue  (':artistImgCoverPath', $value['artistImgCoverPath']);
-       $prep->bindValue (':artistImgProfilPath', $value['artistImgProfilPath']);
-       $prep->bindValue (':artistIdEvent', intval($value['artistidevent']));
-
-       $prep->execute();
-
+        $prep->bindValue(':artistname', $value['nomArtist']);
+        $prep->bindValue(':artistbio', $value['bio']);
+        $prep->bindValue(':artistLaklak', $value['laklak']);
+        $prep->bindValue(':artistWebsiteUrl', $value['siteArtist']);
+        $prep->bindValue(':artistFacebookUrl', $value['fbArtistUrl']);
+        $prep->bindValue(':artistTwitterUrl', $value['twitArtist']);
+        $prep->bindValue(':artistVimeoUrl', $value['vimArtist']);
+        $prep->bindValue(':artistSoundcloudUrl', $value['artistsoundcloudurl']);
+        $prep->bindValue(':artistIframeSoundcloudUrl', $value['scArtistIframe']);
+        $prep->bindValue(':artistIframeYoutubeUrl', $value['yArtistIframe']);
+        $prep->bindValue(':artistTumblrUrl', $value['tumbArtist']);
+        $prep->bindValue(':artistImgCoverPath', $uploadfilec);
+        $prep->bindValue(':artistImgProfilPath', $uploadfilep);
+        $prep->bindValue(':artistIdEvent', $value['artistidevent']);
+        $prep->bindValue(':artistIframeFacebook', ($value['fbArtistIframe']));
+        $prep->bindValue(':artistinstagramurl', ($value['instArtist']));
+        var_dump($prep->execute());
     }
+
 
     /**
      *
      */
-    public function updateArtist($id, $value)
+    public function updateArtist($value, $file)
     {
 
+        if ($file['artistImgProfilPath']['name'] != null){
+            $uploaddir = 'images/Upload/Artiste/';
+            $uploadfilep = $uploaddir . basename($file['artistImgProfilPath']['name']);
+            move_uploaded_file($file['artistImgProfilPath']['tmp_name'], $uploadfilep);
+        } else {
+            $artist = $this->showOneArtist($value['id']);
 
-        $req=("UPDATE artist SET artistname = :artistName, artistbio = :artistBio, 
+            $uploadfilep = $artist['artistimgcoverpath'];
+        }
+
+        if ($file['artistImgCoverPath']['name'] != null){
+            $uploaddir = 'images/Upload/Artiste/';
+            $uploadfilec = $uploaddir . basename($file['artistImgCoverPath']['name']);
+            move_uploaded_file($file['artistimgcoverpath']['tmp_name'], $uploadfilec);
+        } else {
+            $artist = $this->showOneArtist($value['id']);
+            $uploadfilec = $artist['artistimgprofilpath'];
+        }
+
+        if($value['artistidevent'] == ''){
+            $value['artistidevent'] = NULL;
+        } else {
+            $value['artistidevent'] = intval($value['artistidevent']);
+        }
+        if($value['laklak'] == ''){
+            $value['laklak'] = NULL;
+        } else {
+            $value['laklak'] = intval($value['laklak']);
+        }
+
+        $req = ("UPDATE artist SET artistname = :artistName, artistbio = :artistBio, 
                                     artistlaklak = :artistLaklak,
-                                    artistwebsiteurl = :artistWebsitUrl, artistfacebookurl = :artistFacebookUrl, 
-                                    artisttwitterurl = :artistTwitterUrl
+                                    artistwebsiteurl = :artistWebsiteUrl, artistfacebookurl = :artistFacebookUrl, 
+                                    artisttwitterurl = :artistTwitterUrl,
                                     artisttumblrurl = :artistTumblrURL, artistvimeourl = :artistVimeoUrl, 
-                                    artistsoundcloudurl = :artistSouncloudUrl,
-                                    artistinstaurl = :artistInstaUrl, artistiframesoundcloud = :artistIframeSoundcloudUrl, 
-                                    artistiframeyoutube = :artistIframeYoutube, artistimgcoverpath = :artistImgcoverPath, 
-                                    artistimgprofilpath = :artistImgProfilPath, artistidevent = :artistIdEvent WHERE id =:id");
+                                    artistsoundcloudurl = :artistSoundcloudUrl,
+                                    artistiframesoundcloud = :artistIframeSoundcloudUrl, 
+                                    artistiframeyoutube = :artistIframeYoutubeUrl, artistimgcoverpath = :artistImgCoverPath, 
+                                    artistimgprofilpath = :artistImgProfilPath, artistidevent = :artistIdEvent,
+                                    artistiframefacebook = :artistIframeFacebook, artistinstagramurl = :artistInstagramUrl WHERE id = :id");
 
         $prep = $this->bdd->prepare($req);
 
-        $prep->bindValue(':id', $id);
-        $prep->bindValue (':artistName', $value['nomArtist']);
-        $prep->bindValue (':artistBio', $value['bio']);
-        $prep->bindValue  (':artistLaklak',intval($value['laklak']));
-        $prep->bindValue  (':artistWebsiteUrl', $value['siteArtist']);
-        $prep->bindValue  (':artistFacebookUrl', $value['fbArtistIframe']);
-        $prep->bindValue  (':artistTwitterUrl', $value['twitArtist']);
-        $prep->bindValue  (':artistVimeoUrl', $value['vimArtist']);
-        $prep->bindValue  (':artistSoundcloudUrl', $value['artistsoundcloudurl']);
-        $prep->bindValue  (':artistIframeSoundcloudUrl', $value['scArtistIframe']);
-        $prep->bindValue  (':artistIframeYoutubeUrl', $value['yArtistIframe']);
-        $prep->bindValue  (':artistInstaUrl', $value['instArtist']);
-        $prep->bindValue  (':artistTumblrUrl', $value['tumbArtist']);
-        $prep->bindValue  (':artistImgCoverPath', $value['artistImgCoverPath']);
-        $prep->bindValue (':artistImgProfilPath', $value['artistImgProfilPath']);
-        $prep->bindValue (':artistIdEvent', intval($value['artistidevent']));
+        $prep->bindValue(':id', $value['id']);
+        $prep->bindValue(':artistName', $value['nomArtist']);
+        $prep->bindValue(':artistBio', $value['bio']);
+        $prep->bindValue(':artistLaklak', $value['laklak']);
+        $prep->bindValue(':artistWebsiteUrl', $value['siteArtist']);
+        $prep->bindValue(':artistFacebookUrl', $value['fbArtistUrl']);
+        $prep->bindValue(':artistTwitterUrl', $value['twitArtist']);
+        $prep->bindValue(':artistTumblrURL', $value['tumbArtist']);
+        $prep->bindValue(':artistVimeoUrl', $value['vimArtist']);
+        $prep->bindValue(':artistSoundcloudUrl', $value['artistsoundcloudurl']);
+        $prep->bindValue(':artistIframeSoundcloudUrl', $value['scArtistIframe']);
+        $prep->bindValue(':artistIframeYoutubeUrl', $value['yArtistIframe']);
+        $prep->bindValue(':artistImgCoverPath', $uploadfilec);
+        $prep->bindValue(':artistImgProfilPath', $uploadfilep);
+        $prep->bindValue(':artistIdEvent', $value['artistidevent']);
+        $prep->bindValue(':artistIframeFacebook', ($value['fbArtistIframe']));
+        $prep->bindValue(':artistInstagramUrl', $value['instArtist']);
         $prep->execute();
-
     }
 
     /**
      *
      */
-    public function deleteArtist($id) {
+    public function deleteArtist($id)
+    {
 
 
         $req = $this->bdd->prepare('DELETE FROM artist WHERE id = :id');
-        $req->bindValue(':id', $id );
+        $req->bindValue(':id', $id);
         $req->execute();
     }
-
 
 
 }

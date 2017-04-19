@@ -18,8 +18,9 @@ class EventManager extends Manager
         // requete sql pour récupérer tous les events dans un tableau d'objets Events
         $req = "SELECT * FROM event";
         $res = $this->bdd->query($req);
-        return $res->fetchAll(\PDO::FETCH_CLASS,'laklak\Model\Event');
+        return $res->fetchAll(\PDO::FETCH_CLASS, 'laklak\Model\Event');
     }
+
 
     public function listAllByOrderDesc()
     {
@@ -40,23 +41,31 @@ class EventManager extends Manager
         return $eventsYear;
     }
 
+
     public function reArrayFiles($value, &$file_post)
     {
+
         $this->addEvent($value, $file_post['imgEvenement'], $file_post['imgCoverEvenement']);
+
         $file_ary = array();
         $file_count = count($file_post['galerie']['name']);
         $file_keys = array_keys($file_post['galerie']);
+
         for ($i = 0; $i < $file_count; $i++) {
             foreach ($file_keys as $key) {
                 $file_ary[$i][$key] = $file_post['galerie'][$key][$i];
             }
         }
+
         $uploaddir = 'images/Upload/Gallerie/Event/';
+
+
         $lastid = $this->bdd->lastInsertId();
         for ($i = 0; $i < $file_count ; $i++){
             if ($file_ary[$i]['name'] != null){
                 $uploadfile = $uploaddir . basename($file_ary[$i]['name']);
                 move_uploaded_file($file_ary[$i]['tmp_name'], $uploadfile);
+
                 $req = $this->bdd->prepare('INSERT INTO eventimages(idevent, eventimggalerrypath) VALUES (:idevent, :eventimggalerrypath)');
                 $req->bindValue(':idevent', $lastid );
                 $req->bindValue(':eventimggalerrypath', $uploadfile);
@@ -64,6 +73,7 @@ class EventManager extends Manager
             }
         }
     }
+
 
     public function addEvent(array $value, $filep, $filec)
     {
@@ -97,6 +107,9 @@ class EventManager extends Manager
         :eventArtistes,:eventLaklak,:eventIdArtiste,:eventImgCoverPath,:eventImgProfilePath,:eventType,
         :eventMoreUrl,:eventBookingUrl)";
         $prep = $this->bdd->prepare($req);
+
+
+
         $prep->bindValue(':eventName', $value['nom']);
         $prep->bindValue(':eventDescription', $value['description']);
         $prep->bindValue(':eventLocation', $value['lieu']);
@@ -125,7 +138,9 @@ class EventManager extends Manager
         $req = "SELECT * FROM event WHERE id=:id";
         $prep = $this->bdd->prepare($req);
         $prep->bindValue(':id', $id);
+
         $prep->execute();
+
         $res = $prep->fetchAll(\PDO::FETCH_CLASS, 'laklak\Model\Event');
         return $res[0];
     }
@@ -142,6 +157,8 @@ class EventManager extends Manager
             var_dump($event);
             $uploadfilep = $event->getEventImgProfilePath();
         }
+
+
         if ($file['imgCoverEvenement']['name'] != null){
             $uploaddir = 'images/Upload/Event/';
             $uploadfilec = $uploaddir . basename($file['imgCoverEvenement']['name']);
@@ -151,6 +168,7 @@ class EventManager extends Manager
             $event = $this->showOneEvent($value['id']);
             $uploadfilec = $event->getEventImgCoverPath();
         }
+
         if($value['idArtiste'] == ''){
             $value['idArtiste'] = NULL;
         } else {
@@ -161,13 +179,16 @@ class EventManager extends Manager
         } else {
             $value['laklak'] = intval($value['laklak']);
         }
+
         $req = "UPDATE event SET eventName=:eventName, eventDescription=:eventDescription, eventLocation=:eventLocation,
         eventDate=:eventDate, eventProduction=:eventProduction, eventWebsiteUrl=:eventWebsiteUrl, eventFacebookUrl=:eventFacebookUrl
         , eventTwitterUrl=:eventTwitterUrl, eventSoundcloudUrl=:eventSoundcloudUrl, eventIframeYoutube=:eventIframeYoutube,
          eventIframeSoundcloud=:eventIframeSoundcloud, eventArtistes=:eventArtistes, eventLaklak=:eventLaklak,
          eventIdArtiste=:eventIdArtiste, eventImgCoverPath=:eventImgCoverPath, eventImgProfilePath=:eventImgProfilePath,
         eventType=:eventType, eventMoreUrl=:eventMoreUrl, eventBookingUrl=:eventBookingUrl WHERE id = :id";
+
         $prep = $this->bdd->prepare($req);
+
         $prep->bindValue(':id', $value['id']);
         $prep->bindValue(':eventName', $value['nom']);
         $prep->bindValue(':eventDescription', $value['description']);
@@ -188,6 +209,7 @@ class EventManager extends Manager
         $prep->bindValue(':eventType', $value['type']);
         $prep->bindValue(':eventMoreUrl', $value['moreUrl']);
         $prep->bindValue(':eventBookingUrl', $value['bookingUrl']);
+
         $prep->execute();
     }
 
@@ -196,17 +218,11 @@ class EventManager extends Manager
         // requete sql pour récupérer un event dans un tableau d'objets Events
         $req = "DELETE FROM event WHERE id=:id";
         $prep = $this->bdd->prepare($req);
-        $prep->bindValue(':id',$id);
+        $prep->bindValue(':id', $id);
 
         $prep->execute();
 
     }
-
-
-
-
-
-
 
 
 }

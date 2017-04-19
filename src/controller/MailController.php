@@ -25,7 +25,7 @@ class MailController extends Controller
                 ->setFrom(array($mail['email'] => $mail['nom']))
                 ->setSender($mail['email'], $mail['nom'])
                 ->setReplyTo($mail['email'])
-                ->setTo(array($to))
+                ->setTo($to)
                 ->addPart('
                 <h1>Vous avez reçu un message de ' . $mail['nom'] . '</h1> 
                 <p>Email : ' . $mail['email'] . '<br/>

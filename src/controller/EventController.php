@@ -34,7 +34,7 @@ class EventController extends Controller
         if (isset($_POST['addEvent'])){
             $event = new EventManager();
             $event->reArrayFiles($_POST,$_FILES);
-            // redirect vers la page qui liste les artist $this->listArtist()
+        // redirect vers la page qui liste les artist $this->listArtist()
             header('Location:?page=listEvent');
         }
         // sinon le form est pas submit, j'affiche le form
@@ -42,16 +42,21 @@ class EventController extends Controller
             return $this->getTwig()->render('addEvent.html.twig');
         }
     }
+
+
+
     public function updateEvent()
     {
         $evt = new EventManager();
         if (isset($_POST['updateEvent'])) {
+
             $evt->updateEvent($_POST, $_FILES);
             header('Location:?page=listEvent');
         } elseif (isset($_GET['id'])) {
             $event=$evt->showOneEvent($_GET['id']);
             return $this->getTwig()->render('addEvent.html.twig', array('event' => $event));
         }
+
         header('Location:?page=listEvent');
     }
 
