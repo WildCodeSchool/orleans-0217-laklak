@@ -99,6 +99,7 @@ if (isset($_GET['page'])) {
             $defaultArtist = new ArtistController(true);
 
 
+
             switch ($page) {
                 case 'apropos':
                     $view = $default->apropos();

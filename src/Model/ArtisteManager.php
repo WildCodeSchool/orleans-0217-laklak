@@ -168,11 +168,11 @@ class ArtisteManager extends Manager
     public function deleteArtist($id)
     {
 
-
         $req = $this->bdd->prepare('DELETE FROM artist WHERE id = :id');
         $req->bindValue(':id', $id);
         $req->execute();
     }
+
 
 
 }

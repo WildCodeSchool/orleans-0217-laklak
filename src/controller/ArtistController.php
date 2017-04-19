@@ -10,6 +10,7 @@ namespace laklak\controller;
 
 use laklak\Model\ArtisteManager;
 use laklak\Model\Artist;
+use laklak\Model\DiscoManager;
 
 class ArtistController extends Controller
 {
@@ -83,12 +84,18 @@ class ArtistController extends Controller
     {
         $art = new ArtisteManager();
         $artist=$art->showOneArtist($id);
-        return $this->getTwig()->render('artistes.html.twig',array('artist'=>$artist));
+
+        $disc = new DiscoManager();
+        $discs = $disc->showDisc($id);
+
+        return $this->getTwig()->render('artistes.html.twig',array('artist'=>$artist, 'discs'=>$discs));
     }
     public function listeArt()
     {
         $artist = new ArtisteManager();
-        $artists=$artist->showAll();
+        $artists = $artist->showAll();
         return $this->getTwig()->render('liste_artistes.html.twig',array('artists'=>$artists));
     }
+
+
 }
