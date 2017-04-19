@@ -20,7 +20,7 @@
 
                 <div class="form-group">
                     <label for="date">Date</label>
-                    <input type="text" class="form-control" name="date" id="date" value="{{ event.eventDate }}">
+                    <input type="text" class="form-control" name="date" id="date" value="{{ event.eventdate|date('Y-m-d H:i:s') }}">
                 </div>
 
                 <div class="form-group">
@@ -100,7 +100,7 @@
                     <label for="imgEvenement">Photo profil évènement</label>
                     <br/>
                     {% if event.eventImgProfilePath is defined %}
-                        <img src="images/Upload/Event/{{ event.eventImgProfilePath }}" class="img-thumbnail"
+                        <img src="{{ event.eventImgProfilePath }}" class="img-thumbnail"
                              width="250px"/>
                     {% endif %}
                     <input type="hidden" name="MAX_FILE_SIZE" value="1000000"/>
@@ -112,7 +112,7 @@
                     <label for="imgCoverEvenement">Photo couverture évènement</label>
                     <br/>
                     {% if event.eventImgCoverPath is defined %}
-                        <img src="images/Upload/Event/{{ event.eventImgCoverPath }}" class="img-thumbnail"
+                        <img src="{{ event.eventImgCoverPath }}" class="img-thumbnail"
                              width="250px"/>
                     {% endif %}
                     <input type="hidden" name="MAX_FILE_SIZE" value="1000000"/>

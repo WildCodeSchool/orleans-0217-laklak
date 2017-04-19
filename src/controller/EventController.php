@@ -28,8 +28,6 @@ class EventController extends Controller
     }
 
 
-
-
     public function addEvent()
     {
         // si le form est submit, je récupère mon $_POST
@@ -43,13 +41,13 @@ class EventController extends Controller
         else{
             return $this->getTwig()->render('addEvent.html.twig');
         }
-
     }
+
+
 
     public function updateEvent()
     {
         $evt = new EventManager();
-
         if (isset($_POST['updateEvent'])) {
 
             $evt->updateEvent($_POST, $_FILES);
@@ -61,6 +59,7 @@ class EventController extends Controller
 
         header('Location:?page=listEvent');
     }
+
 
     public function deleteEvent($id)
     {
@@ -81,8 +80,9 @@ class EventController extends Controller
     public function listeEvenements()
     {
         $event = new EventManager();
-        $events=$event->listAll();
-        return $this->getTwig()->render('liste_evenements.html.twig',array('events'=>$events));
+        $eventsYear=$event->formatEventsByYear();
+
+        return $this->getTwig()->render('liste_evenements.html.twig',array('eventsYear'=>$eventsYear));
     }
 
 
