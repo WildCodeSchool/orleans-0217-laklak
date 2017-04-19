@@ -4,17 +4,15 @@
 
 
 {% block content %}
+
     <div class="container hidden-xs">
         <div class=row">
             <div class="portfolio-image img-responsive">
 
                 <img src="{{ artist.artistimgcoverpath }}" alt="Portfolio Title">
-
-
             </div>
-        </div>
+       </div>
     </div>
-
     <div class="container">
         <div class=row">
 
@@ -22,29 +20,29 @@
 
             <div class="col-sm-4 bottommargin haut">
                 <div class="fbox-media clearfix bio thumbnail">
-                    <a href="#"><img src="{{ artist.artistimgprofilpath }}" alt="{{ artist.artistname }}"></a>
+                    <img src="{{ artist.artistimgprofilpath }}" alt="{{ artist.artistname }}">
                     <div class="detail_artiste">{% if artist.artistlaklak == 1 %}<img src="images/Laklak/logo.jpg" alt=""> {% endif %} {% if artist.artistlaklak == 0 %}{% endif %}</div>
                 </div>
 
                 <div class="row">
                     <div class="social col-xs-12">
                      <a href="{{ artist.artistwebsiteurl }}" target="_blank">
-                         {%  if artist.artistwebsiteurl ==''  %}{%  else %}
+                         {% if artist.artistwebsiteurl =='' %}{%  else %}
                         <button class="button button-large button-border button-rounded tright nomargin" type="submit" id="#" name="siteArtiste">Site de l'artiste
                         </button>
                         </a>
                       {% endif %}
                     </div>
                     <div class="col-sm-12 bottommargin-sm">
-                        {% if artist.artisttwitterurl =='' %}
-                        {% else %}
+                            {% if artist.artisttwitterurl =='' %}
+                            {% else %}
                         <a href="{{ artist.artisttwitterurl }}" target="_blank" class="social-icon si-dark si-colored si-twitter nobottommargin" style="margin-right: 10px;">
                             <i class="icon-twitter"></i>
                             <i class="icon-twitter"></i>
                         </a>
-                        {% endif %}
+                            {% endif %}
 
-                            {%  if artist.artistfacebookurl =='' %}
+                            {% if artist.artistfacebookurl =='' %}
                             {% else %}
                         <a href="{{ artist.artistfacebookurl }}" target="_blank" class="social-icon si-dark si-colored si-facebook nobottommargin" style="margin-right: 10px;">
                             <i class="icon-facebook"></i>
@@ -60,41 +58,43 @@
                         </a>
                             {% endif %}
 
-                        {% if artist.artisttumblrurl =='' %}
+                            {% if artist.artisttumblrurl =='' %}
                             {% else %}
                         <a href="{{ artist.artisttumblrurl }}" target="_blank" class="social-icon si-dark si-colored si-tumblr nobottommargin" style="margin-right: 10px;">
                             <i class="icon-tumblr"></i>
                             <i class="icon-tumblr"></i>
                         </a>
-                                {% endif %}
+                            {% endif %}
 
-                        {% if artist.artistvimeourl =='' %}
+                            {% if artist.artistvimeourl =='' %}
                             {% else %}
                         <a href="{{ artist.artistvimeourl }}" target="_blank" class="social-icon si-dark si-colored si-vimeo nobottommargin" style="margin-right: 10px;">
                             <i class="icon-vimeo"></i>
                             <i class="icon-vimeo"></i>
                         </a>
-                                {% endif %}
+                            {% endif %}
                     </div>
                 </div>
 
                     {% if artist.artistiframeyoutube =='' %}
-                        {% else %}
+                    {% else %}
                 <div class="bio thumbnail video hidden-xs"><iframe width="100%" height="315" src="{{ artist.artistiframeyoutube }}" frameborder="0" allowfullscreen></iframe>
-                    {% endif %}
+
                 </div>
+                    {% endif %}
+
                     {% if artist.artistiframesoundcloud =='' %}
-                        {%  else %}
+                    {%  else %}
                 <div class="bio thumbnail sound">
                     <iframe width="100%" height="450" scrolling="no" frameborder="no" src="{{ artist.artistiframesoundcloud }}"></iframe>
                 </div>
-                            {% endif %}
-                {% if artist.artistiframefacebook =='' %}
+                    {% endif %}
+
+                    {% if artist.artistiframefacebook =='' %}
                     {% else %}
                 <div class="bio thumbnail">
-
-                    <iframe width="100%" height="450" scrolling="no" frameborder="no"  src="{{ artist.artistiframefacebook }}"></iframe></div>
-
+                    <iframe width="100%" height="450" scrolling="no" frameborder="no"  src="{{ artist.artistiframefacebook }}"></iframe>
+                </div>
                     {% endif %}
             </div>
 
@@ -105,25 +105,26 @@
                     <p>{{ artist.artistbio|raw }}</p>
                 </div>
 
-
                 <div class="divider"><i class="icon-circle"></i></div>
 
 
 
+
                 <div class=""><h3>Discographie</h3>
+
                     <div class="row">
                        {% for disc in discs %}
                         <div class="col-xs-6 col-md-3">
                             <a href="{{ disc.artistalbumurl }}" target="_blank" class="thumbnail">
-                                <img src="images/Upload/Event/{{ disc.artistalbumimg }}" alt="{{ artist.artistname }}"  style="height: 90px; width: 80%; display: block;" />
+                                <img src="{{ disc.artistalbumimg }}" alt="{{ artist.artistname }}" style="height: 90px; width: 80%; display: block;" />
                             </a>
                         </div>
                        {% endfor %}
                     </div>
 
                     <div class="divider"><i class="icon-circle"></i></div>
-                </div>
 
+                </div>
 
 
 
