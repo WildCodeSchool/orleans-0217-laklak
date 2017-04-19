@@ -49,13 +49,6 @@ class DefaultController extends Controller
         $slides = $slide->selectAllSlide();
         return $this->getTwig()->render('index.html.twig', array('sliders' => $slides));
     }
-
-    public function agenda()
-    {
-
-        return $this->getTwig()->render('agenda.html.twig');
-
-    }
     public function connexion()
     {
 

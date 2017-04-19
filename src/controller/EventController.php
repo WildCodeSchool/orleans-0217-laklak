@@ -9,6 +9,7 @@
 namespace laklak\controller;
 
 
+use laklak\Model\ArtisteManager;
 use laklak\Model\Event;
 use laklak\Model\EventManager;
 use laklak\Model\GalerieManager;
@@ -40,7 +41,12 @@ class EventController extends Controller
         }
         // sinon le form est pas submit, j'affiche le form
         else{
-            return $this->getTwig()->render('addEvent.html.twig');
+            $allArtistes = new ArtisteManager();
+            $result = $allArtistes->showAll();
+
+            return $this->getTwig()->render('addEvent.html.twig', array(
+                'artistes'  =>  $result,
+            ));
         }
     }
 
@@ -57,9 +63,12 @@ class EventController extends Controller
             $galerie = new GalerieManager();
             $gal = $galerie->showAll($_GET['id'], 'eventimages', 'idevent');
             $event = $evt->showOneEvent($_GET['id']);
+            $allArtistes = new ArtisteManager();
+            $result = $allArtistes->showAll();
             return $this->getTwig()->render('addEvent.html.twig', array(
                 'event' => $event,
-                'galerie' => $gal
+                'galerie' => $gal,
+                'artistes'  =>  $result,
             ));
         }
 

@@ -97,6 +97,7 @@ if (isset($_GET['page'])) {
             $contact = new \laklak\controller\ContactController(true);
             $defaultEvent = new EventController(true);
             $defaultArtist = new ArtistController(true);
+            $agenda = new \laklak\controller\AgendaController(true);
 
 
             switch ($page) {
@@ -116,7 +117,7 @@ if (isset($_GET['page'])) {
                     $view = $contact->contact();
                     break;
                 case 'agenda':
-                    $view = $default->agenda();
+                    $view = $agenda->Agenda();
                     break;
                 case 'artistes':
                     $view = $defaultArtist->artist($_GET ['id']);

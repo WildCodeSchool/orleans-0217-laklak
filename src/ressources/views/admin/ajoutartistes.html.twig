@@ -104,7 +104,7 @@
 
                 <div class="form-group">
                     {% if artist.artistimgprofilpath is defined %} <img
-                        src="images/Upload/Artistes/profilartistes/{{ artist.artistimgprofilpath }}"
+                        src="{{ artist.artistimgprofilpath }}"
                         class="img-thumbnail" width="250px" />{% else %} {% endif %}
                     <label for="photoArtiste">Photo artiste</label>
                     <input type="hidden" name="MAX_FILE_SIZE" value="1000000"/>
@@ -112,7 +112,7 @@
                 </div>
                 <div class="form-group">
                     {% if artist.artistimgcoverpath is defined %} <img
-                        src="images/Upload/Artistes/coverartistes/{{ artist.artistimgcoverpath }}" class="img-thumbnail"
+                        src="{{ artist.artistimgcoverpath }}" class="img-thumbnail"
                         width="250px"/>{% else %} {% endif %}
                     <label for="exampleInputFile">Photo Cover</label>
                     <input type="file" id="photoCover" name="artistImgCoverPath">
