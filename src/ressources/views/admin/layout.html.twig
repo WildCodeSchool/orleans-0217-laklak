@@ -16,7 +16,6 @@
     <link rel="stylesheet" href="css/swiper.css" type="text/css"/>
 
 
-
     <link rel="stylesheet" href="css/font-icons.css" type="text/css"/>
     <link rel="stylesheet" href="css/fonts.css" type="text/css"/>
 
@@ -69,29 +68,55 @@
                 <nav id="primary-menu">
 
                     <ul>
-                        <li class="current"><a href="#"><div>Artistes</div></a>
+                        <li class="current"><a href="#">
+                                <div>Artistes</div>
+                            </a>
                             <ul>
-                                <li><a href="?page=listeartistes"><div>Gérer les artistes</div></a></li>
-                                <li><a href="?page=ajoutartistes"><div>Ajouter un artiste</div></a></li>
+                                <li><a href="?page=listeartistes">
+                                        <div>Gérer les artistes</div>
+                                    </a></li>
+                                <li><a href="?page=ajoutartistes">
+                                        <div>Ajouter un artiste</div>
+                                    </a></li>
 
                             </ul>
                         </li>
-                        <li><a href="#"><div>Evenements</div></a>
+                        <li><a href="#">
+                                <div>Evenements</div>
+                            </a>
                             <ul>
-                                <li><a href="?page=listEvent"><div>Gérer les évènements</div></a></li>
-                                <li><a href="?page=addEvent"><div>Ajouter un évènement</div></a></li>
+                                <li><a href="?page=listEvent">
+                                        <div>Gérer les évènements</div>
+                                    </a></li>
+                                <li><a href="?page=addEvent">
+                                        <div>Ajouter un évènement</div>
+                                    </a></li>
                             </ul>
                         </li>
-                        <li><a href="?page=adminapropos"><div>A propos</div></a></li>
-                        <li><a href="#"><div>Agenda</div></a></li>
-                        <li><a href="#"><div>Options</div></a>
+                        <li><a href="?page=adminapropos">
+                                <div>A propos</div>
+                            </a></li>
+                        <li><a href="#">
+                                <div>Agenda</div>
+                            </a></li>
+                        <li><a href="#">
+                                <div>Options</div>
+                            </a>
                             <ul>
-                                <li><a href="?page=modifAccueil"><div>Page d'accueil</div></a></li>
-                                <li><a href="?page=gestionAdmin"><div>Administrateur</div></a></li>
-                                <li><a href="#"><div>Autres</div></a></li>
+                                <li><a href="?page=modifAccueil">
+                                        <div>Page d'accueil</div>
+                                    </a></li>
+                                <li><a href="?page=gestionAdmin">
+                                        <div>Administrateur</div>
+                                    </a></li>
+                                <li><a href="#">
+                                        <div>Autres</div>
+                                    </a></li>
                             </ul>
                         </li>
-                        <li><a href="?page=deconnexion"><div>Déconnexion</div></a></li>
+                        <li><a href="?page=deconnexion">
+                                <div>Déconnexion</div>
+                            </a></li>
                     </ul>
 
                 </nav><!-- #primary-menu end -->
@@ -126,8 +151,8 @@
             </div>
         </div>
     </header><!-- #header end -->
-  <!-- Content
-            ============================================= -->
+    <!-- Content
+              ============================================= -->
     <section id="content">
 
         <div class="content-wrap nopadding">
@@ -138,39 +163,37 @@
     </section><!-- #content end -->
 
 
-<!-- Go To Top ============================================= -->
-<div id="gotoTop" class="icon-angle-up"></div>
+    <!-- Go To Top ============================================= -->
+    <div id="gotoTop" class="icon-angle-up"></div>
+    <script type="text/javascript" src="js/dashboard.js"></script>
+    <!-- External JavaScripts ============================================= -->
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/plugins.js"></script>
 
-<!-- External JavaScripts ============================================= -->
-<script type="text/javascript" src="js/jquery.js"></script>
-<script type="text/javascript" src="js/plugins.js"></script>
+    <!-- Bootstrap Select Plugin -->
+    <script type="text/javascript" src="js/components/bs-select.js"></script>
+    <!-- Select Splitter Plugin -->
+    <script type="text/javascript" src="js/components/selectsplitter.js"></script>
 
-<!-- Bootstrap Select Plugin -->
-<script type="text/javascript" src="js/components/bs-select.js"></script>
-<!-- Select Splitter Plugin -->
-<script type="text/javascript" src="js/components/selectsplitter.js"></script>
+    <!-- Bootstrap Switch Plugin -->
+    <script type="text/javascript" src="js/components/bs-switches.js"></script>
 
-<!-- Bootstrap Switch Plugin -->
-<script type="text/javascript" src="js/components/bs-switches.js"></script>
+    <!-- Footer Scripts ============================================= -->
+    <script type="text/javascript" src="js/functions.js"></script>
 
-<!-- Footer Scripts ============================================= -->
-<script type="text/javascript" src="js/functions.js"></script>
+    <script type="text/javascript">
 
-<script type="text/javascript">
-
-    $('.selectsplitter').selectsplitter();
-
-
+        $('.selectsplitter').selectsplitter();
 
 
-</script>
-{% block script %}
+    </script>
+    {% block script %}
     {% endblock %}
 
-<script>
+    <script>
 
-    jQuery(".bt-switch").bootstrapSwitch();
-</script>
+        jQuery(".bt-switch").bootstrapSwitch();
+    </script>
 
     <script src="js/ckeditor/ckeditor.js"></script>
 
