@@ -12,6 +12,8 @@ namespace laklak\controller;
 use laklak\Model\Event;
 use laklak\Model\EventManager;
 use laklak\Model\EventimagesManager;
+use laklak\Model\GalerieManager;
+
 
 class EventController extends Controller
 {
@@ -52,8 +54,13 @@ class EventController extends Controller
             $evt->updateEvent($_POST, $_FILES);
             header('Location:?page=listEvent');
         } elseif (isset($_GET['id'])) {
-            $event=$evt->showOneEvent($_GET['id']);
-            return $this->getTwig()->render('addEvent.html.twig', array('event' => $event));
+            $galerie = new GalerieManager();
+            $gal = $galerie->showAll($_GET['id'], 'eventimages', 'idevent');
+            $event = $evt->showOneEvent($_GET['id']);
+            return $this->getTwig()->render('addEvent.html.twig', array(
+                'event' => $event,
+                'galerie' => $gal
+            ));
         }
 
         header('Location:?page=listEvent');

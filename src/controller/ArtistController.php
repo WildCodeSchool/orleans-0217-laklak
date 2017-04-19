@@ -11,6 +11,11 @@ namespace laklak\controller;
 use laklak\Model\ArtisteManager;
 use laklak\Model\Artist;
 
+use laklak\Model\DiscoManager;
+
+use laklak\Model\GalerieManager;
+
+
 class ArtistController extends Controller
 {
 
@@ -40,8 +45,8 @@ class ArtistController extends Controller
 
         if (isset($_POST['add'])) {
             $art = new ArtisteManager();
-            $art->updateArtist($_POST, $_FILES);
-            header('Location:?page=listartistes');
+            $art->reArrayFiles($_POST, $_FILES);
+            header('Location:?page=listeartistes');
         } else {
             return $this->getTwig()->render('ajoutartistes.html.twig');
         }
@@ -54,10 +59,17 @@ class ArtistController extends Controller
 
         if (isset($_POST['update'])){
             $artist->updateArtist($_POST, $_FILES);
+
             header('Location:?page=listeartistes');
         } elseif (isset($_GET['id'])) {
+            $galerie = new GalerieManager();
+            $gal = $galerie->showAll($_GET['id'], 'artistimages', 'idartist' );
             $art = $artist->showOneArtist($_GET['id']);
-            return $this->getTwig()->render('ajoutartistes.html.twig', array('artist' => $art));
+
+            return $this->getTwig()->render('ajoutartistes.html.twig', array(
+                'artist' => $art,
+                'galerie' => $gal
+            ));
         }
         header('Location:?page=listeartistes');
     }
@@ -76,12 +88,18 @@ class ArtistController extends Controller
     {
         $art = new ArtisteManager();
         $artist=$art->showOneArtist($id);
-        return $this->getTwig()->render('artistes.html.twig',array('artist'=>$artist));
+
+        $disc = new DiscoManager();
+        $discs = $disc->showDisc($id);
+
+        return $this->getTwig()->render('artistes.html.twig',array('artist'=>$artist, 'discs'=>$discs));
     }
     public function listeArt()
     {
         $artist = new ArtisteManager();
-        $artists=$artist->showAll();
+        $artists = $artist->showAll();
         return $this->getTwig()->render('liste_artistes.html.twig',array('artists'=>$artists));
     }
+
+
 }
