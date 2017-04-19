@@ -64,7 +64,7 @@ if (isset($_GET['page'])) {
                     $view = $defaultEvent->addEvent();
                     break;
                 case 'updateEvent':
-                    $view = $defaultEvent->updateEvent($_GET['id']);
+                    $view = $defaultEvent->updateEvent();
                     break;
                 case 'deleteEvent':
                     $view = $defaultEvent->deleteEvent($_GET['id']);
@@ -79,7 +79,7 @@ if (isset($_GET['page'])) {
                     $view = $defaultArtist->deleteArtist();
                     break;
                 case 'updateartist':
-                    $view = $defaultArtist->updateArtist($_GET['id']);
+                    $view = $defaultArtist->updateArtist();
                     break;
                 case 'gestionAdmin':
                     $view = $gestionAdmin->Admin();

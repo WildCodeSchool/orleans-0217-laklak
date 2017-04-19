@@ -10,7 +10,11 @@ namespace laklak\controller;
 
 use laklak\Model\ArtisteManager;
 use laklak\Model\Artist;
+
 use laklak\Model\DiscoManager;
+
+use laklak\Model\GalerieManager;
+
 
 class ArtistController extends Controller
 {
@@ -38,36 +42,36 @@ class ArtistController extends Controller
     public function addArtist()
     {
 
-        $artist = new ArtisteManager();
 
-        if (isset($_POST['add'])){
-            $artist->addArtist($_POST);
-            return $this->getTwig()->render('listeartistes.html.twig');
-
+        if (isset($_POST['add'])) {
+            $art = new ArtisteManager();
+            $art->reArrayFiles($_POST, $_FILES);
+            header('Location:?page=listeartistes');
+        } else {
+            return $this->getTwig()->render('ajoutartistes.html.twig');
         }
-        if (isset($_GET['id'])){
-           $value = $artist->showOneArtist($_GET['id']);
-            return $this->getTwig()->render('ajoutartistes.html.twig', array('artist' => $value));
-        }
-
-
-        // sinon le form est pas submit, j'affiche le form
-        return $this->getTwig()->render('ajoutartistes.html.twig');
 
     }
 
-    public function updateArtist($id)
+    public function updateArtist()
     {
-        $art = new ArtisteManager();
+        $artist = new ArtisteManager();
 
-        if (isset($_POST['add'])) {
+        if (isset($_POST['update'])){
+            $artist->updateArtist($_POST, $_FILES);
 
-            $art->updateArtist($id, $_POST);
-            header('Location:?page=listartistes');
+            header('Location:?page=listeartistes');
+        } elseif (isset($_GET['id'])) {
+            $galerie = new GalerieManager();
+            $gal = $galerie->showAll($_GET['id'], 'artistimages', 'idartist' );
+            $art = $artist->showOneArtist($_GET['id']);
+
+            return $this->getTwig()->render('ajoutartistes.html.twig', array(
+                'artist' => $art,
+                'galerie' => $gal
+            ));
         }
-
-        $artist=$art->showOneArtist($id);
-        return $this->getTwig()->render('editartistes.html.twig',array('artist'=>$artist));
+        header('Location:?page=listeartistes');
     }
 
     public function deleteArtist ()
