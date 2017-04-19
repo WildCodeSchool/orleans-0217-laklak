@@ -2,11 +2,15 @@
 {% block title %} Artistes {{ parent() }}{% endblock title %}
 
 
+
 {% block content %}
     <div class="container hidden-xs">
         <div class=row">
             <div class="portfolio-image img-responsive">
-                <img src="images/Upload/Artistes/coverartistes/{{ artist.artistimgcoverpath }}" alt="Portfolio Title">
+
+                <img src="{{ artist.artistimgcoverpath }}" alt="Portfolio Title">
+
+
             </div>
         </div>
     </div>
@@ -18,7 +22,7 @@
 
             <div class="col-sm-4 bottommargin haut">
                 <div class="fbox-media clearfix bio thumbnail">
-                    <a href="#"><img src="images/Upload/Artistes/profilartistes/{{ artist.artistimgprofilpath }}" alt="{{ artist.artistname }}"></a>
+                    <a href="#"><img src="{{ artist.artistimgprofilpath }}" alt="{{ artist.artistname }}"></a>
                     <div class="detail_artiste">{% if artist.artistlaklak == 1 %}<img src="images/Laklak/logo.jpg" alt=""> {% endif %} {% if artist.artistlaklak == 0 %}{% endif %}</div>
                 </div>
 
@@ -88,7 +92,9 @@
                 {% if artist.artistiframefacebook =='' %}
                     {% else %}
                 <div class="bio thumbnail">
-                    <iframe width="100%" height="400" scrolling="no" frameborder="no" src="{{ artist.artistiframefacebook }}"></iframe></div>
+
+                    <iframe width="100%" height="450" scrolling="no" frameborder="no"  src="{{ artist.artistiframefacebook }}"></iframe></div>
+
                     {% endif %}
             </div>
 
