@@ -13,6 +13,7 @@ use laklak\Model\Artist;
 
 use laklak\Model\DiscoManager;
 
+use laklak\Model\EventManager;
 use laklak\Model\GalerieManager;
 
 
@@ -84,16 +85,24 @@ class ArtistController extends Controller
         return $this->getTwig()->render('listeartistes.html.twig');
 
     }
+
     public function artist($id)
     {
         $art = new ArtisteManager();
         $artist=$art->showOneArtist($id);
 
+        $galery = new GalerieManager();
+        $galerie = $galery->showAll($id,'artistimages','idartist');
+
         $disc = new DiscoManager();
         $discs = $disc->showDisc($id);
 
-        return $this->getTwig()->render('artistes.html.twig',array('artist'=>$artist, 'discs'=>$discs));
+        $evt = new EventManager();
+        $event = $evt->listEventByArtist($id);
+
+        return $this->getTwig()->render('artistes.html.twig',array('artist'=>$artist,'galerie'=>$galerie, 'discs'=>$discs, 'event'=>$event));
     }
+
     public function listeArt()
     {
         $artist = new ArtisteManager();

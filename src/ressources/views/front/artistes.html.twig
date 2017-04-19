@@ -7,12 +7,13 @@
 
     <div class="container hidden-xs">
         <div class=row">
-            <div class="portfolio-image img-responsive">
 
+            <div class="portfolio-image img-responsive">
                 <img src="{{ artist.artistimgcoverpath }}" alt="Portfolio Title">
             </div>
        </div>
     </div>
+
     <div class="container">
         <div class=row">
 
@@ -20,8 +21,10 @@
 
             <div class="col-sm-4 bottommargin haut">
                 <div class="fbox-media clearfix bio thumbnail">
+
                     <img src="{{ artist.artistimgprofilpath }}" alt="{{ artist.artistname }}">
                     <div class="detail_artiste">{% if artist.artistlaklak == 1 %}<img src="images/Laklak/logo.jpg" alt=""> {% endif %} {% if artist.artistlaklak == 0 %}{% endif %}</div>
+
                 </div>
 
                 <div class="row">
@@ -38,14 +41,12 @@
                             {% else %}
                         <a href="{{ artist.artisttwitterurl }}" target="_blank" class="social-icon si-dark si-colored si-twitter nobottommargin" style="margin-right: 10px;">
                             <i class="icon-twitter"></i>
-                            <i class="icon-twitter"></i>
                         </a>
                             {% endif %}
 
                             {% if artist.artistfacebookurl =='' %}
                             {% else %}
                         <a href="{{ artist.artistfacebookurl }}" target="_blank" class="social-icon si-dark si-colored si-facebook nobottommargin" style="margin-right: 10px;">
-                            <i class="icon-facebook"></i>
                             <i class="icon-facebook"></i>
                         </a>
                             {% endif %}
@@ -54,7 +55,6 @@
                             {%  else %}
                         <a href="{{ artist.artistsoundcloudurl }}" target="_blank" class="social-icon si-dark si-colored si-soundcloud nobottommargin" style="margin-right: 10px;">
                             <i class="icon-soundcloud"></i>
-                            <i class="icon-soundcloud"></i>
                         </a>
                             {% endif %}
 
@@ -62,14 +62,12 @@
                             {% else %}
                         <a href="{{ artist.artisttumblrurl }}" target="_blank" class="social-icon si-dark si-colored si-tumblr nobottommargin" style="margin-right: 10px;">
                             <i class="icon-tumblr"></i>
-                            <i class="icon-tumblr"></i>
                         </a>
                             {% endif %}
 
                             {% if artist.artistvimeourl =='' %}
                             {% else %}
                         <a href="{{ artist.artistvimeourl }}" target="_blank" class="social-icon si-dark si-colored si-vimeo nobottommargin" style="margin-right: 10px;">
-                            <i class="icon-vimeo"></i>
                             <i class="icon-vimeo"></i>
                         </a>
                             {% endif %}
@@ -90,41 +88,49 @@
                 </div>
                     {% endif %}
 
-                    {% if artist.artistiframefacebook =='' %}
+
+                {% if artist.artistiframefacebook =='' %}
+
                     {% else %}
                 <div class="bio thumbnail">
                     <iframe width="100%" height="450" scrolling="no" frameborder="no"  src="{{ artist.artistiframefacebook }}"></iframe>
                 </div>
                     {% endif %}
+
             </div>
 
 
             <div class="col-sm-8">
                 <h1 class="hidden-xs"> {{ artist.artistname }}</h1>
-                <div class=""> <h3>Biographie</h3>
+                <div class="">
+                    <h3>Biographie</h3>
                     <p>{{ artist.artistbio|raw }}</p>
                 </div>
 
-                <div class="divider"><i class="icon-circle"></i></div>
 
 
-
-
-                <div class=""><h3>Discographie</h3>
-
-                    <div class="row">
-                       {% for disc in discs %}
-                        <div class="col-xs-6 col-md-3">
-                            <a href="{{ disc.artistalbumurl }}" target="_blank" class="thumbnail">
-                                <img src="{{ disc.artistalbumimg }}" alt="{{ artist.artistname }}" style="height: 90px; width: 80%; display: block;" />
-                            </a>
-                        </div>
-                       {% endfor %}
-                    </div>
-
-                    <div class="divider"><i class="icon-circle"></i></div>
-
+                <div class="divider">
+                    <i class="icon-circle"></i>
                 </div>
+
+
+                <div class="">
+                    <h3>Discographie</h3>
+                        <div class="row">
+                           {% for disc in discs %}
+                            <div class="col-xs-6 col-md-3">
+                                <a href="{{ disc.artistalbumurl }}" target="_blank" class="thumbnail">
+                                    <img src="images/Upload/Event/{{ disc.artistalbumimg }}" alt="{{ artist.artistname }}"  style="height: 90px; width: 80%; display: block;" />
+                                </a>
+                            </div>
+                           {% endfor %}
+                        </div>
+                </div>
+
+
+                    <div class="divider">
+                        <i class="icon-circle"></i>
+                    </div>
 
 
 
@@ -169,15 +175,13 @@
                 <div class="col_full clearfix">
                     <h3>Galerie</h3>
 
+
+
                     <div class="masonry-thumbs col-4" data-big="1" data-lightbox="gallery">
-                        <a href="images/Laklak/Meryem/Meryem_Aboulouafa©BaptisteDVA-18.jpg" data-lightbox="gallery-item"><img class="image_fade" src="images/Laklak/Meryem/Meryem_Aboulouafa©BaptisteDVA-18.jpg" alt="Gallery Thumb 1"></a>
-                        <a href="images/Laklak/Meryem/F94T0300.JPG" data-lightbox="gallery-item"><img class="image_fade" src="images/Laklak/Meryem/F94T0300.JPG" alt="Gallery Thumb 2"></a>
-                        <a href="images/Laklak/Meryem/Meryem_Aboulouafa©BaptisteDVA-20.jpg" data-lightbox="gallery-item"><img class="image_fade" src="images/Laklak/Meryem/Meryem_Aboulouafa©BaptisteDVA-20.jpg" alt="Gallery Thumb 3"></a>
-                        <a href="images/Laklak/Meryem/Meryem_Aboulouafa©BaptisteDVA-19.jpg" data-lightbox="gallery-item"><img class="image_fade" src="images/Laklak/Meryem/Meryem_Aboulouafa©BaptisteDVA-19.jpg" alt="Gallery Thumb 4"></a>
-                        <a href="images/Laklak/Meryem/Meryem_Aboulouafa©BaptisteDVA-13.jpg" data-lightbox="gallery-item"><img class="image_fade" src="images/Laklak/Meryem/Meryem_Aboulouafa©BaptisteDVA-13.jpg" alt="Gallery Thumb 5"></a>
-                        <a href="images/Laklak/Meryem/Meryem_Aboulouafa©BaptisteDVA-12.jpg" data-lightbox="gallery-item"><img class="image_fade" src="images/Laklak/Meryem/Meryem_Aboulouafa©BaptisteDVA-12.jpg" alt="Gallery Thumb 6"></a>
-                        <a href="images/Laklak/Meryem/Meryem%20Aboulouafa.jpg" data-lightbox="gallery-item"><img class="image_fade" src="images/Laklak/Meryem/Meryem%20Aboulouafa.jpg" alt="Gallery Thumb 7"></a>
-                        <a href="images/Laklak/Meryem/JohnFPeters_BDMOROC_5828.jpg" data-lightbox="gallery-item"><img class="image_fade" src="images/Laklak/Meryem/JohnFPeters_BDMOROC_5828.jpg" alt="Gallery Thumb 9"></a>
+                        {% for image in galerie %}
+                            <a href="{{ image.artistimggalerypath }}" data-lightbox="gallery-item"><img class="image_fade" src="{{ image.artistimggalerypath }}" alt="Gallery Thumb {{ image.id }}"></a>
+                        {% endfor %}
+
                     </div>
 
                     <div class="divider"><i class="icon-circle"></i></div>
@@ -185,5 +189,7 @@
             </div>
         </div>
     </div>
+
+
 
 {% endblock %}

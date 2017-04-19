@@ -163,8 +163,7 @@
                     <label for="type">Type évènement</label>
                     <select class="selectpicker" title="Choisir un type" name="type">
                         <option value="private" {% if event.eventType == private %}selected{% endif %}>private</option>
-                        <option value="titi" {% if event.eventType == titi %}selected{% endif %}>type 2</option>
-                        <option value="toto" {% if event.eventType == toto %}selected{% endif %}>type 3</option>
+                        <option value="public" {% if event.eventType == public %}selected{% endif %}>public</option>
                     </select>
                 </div>
 

@@ -91,13 +91,13 @@
                 <div class="radio">
                     <label>
                         <input type="radio" id="optionsRadios1" value="1" name="laklak"
-                               value="{{ artist.artistlaklak }}">Oui
+                               {% if artist.artistlaklak  == 1 %}checked="checked"{% endif %}>Oui
                     </label>
                 </div>
                 <div class="radio">
                     <label>
                         <input type="radio" id="optionsRadios2" value="0" name="laklak"
-                               value="{{ artist.artistlaklak }}" checked>Non
+                               {% if artist.artistlaklak  == 0 %}checked="checked"{% endif %}>Non
                     </label>
                 </div>
 
