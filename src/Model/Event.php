@@ -15,7 +15,13 @@ class Event
     private $eventName;
     private $eventDescription;
     private $eventLocation;
+
+    /**
+     * @var \DateTime
+     * format datetime 'yyyy-mm-dd h:i:s'
+     */
     private $eventDate;
+
     private $eventProduction;
     private $eventWebsiteUrl;
     private $eventFacebookUrl;
@@ -101,16 +107,21 @@ class Event
      */
     public function getEventDate()
     {
+        if ('string' == gettype($this->eventDate)) {
+            $this->eventDate = \DateTime::createFromFormat('Y-m-d H:i:s', $this->eventDate);
+        }
+
         return $this->eventDate;
     }
 
     /**
      * @param mixed $eventDate
      */
-    public function setEventDate($eventDate)
+    public function setEventDate(\DateTime $eventDate)
     {
         $this->eventDate = $eventDate;
     }
+
 
     /**
      * @return mixed

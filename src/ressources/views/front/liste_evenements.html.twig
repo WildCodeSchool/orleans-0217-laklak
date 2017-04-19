@@ -9,53 +9,35 @@
             <h3>EVENEMENTS</h3>
         </div>
 
-        <!--sélecteur-->
-        <div class="panel panel-default hidden-xs">
-            <div class="panel-body">
-                <form id="template-contactform" class="">
 
-                    <div class="col-md-3 col-sm-6">
-                        <label>Date:</label>
-                        <select class="selectpicker" title="Sélectionnez une date...">
-                            <option>2015</option>
-                            <option>2016</option>
-                            <option>2017</option>
-                            <option>2018</option>
-                        </select>
-                    </div>
-
-
-                    <div class="col-md-3 col-sm-6 height-line pull-left">
-                        <button class="button button-small button-border button-rounded tright nomargin" type="submit" id="template-contactform-submit"
-                                name="template-contactform-submit" value="submit">Filtrer
-                        </button>
-                    </div>
-                </form>
+        {% for year, events in eventsYear %}
+            <div class="fancy-title title-border">
+                    <h4>{{ year }}</h4>
             </div>
-        </div>
+            <div class="row">
+            {% for event in events %}
+            <div class="col-sm-6 col-md-3 thumbnail bottommargin">
+                <div class="feature media-box">
+                    <div class="fbox-media">
+                        <div class="image_list_event" style="background-image:url('images/Upload/Event/{{ event.eventImgProfilePath }}')">
+                            <img class="img_list_event" src="images/Upload/Event/{{ event.eventImgProfilePath }}" alt="{{ event.eventName }}"/>
+                            <h3 class="nom_list_event">{{ event.eventName }}</h3>
+                        </div>
+                        <div class="i-overlay on-hover">
+                            <a href="?page=evenements&id={{ event.id }}">
+                                <i class ="icon-line-plus"></i>
+                            </a>
 
-
-        {% for event in events %}
-        <div class="col-sm-6 col-md-3 thumbnail bottommargin">
-            <div class="feature media-box">
-                <div class="fbox-media">
-                    <div class="image_list_event" style="background-image:url('images/Upload/Event/{{ event.eventImgProfilePath }}')">
-                        <img class="img_list_event" src="images/Upload/Event/{{ event.eventImgProfilePath }}" alt="{{ event.eventName }}"/>
-                        <h3 class="nom_list_event">{{ event.eventName }}</h3>
+                        </div>
                     </div>
-                    <div class="i-overlay on-hover">
-                        <a href="?page=evenements&id={{ event.id }}">
-                            <i class ="icon-line-plus"></i>
-                        </a>
-
+                    <div class="fbox-desc">
+                        {% if event.eventLaklak == 1 %}<img class="list_label_laklak" src="images/Laklak/logo.jpg" alt=""/>{% endif %}
+                        {% if event.eventLaklak == 0 %}{% endif %}
                     </div>
                 </div>
-                <div class="fbox-desc">
-                    {% if event.eventLaklak == 1 %}<img class="list_label_laklak" src="images/Laklak/logo.jpg" alt=""/>{% endif %}
-                    {% if event.eventLaklak == 0 %}{% endif %}
-                </div>
             </div>
-        </div>
+            {% endfor %}
+            </div>
         {% endfor %}
 
 
