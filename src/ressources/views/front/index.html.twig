@@ -8,10 +8,10 @@
             <div class="swiper-slide" style="background-image: url('{{ slide.url }}');">
                 <div class="container clearfix">
                     <div class="slider-caption slider-caption-center swiper_wrapper">
-                        <h2 data-caption-animate="fadeInUp">{{ slide.title }}</h2>
-                        <p data-caption-animate="fadeInUp" data-caption-delay="200">{{ slide.baseline }}</p>
+                        <h2 style="color: {{ slide.color }};" data-caption-animate="fadeInUp">{{ slide.title }}</h2>
+                        <p style="color: {{ slide.color }};" data-caption-animate="fadeInUp" data-caption-delay="200">{{ slide.baseline }}</p>
                         {% if slide.button != false %}
-                            <a data-caption-animate="fadeInUp" data-caption-delay="300" href="#" class="button button-border button-rounded">{{ slide.button }}</a>
+                            <a data-caption-animate="fadeInUp" style="color: {{ slide.color }}; border-color:{{ slide.color }};"data-caption-delay="300" href="#" class="button button-border button-rounded">{{ slide.button }}</a>
                         {% endif %}
                     </div>
                 </div>
