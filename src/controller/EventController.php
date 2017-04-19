@@ -99,7 +99,7 @@ class EventController extends Controller
         $event = new EventManager();
         $eventsYear=$event->formatEventsByYear();
 
-        return $this->getTwig()->render('liste_evenements.html.twig',array('eventsYear'=>$eventsYear));
+        return $this->getTwig()->render('liste_evenements.html.twig',array('eventsYear' => $eventsYear));
     }
 
 

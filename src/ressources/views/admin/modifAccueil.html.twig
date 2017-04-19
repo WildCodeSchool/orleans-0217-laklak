@@ -15,6 +15,11 @@
                     <input type="text" name="title" class="form-control" id="titre" placeholder="Titre" required>
                 </div>
                 <div class="form-group">
+                    <label for="titre">Titre</label>
+                    <input type="color" value="#555" name="color">
+                </div>
+
+                <div class="form-group">
                     <label for="baseline">Baseline</label>
                     <textarea type="" name="baseline" class="form-control" id="baseline"
                               placeholder="Baseline"></textarea>
@@ -81,6 +86,10 @@
                                     <label for="titre">Titre</label>
                                     <input type="text" name="title" class="form-control" id="titre" value="{{ slider.title }}" placeholder="Titre"
                                            required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="color">Couleur</label>
+                                    <input type="color" value="{{ slider.color }}" name="color">
                                 </div>
                                 <div class="form-group">
                                     <label for="baseline">Baseline</label>
