@@ -105,23 +105,25 @@
                     <p>{{ artist.artistbio|raw }}</p>
                 </div>
 
-
                 <div class="divider"><i class="icon-circle"></i></div>
 
 
 
+
                 <div class=""><h3>Discographie</h3>
+
                     <div class="row">
                        {% for disc in discs %}
                         <div class="col-xs-6 col-md-3">
                             <a href="{{ disc.artistalbumurl }}" target="_blank" class="thumbnail">
-                                <img src="{{ disc.artistalbumimg }}" alt="{{ artist.artistname }}"  style="height: 90px; width: 80%; display: block;" />
+                                <img src="{{ disc.artistalbumimg }}" alt="{{ artist.artistname }}" style="height: 90px; width: 80%; display: block;" />
                             </a>
                         </div>
                        {% endfor %}
                     </div>
 
                     <div class="divider"><i class="icon-circle"></i></div>
+
                 </div>
 
 
