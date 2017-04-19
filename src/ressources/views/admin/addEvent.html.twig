@@ -119,16 +119,40 @@
                         <img src="{{ event.eventImgCoverPath }}" class="img-thumbnail"
                              width="250px"/>
                     {% endif %}
-                    <input type="hidden" name="MAX_FILE_SIZE" value="1000000"/>
                     <input type="file" name="imgCoverEvenement" id="imgCoverEvenement"
                            value="{{ event.eventImgCoverPath }}">
                 </div>
 
-                <div class="form-group">
-                    <label for="galerie">Galerie Photos</label>
-                    <input type="hidden" name="MAX_FILE_SIZE" value="1000000"/>
-                    <input type="file" multiple="multiple" name="galerie[]" id="galerie">
-                </div>
+
+                {% if galerie is defined %}
+                    <label for="photoEvent">Galerie Photo</label><br/>
+                    Séléctionnez les images pour les supprimer
+                    <div class="row">
+                        {% for image in galerie %}
+                            <div class="col-xs-2">
+                                <label class="btn">
+                                    <img src="{{ image.eventimggalerrypath }}" alt="..."
+                                         class="img-thumbnail img-check" width="100px" height="100px">
+                                    <input type="checkbox" name="image[]" id="checkimage" value="{{ image.id }}"
+                                           class="hidden" autocomplete="off">
+                                </label>
+                            </div>
+                        {% endfor %}
+                    </div>
+                    <div class="form-group">
+                        <label for="galerie">Galerie Photos</label>
+                        <input type="file" multiple="multiple" name="galerie[]" id="galerie">
+                    </div>
+
+                {% else %}
+                    <div class="form-group">
+                        <label for="galerie">Galerie Photos</label>
+                        <input type="file" multiple="multiple" name="galerie[]" id="galerie">
+                    </div>
+                {% endif %}
+
+
+
 
                 <div>
                     <label for="type">Type évènement</label>
@@ -152,11 +176,20 @@
 
                 <input type="hidden" name="id" value="{{ event.id }}">
 
-                <input class="btn btn-success" type="submit" name="{% if event is defined %}updateEvent{% else %}addEvent{% endif %}" value="Ajouter">
+                <input class="btn btn-success" type="submit" name="{% if event is defined %}updateEvent{% else %}addEvent{% endif %}" value="{% if event is defined %}Modifier{% else %}Ajouter{% endif %}">
 
             </form>
         </div>
 
     </div>
 
+{% endblock %}
+{% block script %}
+    <script type="text/javascript">
+        $(document).ready(function (e) {
+            $(".img-check").click(function () {
+                $(this).toggleClass("check");
+            });
+        });
+    </script>
 {% endblock %}

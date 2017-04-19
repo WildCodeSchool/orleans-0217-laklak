@@ -390,3 +390,21 @@ div.desc {
 .form-admin{
     display: inline;
 }
+
+/*-----------------------------------------------------------------
+    Admin : Update
+ -----------------------------------------------------------------*/
+
+.check
+{
+    opacity:0.5;
+    color:#996;
+}
+
+.iconcheck
+{
+    position: absolute;
+    top: 30%;
+    left: 25px;
+    font-size: 25px;
+}
