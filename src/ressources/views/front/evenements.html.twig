@@ -3,9 +3,6 @@
 
 {% block content %}
 
-    {{ dump(event) }}
-    {{ dump(galerie) }}
-
     <!--debut cover-->
     <div class="container hidden-xs">
         <div class=row">
@@ -136,14 +133,6 @@
                         {% for image in galerie %}
                         <a href="{{ image.eventimggalerrypath }}" data-lightbox="gallery-item"><img class="image_fade" src="{{ image.eventimggalerrypath }}" alt="Gallery Thumb {{ image.id }}"></a>
                         {% endfor %}
-                        <a href="images/photoartistes/2016/habibifunk.jpg" data-lightbox="gallery-item"><img class="image_fade" src="images/photoartistes/2016/habibifunk.jpg" alt="Gallery Thumb 1"></a>
-                        <a href="images/photoartistes/2017/saisons-encore/habibifunk/habibifunk1.png" data-lightbox="gallery-item"><img class="image_fade" src="images/photoartistes/2017/saisons-encore/habibifunk/habibifunk1.png" alt="Gallery Thumb 2"></a>
-                        <a href="images/photoartistes/2017/saisons-encore/habibifunk/habibifunk2.png" data-lightbox="gallery-item"><img class="image_fade" src="images/photoartistes/2017/saisons-encore/habibifunk/habibifunk2.png" alt="Gallery Thumb 3"></a>
-                        <a href="images/photoartistes/2017/saisons-encore/habibifunk/habibifunk3.jpg" data-lightbox="gallery-item"><img class="image_fade" src="images/photoartistes/2017/saisons-encore/habibifunk/habibifunk3.jpg" alt="Gallery Thumb 4"></a>
-                        <a href="images/photoartistes/2017/saisons-encore/habibifunk/habibifunk4.jpg" data-lightbox="gallery-item"><img class="image_fade" src="images/photoartistes/2017/saisons-encore/habibifunk/habibifunk4.jpg" alt="Gallery Thumb 5"></a>
-                        <a href="images/photoartistes/2017/saisons-encore/habibifunk/habibifunk5.jpg" data-lightbox="gallery-item"><img class="image_fade" src="images/photoartistes/2017/saisons-encore/habibifunk/habibifunk5.jpg" alt="Gallery Thumb 6"></a>
-                        <a href="images/photoartistes/2017/saisons-encore/habibifunk/habibifunk6.jpg" data-lightbox="gallery-item"><img class="image_fade" src="images/photoartistes/2017/saisons-encore/habibifunk/habibifunk6.jpg" alt="Gallery Thumb 7"></a>
-                        <a href="images/photoartistes/2017/saisons-encore/habibifunk/habibifunk7.jpg" data-lightbox="gallery-item"><img class="image_fade" src="images/photoartistes/2017/saisons-encore/habibifunk/habibifunk7.jpg" alt="Gallery Thumb 8"></a>
                     </div>
 
                     <div class="divider"><i class="icon-circle"></i></div>
