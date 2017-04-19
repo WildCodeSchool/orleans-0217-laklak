@@ -6,7 +6,7 @@
     <div class="container hidden-xs">
         <div class=row">
             <div class="portfolio-image img-responsive">
-                <img src="images/Upload/Artistes/coverartistes/{{ artist.artistimgcoverpath }}" alt="Portfolio Title">
+                <img src="{{ artist.artistimgcoverpath }}" alt="Portfolio Title">
             </div>
         </div>
     </div>
@@ -109,7 +109,7 @@
                        {% for disc in discs %}
                         <div class="col-xs-6 col-md-3">
                             <a href="{{ disc.artistalbumurl }}" target="_blank" class="thumbnail">
-                                <img src="images/Upload/Event/{{ disc.artistalbumimg }}" alt="{{ artist.artistname }}"  style="height: 90px; width: 80%; display: block;" />
+                                <img src="{{ disc.artistalbumimg }}" alt="{{ artist.artistname }}"  style="height: 90px; width: 80%; display: block;" />
                             </a>
                         </div>
                        {% endfor %}
@@ -117,7 +117,6 @@
 
                     <div class="divider"><i class="icon-circle"></i></div>
                 </div>
-
 
 
 
