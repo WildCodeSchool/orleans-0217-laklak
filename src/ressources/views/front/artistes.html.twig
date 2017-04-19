@@ -33,8 +33,9 @@
                          {% if artist.artistwebsiteurl =='' %}{%  else %}
                         <button class="button button-large button-border button-rounded tright nomargin" type="submit" id="#" name="siteArtiste">Site de l'artiste
                         </button>
-                        </a>
+
                       {% endif %}
+                     </a>
                     </div>
                     <div class="col-sm-12 bottommargin-sm">
                             {% if artist.artisttwitterurl =='' %}
@@ -114,23 +115,23 @@
                 </div>
 
 
-                <div class="">
-                    <h3>Discographie</h3>
-                        <div class="row">
-                           {% for disc in discs %}
-                            <div class="col-xs-6 col-md-3">
-                                <a href="{{ disc.artistalbumurl }}" target="_blank" class="thumbnail">
-                                    <img src="images/Upload/Event/{{ disc.artistalbumimg }}" alt="{{ artist.artistname }}"  style="height: 90px; width: 80%; display: block;" />
-                                </a>
-                            </div>
-                           {% endfor %}
-                        </div>
-                </div>
+                {#<div class="">#}
+                    {#<h3>Discographie</h3>#}
+                        {#<div class="row">#}
+                           {#{% for disc in discs %}#}
+                            {#<div class="col-xs-6 col-md-3">#}
+                                {#<a href="{{ disc.artistalbumurl }}" target="_blank" class="thumbnail">#}
+                                    {#<img src="images/Upload/Event/{{ disc.artistalbumimg }}" alt="{{ artist.artistname }}"  style="height: 90px; width: 80%; display: block;" />#}
+                                {#</a>#}
+                            {#</div>#}
+                           {#{% endfor %}#}
+                        {#</div>#}
+                {#</div>#}
 
 
-                    <div class="divider">
-                        <i class="icon-circle"></i>
-                    </div>
+                    {#<div class="divider">#}
+                        {#<i class="icon-circle"></i>#}
+                    {#</div>#}
 
 
 
@@ -179,7 +180,7 @@
 
                     <div class="masonry-thumbs col-4" data-big="1" data-lightbox="gallery">
                         {% for image in galerie %}
-                            <a href="{{ image.artistimggalerypath }}" data-lightbox="gallery-item"><img class="image_fade" src="{{ image.artistimggalerypath }}" alt="Gallery Thumb {{ image.id }}"></a>
+                            <a href="{{ image.artistimggalerypath }}" data-lightbox="gallery-item"><img class="image_fade" src="{{ image.artistimggalerypath }}"></a>
                         {% endfor %}
 
                     </div>

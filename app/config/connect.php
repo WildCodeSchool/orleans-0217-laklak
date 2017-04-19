@@ -8,13 +8,8 @@
 
 define("DSN","mysql:host=localhost;dbname=laklak");
 define("USER","root");
-<<<<<<< HEAD
-define("PASS","Clemma2008");
+define("PASS","root");
 
-=======
->>>>>>> master
-
-define("PASS","francois");
 
 
 

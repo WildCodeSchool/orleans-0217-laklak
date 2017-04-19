@@ -280,7 +280,7 @@ class EventManager extends Manager
         $prep->execute();
 
         $res = $prep->fetchAll(\PDO::FETCH_CLASS, 'laklak\Model\Event');
-        return $res[0];
+        return $res;
     }
 
 
