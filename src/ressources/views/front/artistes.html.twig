@@ -6,7 +6,7 @@
     <div class="container hidden-xs">
         <div class=row">
             <div class="portfolio-image img-responsive">
-                <img src="images/Laklak/Meryem/OCoverbis.jpg" alt="Portfolio Title">
+                <img src="images/Upload/Artistes/coverartistes/{{ artist.artistimgcoverpath }}" alt="Portfolio Title">
 
 
             </div>
@@ -19,8 +19,8 @@
 
             <div class="col-sm-4 bottommargin haut">
                 <div class="fbox-media clearfix bio thumbnail">
-                    <a href="#"><img src="{{ artist.artistimgprofilpath }}" alt="{{ artist.artistname }}"></a>
-                    <div class="detail_artiste">{% if artist.artistlaklak == 1 %}<img src="images/Laklak/logo.jpg" alt=""> {% endif %} {% if artist.artistlaklak == 0 %}{% endif %}></div>
+                    <a href="#"><img src="images/Upload/Artistes/profilartistes/{{ artist.artistimgprofilpath }}" alt="{{ artist.artistname }}"></a>
+                    <div class="detail_artiste">{% if artist.artistlaklak == 1 %}<img src="images/Laklak/logo.jpg" alt=""> {% endif %} {% if artist.artistlaklak == 0 %}{% endif %}</div>
                 </div>
 
                 <div class="row">

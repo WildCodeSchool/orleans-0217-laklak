@@ -44,8 +44,42 @@ class ArtisteManager extends Manager
     /**
      * j'ajoute un artist
      */
-    public function addArtist(array $value)
+    public function addArtist(array $value, $filep, $filec)
     {
+
+
+        $imgFileP = $filep['name'];
+        $tmpDirP = $filep['tmp_name'];
+        $imgSizeP = $filep['size'];
+
+        $uploaddirP = 'images/Upload/Artistes/profilartistes';
+
+        $imgFileC = $filec['name'];
+        $tmpDirC = $filec['tmp_name'];
+        $imgSizeC = $filec['size'];
+
+        $uploaddir = 'images/Upload/Artistes/coverartistes';
+
+        $imgExtP = strtolower(pathinfo($imgFileP, PATHINFO_EXTENSION));
+        $imgExtC = strtolower(pathinfo($imgFileC, PATHINFO_EXTENSION));
+
+        $valid_extensions = array('jpeg', 'jpg', 'png', 'gif');
+
+        $imgEvtP = rand(1000, 1000000) . "." . $imgExtP;
+        $imgEvtC = rand(1000, 1000000) . "." . $imgExtC;
+
+
+        if (in_array($imgExtP, $valid_extensions)) {
+            if ($imgSizeP < 5000000) {
+                move_uploaded_file($tmpDirP, $uploaddirP . $imgEvtP);
+            }
+        }
+
+        if (in_array($imgExtC, $valid_extensions)) {
+            if ($imgSizeC < 5000000) {
+                move_uploaded_file($tmpDirC, $uploaddir . $imgEvtC);
+            }
+        }
 
         if ($value['artistidevent'] == '') {
             $value['artistidevent'] = NULL;
