@@ -46,18 +46,20 @@ class EventController extends Controller
 
     }
 
-    public function updateEvent($id)
+    public function updateEvent()
     {
         $evt = new EventManager();
 
         if (isset($_POST['updateEvent'])) {
 
-            $evt->updateEvent($id,$_POST,$_FILES);
+            $evt->updateEvent($_POST, $_FILES);
             header('Location:?page=listEvent');
+        } elseif (isset($_GET['id'])) {
+            $event=$evt->showOneEvent($_GET['id']);
+            return $this->getTwig()->render('addEvent.html.twig', array('event' => $event));
         }
 
-        $event=$evt->showOneEvent($id);
-        return $this->getTwig()->render('editEvent.html.twig',array('event'=>$event));
+        header('Location:?page=listEvent');
     }
 
     public function deleteEvent($id)

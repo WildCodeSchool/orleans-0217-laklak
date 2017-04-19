@@ -37,36 +37,29 @@ class ArtistController extends Controller
     public function addArtist()
     {
 
-        $artist = new ArtisteManager();
 
-        if (isset($_POST['add'])){
-            $artist->addArtist($_POST);
-            return $this->getTwig()->render('listeartistes.html.twig');
-
+        if (isset($_POST['add'])) {
+            $art = new ArtisteManager();
+            $art->updateArtist($_POST, $_FILES);
+            header('Location:?page=listartistes');
+        } else {
+            return $this->getTwig()->render('ajoutartistes.html.twig');
         }
-        if (isset($_GET['id'])){
-           $value = $artist->showOneArtist($_GET['id']);
-            return $this->getTwig()->render('ajoutartistes.html.twig', array('artist' => $value));
-        }
-
-
-        // sinon le form est pas submit, j'affiche le form
-        return $this->getTwig()->render('ajoutartistes.html.twig');
 
     }
 
-    public function updateArtist($id)
+    public function updateArtist()
     {
-        $art = new ArtisteManager();
+        $artist = new ArtisteManager();
 
-        if (isset($_POST['add'])) {
-
-            $art->updateArtist($id, $_POST);
-            header('Location:?page=listartistes');
+        if (isset($_POST['update'])){
+            $artist->updateArtist($_POST, $_FILES);
+            header('Location:?page=listeartistes');
+        } elseif (isset($_GET['id'])) {
+            $art = $artist->showOneArtist($_GET['id']);
+            return $this->getTwig()->render('ajoutartistes.html.twig', array('artist' => $art));
         }
-
-        $artist=$art->showOneArtist($id);
-        return $this->getTwig()->render('editartistes.html.twig',array('artist'=>$artist));
+        header('Location:?page=listeartistes');
     }
 
     public function deleteArtist ()

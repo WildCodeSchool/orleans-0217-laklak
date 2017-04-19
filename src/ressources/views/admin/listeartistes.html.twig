@@ -25,7 +25,7 @@
             <td><img src="images/Upload/Artistes/profilartistes/{{ artist.artistimgprofilpath }}" width="50px" ></td>
             <td>{{ artist.artistname }}</td>
 
-            <form method="POST" action="?page=ajoutartistes&id={{ artist.id }}">
+            <form method="POST" action="?page=updateartist&id={{ artist.id }}">
             <input type="hidden" name="id" value="{{ artist.id }}">
             <td><button type="submit" name ="updateartist" class="btn btn-default">Modifier</button></td>
             </form>

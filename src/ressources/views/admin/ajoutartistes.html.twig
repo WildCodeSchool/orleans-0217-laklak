@@ -4,106 +4,138 @@
 
 
     <h1>{% if artist.id is defined %}Modifier {{ artist.artistname }} {% else %} Ajouter un artiste{% endif %}</h1>
-<div class="container-fluid">
-    <div class="row col-xs-9">
-    <form method="POST" action="{% if artist is defined %}?page=updateartist&id={{ artist.id }}{% else  %}?page=ajoutartistes{% endif  %}">
+    <div class="container-fluid">
+        <div class="row col-xs-9">
+            <form method="POST" enctype="multipart/form-data"
+                  action="{% if artist is defined %}?page=updateartist&id={{ artist.id }}{% else %}?page=ajoutartistes{% endif %}">
 
-        <div class="form-group">
-            <label for="nom">Nom de l'artiste</label>
-            <input type="text" class="form-control" id="nom" placeholder="nom de l'artiste" value="{{ artist.artistname }}" name="nomArtist">
-        </div>
+                <div class="form-group">
+                    <label for="nom">Nom de l'artiste</label>
+                    <input type="text" class="form-control" id="nom" placeholder="nom de l'artiste"
+                           value="{{ artist.artistname }}" name="nomArtist">
+                </div>
 
-        <div class="form-group">
+                <div class="form-group">
 
-            <label for="biographie">Biographie</label>
+                    <label for="biographie">Biographie</label>
 
-            <textarea cols="70" class="ckeditor" rows="10" id="bio" placeholder="Biographie" value="{{ artist.artistbio|raw }}" name="bio"></textarea>
-        </div>
+                    <textarea cols="70" class="ckeditor" rows="10" id="bio" placeholder="Biographie"
+                              value="{{ artist.artistbio|raw }}" name="bio"></textarea>
+                </div>
 
-        <div class="form-group">
-            <label for="Site de l'artiste">site de l'artiste</label>
-            <input type="url" class="form-control" id="url" placeholder="site de l'artiste" name="siteArtist" value="{{ artist.artistwebsiteurl }}">
-        </div>
-        <div class="form-group">
-            <label for="IframeFacebook">Iframe Facebook <i class="icon-facebook"></i></label>
-            <input type="url" class="form-control" id="iframeFacebook" placeholder="lien Facebook" name="fbArtistIframe" value="{{ artist.artistiframefacebook }}">
-            <comment><em> prendre le code de l'iframe de <a href="https://developers.facebook.com/docs/plugins/page-plugin" target="_blank">facebook.</a></em></comment>
-        </div>
-        <div class="form-group">
-            <label for="IframeYoutube">Iframe Youtube <i class="icon-youtube"></i></label>
-            <input type="url" class="form-control" id="iframeYoutube" placeholder="lien Youtube" name="yArtistIframe" value="{{ artist.artistiframeyoutube }}">
-            <comment><em> prendre le code entre les " apres la balise src de <a href="https://youtube.com" target="_blank">Youtube. </a></em></comment>
+                <div class="form-group">
+                    <label for="Site de l'artiste">site de l'artiste</label>
+                    <input type="url" class="form-control" id="url" placeholder="site de l'artiste" name="siteArtist"
+                           value="{{ artist.artistwebsiteurl }}">
+                </div>
+                <div class="form-group">
+                    <label for="IframeFacebook">Iframe Facebook <i class="icon-facebook"></i></label>
+                    <input type="url" class="form-control" id="iframeFacebook" placeholder="lien Facebook"
+                           name="fbArtistIframe" value="{{ artist.artistiframefacebook }}">
+                    <comment><em> prendre le code de l'iframe de <a
+                                    href="https://developers.facebook.com/docs/plugins/page-plugin" target="_blank">facebook.</a></em>
+                    </comment>
+                </div>
+                <div class="form-group">
+                    <label for="IframeYoutube">Iframe Youtube <i class="icon-youtube"></i></label>
+                    <input type="url" class="form-control" id="iframeYoutube" placeholder="lien Youtube"
+                           name="yArtistIframe" value="{{ artist.artistiframeyoutube }}">
+                    <comment><em> prendre le code entre les " apres la balise src de <a href="https://youtube.com"
+                                                                                        target="_blank">Youtube. </a></em>
+                    </comment>
 
-        </div>
-        <div class="form-group">
-            <label for="IframeSoundCloud">Iframe Soundcloud <i class="icon-soundcloud"></i></label>
-            <input type="url" class="form-control" id="iframeSoundCloud" placeholder="lien Soundcloud" name="scArtistIframe" value="{{ artist.artistiframesoundcloud }}">
-            <comment><em> prendre le code entre les " apres la balise src de <a href="https://soundcloud.com" target="_blank">Soundcloud. </a></em></comment>
-        </div>
-        <div class="form-group">
-            <label for="fluxFacebook">Facebook<i class="icon-facebook"></i></label>
-            <input type="url" class="form-control" id="fluxFacebook" placeholder="lien Facebook" name="fbArtistUrl" value="{{ artist.artistfacebookurl }}">
-        </div>
+                </div>
+                <div class="form-group">
+                    <label for="IframeSoundCloud">Iframe Soundcloud <i class="icon-soundcloud"></i></label>
+                    <input type="url" class="form-control" id="iframeSoundCloud" placeholder="lien Soundcloud"
+                           name="scArtistIframe" value="{{ artist.artistiframesoundcloud }}">
+                    <comment><em> prendre le code entre les " apres la balise src de <a href="https://soundcloud.com"
+                                                                                        target="_blank">Soundcloud. </a></em>
+                    </comment>
+                </div>
+                <div class="form-group">
+                    <label for="fluxFacebook">Facebook<i class="icon-facebook"></i></label>
+                    <input type="url" class="form-control" id="fluxFacebook" placeholder="lien Facebook"
+                           name="fbArtistUrl" value="{{ artist.artistfacebookurl }}">
+                </div>
 
-        <div class="form-group">
-            <label for="fluxTwitter">Twitter <i class="icon-twitter"></i></label>
-            <input type="url" class="form-control" id="fluxTwitter" placeholder="page Twitter" name="twitArtist" value="{{ artist.artisttwitterurl }}">
-        </div>
-        <div class="form-group">
-            <label for="fluxSoundcloud">SoundCloud <i class="icon-soundcloud"></i></label>
-            <input type="url" class="form-control" id="fluxSoundcloud" placeholder="page Soundcloud" name="artistsoundcloudurl" value="{{ artist.artistsoundcloudurl }}">
-        </div>
+                <div class="form-group">
+                    <label for="fluxTwitter">Twitter <i class="icon-twitter"></i></label>
+                    <input type="url" class="form-control" id="fluxTwitter" placeholder="page Twitter" name="twitArtist"
+                           value="{{ artist.artisttwitterurl }}">
+                </div>
+                <div class="form-group">
+                    <label for="fluxSoundcloud">SoundCloud <i class="icon-soundcloud"></i></label>
+                    <input type="url" class="form-control" id="fluxSoundcloud" placeholder="page Soundcloud"
+                           name="artistsoundcloudurl" value="{{ artist.artistsoundcloudurl }}">
+                </div>
 
-        <div class="form-group">
-            <label for="fluxVimeo">Vimeo <i class="icon-vimeo"></i></label>
-            <input type="url" class="form-control" id="fluxVimeo" placeholder="page Vimeo" name="vimArtist" value="{{ artist.artistvimeourl }}">
-        </div>
+                <div class="form-group">
+                    <label for="fluxVimeo">Vimeo <i class="icon-vimeo"></i></label>
+                    <input type="url" class="form-control" id="fluxVimeo" placeholder="page Vimeo" name="vimArtist"
+                           value="{{ artist.artistvimeourl }}">
+                </div>
 
-        <div class="form-group">
-            <label for="fluxInstagram">Instagram <i class="icon-instagram"></i></label>
-            <input type="url" class="form-control" id="fluxInstagram" placeholder="page Instagram" name="instArtist" value="{{ artist.artistinstaurl }}">
-        </div>
-        <div class="form-group">
-            <label for="fluxTumblr">Tumblr <i class="icon-tumblr"></i></label>
-            <input type="url" class="form-control" id="fluxtumblr" placeholder="page Tumblr" name="tumbArtist" value="{{ artist.artisttumblrurl }}">
-        </div>
-        <h4>Artiste Laklak</h4>
-        <div class="radio">
-            <label>
-                <input type="radio" id="optionsRadios1" value="1" name="laklak" value="{{ artist.artistlaklak }}">Oui
-            </label>
-        </div>
-        <div class="radio">
-            <label>
-                <input type="radio" id="optionsRadios2" value="0" name="laklak" value="{{ artist.artistlaklak }}"checked>Non
-            </label>
-        </div>
+                <div class="form-group">
+                    <label for="fluxInstagram">Instagram <i class="icon-instagram"></i></label>
+                    <input type="url" class="form-control" id="fluxInstagram" placeholder="page Instagram"
+                           name="instArtist" value="{{ artist.artistinstaurl }}">
+                </div>
+                <div class="form-group">
+                    <label for="fluxTumblr">Tumblr <i class="icon-tumblr"></i></label>
+                    <input type="url" class="form-control" id="fluxtumblr" placeholder="page Tumblr" name="tumbArtist"
+                           value="{{ artist.artisttumblrurl }}">
+                </div>
+                <h4>Artiste Laklak</h4>
+                <div class="radio">
+                    <label>
+                        <input type="radio" id="optionsRadios1" value="1" name="laklak"
+                               value="{{ artist.artistlaklak }}">Oui
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" id="optionsRadios2" value="0" name="laklak"
+                               value="{{ artist.artistlaklak }}" checked>Non
+                    </label>
+                </div>
 
 
-        <div class="form-group">
-            <label for="exampleInputFile">Photo artiste</label>
-            <input type="file" id="photoArtiste" name="artistImgProfilPath" value="{{ artist.artistimgprofilpath }}">
-           {% if artist.artistimgprofilpath is defined  %} <img src="images/Upload/Artistes/profilartistes/{{ artist.artistimgprofilpath }}" class="img-thumbnail" width="250px" />{% else %} {% endif %}
+                <div class="form-group">
+                    <label for="photoArtiste">Photo artiste</label>
+                    <input type="hidden" name="MAX_FILE_SIZE" value="1000000"/>
+                    <input type="file" id="photoArtiste" name="artistImgProfilPath">
+                    {% if artist.artistimgprofilpath is defined %} <img
+                        src="images/Upload/Artistes/profilartistes/{{ artist.artistimgprofilpath }}"
+                        class="img-thumbnail" width="250px" />{% else %} {% endif %}
 
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputFile">Photo Cover</label>
+                    <input type="file" id="photoCover" name="artistImgCoverPath">
+                    {% if artist.artistimgcoverpath is defined %} <img
+                        src="images/Upload/Artistes/coverartistes/{{ artist.artistimgcoverpath }}" class="img-thumbnail"
+                        width="250px"/>{% else %} {% endif %}
+                </div>
+
+                <div class="form-group">
+                    <label for="galerie">Galerie Photos</label>
+                    <input type="file" multiple="multiple" name="galerie[]" id="galerie">
+                </div>
+
+                <div>
+                    <label>Evènements</label>
+                    <select class="selectpicker" title="Choisir un ou plusieurs événement" name="artistidevent">
+                        <option value="1" selected>Event 1</option>
+                        <option value="2">Event 2</option>
+                        <option value="3">Event 3</option>
+                    </select>
+                </div>
+                <input type="hidden" name="id" value="{{ artist.id }}">
+                <button type="submit" name="{% if artist is defined %}update{% else %}add{% endif %}" class="btn btn-default">Ajouter</button>
+
+            </form>
         </div>
-        <div class="form-group">
-            <label for="exampleInputFile">Photo Cover</label>
-            <input type="file" id="photoCover" name="artistImgCoverPath" value="{{ artist.artistimgcoverpath }}">
-          {% if artist.artistimgcoverpath is defined %} <img src="images/Upload/Artistes/coverartistes/{{ artist.artistimgcoverpath }}" class="img-thumbnail" width="250px"/>{% else %} {% endif %}
-        </div>
-        <div>
-        <label>Evènements</label>
-        <select class="selectpicker" title="Choisir un ou plusieurs événement" name="artistidevent">
-            <option value="1" selected>Event 1</option>
-            <option value="2">Event 2</option>
-            <option value="3">Event 3</option>
-        </select>
     </div>
-
-        <button type="submit" name="add" class="btn btn-default">Ajouter</button>
-
-    </form>
-    </div>
-</div>
 
 {% endblock %}
