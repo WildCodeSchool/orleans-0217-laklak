@@ -293,10 +293,9 @@ h3.nom_list_event {
 }
 .detail_artiste {
     position: absolute;
-    top: 2%;
-    padding: 6px 10px;
+    top: 24px;
     border-radius: 2px;
-    max-width: 25%;
+    max-width: 20%;
 
 }
 .social{

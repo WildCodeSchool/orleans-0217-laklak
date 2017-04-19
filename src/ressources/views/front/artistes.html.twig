@@ -134,9 +134,9 @@
                         {#<i class="icon-circle"></i>#}
                     {#</div>#}
 
-
-
+                {% if event != NULL %}
                 <div class="nobottommargin">
+
 
                     <h3>Dates importantes</h3>
 
@@ -160,12 +160,13 @@
                             </tbody>
                         </table>
                     </div>
+
                 </div>
 
                 <div class="divider"><i class="icon-circle"></i></div>
+                {% endif %}
 
-
-
+{% if galerie != NULL %}
                 <div class="col_full clearfix">
                     <h3>Galerie</h3>
 
@@ -180,6 +181,7 @@
 
                     <div class="divider"><i class="icon-circle"></i></div>
                 </div>
+    {% endif %}
             </div>
         </div>
     </div>
