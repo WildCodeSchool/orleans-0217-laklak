@@ -7,7 +7,7 @@
     <div class="container hidden-xs">
         <div class=row">
             <div class="portfolio-image img-responsive">
-                <img src="images/Upload/Event/{{ event.eventImgCoverPath }}" alt="Portfolio Title">
+                <img src="{{ event.eventImgCoverPath }}" alt="Portfolio Title">
 
 
             </div>
@@ -24,7 +24,7 @@
                 <div class="col-sm-4 bottommargin">
                     <div class="fbox-media clearfix bio thumbnail">
 
-                        <a href="#"><img src="images/Upload/Event/{{ event.eventImgProfilePath }}" alt="{{ event.eventName }}"></a>
+                        <a href="#"><img src="{{ event.eventImgProfilePath }}" alt="{{ event.eventName }}"></a>
                             <div class="detail_artiste">
                             {% if event.eventLaklak == 1 %}<img src="images/Laklak/logo.jpg" alt=""/>{% endif %}
                             {% if event.eventLaklak == 0 %}{% endif %}
