@@ -1,4 +1,4 @@
-{% extends 'layout.html.twig' %}
+git sta{% extends 'layout.html.twig' %}
 {% block title %} Artistes {{ parent() }}{% endblock %}
 
 
@@ -6,7 +6,7 @@
     <div class="container hidden-xs">
         <div class=row">
             <div class="portfolio-image img-responsive">
-                <img src="images/Upload/Artiste/{{ artist.artistimgcoverpath }}" alt="Portfolio Title">
+                <img src="{{ artist.artistimgcoverpath }}" alt="Portfolio Title">
 
 
             </div>
@@ -19,7 +19,7 @@
 
             <div class="col-sm-4 bottommargin haut">
                 <div class="fbox-media clearfix bio thumbnail">
-                    <a href="#"><img src="images/Upload/Artiste/{{ artist.artistimgprofilpath }}" alt="{{ artist.artistname }}"></a>
+                    <a href="#"><img src="{{ artist.artistimgprofilpath }}" alt="{{ artist.artistname }}"></a>
                     <div class="detail_artiste">{% if artist.artistlaklak == 1 %}<img src="images/Laklak/logo.jpg" alt=""> {% endif %} {% if artist.artistlaklak == 0 %}{% endif %}</div>
                 </div>
 
@@ -89,7 +89,7 @@
                 {% if artist.artistiframefacebook =='' %}
                     {% else %}
                 <div class="bio thumbnail">
-                    <iframe src="{{ artist.artistiframefacebook }}"></iframe></div>
+                    <iframe width="100%" height="450" scrolling="no" frameborder="no"  src="{{ artist.artistiframefacebook }}"></iframe></div>
                     {% endif %}
             </div>
 
