@@ -13,6 +13,9 @@ use laklak\Model\Artist;
 
 class ArtisteManager extends Manager
 {
+
+    private $lastid;
+
     public function showAll()
     {
         // connection à la bdd
@@ -59,14 +62,15 @@ class ArtisteManager extends Manager
 
         $uploaddir = 'images/Upload/Galerie/Artist/';
 
-        $lastid = $this->bdd->lastInsertId();
+        $this->lastid = $this->bdd->lastInsertId();
+
         for ($i = 0; $i < $file_count ; $i++){
             if ($file_ary[$i]['name'] != null){
                 $uploadfile = $uploaddir . basename($file_ary[$i]['name']);
                 move_uploaded_file($file_ary[$i]['tmp_name'], $uploadfile);
 
                 $req = $this->bdd->prepare('INSERT INTO artistimages(artistimggalerypath, idartist) VALUES (:artistimggalerypath, :idartist)');
-                $req->bindValue(':idartist', $lastid );
+                $req->bindValue(':idartist', $this->lastid );
                 $req->bindValue(':artistimggalerypath', $uploadfile);
                 $req->execute();
             }
@@ -84,12 +88,16 @@ class ArtisteManager extends Manager
             $uploaddir = 'images/Upload/Artiste/';
             $uploadfilep = $uploaddir . basename($filep['name']);
             move_uploaded_file($filep['tmp_name'], $uploadfilep);
+        } else {
+            $uploadfilep = '';
         }
 
         if ($filec['name'] != null){
             $uploaddir = 'images/Upload/Artiste/';
             $uploadfilec = $uploaddir . basename($filec['name']);
             move_uploaded_file($filec['tmp_name'], $uploadfilec);
+        } else {
+            $uploadfilec = '';
         }
 
         if($value['artistidevent'] == ''){
@@ -129,13 +137,38 @@ class ArtisteManager extends Manager
         $prep->bindValue(':artistIdEvent', $value['artistidevent']);
         $prep->bindValue(':artistIframeFacebook', ($value['fbArtistIframe']));
         $prep->bindValue(':artistinstagramurl', ($value['instArtist']));
-        var_dump($prep->execute());
+        $prep->execute();
     }
 
 
-    /**
-     *
-     */
+    public function reArrayFilesUpdate($file_post, $id)
+    {
+        $file_ary = array();
+        $file_count = count($file_post['galerie']['name']);
+        $file_keys = array_keys($file_post['galerie']);
+
+        for ($i = 0; $i < $file_count; $i++) {
+            foreach ($file_keys as $key) {
+                $file_ary[$i][$key] = $file_post['galerie'][$key][$i];
+            }
+        }
+
+        $uploaddir = 'images/Upload/Galerie/Artist/';
+
+        for ($i = 0; $i < $file_count ; $i++){
+            if ($file_ary[$i]['name'] != null){
+                $uploadfile = $uploaddir . basename($file_ary[$i]['name']);
+                move_uploaded_file($file_ary[$i]['tmp_name'], $uploadfile);
+
+                $req = $this->bdd->prepare('INSERT INTO artistimages(artistimggalerypath, idartist) VALUES (:artistimggalerypath, :idartist)');
+                $req->bindValue(':idartist', $id);
+                $req->bindValue(':artistimggalerypath', $uploadfile);
+                $req->execute();
+            }
+        }
+    }
+
+
     public function updateArtist($value, $file)
     {
 
@@ -169,6 +202,13 @@ class ArtisteManager extends Manager
             $value['laklak'] = intval($value['laklak']);
         }
 
+        if (isset($value['image']) && !empty($value['image'])) {
+            $galerie = new GalerieManager();
+            $galerie->delete($value['image'], 'artistimages');
+        }
+
+        $this->reArrayFilesUpdate($file, $value['id']);
+
         $req = ("UPDATE artist SET artistname = :artistName, artistbio = :artistBio, 
                                     artistlaklak = :artistLaklak,
                                     artistwebsiteurl = :artistWebsiteUrl, artistfacebookurl = :artistFacebookUrl, 
@@ -200,8 +240,9 @@ class ArtisteManager extends Manager
         $prep->bindValue(':artistIframeFacebook', ($value['fbArtistIframe']));
         $prep->bindValue(':artistInstagramUrl', $value['instArtist']);
         $prep->execute();
-    }
 
+
+    }
     /**
      *
      */

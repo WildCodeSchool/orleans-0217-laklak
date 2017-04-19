@@ -13,6 +13,9 @@ use laklak\Model\Event;
 
 class EventManager extends Manager
 {
+
+    private $lastid;
+
     public function listAll()
     {
         // requete sql pour récupérer tous les events dans un tableau d'objets Events
@@ -36,17 +39,18 @@ class EventManager extends Manager
             }
         }
 
-        $uploaddir = 'images/Upload/Gallerie/Event/';
+        $uploaddir = 'images/Upload/Galerie/Event/';
 
 
-        $lastid = $this->bdd->lastInsertId();
+        $this->lastid = $this->bdd->lastInsertId();
+
         for ($i = 0; $i < $file_count ; $i++){
             if ($file_ary[$i]['name'] != null){
                 $uploadfile = $uploaddir . basename($file_ary[$i]['name']);
                 move_uploaded_file($file_ary[$i]['tmp_name'], $uploadfile);
 
                 $req = $this->bdd->prepare('INSERT INTO eventimages(idevent, eventimggalerrypath) VALUES (:idevent, :eventimggalerrypath)');
-                $req->bindValue(':idevent', $lastid );
+                $req->bindValue(':idevent', $this->lastid );
                 $req->bindValue(':eventimggalerrypath', $uploadfile);
                 $req->execute();
             }
@@ -60,12 +64,16 @@ class EventManager extends Manager
             $uploaddir = 'images/Upload/Event/';
             $uploadfilep = $uploaddir . basename($filep['name']);
             move_uploaded_file($filep['tmp_name'], $uploadfilep);
+        } else {
+            $uploadfilep = '';
         }
 
         if ($filec['name'] != null){
             $uploaddir = 'images/Upload/Event/';
             $uploadfilec = $uploaddir . basename($filec['name']);
             move_uploaded_file($filec['tmp_name'], $uploadfilec);
+        } else {
+            $uploadfilec= '';
         }
 
         if($value['idArtiste'] == ''){
@@ -129,6 +137,36 @@ class EventManager extends Manager
 
     }
 
+    public function reArrayFilesUpdate($file_post, $id)
+    {
+
+
+        $file_ary = array();
+        $file_count = count($file_post['galerie']['name']);
+        $file_keys = array_keys($file_post['galerie']);
+
+        for ($i = 0; $i < $file_count; $i++) {
+            foreach ($file_keys as $key) {
+                $file_ary[$i][$key] = $file_post['galerie'][$key][$i];
+            }
+        }
+
+        $uploaddir = 'images/Upload/Galerie/Event/';
+
+
+        for ($i = 0; $i < $file_count ; $i++){
+            if ($file_ary[$i]['name'] != null){
+                $uploadfile = $uploaddir . basename($file_ary[$i]['name']);
+                move_uploaded_file($file_ary[$i]['tmp_name'], $uploadfile);
+
+                $req = $this->bdd->prepare('INSERT INTO eventimages(idevent, eventimggalerrypath) VALUES (:idevent, :eventimggalerrypath)');
+                $req->bindValue(':idevent', $id );
+                $req->bindValue(':eventimggalerrypath', $uploadfile);
+                $req->execute();
+            }
+        }
+    }
+
     public function updateEvent($value, $file)
     {
         if ($file['imgEvenement']['name'] != null){
@@ -138,7 +176,6 @@ class EventManager extends Manager
         }
         else {
             $event = $this->showOneEvent($value['id']);
-            var_dump($event);
             $uploadfilep = $event->getEventImgProfilePath();
         }
 
@@ -162,6 +199,13 @@ class EventManager extends Manager
         } else {
             $value['laklak'] = intval($value['laklak']);
         }
+
+        if (isset($value['image']) && !empty($value['image'])) {
+            $galerie = new GalerieManager();
+            $galerie->delete($value['image'], 'eventimages');
+        }
+
+        $this->reArrayFilesUpdate($file, $value['id']);
 
         $req = "UPDATE event SET eventName=:eventName, eventDescription=:eventDescription, eventLocation=:eventLocation,
         eventDate=:eventDate, eventProduction=:eventProduction, eventWebsiteUrl=:eventWebsiteUrl, eventFacebookUrl=:eventFacebookUrl

@@ -33,7 +33,8 @@
                     <input type="url" class="form-control" id="iframeFacebook" placeholder="lien Facebook"
                            name="fbArtistIframe" value="{{ artist.artistiframefacebook }}">
                     <comment><em> prendre le code de l'iframe de <a
-                                    href="https://developers.facebook.com/docs/plugins/page-plugin" target="_blank">facebook.</a></em>
+                                    href="https://developers.facebook.com/docs/plugins/page-plugin"
+                                    target="_blank">facebook.</a></em>
                     </comment>
                 </div>
                 <div class="form-group">
@@ -102,26 +103,48 @@
 
 
                 <div class="form-group">
-                    <label for="photoArtiste">Photo artiste</label>
-                    <input type="hidden" name="MAX_FILE_SIZE" value="1000000"/>
-                    <input type="file" id="photoArtiste" name="artistImgProfilPath">
                     {% if artist.artistimgprofilpath is defined %} <img
                         src="images/Upload/Artistes/profilartistes/{{ artist.artistimgprofilpath }}"
                         class="img-thumbnail" width="250px" />{% else %} {% endif %}
-
+                    <label for="photoArtiste">Photo artiste</label>
+                    <input type="hidden" name="MAX_FILE_SIZE" value="1000000"/>
+                    <input type="file" id="photoArtiste" name="artistImgProfilPath">
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputFile">Photo Cover</label>
-                    <input type="file" id="photoCover" name="artistImgCoverPath">
                     {% if artist.artistimgcoverpath is defined %} <img
                         src="images/Upload/Artistes/coverartistes/{{ artist.artistimgcoverpath }}" class="img-thumbnail"
                         width="250px"/>{% else %} {% endif %}
+                    <label for="exampleInputFile">Photo Cover</label>
+                    <input type="file" id="photoCover" name="artistImgCoverPath">
                 </div>
 
-                <div class="form-group">
-                    <label for="galerie">Galerie Photos</label>
-                    <input type="file" multiple="multiple" name="galerie[]" id="galerie">
-                </div>
+
+                {% if galerie is defined %}
+                    <label for="photoArtiste">Galerie Photo</label><br/>
+                    Séléctionnez les images pour les supprimer
+                    <div class="row">
+                        {% for image in galerie %}
+                            <div class="col-xs-2">
+                                <label class="btn">
+                                    <img src="{{ image.artistimggalerypath }}" alt="..."
+                                         class="img-thumbnail img-check" width="100px" height="100px">
+                                    <input type="checkbox" name="image[]" id="checkimage" value="{{ image.id }}"
+                                           class="hidden" autocomplete="off">
+                                </label>
+                            </div>
+                        {% endfor %}
+                    </div>
+                    <div class="form-group">
+                        <label for="galerie">Ajouter des photos à la galerie</label>
+                        <input type="file" multiple="multiple" name="galerie[]" id="galerie">
+                    </div>
+
+                {% else %}
+                    <div class="form-group">
+                        <label for="galerie">Galerie Photos</label>
+                        <input type="file" multiple="multiple" name="galerie[]" id="galerie">
+                    </div>
+                {% endif %}
 
                 <div>
                     <label>Evènements</label>
@@ -132,10 +155,21 @@
                     </select>
                 </div>
                 <input type="hidden" name="id" value="{{ artist.id }}">
-                <button type="submit" name="{% if artist is defined %}update{% else %}add{% endif %}" class="btn btn-default">Ajouter</button>
+                <button type="submit" name="{% if artist is defined %}update{% else %}add{% endif %}"
+                        class="btn btn-default">{% if artist is defined %}Modifier{% else %}Ajouter{% endif %}</button>
 
             </form>
         </div>
     </div>
 
+{% endblock %}
+
+{% block script %}
+    <script type="text/javascript">
+        $(document).ready(function (e) {
+            $(".img-check").click(function () {
+                $(this).toggleClass("check");
+            });
+        });
+    </script>
 {% endblock %}
