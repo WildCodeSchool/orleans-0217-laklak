@@ -23,7 +23,7 @@ class EventimagesManager extends Manager
         $prep->execute();
 
         $res = $prep->fetchAll(\PDO::FETCH_CLASS, 'laklak\Model\Eventimages');
-        return $res[0];
+        return $res;
     }
 
 }

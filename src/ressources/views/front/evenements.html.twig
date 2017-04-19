@@ -133,6 +133,9 @@
                     <h3>Galerie</h3>
 
                     <div class="masonry-thumbs col-4" data-big="1" data-lightbox="gallery">
+                        {% for image in galerie %}
+                        <a href="{{ image.eventimggalerrypath }}" data-lightbox="gallery-item"><img class="image_fade" src="{{ image.eventimggalerrypath }}" alt="Gallery Thumb {{ image.id }}"></a>
+                        {% endfor %}
                         <a href="images/photoartistes/2016/habibifunk.jpg" data-lightbox="gallery-item"><img class="image_fade" src="images/photoartistes/2016/habibifunk.jpg" alt="Gallery Thumb 1"></a>
                         <a href="images/photoartistes/2017/saisons-encore/habibifunk/habibifunk1.png" data-lightbox="gallery-item"><img class="image_fade" src="images/photoartistes/2017/saisons-encore/habibifunk/habibifunk1.png" alt="Gallery Thumb 2"></a>
                         <a href="images/photoartistes/2017/saisons-encore/habibifunk/habibifunk2.png" data-lightbox="gallery-item"><img class="image_fade" src="images/photoartistes/2017/saisons-encore/habibifunk/habibifunk2.png" alt="Gallery Thumb 3"></a>
