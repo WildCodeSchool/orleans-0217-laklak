@@ -215,6 +215,58 @@
             </form>
 
         </div>
+
+
+        <div class="form-group">
+            <label for="fluxVimeo">Vimeo <i class="icon-vimeo"></i></label>
+            <input type="url" class="form-control" id="fluxVimeo" placeholder="page Vimeo" name="vimArtist" value="{{ artist.artistvimeourl }}">
+        </div>
+
+        <div class="form-group">
+            <label for="fluxInstagram">Instagram <i class="icon-instagram"></i></label>
+            <input type="url" class="form-control" id="fluxInstagram" placeholder="page Instagram" name="instArtist" value="{{ artist.artistinstaurl }}">
+        </div>
+        <div class="form-group">
+            <label for="fluxTumblr">Tumblr <i class="icon-tumblr"></i></label>
+            <input type="url" class="form-control" id="fluxtumblr" placeholder="page Tumblr" name="tumbArtist" value="{{ artist.artisttumblrurl }}">
+        </div>
+        <h4>Artiste Laklak</h4>
+        <div class="radio">
+            <label>
+                <input type="radio" id="optionsRadios1" value="1" name="laklak" value="{{ artist.artistlaklak }}">Oui
+            </label>
+        </div>
+        <div class="radio">
+            <label>
+                <input type="radio" id="optionsRadios2" value="0" name="laklak" value="{{ artist.artistlaklak }}"checked>Non
+            </label>
+        </div>
+
+
+        <div class="form-group">
+            <label for="exampleInputFile">Photo artiste (Largeur 500px, Hauteur: 500px recommandée)</label>
+            <input type="file" id="photoArtiste" name="artistImgProfilPath" value="{{ artist.artistimgprofilpath }}">
+           {% if artist.artistimgprofilpath is defined  %} <img src="images/Upload/Artistes/profilartistes/{{ artist.artistimgprofilpath }}" class="img-thumbnail" width="250px" />{% else %} {% endif %}
+
+        </div>
+        <div class="form-group">
+            <label for="exampleInputFile">Photo Cover (Largeur 1400px, Hauteur: 500px recommandée)</label>
+            <input type="file" id="photoCover" name="artistImgCoverPath" value="{{ artist.artistimgcoverpath }}">
+          {% if artist.artistimgcoverpath is defined %} <img src="images/Upload/Artistes/coverartistes/{{ artist.artistimgcoverpath }}" class="img-thumbnail" width="250px"/>{% else %} {% endif %}
+        </div>
+        <div>
+        <label>Evènements</label>
+        <select class="selectpicker" title="Choisir un ou plusieurs événement" name="artistidevent">
+            <option value="1" selected>Event 1</option>
+            <option value="2">Event 2</option>
+            <option value="3">Event 3</option>
+        </select>
+    </div>
+
+        <button type="submit" name="add" class="btn btn-default">Ajouter</button>
+
+    </form>
+
     </div>
 
 {% endblock %}
