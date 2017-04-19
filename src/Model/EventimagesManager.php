@@ -8,8 +8,22 @@
 
 namespace laklak\Model;
 
+use laklak\Model\Eventimages;
 
-class EventimagesManager
+
+class EventimagesManager extends Manager
 {
+
+    public function showGaleryEvent($id)
+    {
+        $req = "SELECT * FROM eventimages WHERE idevent=:id";
+        $prep = $this->bdd->prepare($req);
+        $prep->bindValue(':id' , $id);
+
+        $prep->execute();
+
+        $res = $prep->fetchAll(\PDO::FETCH_CLASS, 'laklak\Model\Eventimages');
+        return $res[0];
+    }
 
 }

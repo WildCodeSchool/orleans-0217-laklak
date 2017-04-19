@@ -11,8 +11,9 @@
 
 
         {% for year, events in eventsYear %}
-            <div class="fancy-title title-border">
-                    <h4>{{ year }}</h4>
+
+            <div class="year">
+                    <h2 class="uppercase nobottommargin">{{ year }}</h2>
             </div>
             <div class="row">
             {% for event in events %}

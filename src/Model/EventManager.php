@@ -145,6 +145,8 @@ class EventManager extends Manager
         return $res[0];
     }
 
+
+
     public function updateEvent($value, $file)
     {
         if ($file['imgEvenement']['name'] != null){
