@@ -15,15 +15,15 @@
         <div class="col-sm-6 col-md-3 thumbnail bottommargin">
             <div class="feature media-box">
                 <div class="fbox-media">
-                    <div class="image_list_artist" style="background-image:url('images/photoartistes/2016/meryem.jpg')">
-                        <img class="img_list_artist" src="images/Upload/Artistes/profilartistes/{{ artist.artistimgprofilpath }}" alt="{{ artist.artistname }}"/>
-                        <h3 class="nom_list_artiste">{{ artist.artistname }}</h3>
-                        <a href="?page=artistes&id={{ artist.id }}"></a>
+                    <div class="image_list_event" style="background-image:url('images/Upload/Event/{{ event.eventImgProfilePath }}')">
+                        <img class="img_list_event" src="images/Upload/Artiste/{{ artist.artistimgprofilpath }}" alt="{{ artist.artistname }}"/>
+                        <h3 class="nom_list_event">{{ artist.artistname }}</h3>
                     </div>
                     <div class="i-overlay on-hover">
                         <a href="?page=artistes&id={{ artist.id }}">
                             <i class ="icon-line-plus"></i>
                         </a>
+
                     </div>
                 </div>
                 <div class="fbox-desc">
