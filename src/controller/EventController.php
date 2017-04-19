@@ -11,7 +11,9 @@ namespace laklak\controller;
 
 use laklak\Model\Event;
 use laklak\Model\EventManager;
+use laklak\Model\EventimagesManager;
 use laklak\Model\GalerieManager;
+
 
 class EventController extends Controller
 {
@@ -44,8 +46,6 @@ class EventController extends Controller
         }
     }
 
-
-
     public function updateEvent()
     {
         $evt = new EventManager();
@@ -73,14 +73,16 @@ class EventController extends Controller
         $event->deleteEvent($id);
 
         header('Location:?page=listEvent');
-
     }
 
     public function evenements($id)
     {
         $evt = new EventManager();
         $event=$evt->showOneEvent($id);
-        return $this->getTwig()->render('evenements.html.twig',array('event'=>$event));
+        $galery = new EventimagesManager();
+        $galerie = $galery->showGaleryEvent($id);
+
+        return $this->getTwig()->render('evenements.html.twig',array('event'=>$event,'galerie'=>$galerie));
     }
 
     public function listeEvenements()
