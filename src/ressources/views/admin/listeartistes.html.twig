@@ -22,7 +22,7 @@
         <tr>
 
             <td>{{ artist.id }}</td>
-            <td><img src="/web/images/photoartistes/2016/meryem.jpg" width="50px" ></td>
+            <td><img src="images/Upload/Artiste/{{artist.artistimgprofilepath }}" alt="{{ artist.artistimgprofilepath }}"/>" width="50px" ></td>
             <td>{{ artist.artistname }}</td>
 
             <form method="POST" action="?page=ajoutartistes&id={{ artist.id }}">
