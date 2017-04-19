@@ -3,7 +3,7 @@
 {% block content %}
 
 
-    <h1>Ajouter un artiste</h1>
+    <h1>{% if artist.id is defined %}Modifier {{ artist.artistname }} {% else %} Ajouter un artiste{% endif %}</h1>
 <div class="container-fluid">
     <div class="row col-xs-9">
     <form method="POST" action="{% if artist is defined %}?page=updateartist&id={{ artist.id }}{% else  %}?page=ajoutartistes{% endif  %}">
@@ -83,12 +83,13 @@
         <div class="form-group">
             <label for="exampleInputFile">Photo artiste</label>
             <input type="file" id="photoArtiste" name="artistImgProfilPath" value="{{ artist.artistimgprofilpath }}">
+            <img src="images/Upload/Artistes/profilartistes/{{ artist.artistimgprofilpath }}" class="img-thumbnail" width="250px" />
 
         </div>
         <div class="form-group">
             <label for="exampleInputFile">Photo Cover</label>
             <input type="file" id="photoCover" name="artistImgCoverPath" value="{{ artist.artistimgcoverpath }}">
-
+            <img src="images/Upload/Artistes/coverartistes/{{ artist.artistimgcoverpath }}" class="img-thumbnail" width="250px" />
         </div>
         <div>
         <label>Evènements</label>
