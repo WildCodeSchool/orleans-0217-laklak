@@ -17,9 +17,14 @@ class AgendaController extends Controller
     {
         $event = new EventManager();
         $eventsYear=$event->formatEventsByYear();
+        $annee = '';
+        if (isset($_GET['annee'])){
+            $annee = $_GET['annee'];
+        }
 
         return $this->getTwig()->render('agenda.html.twig', array(
-            'eventsYear' => $eventsYear
+            'eventsYear' => $eventsYear,
+            'annee' => $annee,
         ));
 
     }

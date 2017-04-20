@@ -97,12 +97,11 @@
 
                     </div>
                 {% endif %}
-
-                {% if artist.artistiframesoundcloud =='' %}
-                {% else %}
+                {% if soundcloud != NULL %}
                     <div class="bio thumbnail sound">
                         <iframe width="100%" height="450" scrolling="no" frameborder="no"
-                                src="{{ artist.artistiframesoundcloud }}"></iframe>
+                                src="{{ soundcloud }}">
+                        </iframe>
                     </div>
                 {% endif %}
 
@@ -153,7 +152,7 @@
                     <div class="nobottommargin">
 
 
-                        <h3>Dates importantes</h3>
+                        <h3>Dates</h3>
 
                         <div class="table-responsive">
                             <table class="table table-striped">
@@ -170,7 +169,7 @@
                                         <td><span class="label label-danger">{{ evt.eventDate|date('d-m-Y') }}</span>
                                         </td>
                                         <td>{{ evt.eventLocation }}</td>
-                                        <td>{{ evt.eventName }}</td>
+                                        <td><a href="?page=evenements&id={{ evt.id }}">{{ evt.eventName }}</a></td>
                                     </tr>
                                 {% endfor %}
                                 </tbody>
