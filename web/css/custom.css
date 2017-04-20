@@ -110,6 +110,20 @@ a:hover { color: #222; }
 .slider-caption p{
     line-height: 1.3em;
 }
+#header.transparent-header.home{
+    position: absolute;
+    width: 100%;
+    margin-top: 30px;
+    padding: 0 20px;
+
+}
+@media (max-width:990px) {
+    .home #primary-menu{
+        background-color: white;
+
+    }
+}
+
 
 /* ----------------------------------------------------------------
 	Agenda
@@ -279,10 +293,9 @@ h3.nom_list_event {
 }
 .detail_artiste {
     position: absolute;
-    top: 2%;
-    padding: 6px 10px;
+    top: 24px;
     border-radius: 2px;
-    max-width: 25%;
+    max-width: 20%;
 
 }
 .social{

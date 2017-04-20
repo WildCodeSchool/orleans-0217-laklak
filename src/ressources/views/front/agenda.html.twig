@@ -4,150 +4,111 @@
 {% block content %}
     <div class="container agenda">
 
-    <section class=" bothsidebar nobottommargin">
+        <section class=" bothsidebar nobottommargin">
 
-        <div class="fancy-title title-border">
-            <h3>Upcoming Events</h3>
-        </div>
-        <a href="#" class="button button-small button-border button-rounded tright visible-xs" data-toggle="collapse"
-           data-target="#collapseExample"
-           aria-expanded="false" aria-controls="collapseExample">Filtres<i class="icon-circle-arrow-right"></i>
-        </a>
-        <div class="collapse" id="collapseExample">
-            <div class="well">
-                <form id="template-contactform " class="">
-                    <div class="col-md-3 col-sm-6 text-center">
-                        <label>Date:</label>
-                        <select class="selectpicker" multiple title="Choose one of the following...">
-                            <option>Mustard</option>
-                            <option>Ketchup</option>
-                            <option>Relish</option>
-                        </select>
-                    </div>
-                    <div class="col-md-3 col-sm-6 text-center">
-                        <label>Type:</label>
-                        <select class="selectpicker" title="Choose one of the following...">
-                            <option>Mustard</option>
-                            <option>Ketchup</option>
-                            <option>Relish</option>
-                        </select>
-                    </div>
-
-                    <div class="col-md-2 col-sm-6 text-center">
-                        <label>100% LAKLAK:</label>
-                        <input class="bt-switch" type="checkbox" checked data-size="mini">
-                    </div>
-
-                    <div class="col-md-3 col-sm-6 pull-left text-center">
-                        <button class="button button-small button-border button-rounded tright nomargin" type="submit"
-                                id="template-contactform-submit"
-                                name="template-contactform-submit" value="submit">Filtrer
-                        </button>
-                    </div>
-                </form>
+            <div class="fancy-title title-border">
+                <h3>Upcoming Events</h3>
             </div>
-        </div>
-
-
-        <div class="panel panel-default hidden-xs">
-            <div class="panel-body">
-                <form id="template-contactform" class="">
-                    <div class="col-md-3 col-sm-6">
-                        <label>Date:</label>
-                        <select class="selectpicker" multiple title="Choose one of the following...">
-                            <option>Mustard</option>
-                            <option>Ketchup</option>
-                            <option>Relish</option>
-                        </select>
-                    </div>
-                    <div class="col-md-3 col-sm-6">
-                        <label>Type:</label>
-                        <select class="selectpicker" title="Choose one of the following...">
-                            <option>Mustard</option>
-                            <option>Ketchup</option>
-                            <option>Relish</option>
-                        </select>
-                    </div>
-
-                    <div class="col-md-2 col-sm-6">
-                        <label>100% LAKLAK:</label>
-                        <input class="bt-switch" type="checkbox" checked data-size="mini">
-                    </div>
-
-                    <div class="col-md-3 col-sm-6 height-line pull-left">
-                        <button class="button button-small button-border button-rounded tright nomargin" type="submit"
-                                id="template-contactform-submit"
-                                name="template-contactform-submit" value="submit">Filtrer
-                        </button>
-                    </div>
-                </form>
+            <a href="#" class="button button-small button-border button-rounded tright visible-xs"
+               data-toggle="collapse"
+               data-target="#collapseExample"
+               aria-expanded="false" aria-controls="collapseExample">Filtres<i class="icon-circle-arrow-right"></i>
+            </a>
+            <div class="collapse" id="collapseExample">
+                <div class="well">
+                    <form id="template-contactform " class="">
+                        <div class="col-md-3 col-sm-6 text-center">
+                            <label>Date:</label>
+                            <select class="selectpicker" multiple title="Choose one of the following...">
+                                {% for year, events in eventsYear %}
+                                    <option>{{ year }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="col-md-3 col-sm-6 pull-left text-center">
+                            <button class="button button-small button-border button-rounded tright nomargin"
+                                    type="submit"
+                                    id="template-contactform-submit"
+                                    name="template-contactform-submit" value="submit">Filtrer
+                            </button>
+                        </div>
+                    </form>
+                </div>
             </div>
-        </div>
 
-        <div id="posts" class="events small-thumbs">
 
-            {% for e in events %}
-                {% if e.date < "now"|date() %}
-                    <div class="entry clearfix">
-                        <div class="entry-image ">
-                            <a href="#">
-                                <img src="images/events/thumbs/1.jpg"
-                                     alt="Inventore voluptates velit totam ipsa tenetur">
-                                <div class="entry-date">10<span>Apr</span></div>
-                            </a>
+            <div class="panel panel-default hidden-xs">
+                <div class="panel-body">
+                    <form id="template-contactform" class="">
+                        <div class="col-md-3 col-sm-6">
+                            <label>Date:</label>
+                            <select class="selectpicker" multiple title="Selectionnez une date...">
+                                {% for year, events in eventsYear %}
+                                    <option>{{ year }}</option>
+                                {% endfor %}
+                            </select>
                         </div>
-                        <div class="entry-c">
-                            <div class="entry-title">
-                                <h2><a href="#">Inventore voluptates velit totam ipsa tenetur</a></h2>
-                            </div>
-                            <ul class="entry-meta clearfix">
-                                <li><span class="label label-warning">Private</span></li>
-                                <li><a href="#"><i class="icon-time"></i> 11:00 - 19:00</a></li>
-                                <li><a href="#"><i class="icon-map-marker2"></i> Melbourne</a></li>
-                            </ul>
-                            <div class="entry-content">
-                                <a href="#" class="btn btn-default" disabled="disabled">Buy Tickets</a> <a href="#"
-                                                                                                           class="btn btn-danger">Read
-                                    More</a>
-                            </div>
+                        <div class="col-md-3 col-sm-6 height-line pull-left">
+                            <button class="button button-small button-border button-rounded tright nomargin"
+                                    type="submit"
+                                    id="template-contactform-submit"
+                                    name="template-contactform-submit" value="submit">Filtrer
+                            </button>
                         </div>
-                    </div>
-                {% endif %}
-            {% endfor %}
+                    </form>
+                </div>
+            </div>
 
-        </div>
-
-        <div class="divider"><i class="icon-circle"></i></div>
-        <div class="evenements-passés">
-            <h2>Evénements passés</h2>
 
             <div id="posts" class="events small-thumbs">
+                {% for year, events in eventsYear %}
 
-                <div class="entry clearfix">
-                    <div class="entry-image ">
-                        <a href="#">
-                            <img src="images/events/thumbs/1.jpg" alt="Inventore voluptates velit totam ipsa tenetur">
-                            <div class="entry-date">10<span>Apr</span></div>
-                        </a>
+                    <div class="year divider"><i class="icon-circle"></i>
+                        <h2 class="uppercase nobottommargin">{% if year ==  "-1 year"|date('Y') %}Evénements passés{% else %}{{ year }}{% endif %}</h2>
                     </div>
-                    <div class="entry-c">
-                        <div class="entry-title">
-                            <h2><a href="#">Inventore voluptates velit totam ipsa tenetur</a></h2>
-                        </div>
-                        <ul class="entry-meta clearfix">
-                            <li><span class="label label-warning">Private</span></li>
-                            <li><a href="#"><i class="icon-time"></i> 11:00 - 19:00</a></li>
-                            <li><a href="#"><i class="icon-map-marker2"></i> Melbourne</a></li>
-                        </ul>
-                        <div class="entry-content">
-                            </a> <a href="#" class="btn btn-danger">Read More</a>
-                        </div>
-                    </div>
-                </div>
+                    {% for event in events %}
 
+                        <div class="entry clearfix">
+                            <div class="entry-image ">
+                                <a href="#">
+                                    <img src="{{ event.eventImgProfilePath }}"
+                                         alt="Inventore voluptates velit totam ipsa tenetur">
+                                    <div class="entry-date">{{ event.eventdate.date|date('d') }}
+                                        <span>{{ event.eventdate.date|date('M') }}</span></div>
+                                </a>
+                            </div>
+                            <div class="entry-c">
+                                <div class="entry-title">
+                                    <h2><a href="?page=evenements&id={{ event.id }}">{{ event.eventName }}</a></h2>
+                                </div>
+                                <ul class="entry-meta clearfix">
+                                    <li>
+                                        <span class="label {% if event.eventType == 'Public' %}label-success {% else %}label-warning{% endif %}">{{ event.eventType }}</span>
+                                    </li>
+                                    <li><a><i
+                                                    class="icon-time"></i>{{ event.eventDate.date|date('d-m-Y h:i') }}
+                                        </a></li>
+                                    <li><a href="http://maps.google.fr/maps?f=q&hl=fr&q={{ event.eventLocation }}"
+                                           target="_blank"><i class="icon-map-marker2"></i>{{ event.eventLocation }}</a>
+                                    </li>
+                                </ul>
+                                <div class="entry-content">
+                                    <a href="{{ event.eventBookingUrl }}" class="btn btn-default"
+                                       {% if event.eventBookingUrl == '' %}disabled="disabled"{% endif %}>billetterie</a>
+                                    <a
+                                            href="?page=evenements&id={{ event.id }}"
+                                            class="btn btn-danger">Voir Plus</a>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% endfor %}
 
             </div>
-    </section>
+
+            <div class="divider"><i class="icon-circle"></i></div>
+        </section>
+    </div>
 
 
 {% endblock %}

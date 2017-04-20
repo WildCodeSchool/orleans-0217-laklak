@@ -18,7 +18,25 @@ class Slider
 
     private $titre;
 
+    private $color;
+
     private $button;
+
+    /**
+     * @return mixed
+     */
+    public function getColor()
+    {
+        return $this->color;
+    }
+
+    /**
+     * @param mixed $color
+     */
+    public function setColor($color)
+    {
+        $this->color = $color;
+    }
 
     /**
      * @return mixed

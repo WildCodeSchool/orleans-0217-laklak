@@ -967,8 +967,6 @@ html[xmlns] .slider-wrap {display: block;}
 #header.transparent-header + #page-title.page-title-parallax,
 #header.transparent-header + #google-map,
 #slider + #header.transparent-header {
-	top: -100px;
-	margin-bottom: -100px;
 }
 
 #header.transparent-header.floating-header + #slider,

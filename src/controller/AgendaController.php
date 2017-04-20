@@ -15,10 +15,11 @@ class AgendaController extends Controller
 {
     public function Agenda()
     {
-        $events = new EventManager();
-        $events->listAll();
+        $event = new EventManager();
+        $eventsYear=$event->formatEventsByYear();
+
         return $this->getTwig()->render('agenda.html.twig', array(
-            'events' => $events
+            'eventsYear' => $eventsYear
         ));
 
     }
