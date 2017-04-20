@@ -84,12 +84,11 @@
             <!--fin bloc gauche-->
 
             <!--debut titre evenement-->
-            <div class="col-sm-8">
+            <div class="col-sm-8 event">
                 <h1 class="hidden-xs">{{ event.eventName }}</h1>
+                <blockquote><i><i class="icon-map-marker2"></i> {{ event.eventlocation }} | <i class="icon-time"></i> {{ event.eventdate|date('d/m/Y') }}</i></blockquote>
                 <div class="bio thumbnail">
-                    <h2>{{ event.eventlocation }}</h2>
                     <h3>{{ event.eventartistes|raw}}</h3>
-                    <h4>{{ event.eventdate|date('d/m/Y') }}</h4>
                 </div>
 
 

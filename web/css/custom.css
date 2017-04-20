@@ -208,12 +208,13 @@ form > div:not(.height-line) {
 
 h3.nom_list_artiste {
     color:#fff;
-    font-size:3rem;
+    font-size:2.5rem;
     display:block;
     position:absolute;
-    top:60%;
+    top:70%;
     width:100%;
     text-align: center;
+    padding: 0 10px;
 
 }
 
@@ -248,12 +249,13 @@ h3.nom_list_artiste {
 
 h3.nom_list_event {
     color:#fff;
-    font-size:3rem;
+    font-size:2.5rem;
     display:block;
     position:absolute;
-    top:60%;
+    top:70%;
     width:100%;
     text-align: center;
+    padding: 0 10px;
 }
 
 /*-----------------------------------------------------------------
@@ -329,6 +331,12 @@ h3.nom_list_event {
 
 }
 
+.event h1{
+    font-family: 'Anton', sans-serif;
+    margin-bottom: 0px;
+    margin-left: 0px;
+
+}
 
 /*-----------------------------------------------------------------
    Fin Détail Artistes
@@ -420,4 +428,9 @@ div.desc {
     top: 30%;
     left: 25px;
     font-size: 25px;
+}
+
+.addartiste{
+    background-color: #f8f8f8;
+    margin-top: 40px;
 }
