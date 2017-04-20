@@ -30,8 +30,8 @@
 
                 <div class="row">
                     <div class="social col-xs-12">
+                        {% if artist.artistwebsiteurl =='' %}{%  else %}
                      <a href="{{ artist.artistwebsiteurl }}" target="_blank">
-                         {% if artist.artistwebsiteurl =='' %}{%  else %}
                         <button class="button button-large button-border button-rounded tright nomargin" type="submit" id="#" name="siteArtiste">Site de l'artiste
                         </button>
                         </a>
