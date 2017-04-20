@@ -12,7 +12,7 @@
             <div class="portfolio-image img-responsive">
                 <img src="{{ artist.artistimgcoverpath }}" alt="Portfolio Title">
             </div>
-       </div>
+        </div>
     </div>
 
     <div class="container">
@@ -24,80 +24,99 @@
                 <div class="fbox-media clearfix bio thumbnail">
 
                     <img src="{{ artist.artistimgprofilpath }}" alt="{{ artist.artistname }}">
-                    <div class="detail_artiste">{% if artist.artistlaklak == 1 %}<img src="images/Laklak/logo.jpg" alt=""> {% endif %} {% if artist.artistlaklak == 0 %}{% endif %}</div>
+                    <div class="detail_artiste">{% if artist.artistlaklak == 1 %}<img src="images/Laklak/logo.jpg"
+                                                                                      alt=""> {% endif %} {% if artist.artistlaklak == 0 %}{% endif %}
+                    </div>
 
                 </div>
 
                 <div class="row">
                     <div class="social col-xs-12">
-                        {% if artist.artistwebsiteurl =='' %}{%  else %}
-                     <a href="{{ artist.artistwebsiteurl }}" target="_blank">
-                        <button class="button button-large button-border button-rounded tright nomargin" type="submit" id="#" name="siteArtiste">Site de l'artiste
-                        </button>
 
-                      {% endif %}
-                     </a>
+                        <a href="{{ artist.artistwebsiteurl }}" target="_blank">
+                            {% if artist.artistwebsiteurl =='' %}{% else %}
+                                <button class="button button-large button-border button-rounded tright nomargin"
+                                        type="submit" id="#" name="siteArtiste">Site de l'artiste
+                                </button>
+
+
+                            {% endif %}
+                        </a>
                     </div>
                     <div class="col-sm-12 bottommargin-sm">
-                            {% if artist.artisttwitterurl =='' %}
-                            {% else %}
-                        <a href="{{ artist.artisttwitterurl }}" target="_blank" class="social-icon si-dark si-colored si-twitter nobottommargin" style="margin-right: 10px;">
-                            <i class="icon-twitter"></i>
-                        </a>
-                            {% endif %}
+                        {% if artist.artisttwitterurl =='' %}
+                        {% else %}
+                            <a href="{{ artist.artisttwitterurl }}" target="_blank"
+                               class="social-icon si-dark si-colored si-twitter nobottommargin"
+                               style="margin-right: 10px;">
+                                <i class="icon-twitter"></i>
+                            </a>
+                        {% endif %}
 
-                            {% if artist.artistfacebookurl =='' %}
-                            {% else %}
-                        <a href="{{ artist.artistfacebookurl }}" target="_blank" class="social-icon si-dark si-colored si-facebook nobottommargin" style="margin-right: 10px;">
-                            <i class="icon-facebook"></i>
-                        </a>
-                            {% endif %}
+                        {% if artist.artistfacebookurl =='' %}
+                        {% else %}
+                            <a href="{{ artist.artistfacebookurl }}" target="_blank"
+                               class="social-icon si-dark si-colored si-facebook nobottommargin"
+                               style="margin-right: 10px;">
+                                <i class="icon-facebook"></i>
+                            </a>
+                        {% endif %}
 
-                            {% if artist.artistsoundcloudurl =='' %}
-                            {%  else %}
-                        <a href="{{ artist.artistsoundcloudurl }}" target="_blank" class="social-icon si-dark si-colored si-soundcloud nobottommargin" style="margin-right: 10px;">
-                            <i class="icon-soundcloud"></i>
-                        </a>
-                            {% endif %}
+                        {% if artist.artistsoundcloudurl =='' %}
+                        {% else %}
+                            <a href="{{ artist.artistsoundcloudurl }}" target="_blank"
+                               class="social-icon si-dark si-colored si-soundcloud nobottommargin"
+                               style="margin-right: 10px;">
+                                <i class="icon-soundcloud"></i>
+                            </a>
+                        {% endif %}
 
-                            {% if artist.artisttumblrurl =='' %}
-                            {% else %}
-                        <a href="{{ artist.artisttumblrurl }}" target="_blank" class="social-icon si-dark si-colored si-tumblr nobottommargin" style="margin-right: 10px;">
-                            <i class="icon-tumblr"></i>
-                        </a>
-                            {% endif %}
+                        {% if artist.artisttumblrurl =='' %}
+                        {% else %}
+                            <a href="{{ artist.artisttumblrurl }}" target="_blank"
+                               class="social-icon si-dark si-colored si-tumblr nobottommargin"
+                               style="margin-right: 10px;">
+                                <i class="icon-tumblr"></i>
+                            </a>
+                        {% endif %}
 
-                            {% if artist.artistvimeourl =='' %}
-                            {% else %}
-                        <a href="{{ artist.artistvimeourl }}" target="_blank" class="social-icon si-dark si-colored si-vimeo nobottommargin" style="margin-right: 10px;">
-                            <i class="icon-vimeo"></i>
-                        </a>
-                            {% endif %}
+                        {% if artist.artistvimeourl =='' %}
+                        {% else %}
+                            <a href="{{ artist.artistvimeourl }}" target="_blank"
+                               class="social-icon si-dark si-colored si-vimeo nobottommargin"
+                               style="margin-right: 10px;">
+                                <i class="icon-vimeo"></i>
+                            </a>
+                        {% endif %}
                     </div>
                 </div>
 
-                    {% if artist.artistiframeyoutube =='' %}
-                    {% else %}
-                <div class="bio thumbnail video hidden-xs"><iframe width="100%" height="315" src="{{ artist.artistiframeyoutube }}" frameborder="0" allowfullscreen></iframe>
+                {% if artist.artistiframeyoutube =='' %}
+                {% else %}
+                    <div class="bio thumbnail video hidden-xs">
+                        <iframe width="100%" height="315" src="{{ artist.artistiframeyoutube }}" frameborder="0"
+                                allowfullscreen></iframe>
 
-                </div>
-                    {% endif %}
+                    </div>
+                {% endif %}
 
-                    {% if artist.artistiframesoundcloud =='' %}
-                    {%  else %}
-                <div class="bio thumbnail sound">
-                    <iframe width="100%" height="450" scrolling="no" frameborder="no" src="{{ artist.artistiframesoundcloud }}"></iframe>
-                </div>
-                    {% endif %}
+                {% if artist.artistiframesoundcloud =='' %}
+                {% else %}
+                    <div class="bio thumbnail sound">
+                        <iframe width="100%" height="450" scrolling="no" frameborder="no"
+                                src="{{ artist.artistiframesoundcloud }}"></iframe>
+                    </div>
+                {% endif %}
 
 
                 {% if artist.artistiframefacebook =='' %}
 
-                    {% else %}
-                <div class="bio thumbnail">
-                    <iframe width="100%" height="450" scrolling="no" frameborder="no"  src="{{ artist.artistiframefacebook }}"></iframe>
-                </div>
-                    {% endif %}
+                {% else %}
+                    <div class="bio thumbnail">
+                        <iframe width="100%" height="450" scrolling="no" frameborder="no"
+                                src="{{ artist.artistiframefacebook }}"></iframe>
+                    </div>
+                {% endif %}
 
             </div>
 
@@ -110,76 +129,80 @@
                 </div>
 
 
-                <div class="divider"><i class="icon-circle"></i></div>
+
+                <div class="divider">
+                    <i class="icon-circle"></i>
+                </div>
+
 
 
                 {#<div class="">#}
-                    {#<h3>Discographie</h3>#}
-                        {#<div class="row">#}
-                           {#{% for disc in discs %}#}
-                            {#<div class="col-xs-6 col-md-3">#}
-                                {#<a href="{{ disc.artistalbumurl }}" target="_blank" class="thumbnail">#}
-                                    {#<img src="images/Upload/Event/{{ disc.artistalbumimg }}" alt="{{ artist.artistname }}"  style="height: 90px; width: 80%; display: block;" />#}
-                                {#</a>#}
-                            {#</div>#}
-                           {#{% endfor %}#}
-                        {#</div>#}
+                {#<h3>Discographie</h3>#}
+                {#<div class="row">#}
+                {#{% for disc in discs %}#}
+                {#<div class="col-xs-6 col-md-3">#}
+                {#<a href="{{ disc.artistalbumurl }}" target="_blank" class="thumbnail">#}
+                {#<img src="images/Upload/Event/{{ disc.artistalbumimg }}" alt="{{ artist.artistname }}"  style="height: 90px; width: 80%; display: block;" />#}
+                {#</a>#}
+                {#</div>#}
+                {#{% endfor %}#}
+                {#</div>#}
                 {#</div>#}
 
 
-
-                    {#<div class="divider">#}
-                        {#<i class="icon-circle"></i>#}
-                    {#</div>#}
+                {#<div class="divider">#}
+                {#<i class="icon-circle"></i>#}
+                {#</div>#}
 
                 {% if event != NULL %}
-                <div class="nobottommargin">
+                    <div class="nobottommargin">
 
 
-                    <h3>Dates importantes</h3>
+                        <h3>Dates importantes</h3>
 
-                    <div class="table-responsive">
-                        <table class="table table-striped">
-                            <thead>
-                            <tr>
-                                <th>Date</th>
-                                <th>Lieu</th>
-                                <th>Evénement</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            {% for evt in event %}
-                            <tr>
-                                <td><span class="label label-danger">{{ evt.eventDate|date('d-m-Y') }}</span></td>
-                                <td>{{ evt.eventLocation }}</td>
-                                <td>{{ evt.eventName }}</td>
-                            </tr>
-                            {% endfor %}
-                            </tbody>
-                        </table>
-                    </div>
-
-                </div>
-
-                <div class="divider"><i class="icon-circle"></i></div>
-                {% endif %}
-
-{% if galerie != NULL %}
-                <div class="col_full clearfix">
-                    <h3>Galerie</h3>
-
-
-
-                    <div class="masonry-thumbs col-4" data-big="1" data-lightbox="gallery">
-                        {% for image in galerie %}
-                            <a href="{{ image.artistimggalerypath }}" data-lightbox="gallery-item"><img class="image_fade" src="{{ image.artistimggalerypath }}"></a>
-                        {% endfor %}
+                        <div class="table-responsive">
+                            <table class="table table-striped">
+                                <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Lieu</th>
+                                    <th>Evénement</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for evt in event %}
+                                    <tr>
+                                        <td><span class="label label-danger">{{ evt.eventDate|date('d-m-Y') }}</span>
+                                        </td>
+                                        <td>{{ evt.eventLocation }}</td>
+                                        <td>{{ evt.eventName }}</td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
 
                     </div>
 
                     <div class="divider"><i class="icon-circle"></i></div>
-                </div>
-    {% endif %}
+                {% endif %}
+
+                {% if galerie != NULL %}
+                    <div class="col_full clearfix">
+                        <h3>Galerie</h3>
+
+
+                        <div class="masonry-thumbs col-4" data-big="1" data-lightbox="gallery">
+                            {% for image in galerie %}
+                                <a href="{{ image.artistimggalerypath }}" data-lightbox="gallery-item"><img
+                                            class="image_fade" src="{{ image.artistimggalerypath }}"></a>
+                            {% endfor %}
+
+                        </div>
+
+                        <div class="divider"><i class="icon-circle"></i></div>
+                    </div>
+                {% endif %}
             </div>
         </div>
     </div>
