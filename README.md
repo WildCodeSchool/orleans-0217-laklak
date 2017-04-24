@@ -6,6 +6,7 @@
  * Navigateurs recommandés 
  * Logiciels utilisés
  * Auteurs
+ * Installation
  * Superviseurs
  * Contacts
  * Licence
