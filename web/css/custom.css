@@ -53,6 +53,13 @@ a:hover { color: #222; }
     color: white;
 }
 
+.presentation > div.row {
+    margin: 0;
+}
+
+.presentation > div.row  > div.col-xs-12 {
+    padding:0;
+}
 
 
 
@@ -133,7 +140,7 @@ a:hover { color: #222; }
     width: 100%!important;
 }
 .height-line{
-    line-height: 70px;
+    line-height: 92px;
 }
 .agenda .panel-body{
     padding: 5px 0 0 0;
@@ -281,6 +288,10 @@ h3.nom_list_event {
 
 .portfolio-image {
     position : static;
+}
+
+.titrename{
+    margin-left: 0px;
 }
 .haut{
 
