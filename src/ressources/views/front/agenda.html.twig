@@ -7,7 +7,7 @@
         <section class=" bothsidebar nobottommargin">
 
             <div class="fancy-title title-border">
-                <h3>Upcoming Events</h3>
+                <h3>AGENDA</h3>
             </div>
             <a href="#" class="button button-small button-border button-rounded tright visible-xs"
                data-toggle="collapse"
@@ -16,21 +16,22 @@
             </a>
             <div class="collapse" id="collapseExample">
                 <div class="well">
-                    <form id="template-contactform " class="">
+                    <form id="template-contactform" action="" method="get">
                         <div class="col-md-3 col-sm-6 text-center">
                             <label>Date:</label>
-                            <select class="selectpicker" multiple title="Choose one of the following...">
+                            <select class="selectpicker" name="annee" title="Selectionnez une date...">
+                                <option value="">Toutes les dates</option>
                                 {% for year, events in eventsYear %}
-                                    <option>{{ year }}</option>
+                                    <option value="{{ year }}">{{ year }}</option>
                                 {% endfor %}
                             </select>
                         </div>
                         <div class="col-md-3 col-sm-6 pull-left text-center">
                             <button class="button button-small button-border button-rounded tright nomargin"
                                     type="submit"
-                                    id="template-contactform-submit"
-                                    name="template-contactform-submit" value="submit">Filtrer
+                                    id="template-contactform-submit" value="submit">Filtrer
                             </button>
+                            <input type="hidden" value="agenda" name="page">
                         </div>
                     </form>
                 </div>
@@ -39,70 +40,120 @@
 
             <div class="panel panel-default hidden-xs">
                 <div class="panel-body">
-                    <form id="template-contactform" class="">
+                    <form id="template-contactform" action="" method="get">
                         <div class="col-md-3 col-sm-6">
                             <label>Date:</label>
-                            <select class="selectpicker" multiple title="Selectionnez une date...">
+                            <select class="selectpicker"  name="annee" title="Selectionnez une date...">
+                                <option value="">Toutes les dates</option>
                                 {% for year, events in eventsYear %}
-                                    <option>{{ year }}</option>
+                                    <option value="{{ year }}">{{ year }}</option>
                                 {% endfor %}
                             </select>
                         </div>
                         <div class="col-md-3 col-sm-6 height-line pull-left">
                             <button class="button button-small button-border button-rounded tright nomargin"
                                     type="submit"
-                                    id="template-contactform-submit"
-                                    name="template-contactform-submit" value="submit">Filtrer
+                                    id="template-contactform-submit" value="submit">Filtrer
                             </button>
+                            <input type="hidden" value="agenda" name="page">
                         </div>
                     </form>
                 </div>
             </div>
 
-{{ dump(app.request.query.get) }}
             <div id="posts" class="events small-thumbs">
                 {% for year, events in eventsYear %}
-                    {% if year == app.request.query.get("annee") %}
-                    <div class="year divider"><i class="icon-circle"></i>
-                        <h2 class="uppercase nobottommargin">{% if year ==  "-1 year"|date('Y') %}Evénements passés{% else %}{{ year }}{% endif %}</h2>
-                    </div>
-                    {% for event in events %}
+                    {% if annee != NULL %}
+                        {% if year == annee %}
+                            <div class="year divider"><i class="icon-circle"></i>
+                                <h2 class="uppercase nobottommargin">{% if year ==  "-1 year"|date('Y') %}Evénements passés{% else %}{{ year }}{% endif %}</h2>
+                            </div>
+                            {% for event in events %}
 
-                        <div class="entry clearfix">
-                            <div class="entry-image ">
-                                <a href="#">
-                                    <img src="{{ event.eventImgProfilePath }}"
-                                         alt="Inventore voluptates velit totam ipsa tenetur">
-                                    <div class="entry-date">{{ event.eventdate.date|date('d') }}
-                                        <span>{{ event.eventdate.date|date('M') }}</span></div>
-                                </a>
-                            </div>
-                            <div class="entry-c">
-                                <div class="entry-title">
-                                    <h2><a href="?page=evenements&id={{ event.id }}">{{ event.eventName }}</a></h2>
+                                <div class="entry clearfix">
+                                    <div class="entry-image ">
+                                        <a href="#">
+                                            <img src="{{ event.eventImgProfilePath }}"
+                                                 alt="Inventore voluptates velit totam ipsa tenetur">
+                                            <div class="entry-date">{{ event.eventdate.date|date('d') }}
+                                                <span>{{ event.eventdate.date|date('M') }}</span></div>
+                                        </a>
+                                    </div>
+                                    <div class="entry-c">
+                                        <div class="entry-title">
+                                            <h2><a href="?page=evenements&id={{ event.id }}">{{ event.eventName }}</a>
+                                            </h2>
+                                        </div>
+                                        <ul class="entry-meta clearfix">
+                                            <li>
+                                                <span class="label {% if event.eventType == 'Public' %}label-success {% else %}label-warning{% endif %}">{{ event.eventType }}</span>
+                                            </li>
+                                            <li><a><i
+                                                            class="icon-time"></i>{{ event.eventDate.date|date('d-m-Y h:i') }}
+                                                </a></li>
+                                            <li>
+                                                <a href="http://maps.google.fr/maps?f=q&hl=fr&q={{ event.eventLocation }}"
+                                                   target="_blank"><i
+                                                            class="icon-map-marker2"></i>{{ event.eventLocation }}</a>
+                                            </li>
+                                        </ul>
+                                        <div class="entry-content">
+                                            <a href="{{ event.eventBookingUrl }}" class="btn btn-default"
+                                               {% if event.eventBookingUrl == '' %}disabled="disabled"{% endif %}>Billetterie</a>
+                                            <a
+                                                    href="?page=evenements&id={{ event.id }}"
+                                                    class="btn btn-danger">Voir Plus</a>
+                                        </div>
+                                    </div>
                                 </div>
-                                <ul class="entry-meta clearfix">
-                                    <li>
-                                        <span class="label {% if event.eventType == 'Public' %}label-success {% else %}label-warning{% endif %}">{{ event.eventType }}</span>
-                                    </li>
-                                    <li><a><i
-                                                    class="icon-time"></i>{{ event.eventDate.date|date('d-m-Y h:i') }}
-                                        </a></li>
-                                    <li><a href="http://maps.google.fr/maps?f=q&hl=fr&q={{ event.eventLocation }}"
-                                           target="_blank"><i class="icon-map-marker2"></i>{{ event.eventLocation }}</a>
-                                    </li>
-                                </ul>
-                                <div class="entry-content">
-                                    <a href="{{ event.eventBookingUrl }}" class="btn btn-default"
-                                       {% if event.eventBookingUrl == '' %}disabled="disabled"{% endif %}>billetterie</a>
-                                    <a
-                                            href="?page=evenements&id={{ event.id }}"
-                                            class="btn btn-danger">Voir Plus</a>
-                                </div>
-                            </div>
-                        </div>
-                    {% endfor %}
+                            {% endfor %}
                         {% endif %}
+
+                    {% else %}
+
+                        <div class="year divider"><i class="icon-circle"></i>
+                            <h2 class="uppercase nobottommargin">{% if year ==  "-1 year"|date('Y') %}Evénements passés{% else %}{{ year }}{% endif %}</h2>
+                        </div>
+                        {% for event in events %}
+
+                            <div class="entry clearfix">
+                                <div class="entry-image ">
+                                    <a href="#">
+                                        <img src="{{ event.eventImgProfilePath }}"
+                                             alt="Inventore voluptates velit totam ipsa tenetur">
+                                        <div class="entry-date">{{ event.eventdate.date|date('d') }}
+                                            <span>{{ event.eventdate.date|date('M') }}</span></div>
+                                    </a>
+                                </div>
+                                <div class="entry-c">
+                                    <div class="entry-title">
+                                        <h2><a href="?page=evenements&id={{ event.id }}">{{ event.eventName }}</a>
+                                        </h2>
+                                    </div>
+                                    <ul class="entry-meta clearfix">
+                                        <li>
+                                            <span class="label {% if event.eventType == 'Public' %}label-success {% else %}label-warning{% endif %}">{{ event.eventType }}</span>
+                                        </li>
+                                        <li><a><i
+                                                        class="icon-time"></i>{{ event.eventDate.date|date('d-m-Y h:i') }}
+                                            </a></li>
+                                        <li>
+                                            <a href="http://maps.google.fr/maps?f=q&hl=fr&q={{ event.eventLocation }}"
+                                               target="_blank"><i
+                                                        class="icon-map-marker2"></i>{{ event.eventLocation }}</a>
+                                        </li>
+                                    </ul>
+                                    <div class="entry-content">
+                                        <a href="{{ event.eventBookingUrl }}" class="btn btn-default"
+                                           {% if event.eventBookingUrl == '' %}disabled="disabled"{% endif %}>Billetterie</a>
+                                        <a
+                                                href="?page=evenements&id={{ event.id }}"
+                                                class="btn btn-danger">Voir Plus</a>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
                 {% endfor %}
 
             </div>

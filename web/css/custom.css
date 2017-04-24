@@ -53,6 +53,13 @@ a:hover { color: #222; }
     color: white;
 }
 
+.presentation > div.row {
+    margin: 0;
+}
+
+.presentation > div.row  > div.col-xs-12 {
+    padding:0;
+}
 
 
 
@@ -133,7 +140,7 @@ a:hover { color: #222; }
     width: 100%!important;
 }
 .height-line{
-    line-height: 70px;
+    line-height: 92px;
 }
 .agenda .panel-body{
     padding: 5px 0 0 0;
@@ -208,12 +215,13 @@ form > div:not(.height-line) {
 
 h3.nom_list_artiste {
     color:#fff;
-    font-size:3rem;
+    font-size:2.5rem;
     display:block;
     position:absolute;
-    top:60%;
+    top:70%;
     width:100%;
     text-align: center;
+    padding: 0 10px;
 
 }
 
@@ -248,12 +256,13 @@ h3.nom_list_artiste {
 
 h3.nom_list_event {
     color:#fff;
-    font-size:3rem;
+    font-size:2.5rem;
     display:block;
     position:absolute;
-    top:60%;
+    top:70%;
     width:100%;
     text-align: center;
+    padding: 0 10px;
 }
 
 /*-----------------------------------------------------------------
@@ -279,6 +288,10 @@ h3.nom_list_event {
 
 .portfolio-image {
     position : static;
+}
+
+.titrename{
+    margin-left: 0px;
 }
 .haut{
 
@@ -329,6 +342,12 @@ h3.nom_list_event {
 
 }
 
+.event h1{
+    font-family: 'Anton', sans-serif;
+    margin-bottom: 0px;
+    margin-left: 0px;
+
+}
 
 /*-----------------------------------------------------------------
    Fin Détail Artistes
@@ -420,4 +439,9 @@ div.desc {
     top: 30%;
     left: 25px;
     font-size: 25px;
+}
+
+.addartiste{
+    background-color: #f8f8f8;
+    margin-top: 40px;
 }

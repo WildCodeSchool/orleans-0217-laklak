@@ -21,16 +21,15 @@ class ArtistController extends Controller
 {
 
     public function listArtist()
-   {
-       $artist =new ArtisteManager();
-       $artists = $artist->showAll();
-
-       return $this->getTwig()->render('listeartistes.html.twig', array('artists' => $artists));
-   }
+    {
+        $artist = new ArtisteManager();
+        $artists = $artist->showAll();
+        return $this->getTwig()->render('listeartistes.html.twig', array('artists' => $artists));
+    }
 
     public function listOneArtist($id)
     {
-        if (isset($_POST ['modif'])){
+        if (isset($_POST ['modif'])) {
 
             $artist = new ArtisteManager();
             $artist->showOneArtist($id);
@@ -58,13 +57,13 @@ class ArtistController extends Controller
     {
         $artist = new ArtisteManager();
 
-        if (isset($_POST['update'])){
+        if (isset($_POST['update'])) {
             $artist->updateArtist($_POST, $_FILES);
 
             header('Location:?page=listeartistes');
         } elseif (isset($_GET['id'])) {
             $galerie = new GalerieManager();
-            $gal = $galerie->showAll($_GET['id'], 'artistimages', 'idartist' );
+            $gal = $galerie->showAll($_GET['id'], 'artistimages', 'idartist');
             $art = $artist->showOneArtist($_GET['id']);
 
             return $this->getTwig()->render('ajoutartistes.html.twig', array(
@@ -75,9 +74,9 @@ class ArtistController extends Controller
         header('Location:?page=listeartistes');
     }
 
-    public function deleteArtist ()
+    public function deleteArtist()
     {
-        if(isset($_POST['delete'])) {
+        if (isset($_POST['delete'])) {
             $artist = new ArtisteManager();
             $artist->deleteArtist($_POST['id']);
         }
@@ -89,10 +88,10 @@ class ArtistController extends Controller
     public function artist($id)
     {
         $art = new ArtisteManager();
-        $artist=$art->showOneArtist($id);
+        $artist = $art->showOneArtist($id);
 
         $galery = new GalerieManager();
-        $galerie = $galery->showAll($id,'artistimages','idartist');
+        $galerie = $galery->showAll($id, 'artistimages', 'idartist');
 
         $disc = new DiscoManager();
         $discs = $disc->showDisc($id);
@@ -100,14 +99,27 @@ class ArtistController extends Controller
         $evt = new EventManager();
         $event = $evt->listEventByArtist($id);
 
-        return $this->getTwig()->render('artistes.html.twig',array('artist'=>$artist,'galerie'=>$galerie, 'discs'=>$discs, 'event'=>$event));
+
+        $b = '';
+        if (!empty($artist['artistiframesoundcloud'])) {
+            $a = str_replace('<iframe width="100%" height="450" scrolling="no" frameborder="no" src="', '', $artist['artistiframesoundcloud']);
+            $b = str_replace('"></iframe>', '', $a);
+        }
+
+        return $this->getTwig()->render('artistes.html.twig', array(
+            'artist' => $artist,
+            'galerie' => $galerie,
+            'discs' => $discs,
+            'event' => $event,
+            'soundcloud' => $b,
+        ));
     }
 
     public function listeArt()
     {
         $artist = new ArtisteManager();
         $artists = $artist->showAll();
-        return $this->getTwig()->render('liste_artistes.html.twig',array('artists'=>$artists));
+        return $this->getTwig()->render('liste_artistes.html.twig', array('artists' => $artists));
     }
 
 

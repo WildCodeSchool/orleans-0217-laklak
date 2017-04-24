@@ -25,40 +25,47 @@
                     <div class="fbox-media clearfix bio thumbnail">
 
                         <a href="#"><img src="{{ event.eventImgProfilePath }}" alt="{{ event.eventName }}"></a>
-                            <div class="detail_artiste">
+                        <div class="detail_artiste">
                             {% if event.eventLaklak == 1 %}<img src="images/Laklak/logo.jpg" alt=""/>{% endif %}
                             {% if event.eventLaklak == 0 %}{% endif %}
-                            </div>
+                        </div>
 
                     </div>
 
                     <!--reseaux sociaux et site web-->
                     <div class="row">
 
-                               <div class="social col-xs-12">
-                                <a href="{{ event.eventWebsiteUrl }}">
-                                    {% if event.eventWebsiteUrl != NULL %}
+                        <div class="social col-xs-12">
+                            <a href="{{ event.eventWebsiteUrl }}">
+                                {% if event.eventWebsiteUrl != NULL %}
                                     <button class="button button-large button-border button-rounded tright nomargin"
-                                    type="submit" id="#" name="siteArtiste">Site de l'evenement</button>
-                                    {% endif %}
-                                </a>
-                            </div>
+                                            type="submit" id="#" name="siteArtiste">Site de l'evenement
+                                    </button>
+                                {% endif %}
+                            </a>
+                        </div>
 
                         <div class="col-sm-12 bottommargin-sm">
                             {% if event.eventFacebookUrl != NULL %}
-                                <a href="{{ event.eventFacebookUrl }}" target="_blank" class="social-icon si-dark si-colored si-facebook nobottommargin" style="margin-right: 10px;">
-                                <i class="icon-facebook"></i>
+                                <a href="{{ event.eventFacebookUrl }}" target="_blank"
+                                   class="social-icon si-dark si-colored si-facebook nobottommargin"
+                                   style="margin-right: 10px;">
+                                    <i class="icon-facebook"></i>
                                 </a>
                             {% endif %}
 
                             {% if event.eventTwitterUrl != NULL %}
-                                <a href="{{ event.eventTwitterUrl }}" target="_blank" class="social-icon si-dark si-colored si-twitter nobottommargin" style="margin-right: 10px;">
-                                <i class="icon-twitter"></i>
+                                <a href="{{ event.eventTwitterUrl }}" target="_blank"
+                                   class="social-icon si-dark si-colored si-twitter nobottommargin"
+                                   style="margin-right: 10px;">
+                                    <i class="icon-twitter"></i>
                                 </a>
                             {% endif %}
 
                             {% if event.eventSoundcloudUrl != NULL %}
-                                <a href="{{ event.eventSoundcloudUrl }}" target="_blank" class="social-icon si-dark si-colored si-soundcloud nobottommargin" style="margin-right: 10px;">
+                                <a href="{{ event.eventSoundcloudUrl }}" target="_blank"
+                                   class="social-icon si-dark si-colored si-soundcloud nobottommargin"
+                                   style="margin-right: 10px;">
                                     <i class="icon-soundcloud"></i>
                                 </a>
                             {% endif %}
@@ -72,11 +79,19 @@
                     <!--video youtube-->
 
                     {% if event.eventIframeYoutube != NULL %}
-                         <div class="bio thumbnail video hidden-xs"><iframe width="100%" height="315" src="{{ event.eventIframeYoutube }}" frameborder="0" allowfullscreen></iframe>
-                         </div>
+                        <div class="bio thumbnail video hidden-xs">
+                            <iframe width="100%" height="315" src="{{ event.eventIframeYoutube }}" frameborder="0"
+                                    allowfullscreen></iframe>
+                        </div>
                     {% endif %}
                     <!--video youtube-->
-
+                    {% if event.eventIframeSoundcloud != NULL %}
+                        <div class="bio thumbnail sound">
+                            <iframe width="100%" height="450" scrolling="no" frameborder="no"
+                                    src="{{ event.eventIframeSoundcloud }}">
+                            </iframe>
+                        </div>
+                    {% endif %}
 
                 </div>
             </div>
@@ -84,23 +99,27 @@
             <!--fin bloc gauche-->
 
             <!--debut titre evenement-->
-            <div class="col-sm-8">
+            <div class="col-sm-8 event">
                 <h1 class="hidden-xs">{{ event.eventName }}</h1>
-                <div class="bio thumbnail">
-                    <h2>{{ event.eventlocation }}</h2>
-                    <h3>{{ event.eventartistes|raw}}</h3>
-                    <h4>{{ event.eventdate|date('d/m/Y') }}</h4>
-                </div>
-
+                <blockquote><i><i class="icon-map-marker2"></i> {{ event.eventlocation }} | <i
+                                class="icon-time"></i> {{ event.eventdate|date('d/m/Y') }}</i></blockquote>
+                {% if event.eventartistes != NULL %}
+                    <div class="">
+                        <h3>Artistes de l'événement</h3>
+                        <p>{{ event.eventartistes|raw }}</p>
+                    </div>
+                    <div class="divider"><i class="icon-circle"></i></div>
+                {% endif %}
 
 
                 <!--fin titre evenement-->
 
                 <!--debut bloc description-->
                 {% if event.eventdescription != NULL %}
-                <div class="bio thumbnail"><h3>Description</h3>
-                    <p>{{ event.eventdescription|raw }}</p>
-                </div>
+                    <div class=""><h3>Description</h3>
+                        <p>{{ event.eventdescription|raw }}</p>
+                    </div>
+                    <div class="divider"><i class="icon-circle"></i></div>
                 {% endif %}
 
                 <!--fin bloc description-->
@@ -108,30 +127,32 @@
 
                 <!--debut bloc productions-->
                 {% if event.eventproduction != NULL %}
-                <div class="bio thumbnail"><h3>Productions</h3>
-                    <p>{{ event.eventproduction|raw}}</p>
-                </div>
+                    <div class=""><h3>Productions</h3>
+                        <p>{{ event.eventproduction|raw }}</p>
+                    </div>
+                    <div class="divider"><i class="icon-circle"></i></div>
                 {% endif %}
 
                 <!--fin bloc productions-->
 
 
+                {% if galerie != NULL %}
+                    <!--début galerie photo-->
+                    <div class="col_full clearfix">
+                        <h3>Galerie</h3>
 
-    {% if galerie != NULL %}
-                <!--début galerie photo-->
-                <div class="col_full clearfix">
-                    <h3>Galerie</h3>
+                        <div class="masonry-thumbs col-4" data-big="1" data-lightbox="gallery">
+                            {% for image in galerie %}
+                                <a href="{{ image.eventimggalerrypath }}" data-lightbox="gallery-item"><img
+                                            class="image_fade" src="{{ image.eventimggalerrypath }}"
+                                            alt="Gallery Thumb {{ image.id }}"></a>
+                            {% endfor %}
+                        </div>
 
-                    <div class="masonry-thumbs col-4" data-big="1" data-lightbox="gallery">
-                        {% for image in galerie %}
-                        <a href="{{ image.eventimggalerrypath }}" data-lightbox="gallery-item"><img class="image_fade" src="{{ image.eventimggalerrypath }}" alt="Gallery Thumb {{ image.id }}"></a>
-                        {% endfor %}
+                        <div class="divider"><i class="icon-circle"></i></div>
                     </div>
-
-                    <div class="divider"><i class="icon-circle"></i></div>
-                </div>
-                <!--fin galerie photo-->
-        {% endif %}
+                    <!--fin galerie photo-->
+                {% endif %}
             </div>
 
         </div>
