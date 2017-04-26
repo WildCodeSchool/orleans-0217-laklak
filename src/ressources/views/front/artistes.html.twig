@@ -35,7 +35,7 @@
                         <a href="{{ artist.artistwebsiteurl }}" target="_blank">
                             {% if artist.artistwebsiteurl =='' %}{% else %}
                                 <button class="button button-large button-border button-rounded tright nomargin"
-                                        type="submit" id="#" name="siteArtiste">Site de l'artiste
+                                        type="submit" id="#" name="siteArtiste">Site web
                                 </button>
 
                             {% endif %}
@@ -130,7 +130,18 @@
                     <i class="icon-circle"></i>
                 </div>
 
+                    {% if artist.artistdisco =='' %}
 
+                    {% else %}
+                <div class="">
+                    <h3>Discographie</h3>
+                    <p>{{ artist.artistdisco|raw }}</p>
+                </div>
+
+                <div class="divider">
+                    <i class="icon-circle"></i>
+                </div>
+        {% endif %}
                 {#<div class="">#}
                 {#<h3>Discographie</h3>#}
                 {#<div class="row">#}
@@ -152,7 +163,7 @@
                     <div class="nobottommargin">
 
 
-                        <h3>Dates</h3>
+                        <h3>{% if artist.artistlaklak == 1 %}Dates{% else %}Dates (Maroc){% endif %}</h3>
 
                         <div class="table-responsive">
                             <table class="table table-striped">

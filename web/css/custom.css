@@ -191,9 +191,13 @@ form > div:not(.height-line) {
  -----------------------------------------------------------------*/
 
 
-.list_artist .fbox-media {
-    position:relative;
-    overflow: hidden;
+/*.list_artist .fbox-media {*/
+    /*position:relative;*/
+    /*overflow: hidden;*/
+/*}*/
+
+.container.clearfix.list_artist{
+    margin-bottom: 40px;
 }
 
 .image_list_artist {
@@ -214,11 +218,11 @@ form > div:not(.height-line) {
 }
 
 h3.nom_list_artiste {
-    color:#fff;
-    font-size:2.5rem;
+    color:#444;
+    font-size:1.8rem;
     display:block;
     position:absolute;
-    top:70%;
+    top:103%;
     width:100%;
     text-align: center;
     padding: 0 10px;
@@ -236,6 +240,14 @@ h3.nom_list_artiste {
     /*overflow: hidden;*/
 
 /*}*/
+
+.container.clearfix.list_event{
+    margin-bottom: 40px;
+}
+
+h2.uppercase.nobottommargin.list_event{
+    margin-top: 35px;
+}
 
 .image_list_event {
     background-size: cover;
@@ -255,11 +267,11 @@ h3.nom_list_artiste {
 }
 
 h3.nom_list_event {
-    color:#fff;
-    font-size:2.5rem;
+    color:#444;
+    font-size:1.8rem;
     display:block;
     position:absolute;
-    top:70%;
+    top:103%;
     width:100%;
     text-align: center;
     padding: 0 10px;

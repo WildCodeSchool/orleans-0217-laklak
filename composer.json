@@ -1,5 +1,11 @@
 {
-    "name": "wilder12/orleans-0217-laklak",
+    "name": "wilder7/orleans-0217-laklak",
+    "authors": [
+        {
+            "name": "Veronique Monaco",
+            "email": "veronique.jollivel@wanadoo.fr"
+        }
+    ],
     "require": {
         "twig/twig": "^2.3",
         "swiftmailer/swiftmailer": "^5.4"
@@ -15,5 +21,4 @@
     "autoload": {
         "psr-4": {"laklak\\": "src/"}
     }
-
 }

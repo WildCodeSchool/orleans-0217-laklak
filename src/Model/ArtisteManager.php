@@ -115,10 +115,10 @@ class ArtisteManager extends Manager
         $prep = $this->bdd->prepare('INSERT INTO artist (artistname, artistbio, artistlaklak, artistwebsiteurl,
                                                         artistfacebookurl, artisttwitterurl, artisttumblrurl,
                                                         artistvimeourl, artistsoundcloudurl, artistiframesoundcloud, artistiframeyoutube, artistimgcoverpath, 
-                                                        artistimgprofilpath, artistidevent, artistiframefacebook, artistinstagramurl) 
+                                                        artistimgprofilpath, artistidevent, artistiframefacebook, artistinstagramurl, artistdisco) 
                                     VALUES (:artistname, :artistbio, :artistLaklak,:artistWebsiteUrl,:artistFacebookUrl,
-                                            :artistTwitterUrl,:artistTumblrUrl,:artistVimeoUrl, :artistSoundcloudUrl,:artistIframeSoundcloudUrl, :artistIframeYoutubeUrl, 
-                                            :artistImgCoverPath, :artistImgProfilPath, :artistIdEvent, :artistIframeFacebook, :artistinstagramurl)');
+                                            :artistTwitterUrl,:artistTumblrUrl,:artistVimeoUrl, :artistSoundcloudUrl, :artistIframeSoundcloudUrl, :artistIframeYoutubeUrl, 
+                                            :artistImgCoverPath, :artistImgProfilPath, :artistIdEvent, :artistIframeFacebook, :artistinstagramurl, :artistdisco)');
 
 
         $prep->bindValue(':artistname', $value['nomArtist']);
@@ -137,7 +137,9 @@ class ArtisteManager extends Manager
         $prep->bindValue(':artistIdEvent', $value['artistidevent']);
         $prep->bindValue(':artistIframeFacebook', ($value['fbArtistIframe']));
         $prep->bindValue(':artistinstagramurl', ($value['instArtist']));
+        $prep->bindValue(':artistdisco', ($value['disco']));
         $prep->execute();
+
     }
 
 
@@ -171,6 +173,7 @@ class ArtisteManager extends Manager
 
     public function updateArtist($value, $file)
     {
+
 
         if ($file['artistImgProfilPath']['name'] != null){
             $uploaddir = 'images/Upload/Artiste/';
@@ -218,7 +221,7 @@ class ArtisteManager extends Manager
                                     artistiframesoundcloud = :artistIframeSoundcloudUrl, 
                                     artistiframeyoutube = :artistIframeYoutubeUrl, artistimgcoverpath = :artistImgCoverPath, 
                                     artistimgprofilpath = :artistImgProfilPath, artistidevent = :artistIdEvent,
-                                    artistiframefacebook = :artistIframeFacebook, artistinstagramurl = :artistInstagramUrl WHERE id = :id");
+                                    artistiframefacebook = :artistIframeFacebook, artistinstagramurl = :artistInstagramUrl, artistdisco = :artistdisco WHERE id = :id");
 
         $prep = $this->bdd->prepare($req);
 
@@ -239,6 +242,7 @@ class ArtisteManager extends Manager
         $prep->bindValue(':artistIdEvent', $value['artistidevent']);
         $prep->bindValue(':artistIframeFacebook', ($value['fbArtistIframe']));
         $prep->bindValue(':artistInstagramUrl', $value['instArtist']);
+        $prep->bindValue(':artistdisco', $value['disco']);
         $prep->execute();
 
 
