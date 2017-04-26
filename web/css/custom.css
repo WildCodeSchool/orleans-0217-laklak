@@ -237,6 +237,7 @@ h3.nom_list_artiste {
 
 /*}*/
 
+
 .image_list_event {
     background-size: cover;
     max-width: 100%;
@@ -255,11 +256,11 @@ h3.nom_list_artiste {
 }
 
 h3.nom_list_event {
-    color:#fff;
-    font-size:2.5rem;
+    color:#444;
+    font-size:1.4rem;
     display:block;
     position:absolute;
-    top:70%;
+    top:102%;
     width:100%;
     text-align: center;
     padding: 0 10px;
