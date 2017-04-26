@@ -18,28 +18,33 @@ USE `laklak`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `admin`
+-- Table structure for table `slider`
 --
 
-DROP TABLE IF EXISTS `admin`;
+DROP TABLE IF EXISTS `slider`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `admin` (
+CREATE TABLE `slider` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `email` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL,
+  `url` varchar(255) DEFAULT NULL,
+  `title` varchar(255) DEFAULT NULL,
+  `color` varchar(10) DEFAULT NULL,
+  `baseline` text,
+  `button` varchar(45) DEFAULT NULL,
+  `hidden` int(11) DEFAULT '1',
+  `urlbutton` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `admin`
+-- Dumping data for table `slider`
 --
 
-LOCK TABLES `admin` WRITE;
-/*!40000 ALTER TABLE `admin` DISABLE KEYS */;
-INSERT INTO `admin` VALUES (1,'jb.hallassou@gmail.com','5284441a462de9e3c547ebb964fc774e7f32ff83');
-/*!40000 ALTER TABLE `admin` ENABLE KEYS */;
+LOCK TABLES `slider` WRITE;
+/*!40000 ALTER TABLE `slider` DISABLE KEYS */;
+INSERT INTO `slider` VALUES (3,'images/Upload/Slider/6.jpg','LAKLAK PRODUCTIONS','#000000','Société de productions de spectacles','ON AIR',1,''),(5,'images/Upload/Slider/jumbe.png','LAKLAK PRODUCTIONS','#000000','Société de productions de spectacles','ON AIR',1,'');
+/*!40000 ALTER TABLE `slider` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -51,4 +56,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-04-26 10:46:54
+-- Dump completed on 2017-04-26 16:28:52

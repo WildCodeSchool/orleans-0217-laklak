@@ -30,7 +30,7 @@ CREATE TABLE `eventimages` (
   `eventimggalerrypath` text,
   PRIMARY KEY (`id`),
   KEY `fk_event_images_1_idx` (`idevent`),
-  CONSTRAINT `fk_event_images_1` FOREIGN KEY (`idevent`) REFERENCES `event` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `fk_event_images_1` FOREIGN KEY (`idevent`) REFERENCES `event` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION
 ) ENGINE=InnoDB AUTO_INCREMENT=252 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -53,4 +53,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-04-26 10:46:54
+-- Dump completed on 2017-04-26 16:28:53
