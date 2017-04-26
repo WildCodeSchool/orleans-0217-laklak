@@ -87,11 +87,13 @@ class EventController extends Controller
     public function evenements($id)
     {
         $evt = new EventManager();
-        $event=$evt->showOneEvent($id);
+        $event = $evt->showOneEvent($id);
         $galery = new EventimagesManager();
         $galerie = $galery->showGaleryEvent($id);
 
+
         return $this->getTwig()->render('evenements.html.twig',array('event'=>$event,'galerie'=>$galerie));
+
     }
 
     public function listeEvenements()
