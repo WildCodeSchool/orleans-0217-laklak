@@ -29,7 +29,7 @@
                 <div class="form-group">
                     <label for="idArtiste">identifiant de l'artiste</label>
                     <select type="text" class="form-control" id="idArtiste" name="idArtiste" placeholder="test">
-                        <option>Séléctionner un artiste</option>
+                        <option value="">Séléctionner un artiste</option>
                         {% for allartist in artistes %}
                             <option value="{{ allartist.id }}"
                                     {% if event.eventIdArtiste == allartist.id %}selected="selected"{% else %}{% endif %}>{{ allartist.artistname }}</option>
