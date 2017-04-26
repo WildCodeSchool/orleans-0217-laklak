@@ -99,11 +99,17 @@ class ArtistController extends Controller
         $evt = new EventManager();
         $event = $evt->listEventByArtist($id);
 
-
-        $b = '';
         if (!empty($artist['artistiframesoundcloud'])) {
             $a = str_replace('<iframe width="100%" height="450" scrolling="no" frameborder="no" src="', '', $artist['artistiframesoundcloud']);
-            $b = str_replace('"></iframe>', '', $a);
+            $artist['artistiframesoundcloud'] = str_replace('"></iframe>', '', $a);
+        }
+        if (!empty($artist['artistiframeyoutube'])) {
+            $a = str_replace('<iframe width="560" height="315" src="', '', $artist['artistiframeyoutube']);
+            $artist['artistiframeyoutube'] = str_replace('" frameborder="0" allowfullscreen></iframe>', '', $a);
+        }
+        if (!empty($artist['artistiframefacebook'])) {
+            $a = str_replace('<iframe src="', '', $artist['artistiframefacebook']);
+            $artist['artistiframefacebook'] = str_replace('"></iframe>', '', $a);
         }
 
         return $this->getTwig()->render('artistes.html.twig', array(
@@ -111,7 +117,6 @@ class ArtistController extends Controller
             'galerie' => $galerie,
             'discs' => $discs,
             'event' => $event,
-            'soundcloud' => $b,
         ));
     }
 

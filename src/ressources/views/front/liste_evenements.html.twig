@@ -21,7 +21,7 @@
                     <div class="fbox-media">
                         <div class="image_list_event" style="background-image:url('{{ event.eventImgProfilePath }}')">
                             <img class="img_list_event" src="{{ event.eventImgProfilePath }}" alt="{{ event.eventName }}"/>
-                            <h3 class="nom_list_event">{{ event.eventName }}</h3>
+                            <h3 class="nom_list_event">{{ event.eventName|upper }}</h3>
                         </div>
                         <div class="i-overlay on-hover">
                             <a href="?page=evenements&id={{ event.id }}">
