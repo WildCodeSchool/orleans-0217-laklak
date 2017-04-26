@@ -35,7 +35,7 @@
                         <a href="{{ artist.artistwebsiteurl }}" target="_blank">
                             {% if artist.artistwebsiteurl =='' %}{% else %}
                                 <button class="button button-large button-border button-rounded tright nomargin"
-                                        type="submit" id="#" name="siteArtiste">Site de l'artiste
+                                        type="submit" id="#" name="siteArtiste">Site web
                                 </button>
 
                             {% endif %}
@@ -152,7 +152,7 @@
                     <div class="nobottommargin">
 
 
-                        <h3>Dates</h3>
+                        <h3>{% if artist.artistlaklak == 1 %}Dates{% else %}Dates (Maroc){% endif %}</h3>
 
                         <div class="table-responsive">
                             <table class="table table-striped">
