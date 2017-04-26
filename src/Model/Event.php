@@ -37,6 +37,23 @@ class Event
     private $eventType;
     private $eventMoreUrl;
     private $eventBookingUrl;
+    private $eventIframeFacebook;
+
+    /**
+     * @return mixed
+     */
+    public function getEventIframeFacebook()
+    {
+        return $this->eventIframeFacebook;
+    }
+
+    /**
+     * @param mixed $eventIframeFacebook
+     */
+    public function setEventIframeFacebook($eventIframeFacebook)
+    {
+        $this->eventIframeFacebook = $eventIframeFacebook;
+    }
 
     /**
      * @return mixed

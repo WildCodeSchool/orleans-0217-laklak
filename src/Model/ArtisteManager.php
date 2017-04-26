@@ -19,7 +19,7 @@ class ArtisteManager extends Manager
     public function showAll()
     {
         // connection à la bdd
-        $req = $this->bdd->query('SELECT * FROM artist');
+        $req = $this->bdd->query('SELECT * FROM artist ORDER BY artistname ASC' );
         $req->execute();
         return $req->fetchAll(\PDO::FETCH_CLASS, __NAMESPACE__ . "\\Artist");
     }
