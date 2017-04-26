@@ -24,14 +24,30 @@ class PresentationManager extends Manager
 
     }
 
-    public function updatePresentation(array $value)
+    public function updatePresentation(array $value, $file)
 
     {
-        $req = $this->bdd->prepare("UPDATE presentation SET textpresentation = :textpresentation WHERE id = :id");
+        if ($file['textcover']['name'] != null){
+            $uploaddir = 'images/Upload/presentation/';
+            $uploadfilec = $uploaddir . basename($file['textcover']['name']);
+            move_uploaded_file($file['textcover']['tmp_name'], $uploadfilec);
+        }
+        else{
+            $presentation = $this->textPresentation();
+            $uploadfilec = $presentation->textcover;
+        }
+
+
+        $req = $this->bdd->prepare("UPDATE presentation SET textpresentation = :textpresentation, textcover = :textcover WHERE id = :id");
         $req->bindValue(':id', $value['id']);
         $req->bindValue(':textpresentation', $value['textpresentation']);
+        $req->bindValue(':textcover', $uploadfilec);
         $req->execute();
+
 
     }
 
+
 }
+
+

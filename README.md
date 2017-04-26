@@ -2,7 +2,7 @@
 
 
 
- * Introduction
+ * Introduction 
  * Navigateurs recommandés 
  * Logiciels utilisés
  * Auteurs

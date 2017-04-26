@@ -101,7 +101,9 @@
             <!--debut titre evenement-->
             <div class="col-sm-8 event">
                 <h1 class="hidden-xs">{{ event.eventName }}</h1>
-                <blockquote><i><i class="icon-map-marker2"></i> {{ event.eventlocation }} | <i
+                <blockquote><i><i class="icon-map-marker2"></i>
+                        <a href="http://maps.google.fr/maps?f=q&hl=fr&q={{ event.eventLocation }}"
+                                                                   target="_blank">{{ event.eventLocation }}</a> | <i
                                 class="icon-time"></i> {{ event.eventdate|date('d/m/Y') }}</i></blockquote>
                 {% if event.eventartistes != NULL %}
                     <div class="">
