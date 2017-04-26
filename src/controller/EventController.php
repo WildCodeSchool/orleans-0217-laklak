@@ -87,20 +87,29 @@ class EventController extends Controller
     public function evenements($id)
     {
         $evt = new EventManager();
-        $event=$evt->showOneEvent($id);
+        $event = $evt->showOneEvent($id);
         $galery = new EventimagesManager();
         $galerie = $galery->showGaleryEvent($id);
 
-        if (!empty($event->eventIframeSoundcloud)) {
-            $a = str_replace('<iframe width="100%" height="450" scrolling="no" frameborder="no" src="', '', $event->eventIframeSoundcloud);
-            $event->eventIframeSoundcloud = str_replace('"></iframe>', '', $a);
+
+        if (!empty($event->getEventIframeSoundcloud())) {
+            $a = str_replace('<iframe width="100%" height="450" scrolling="no" frameborder="no" src="', '', $event->getEventIframeSoundcloud());
+            $newiframe = str_replace('"></iframe>', '', $a);
+            $event->setEventIframeSoundcloud($newiframe);
         }
-        if (!empty($event->eventIframeYoutube)) {
-            $a = str_replace('<iframe width="560" height="315" src="', '', $event->eventIframeYoutube);
-            $event->eventIframeYoutube = str_replace('" frameborder="0" allowfullscreen></iframe>', '', $a);
+        if (!empty($event->getEventIframeYoutube())) {
+            $a = str_replace('<iframe width="560" height="315" src="', '', $event->getEventIframeYoutube());
+            $newiframe = str_replace('"></iframe>', '', $a);
+            $event->setEventIframeYoutube($newiframe);
+        }
+        if (!empty($event->getEventIframeFacebook())) {
+            $a = str_replace('<iframe src="', '', $event->getEventIframeFacebook());
+            $newiframe = str_replace('"></iframe>', '', $a);
+            $event->setEventIframeFacebook($newiframe);
         }
 
         return $this->getTwig()->render('evenements.html.twig',array('event'=>$event,'galerie'=>$galerie));
+
     }
 
     public function listeEvenements()

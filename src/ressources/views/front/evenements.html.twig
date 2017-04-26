@@ -70,6 +70,9 @@
                                 </a>
                             {% endif %}
 
+
+
+
                         </div>
                     </div>
 
@@ -93,6 +96,15 @@
                         </div>
                     {% endif %}
 
+                    {% if event.eventIframefacebook =='' %}
+
+                    {% else %}
+                        <div class="bio thumbnail">
+                            <iframe width="100%" height="450" scrolling="no" frameborder="no"
+                                    src="{{ event.eventIframeFacebook }}" target="_blank"></iframe>
+                        </div>
+                    {% endif %}
+
                 </div>
             </div>
 
@@ -107,7 +119,7 @@
                                 class="icon-time"></i> {{ event.eventdate|date('d/m/Y') }}</i></blockquote>
                 {% if event.eventartistes != NULL %}
                     <div class="">
-                        <h3>Artistes de l'événement</h3>
+
                         <p>{{ event.eventartistes|raw }}</p>
                     </div>
                     <div class="divider"><i class="icon-circle"></i></div>
@@ -129,7 +141,7 @@
 
                 <!--debut bloc productions-->
                 {% if event.eventproduction != NULL %}
-                    <div class=""><h3>Productions</h3>
+                    <div class=""><h3>Production</h3>
                         <p>{{ event.eventproduction|raw }}</p>
                     </div>
                     <div class="divider"><i class="icon-circle"></i></div>
