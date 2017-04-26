@@ -109,11 +109,11 @@ class EventManager extends Manager
         $req = "INSERT INTO event (eventName,eventDescription,eventLocation,eventDate,eventProduction,eventWebsiteUrl,
         eventFacebookUrl,eventTwitterUrl,eventSoundcloudUrl,eventIframeYoutube,eventIframeSoundcloud,
         eventArtistes,eventLaklak,eventIdArtiste,eventImgCoverPath,eventImgProfilePath,eventType,
-        eventMoreUrl,eventBookingUrl) 
+        eventMoreUrl,eventBookingUrl, eventIframeFacebook) 
                 VALUES (:eventName,:eventDescription,:eventLocation,:eventDate,:eventProduction,:eventWebsiteUrl,
         :eventFacebookUrl,:eventTwitterUrl,:eventSoundcloudUrl,:eventIframeYoutube,:eventIframeSoundcloud,
         :eventArtistes,:eventLaklak,:eventIdArtiste,:eventImgCoverPath,:eventImgProfilePath,:eventType,
-        :eventMoreUrl,:eventBookingUrl)";
+        :eventMoreUrl,:eventBookingUrl, :eventIframeFacebook)";
         $prep = $this->bdd->prepare($req);
 
 
@@ -137,6 +137,7 @@ class EventManager extends Manager
         $prep->bindValue(':eventType', $value['type']);
         $prep->bindValue(':eventMoreUrl', $value['moreUrl']);
         $prep->bindValue(':eventBookingUrl', $value['bookingUrl']);
+        $prep->bindValue(':eventIframeFacebook', $value['iframeFacebook']);
         $prep->execute();
     }
 
@@ -231,7 +232,7 @@ class EventManager extends Manager
         , eventTwitterUrl=:eventTwitterUrl, eventSoundcloudUrl=:eventSoundcloudUrl, eventIframeYoutube=:eventIframeYoutube,
          eventIframeSoundcloud=:eventIframeSoundcloud, eventArtistes=:eventArtistes, eventLaklak=:eventLaklak,
          eventIdArtiste=:eventIdArtiste, eventImgCoverPath=:eventImgCoverPath, eventImgProfilePath=:eventImgProfilePath,
-        eventType=:eventType, eventMoreUrl=:eventMoreUrl, eventBookingUrl=:eventBookingUrl WHERE id = :id";
+        eventType=:eventType, eventMoreUrl=:eventMoreUrl, eventBookingUrl=:eventBookingUrl, eventIframeFacebook = :eventIframeFacebook WHERE id = :id";
 
         $prep = $this->bdd->prepare($req);
 
@@ -255,6 +256,7 @@ class EventManager extends Manager
         $prep->bindValue(':eventType', $value['type']);
         $prep->bindValue(':eventMoreUrl', $value['moreUrl']);
         $prep->bindValue(':eventBookingUrl', $value['bookingUrl']);
+        $prep->bindValue(':eventIframeFacebook', $value['iframeFacebook']);
 
         $prep->execute();
     }
