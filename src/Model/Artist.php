@@ -28,6 +28,23 @@ class Artist
     private $artistImgCoverPath;
     private $artistImgProfilPath;
     private $artistIdEvent;
+    private $artistdisco;
+
+    /**
+     * @return mixed
+     */
+    public function getArtistdisco()
+    {
+        return $this->artistdisco;
+    }
+
+    /**
+     * @param mixed $artistdisco
+     */
+    public function setArtistdisco($artistdisco)
+    {
+        $this->artistdisco = $artistdisco;
+    }
 
     /**
      * @return mixed

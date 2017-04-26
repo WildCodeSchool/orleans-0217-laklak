@@ -130,7 +130,18 @@
                     <i class="icon-circle"></i>
                 </div>
 
+                    {% if artist.artistdisco =='' %}
 
+                    {% else %}
+                <div class="">
+                    <h3>Discographie</h3>
+                    <p>{{ artist.artistdisco|raw }}</p>
+                </div>
+
+                <div class="divider">
+                    <i class="icon-circle"></i>
+                </div>
+        {% endif %}
                 {#<div class="">#}
                 {#<h3>Discographie</h3>#}
                 {#<div class="row">#}
