@@ -164,3 +164,23 @@ $username = "francois"; $password = 'eb7abf5f00d2dd1678fd3763b90d5ea7';
     $useruploadpath = $usersiteroot."$useruploadfolder/";
     $foldershistory[] = "Laklak/orleans-0217-laklak/web/images/Upload/Disco";
         
+
+    $useruploadfolder = "images/Upload/Disco";
+    $useruploadpath = $usersiteroot."$useruploadfolder/";
+    $foldershistory[] = "images/Upload/Disco";
+        
+
+    $useruploadfolder = "/images/Upload/Disco";
+    $useruploadpath = $usersiteroot."$useruploadfolder/";
+    $foldershistory[] = "/images/Upload/Disco";
+        
+
+    $useruploadfolder = "http://sitelocal.local/orleans-0217-laklak/web/images/Upload/Disco";
+    $useruploadpath = $usersiteroot."$useruploadfolder/";
+    $foldershistory[] = "http://sitelocal.local/orleans-0217-laklak/web/images/Upload/Disco";
+        
+
+    $useruploadfolder = "/orleans-0217-laklak/web/images/Upload/Disco";
+    $useruploadpath = $usersiteroot."$useruploadfolder/";
+    $foldershistory[] = "/orleans-0217-laklak/web/images/Upload/Disco";
+        
