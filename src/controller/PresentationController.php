@@ -18,7 +18,7 @@ class PresentationController extends Controller
     {
         $presentationmanager = new PresentationManager();
         if (isset($_POST['enregistrer'])) {
-            $presentationmanager->updatePresentation($_POST);
+            $presentationmanager->updatePresentation($_POST, $_FILES);
         }
         $presentation = $presentationmanager->textPresentation();
         return $this->getTwig()->render('adminapropos.html.twig', array('presentation' => $presentation));

@@ -2,7 +2,7 @@
 
 {% block content %}
     <div class="container-admin">
-        <form method="post" action="?page=adminapropos">
+        <form method="post" enctype="multipart/form-data" action="?page=adminapropos">
             <h1>Modifier texte de présentation</h1>
             <div class="form-group">
 
@@ -13,6 +13,16 @@
                           id="bio">{{ presentation.textpresentation }}
                      </textarea>
             </div>
+            <div class="thumbnail textcover">
+                <div class="form-group">
+                    {% if presentation.textcover is defined %} <img
+                        src="{{ presentation.textcover }}" class="img-thumbnail"
+                        width="250px"/>{% else %} {% endif %}
+                    <label for="exampleInputFile">Photo Cover</label>
+                    <input type="hidden" name="MAX_FILE_SIZE" value="1000000">
+                    <input type="file" id="textcover" name="textcover">
+                    <comment><em>Taille recommandée : 1400px x 900px | Max. 1Mo</em></comment>
+                </div>
             <input class="btn btn-success" type="submit" name="enregistrer" value="enregistrer"/>
 
         </form>

@@ -92,6 +92,16 @@ class EventController extends Controller
         $galerie = $galery->showGaleryEvent($id);
 
 
+        if (!empty($event->eventIframeSoundcloud)) {
+            $a = str_replace('<iframe width="100%" height="450" scrolling="no" frameborder="no" src="', '', $event->eventIframeSoundcloud);
+            $event->eventIframeSoundcloud = str_replace('"></iframe>', '', $a);
+        }
+        if (!empty($event->eventIframeYoutube)) {
+            $a = str_replace('<iframe width="560" height="315" src="', '', $event->eventIframeYoutube);
+            $event->eventIframeYoutube = str_replace('" frameborder="0" allowfullscreen></iframe>', '', $a);
+        }
+
+
         return $this->getTwig()->render('evenements.html.twig',array('event'=>$event,'galerie'=>$galerie));
 
     }
