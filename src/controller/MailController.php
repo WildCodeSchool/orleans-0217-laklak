@@ -27,7 +27,7 @@ class MailController extends Controller
                 ->setReplyTo($mail['email'])
                 ->setTo($to)
                 ->addPart('
-                <h1>Vous avez reçu un message de ' . $mail['nom'] . '</h1> 
+                <h1>Vous avez reçu un message de ' . $mail['nom'] . ' en tant que ' . $mail['type'] . '</h1> 
                 <p>Email : ' . $mail['email'] . '<br/>
                 Tel : ' . $mail['tel'] . '</p>
                 <p>' . $mail['message'] . '</p>
