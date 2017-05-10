@@ -81,7 +81,7 @@
                                     </div>
                                     <div class="entry-c">
                                         <div class="entry-title">
-                                            <h2><a href="?page=evenements&id={{ event.id }}">{{ event.eventName }}</a>
+                                            <h2><a href="evenement-{{ event.id }}">{{ event.eventName }}</a>
                                             </h2>
                                         </div>
                                         <ul class="entry-meta clearfix">
@@ -101,7 +101,7 @@
                                             <a href="{{ event.eventBookingUrl }}" class="btn btn-default"
                                                {% if event.eventBookingUrl == '' %}disabled="disabled"{% endif %}>Billetterie</a>
                                             <a
-                                                    href="?page=evenements&id={{ event.id }}"
+                                                    href="evenement-{{ event.id }}"
                                                     class="btn btn-danger">Voir Plus</a>
                                         </div>
                                     </div>
@@ -127,7 +127,7 @@
                                 </div>
                                 <div class="entry-c">
                                     <div class="entry-title">
-                                        <h2><a href="?page=evenements&id={{ event.id }}">{{ event.eventName }}</a>
+                                        <h2><a href="evenement-{{ event.id }}">{{ event.eventName }}</a>
                                         </h2>
                                     </div>
                                     <ul class="entry-meta clearfix">
@@ -147,7 +147,7 @@
                                         <a href="{{ event.eventBookingUrl }}" class="btn btn-default"
                                            {% if event.eventBookingUrl == '' %}disabled="disabled"{% endif %}>Billetterie</a>
                                         <a
-                                                href="?page=evenements&id={{ event.id }}"
+                                                href="evenement-{{ event.id }}"
                                                 class="btn btn-danger">Voir Plus</a>
                                     </div>
                                 </div>

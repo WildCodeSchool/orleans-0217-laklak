@@ -180,7 +180,7 @@
                                         <td><span class="label label-danger">{{ evt.eventDate|date('d-m-Y') }}</span>
                                         </td>
                                         <td>{{ evt.eventLocation }}</td>
-                                        <td><a href="?page=evenements&id={{ evt.id }}">{{ evt.eventName }}</a></td>
+                                        <td><a href="evenements-{{ evt.id }}">{{ evt.eventName }}</a></td>
                                     </tr>
                                 {% endfor %}
                                 </tbody>
