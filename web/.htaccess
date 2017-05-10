@@ -1,0 +1,14 @@
+RewriteEngine On
+#RewriteCond %{REQUEST_FILENAME} !-f
+RewriteBase /laklakfinal/orleans-0217-laklak/web/
+RewriteRule ^accueil$ index\.php [QSA,L]
+RewriteRule ^apropos$ index\.php?page=apropos [QSA,L]
+RewriteRule ^liste-artistes$ index\.php?page=liste_artistes [QSA,L]
+RewriteRule ^artiste-(.*)$ index\.php?page=artistes&id=$1 [QSA,L]
+RewriteRule ^liste-evenements$ index\.php?page=liste_evenements [QSA,L]
+RewriteRule ^evenement-(.*)$ index\.php?page=evenements&id=$1 [QSA,L]
+RewriteRule ^agenda$ index\.php?page=agenda [QSA,L]
+RewriteRule ^contact$ index\.php?page=contact [QSA,L]
+#RewriteRule ^(.*)$ ?page=$1 [QSA,L]
+
+
