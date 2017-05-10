@@ -2,7 +2,7 @@ RewriteEngine On
 #RewriteCond %{REQUEST_FILENAME} !-f
 RewriteBase /
 RewriteRule ^accueil$ index\.php [QSA,L]
-RewriteRule ^apropos$ index\.php?page=apropos [QSA,L]
+RewriteRule ^apropos$ ?page=apropos [QSA,L]
 RewriteRule ^liste-artistes$ index\.php?page=liste_artistes [QSA,L]
 RewriteRule ^artiste-(.*)$ index\.php?page=artistes&id=$1 [QSA,L]
 RewriteRule ^liste-evenements$ index\.php?page=liste_evenements [QSA,L]
